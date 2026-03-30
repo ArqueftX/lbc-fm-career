@@ -25,20 +25,112 @@ const LEAGUE_STYLES = {
 /* ═══════════════════════════════════════════════
    ROOT APP
 ═══════════════════════════════════════════════ */
+const INTRO_KEY = 'lbc-coach-intro-seen'
+
 export default function App() {
   const [view, setView] = useState('home')
   const [current, setCurrent] = useState(null)
+  const [showIntro, setShowIntro] = useState(() => !localStorage.getItem(INTRO_KEY))
 
   const goHome    = ()  => { setView('home');    window.scrollTo(0,0) }
   const goDetail  = (s) => { setCurrent(s);  setView('detail');  window.scrollTo(0,0) }
   const goMercato = (s) => { setCurrent(s);  setView('mercato'); window.scrollTo(0,0) }
   const goSelect  = (s) => { setCurrent(s);  setView(s.splash ? 'splash' : 'detail'); window.scrollTo(0,0) }
 
+  const dismissIntro = () => { localStorage.setItem(INTRO_KEY, '1'); setShowIntro(false) }
+  const replayIntro  = () => setShowIntro(true)
+
+  if (showIntro) return <CoachIntro onDone={dismissIntro} />
+
   if (view === 'splash'  && current) return <SeasonSplash season={current} onDone={() => goDetail(current)} />
   if (view === 'detail'  && current) return <SeasonPage  season={current} onBack={goHome}           onMercato={() => goMercato(current)} />
   if (view === 'mercato' && current) return <MercatoPage season={current} onBack={() => goDetail(current)} />
 
-  return <HomePage seasons={SEASONS} onSelect={goSelect} />
+  return <HomePage seasons={SEASONS} onSelect={goSelect} onReplay={replayIntro} />
+}
+
+/* ═══════════════════════════════════════════════
+   COACH INTRO
+═══════════════════════════════════════════════ */
+function CoachIntro({ onDone }) {
+  const [leaving, setLeaving] = useState(false)
+
+  const leave = () => {
+    setLeaving(true)
+    setTimeout(onDone, 800)
+  }
+
+  return (
+    <div style={{
+      position: 'fixed', top:0, left:0, right:0, bottom:0, zIndex: 999,
+      background: C.navy,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      opacity: leaving ? 0 : 1,
+      transition: 'opacity 0.8s ease',
+      overflowY: 'auto',
+    }}>
+      {/* Texture */}
+      <div style={{ position:'absolute', top:0, left:0, right:0, bottom:0, backgroundImage:'repeating-linear-gradient(135deg,rgba(232,184,75,0.025) 0,rgba(232,184,75,0.025) 1px,transparent 1px,transparent 40px)', pointerEvents:'none' }} />
+
+      <div style={{ position:'relative', maxWidth:560, width:'100%', padding:'48px 40px', margin:'40px 24px' }}>
+
+        {/* Header */}
+        <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:36, paddingBottom:24, borderBottom:'1px solid rgba(232,184,75,0.15)' }}>
+          <img src="./logo.png" alt="LBC" style={{ width:48, height:48, objectFit:'contain' }} />
+          <div>
+            <div className="bc" style={{ fontSize:9, letterSpacing:5, color:C.gold, fontWeight:700 }}>COMMUNIQUÉ OFFICIEL</div>
+            <div className="bc" style={{ fontSize:12, color:C.muted, marginTop:3, letterSpacing:1 }}>La Berrichonne de Châteauroux — Été 2025</div>
+          </div>
+        </div>
+
+        {/* Body */}
+        <div style={{ lineHeight:1.8, marginBottom:32 }}>
+          <p className="bc" style={{ fontSize:15, color:C.white, marginBottom:18 }}>
+            La direction du club annonce la nomination de{' '}
+            <span style={{ color:C.gold, fontWeight:600 }}>Nolann Queft</span>
+            {' '}au poste d'entraîneur principal, à compter de ce jour.
+          </p>
+          <p className="bc" style={{ fontSize:14, color:C.muted, marginBottom:18 }}>
+            Le technicien prend les rênes d'un effectif qui n'a plus goûté aux divisions
+            supérieures depuis trop longtemps. Sa mission : reconstruire, conquérir,
+            et rendre à La Berrichonne la place qu'elle mérite dans le football français.
+          </p>
+        </div>
+
+        {/* Quote */}
+        <div style={{ borderLeft:`3px solid ${C.gold}`, paddingLeft:20, marginBottom:36 }}>
+          <p className="bc" style={{ fontSize:15, color:C.white, fontStyle:'italic', lineHeight:1.7, marginBottom:10 }}>
+            « Je ne suis pas venu gérer un effectif. Je suis venu construire quelque chose.
+            Cette ville, ce club, ils méritent mieux — et on va leur donner. »
+          </p>
+          <div className="bc" style={{ fontSize:10, letterSpacing:3, color:C.gold, fontWeight:700 }}>
+            — NOLANN QUEFT · Conférence de presse d'intégration, Stade Gaston-Petit
+          </div>
+        </div>
+
+        {/* Sign-off */}
+        <p className="bc" style={{ fontSize:13, color:C.muted, fontStyle:'italic', marginBottom:40, textAlign:'center' }}>
+          Bienvenue à Châteauroux, Mister.
+        </p>
+
+        {/* CTA */}
+        <button
+          onClick={leave}
+          style={{
+            width:'100%', padding:'16px', background:C.gold, border:'none',
+            color:C.navy, cursor:'pointer', fontFamily:"'Barlow Condensed',sans-serif",
+            fontSize:13, letterSpacing:5, fontWeight:700,
+            transition:'opacity 0.2s',
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity='0.85'}
+          onMouseLeave={e => e.currentTarget.style.opacity='1'}
+        >
+          COMMENCER LA CARRIÈRE
+        </button>
+
+      </div>
+    </div>
+  )
 }
 
 /* ═══════════════════════════════════════════════
@@ -106,7 +198,7 @@ function SeasonSplash({ season, onDone }) {
 /* ═══════════════════════════════════════════════
    HOME PAGE
 ═══════════════════════════════════════════════ */
-function HomePage({ seasons, onSelect }) {
+function HomePage({ seasons, onSelect, onReplay }) {
   const sorted   = [...seasons].sort((a, b) => b.year.localeCompare(a.year))
   const totalW   = seasons.reduce((s, x) => s + x.wins, 0)
   const totalPts = seasons.reduce((s, x) => s + x.points, 0)
@@ -137,13 +229,18 @@ function HomePage({ seasons, onSelect }) {
               <div className="bc au au2" style={{ fontSize:12, color:C.muted, letterSpacing:3, fontWeight:400 }}>
                 {seasons.length} SAISON{seasons.length !== 1 ? 'S' : ''} · {totalW} VICTOIRES · {totalPts} POINTS CUMULÉS
               </div>
+              <div className="bc au au3" style={{ display:'inline-flex', alignItems:'center', gap:10, marginTop:14, padding:'6px 14px', border:'1px solid rgba(232,184,75,0.2)', width:'fit-content' }}>
+                <span style={{ fontSize:9, letterSpacing:3, color:C.muted, fontWeight:700 }}>ENTRAÎNEUR</span>
+                <span style={{ width:1, height:10, background:'rgba(232,184,75,0.25)' }} />
+                <span style={{ fontSize:12, color:C.gold, letterSpacing:2, fontWeight:600 }}>Nolann Queft</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* SEASON CARDS */}
-      <div style={{ maxWidth:1160, margin:'0 auto', padding:'48px 56px 80px' }}>
+      <div style={{ maxWidth:1160, margin:'0 auto', padding:'48px 56px 60px' }}>
         {sorted.length === 0 ? (
           <div style={{ textAlign:'center', padding:'80px 0', color:C.muted }}>
             <div className="bb" style={{ fontSize:32, letterSpacing:4, color:C.mid }}>AUCUNE SAISON</div>
@@ -158,6 +255,19 @@ function HomePage({ seasons, onSelect }) {
             ))}
           </div>
         )}
+      </div>
+
+      {/* FOOTER */}
+      <div style={{ borderTop:'1px solid rgba(255,255,255,0.05)', padding:'20px 56px', display:'flex', justifyContent:'flex-end' }}>
+        <button
+          onClick={onReplay}
+          className="bc"
+          style={{ background:'transparent', border:'none', color:'rgba(106,130,176,0.4)', cursor:'pointer', fontSize:10, letterSpacing:4, fontFamily:'inherit', transition:'color 0.2s' }}
+          onMouseEnter={e => e.currentTarget.style.color=C.muted}
+          onMouseLeave={e => e.currentTarget.style.color='rgba(106,130,176,0.4)'}
+        >
+          ↺ REJOUER L'INTRO
+        </button>
       </div>
     </div>
   )
