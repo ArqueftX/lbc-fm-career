@@ -50,83 +50,65 @@ function SeasonSplash({ season, onDone }) {
   const sp = season.splash
 
   useEffect(() => {
-    const timers = [
-      setTimeout(() => setStep(1), 200),   // eyebrow
-      setTimeout(() => setStep(2), 650),   // line 1
-      setTimeout(() => setStep(3), 980),   // line 2
-      setTimeout(() => setStep(4), 1300),  // divider
-      setTimeout(() => setStep(5), 1650),  // sub
-      setTimeout(() => setStep(6), 2050),  // tagline
-      setTimeout(() => setStep(7), 3100),  // hint
-    ]
-    const auto = setTimeout(() => dismiss(), 4800)
-    return () => { timers.forEach(clearTimeout); clearTimeout(auto) }
+    let s = 0
+    const tick = setInterval(() => {
+      s += 1
+      setStep(s)
+      if (s >= 7) clearInterval(tick)
+    }, 350)
+    const auto = setTimeout(() => leave(), 5500)
+    return () => { clearInterval(tick); clearTimeout(auto) }
   }, [])
 
-  const dismiss = () => {
-    if (leaving) return
+  const leave = () => {
     setLeaving(true)
-    setTimeout(onDone, 700)
+    setTimeout(onDone, 800)
   }
 
-  const fx = (n) => ({
+  const show = (n) => ({
     opacity:   step >= n ? 1 : 0,
-    transform: step >= n ? 'translateY(0)' : 'translateY(18px)',
-    transition: 'opacity 0.55s ease, transform 0.55s ease',
+    transform: step >= n ? 'none' : 'translateY(20px)',
+    transition: 'opacity 0.5s ease, transform 0.5s ease',
+    pointerEvents: 'none',
   })
 
   return (
     <div
-      onClick={dismiss}
+      onClick={leave}
       style={{
-        position:'fixed', inset:0, zIndex:999,
-        background: C.navy,
-        display:'flex', alignItems:'center', justifyContent:'center',
-        cursor:'pointer',
+        position: 'fixed', inset: 0, zIndex: 999,
+        background: '#07111f',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        cursor: 'pointer',
         opacity: leaving ? 0 : 1,
-        transition: 'opacity 0.7s ease',
-        overflow:'hidden',
+        transition: 'opacity 0.8s ease',
       }}
     >
-      {/* Decorative grid */}
-      <div style={{ position:'absolute', inset:0, backgroundImage:'repeating-linear-gradient(135deg,rgba(232,184,75,0.03) 0,rgba(232,184,75,0.03) 1px,transparent 1px,transparent 40px)', pointerEvents:'none' }} />
-      {/* Glow */}
-      <div style={{ position:'absolute', left:'50%', top:'50%', transform:'translate(-50%,-50%)', width:'70vmin', height:'70vmin', borderRadius:'50%', background:'radial-gradient(circle,rgba(12,34,89,0.9) 0%,transparent 70%)', pointerEvents:'none' }} />
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(135deg,rgba(232,184,75,0.03) 0,rgba(232,184,75,0.03) 1px,transparent 1px,transparent 40px)', pointerEvents: 'none' }} />
 
-      <div style={{ position:'relative', textAlign:'center', padding:'0 48px', maxWidth:820 }}>
+      <div style={{ position: 'relative', textAlign: 'center', padding: '0 48px', maxWidth: 820 }}>
 
-        {/* Eyebrow */}
-        <div className="bc" style={{ fontSize:11, letterSpacing:8, color:C.gold, marginBottom:36, fontWeight:600, ...fx(1) }}>
+        <div className="bc" style={{ fontSize: 11, letterSpacing: 8, color: '#e8b84b', marginBottom: 36, fontWeight: 600, ...show(1) }}>
           {sp.eyebrow}
         </div>
 
-        {/* Main headline lines */}
         {sp.lines.map((line, i) => (
-          <div key={i} className="bb" style={{ fontSize:'clamp(56px,10vw,124px)', lineHeight:0.9, letterSpacing:3, color: i === 0 ? C.white : C.gold, ...fx(i + 2) }}>
+          <div key={i} className="bb" style={{ fontSize: 'clamp(56px,10vw,120px)', lineHeight: 0.9, letterSpacing: 3, color: i === 0 ? '#eef2ff' : '#e8b84b', ...show(i + 2) }}>
             {line}
           </div>
         ))}
 
-        {/* Divider */}
-        <div style={{
-          height:2, background:C.gold, margin:'38px auto',
-          width:   step >= 4 ? 110 : 0,
-          opacity: step >= 4 ? 1   : 0,
-          transition: 'width 0.55s ease, opacity 0.55s ease',
-        }} />
+        <div style={{ height: 2, margin: '36px auto', background: '#e8b84b', transition: 'width 0.5s ease, opacity 0.5s ease', width: step >= 4 ? 110 : 0, opacity: step >= 4 ? 1 : 0 }} />
 
-        {/* Sub */}
-        <div className="bb" style={{ fontSize:'clamp(16px,3vw,30px)', letterSpacing:7, color:C.muted, marginBottom:18, ...fx(5) }}>
+        <div className="bb" style={{ fontSize: 'clamp(16px,2.8vw,28px)', letterSpacing: 6, color: '#6a82b0', marginBottom: 20, ...show(5) }}>
           {sp.sub}
         </div>
 
-        {/* Tagline */}
-        <div className="bc" style={{ fontSize:'clamp(14px,1.8vw,20px)', color:C.white, letterSpacing:2, fontWeight:300, fontStyle:'italic', lineHeight:1.5, ...fx(6) }}>
+        <div className="bc" style={{ fontSize: 'clamp(14px,1.8vw,20px)', color: '#eef2ff', letterSpacing: 2, fontWeight: 300, fontStyle: 'italic', lineHeight: 1.6, ...show(6) }}>
           {sp.tagline}
         </div>
 
-        {/* Click hint */}
-        <div className="bc" style={{ marginTop:60, fontSize:10, letterSpacing:5, color:'rgba(106,130,176,0.45)', ...fx(7) }}>
+        <div className="bc" style={{ marginTop: 60, fontSize: 10, letterSpacing: 5, color: 'rgba(106,130,176,0.4)', ...show(7) }}>
           CLIQUER POUR CONTINUER
         </div>
 
