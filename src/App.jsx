@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { SEASONS } from './data/seasons.js'
 
 /* ═══════════════════════════════════════════════
@@ -45,19 +45,12 @@ export default function App() {
    SEASON SPLASH
 ═══════════════════════════════════════════════ */
 function SeasonSplash({ season, onDone }) {
-  const [step, setStep]       = useState(0)
   const [leaving, setLeaving] = useState(false)
   const sp = season.splash
 
   useEffect(() => {
-    let s = 0
-    const tick = setInterval(() => {
-      s += 1
-      setStep(s)
-      if (s >= 7) clearInterval(tick)
-    }, 350)
-    const auto = setTimeout(() => leave(), 5500)
-    return () => { clearInterval(tick); clearTimeout(auto) }
+    const auto = setTimeout(() => leave(), 6000)
+    return () => clearTimeout(auto)
   }, [])
 
   const leave = () => {
@@ -65,18 +58,11 @@ function SeasonSplash({ season, onDone }) {
     setTimeout(onDone, 800)
   }
 
-  const show = (n) => ({
-    opacity:   step >= n ? 1 : 0,
-    transform: step >= n ? 'none' : 'translateY(20px)',
-    transition: 'opacity 0.5s ease, transform 0.5s ease',
-    pointerEvents: 'none',
-  })
-
   return (
     <div
-      onClick={leave}
+      onClick={(e) => { e.stopPropagation(); leave() }}
       style={{
-        position: 'fixed', inset: 0, zIndex: 999,
+        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 999,
         background: '#07111f',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         cursor: 'pointer',
@@ -84,31 +70,31 @@ function SeasonSplash({ season, onDone }) {
         transition: 'opacity 0.8s ease',
       }}
     >
-      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(135deg,rgba(232,184,75,0.03) 0,rgba(232,184,75,0.03) 1px,transparent 1px,transparent 40px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top:0, left:0, right:0, bottom:0, backgroundImage: 'repeating-linear-gradient(135deg,rgba(232,184,75,0.03) 0,rgba(232,184,75,0.03) 1px,transparent 1px,transparent 40px)', pointerEvents: 'none' }} />
 
       <div style={{ position: 'relative', textAlign: 'center', padding: '0 48px', maxWidth: 820 }}>
 
-        <div className="bc" style={{ fontSize: 11, letterSpacing: 8, color: '#e8b84b', marginBottom: 36, fontWeight: 600, ...show(1) }}>
+        <div className="bc" style={{ fontSize: 11, letterSpacing: 8, color: '#e8b84b', marginBottom: 36, fontWeight: 600 }}>
           {sp.eyebrow}
         </div>
 
         {sp.lines.map((line, i) => (
-          <div key={i} className="bb" style={{ fontSize: 'clamp(56px,10vw,120px)', lineHeight: 0.9, letterSpacing: 3, color: i === 0 ? '#eef2ff' : '#e8b84b', ...show(i + 2) }}>
+          <div key={i} className="bb" style={{ fontSize: 'clamp(56px,10vw,120px)', lineHeight: 0.9, letterSpacing: 3, color: i === 0 ? '#eef2ff' : '#e8b84b' }}>
             {line}
           </div>
         ))}
 
-        <div style={{ height: 2, margin: '36px auto', background: '#e8b84b', transition: 'width 0.5s ease, opacity 0.5s ease', width: step >= 4 ? 110 : 0, opacity: step >= 4 ? 1 : 0 }} />
+        <div style={{ height: 2, width: 110, margin: '36px auto', background: '#e8b84b' }} />
 
-        <div className="bb" style={{ fontSize: 'clamp(16px,2.8vw,28px)', letterSpacing: 6, color: '#6a82b0', marginBottom: 20, ...show(5) }}>
+        <div className="bb" style={{ fontSize: 'clamp(16px,2.8vw,28px)', letterSpacing: 6, color: '#6a82b0', marginBottom: 20 }}>
           {sp.sub}
         </div>
 
-        <div className="bc" style={{ fontSize: 'clamp(14px,1.8vw,20px)', color: '#eef2ff', letterSpacing: 2, fontWeight: 300, fontStyle: 'italic', lineHeight: 1.6, ...show(6) }}>
+        <div className="bc" style={{ fontSize: 'clamp(14px,1.8vw,20px)', color: '#eef2ff', letterSpacing: 2, fontWeight: 300, fontStyle: 'italic', lineHeight: 1.6 }}>
           {sp.tagline}
         </div>
 
-        <div className="bc" style={{ marginTop: 60, fontSize: 10, letterSpacing: 5, color: 'rgba(106,130,176,0.4)', ...show(7) }}>
+        <div className="bc" style={{ marginTop: 60, fontSize: 10, letterSpacing: 5, color: 'rgba(106,130,176,0.4)' }}>
           CLIQUER POUR CONTINUER
         </div>
 
