@@ -476,7 +476,7 @@ export const SEASONS = [
 
     splash: {
       eyebrow:  "2028/29 · Ligue 1 · Saison 4",
-      lines:    ["BIENVENUS", "EN ÉLITE."],
+      lines:    ["BIENVENUE", "DANS L'ÉLITE."],
       sub:      "Ligue 1 · 12e · Finalistes de la Coupe de France",
       tagline:  "LBC tient son rang face aux plus grands. Une finale contre le PSG — le monde entier regardait Châteauroux.",
     },
