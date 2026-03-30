@@ -574,6 +574,10 @@ function MercatoPage({ season: s, onBack }) {
 }
 
 
+/* ═══════════════════════════════════════════════
+   STANDINGS TABLE
+═══════════════════════════════════════════════ */
+function StandingsTable({ rows }) {
   return (
     <div>
       <div style={{ display:'grid', gridTemplateColumns:'34px 1fr repeat(8,42px)', gap:5, padding:'7px 14px', borderBottom:'1px solid rgba(255,255,255,0.08)' }}>
