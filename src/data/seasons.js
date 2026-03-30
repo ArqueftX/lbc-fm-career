@@ -106,6 +106,13 @@ export const SEASONS = [
       { r:"W", tip:"Stade Briochin (D) 2-0"       },
     ],
 
+    splash: {
+      eyebrow:  "2025/26 · Saison 1",
+      lines:    ["SI PRÈS.", "SI LOIN."],
+      sub:      "National · 3e · 59 pts",
+      tagline:  "Éliminé par Laval en prolongations. LBC apprend ce que coûte la montée.",
+    },
+
     standings: [
       { pos:1,  team:"FC Rouen",           j:32, g:19, n:7,  l:6,  bp:54, bc:31, db: 23, pts:64, zone:"promo"  },
       { pos:2,  team:"Valenciennes",        j:32, g:18, n:8,  l:6,  bp:42, bc:26, db: 16, pts:62, zone:"promo"  },
@@ -192,8 +199,14 @@ export const SEASONS = [
 
     playoffs: null,
 
+    splash: {
+      eyebrow:  "2026/27 · Premier titre",
+      lines:    ["UN AN APRÈS", "LES BARRAGES."],
+      sub:      "National · Champions · 70 pts",
+      tagline:  "LBC ne rate plus. LBC remporte tout. Direction la Ligue 2.",
+    },
+
     matches: [
-      { r:"W", tip:"FC Versailles 78 (D) 2-0"          },
       { r:"L", tip:"AS Cannes (E) 3-2"                 },
       { r:"D", tip:"Bourg-Péronnas (D) 1-1"            },
       { r:"W", tip:"Caen (E) 0-5"                      },
@@ -433,6 +446,15 @@ export const SEASONS = [
     },
 
     playoffs: null,  // ou un objet si barrages
+
+    // Splash d'intro (optionnel) — s'affiche avant la fiche saison
+    // Supprime ce bloc entier si tu ne veux pas d'intro pour cette saison
+    splash: {
+      eyebrow:  "2028/29 · Saison X",        // sous-titre discret en haut
+      lines:    ["TITRE 1.", "TITRE 2."],     // 1 ou 2 lignes géantes
+      sub:      "Ligue 1 · Champions",        // ligne résumé sous les titres
+      tagline:  "Ta phrase clé de la saison.",// phrase en italique
+    },
 
     // Chaîne de résultats : W=Victoire D=Nul L=Défaite
     // tip = texte au survol (Adversaire + score)
