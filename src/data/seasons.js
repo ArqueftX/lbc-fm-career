@@ -318,6 +318,13 @@ export const SEASONS = [
 
     playoffs: null,
 
+    splash: {
+      eyebrow:  "2026/27 · 2027/28",
+      lines:    ["DEUX TITRES.", "DEUX DIVISIONS."],
+      sub:      "National → Ligue 2",
+      tagline:  "Châteauroux ne monte pas. Elle domine.",
+    },
+
     matches: [
       { r:"W", tip:"Angers (E) 2-3"             },
       { r:"W", tip:"FC Rouen (D) 3-2"           },

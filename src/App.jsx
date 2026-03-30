@@ -32,11 +32,112 @@ export default function App() {
   const goHome    = ()  => { setView('home');    window.scrollTo(0,0) }
   const goDetail  = (s) => { setCurrent(s);  setView('detail');  window.scrollTo(0,0) }
   const goMercato = (s) => { setCurrent(s);  setView('mercato'); window.scrollTo(0,0) }
+  const goSelect  = (s) => { setCurrent(s);  setView(s.splash ? 'splash' : 'detail'); window.scrollTo(0,0) }
 
+  if (view === 'splash'  && current) return <SeasonSplash season={current} onDone={() => goDetail(current)} />
   if (view === 'detail'  && current) return <SeasonPage  season={current} onBack={goHome}           onMercato={() => goMercato(current)} />
   if (view === 'mercato' && current) return <MercatoPage season={current} onBack={() => goDetail(current)} />
 
-  return <HomePage seasons={SEASONS} onSelect={goDetail} />
+  return <HomePage seasons={SEASONS} onSelect={goSelect} />
+}
+
+/* ═══════════════════════════════════════════════
+   SEASON SPLASH
+═══════════════════════════════════════════════ */
+function SeasonSplash({ season, onDone }) {
+  const [phase, setPhase] = useState('in')
+  const sp = season.splash
+
+  useEffect(() => {
+    const out = setTimeout(() => {
+      setPhase('out')
+      setTimeout(onDone, 700)
+    }, 4200)
+    return () => clearTimeout(out)
+  }, [])
+
+  const dismiss = () => {
+    if (phase === 'out') return
+    setPhase('out')
+    setTimeout(onDone, 700)
+  }
+
+  return (
+    <div
+      onClick={dismiss}
+      style={{
+        position:'fixed', inset:0, zIndex:999,
+        background: C.navy,
+        display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center',
+        cursor:'pointer',
+        opacity: phase === 'out' ? 0 : 1,
+        transition: 'opacity 0.7s ease',
+        overflow:'hidden',
+      }}
+    >
+      {/* Background decoration */}
+      <div style={{ position:'absolute', inset:0, backgroundImage:'repeating-linear-gradient(135deg,rgba(232,184,75,0.03) 0,rgba(232,184,75,0.03) 1px,transparent 1px,transparent 40px)', pointerEvents:'none' }} />
+      <div style={{ position:'absolute', left:'50%', top:'50%', transform:'translate(-50%,-50%)', width:'80vmin', height:'80vmin', borderRadius:'50%', background:'radial-gradient(circle,rgba(12,34,89,0.8) 0%,transparent 70%)', pointerEvents:'none' }} />
+
+      <div style={{ position:'relative', textAlign:'center', padding:'0 40px', maxWidth:800 }}>
+
+        {/* Eyebrow */}
+        <div
+          className="bc"
+          style={{ fontSize:11, letterSpacing:8, color:C.gold, marginBottom:32, fontWeight:600, opacity:0,
+            animation:'fadeUp 0.6s ease 0.3s both' }}
+        >
+          {sp.eyebrow}
+        </div>
+
+        {/* Main lines */}
+        {sp.lines.map((line, i) => (
+          <div
+            key={i}
+            className="bb"
+            style={{
+              fontSize:'clamp(52px,10vw,120px)', lineHeight:0.92, letterSpacing:3,
+              color: i === 0 ? C.white : C.gold,
+              opacity:0, animation:`fadeUp 0.7s ease ${0.7 + i * 0.25}s both`,
+            }}
+          >
+            {line}
+          </div>
+        ))}
+
+        {/* Divider */}
+        <div style={{ width:0, height:2, background:C.gold, margin:'36px auto', opacity:0, animation:`expandW 0.6s ease 1.4s both` }} />
+
+        {/* Sub */}
+        <div
+          className="bb"
+          style={{ fontSize:'clamp(18px,3vw,32px)', letterSpacing:6, color:C.muted, marginBottom:20, opacity:0, animation:'fadeUp 0.6s ease 1.6s both' }}
+        >
+          {sp.sub}
+        </div>
+
+        {/* Tagline */}
+        <div
+          className="bc"
+          style={{ fontSize:'clamp(14px,2vw,20px)', color:C.white, letterSpacing:2, fontWeight:300, fontStyle:'italic', opacity:0, animation:'fadeUp 0.6s ease 1.9s both' }}
+        >
+          {sp.tagline}
+        </div>
+
+        {/* Click hint */}
+        <div
+          className="bc"
+          style={{ marginTop:56, fontSize:10, letterSpacing:4, color:'rgba(106,130,176,0.5)', opacity:0, animation:'fadeIn 0.6s ease 2.8s both' }}
+        >
+          CLIQUER POUR CONTINUER
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes expandW { from { width:0; opacity:0 } to { width:120px; opacity:1 } }
+      `}</style>
+    </div>
+  )
 }
 
 /* ═══════════════════════════════════════════════
