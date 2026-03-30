@@ -169,6 +169,15 @@ export const SEASONS = [
       { type: "free", name: "Tim-Justin Dietrich",  from: "Libre de contrat",  date: "Oct. 2026"   },
       { type: "free", name: "Itaitinga",            from: "Etoile-Carouge",    date: "Jan. 2027"   },
       { type: "free", name: "Tim Danhof",           from: "Libre de contrat",  date: "Jan. 2027"   },
+      { type: "free", name: "Joachim Imbrechts",   from: "RSCA Futures",       date: "Juin 2027"   },
+    ],
+
+    departures: [
+      { type: "free", name: "Amadou Konaté",   to: "Djoliba",                    date: "Juil. 2026" },
+      { type: "free", name: "David Gomis",     to: "FK Qabala",                  date: "Juil. 2026" },
+      { type: "loan", name: "Ilan Thobor",     to: "St. Ol. Romorantinais",      date: "Juil. 2026" },
+      { type: "free", name: "Luca Cardinale",  to: "Nice",                       date: "Juil. 2026" },
+      { type: "loan", name: "Tidiane Amani",   to: "FC Gueugnon",                date: "Aoû. 2026"  },
     ],
 
     cup: {

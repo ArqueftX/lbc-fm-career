@@ -63,7 +63,7 @@ function HomePage({ seasons, onSelect }) {
               src="./logo.png"
               alt="La Berrichonne de Châteauroux"
               className="au au1"
-              style={{ width:110, height:110, objectFit:'contain', flexShrink:0, filter:'drop-shadow(0 4px 20px rgba(0,0,0,0.6))' }}
+              style={{ width:110, height:110, objectFit:'contain', flexShrink:0 }}
             />
             <div>
               <h1 className="bb au au1" style={{ fontSize:'clamp(40px,7vw,80px)', lineHeight:0.9, letterSpacing:2, marginBottom:16 }}>
@@ -256,6 +256,7 @@ function SeasonPage({ season: s, onBack }) {
           <div>
             <PerfList title="Meilleurs passeurs" items={s.assists}  unit="passes D." />
             <div style={{ marginTop:44 }}><TransfList transfers={s.transfers} /></div>
+            {s.departures?.length > 0 && <div style={{ marginTop:44 }}><DepartList departures={s.departures} /></div>}
           </div>
         </div>
 
@@ -381,8 +382,35 @@ function TransfList({ transfers }) {
 }
 
 /* ═══════════════════════════════════════════════
-   STANDINGS TABLE
+   DEPARTURE LIST
 ═══════════════════════════════════════════════ */
+function DepartList({ departures }) {
+  if (!departures?.length) return null
+  return (
+    <div>
+      <div className="bc" style={{ fontSize:10, letterSpacing:6, color:C.red, marginBottom:18, paddingBottom:10, borderBottom:'1px solid rgba(232,80,80,0.2)', fontWeight:700, textTransform:'uppercase' }}>
+        Mercato · Départs
+      </div>
+      {departures.map((t, i) => (
+        <div key={i} style={{ display:'flex', alignItems:'center', gap:10, padding:'11px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
+          <div className="bc" style={{ fontSize:9, letterSpacing:2, padding:'3px 8px', flexShrink:0, fontWeight:700,
+            background: t.type === 'loan' ? 'rgba(232,184,75,0.12)' : t.type === 'sell' ? 'rgba(232,80,80,0.12)' : 'rgba(106,130,176,0.12)',
+            border:     `1px solid ${t.type === 'loan' ? C.gold : t.type === 'sell' ? C.red : C.muted}`,
+            color:      t.type === 'loan' ? C.gold : t.type === 'sell' ? C.red : C.muted }}>
+            {t.type === 'loan' ? 'PRÊT' : t.type === 'sell' ? 'TRANSFERT' : 'FIN CONTRAT'}
+          </div>
+          <div style={{ flex:1, fontSize:13, fontWeight:500 }}>{t.name}</div>
+          <div style={{ textAlign:'right' }}>
+            <div className="bc" style={{ fontSize:12, color:C.muted }}>{t.to}</div>
+            <div className="bc" style={{ fontSize:10, color:C.muted, marginTop:1 }}>{t.date}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+
 function StandingsTable({ rows }) {
   return (
     <div>
