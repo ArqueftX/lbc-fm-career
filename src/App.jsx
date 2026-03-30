@@ -100,8 +100,7 @@ function CoachIntro({ onDone }) {
         {/* Quote */}
         <div style={{ borderLeft:`3px solid ${C.gold}`, paddingLeft:20, marginBottom:36 }}>
           <p className="bc" style={{ fontSize:15, color:C.white, fontStyle:'italic', lineHeight:1.7, marginBottom:10 }}>
-            « Je ne suis pas venu gérer un effectif. Je suis venu construire quelque chose.
-            Cette ville, ce club, ils méritent mieux — et on va leur donner. »
+            « J'ai grandi en voyant ce club aussi abîmé de l'intérieur que je l'étais. Mais j'ai regardé <em>Cyberpunk : Edgerunners</em>, alors je ferai regarder cette masterclass à tous les joueurs pour qu'ils retrouvent un niveau correct — parce que là, j'en peux plus. Si j'y arrive pas, je retourne dans ma depressive era. Merci. »
           </p>
           <div className="bc" style={{ fontSize:10, letterSpacing:3, color:C.gold, fontWeight:700 }}>
             — NOLANN QUEFT · Conférence de presse d'intégration, Stade Gaston-Petit
