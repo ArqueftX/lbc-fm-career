@@ -55,14 +55,24 @@ function HomePage({ seasons, onSelect }) {
         <div style={{ position:'absolute', top:0, right:0, width:320, height:'100%', backgroundImage:'repeating-linear-gradient(90deg,rgba(232,184,75,0.04) 0,rgba(232,184,75,0.04) 1px,transparent 1px,transparent 24px)', pointerEvents:'none' }} />
 
         <div style={{ maxWidth:1160, margin:'0 auto' }}>
-          <div className="bc au" style={{ fontSize:10, letterSpacing:6, color:C.gold, marginBottom:14, fontWeight:600 }}>
+          <div className="bc au" style={{ fontSize:10, letterSpacing:6, color:C.gold, marginBottom:18, fontWeight:600 }}>
             FOOTBALL MANAGER 26 · CARRIÈRE
           </div>
-          <h1 className="bb au au1" style={{ fontSize:'clamp(40px,7vw,80px)', lineHeight:0.9, letterSpacing:2, marginBottom:16 }}>
-            La Berrichonne<br /><span style={{ color:C.gold }}>de Châteauroux</span>
-          </h1>
-          <div className="bc au au2" style={{ fontSize:12, color:C.muted, letterSpacing:3, fontWeight:400 }}>
-            {seasons.length} SAISON{seasons.length !== 1 ? 'S' : ''} · {totalW} VICTOIRES · {totalPts} POINTS CUMULÉS
+          <div style={{ display:'flex', alignItems:'center', gap:32, flexWrap:'wrap' }}>
+            <img
+              src="./logo.png"
+              alt="La Berrichonne de Châteauroux"
+              className="au au1"
+              style={{ width:110, height:110, objectFit:'contain', flexShrink:0, filter:'drop-shadow(0 4px 20px rgba(0,0,0,0.6))' }}
+            />
+            <div>
+              <h1 className="bb au au1" style={{ fontSize:'clamp(40px,7vw,80px)', lineHeight:0.9, letterSpacing:2, marginBottom:16 }}>
+                La Berrichonne<br /><span style={{ color:C.gold }}>de Châteauroux</span>
+              </h1>
+              <div className="bc au au2" style={{ fontSize:12, color:C.muted, letterSpacing:3, fontWeight:400 }}>
+                {seasons.length} SAISON{seasons.length !== 1 ? 'S' : ''} · {totalW} VICTOIRES · {totalPts} POINTS CUMULÉS
+              </div>
+            </div>
           </div>
         </div>
       </div>
