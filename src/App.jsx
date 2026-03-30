@@ -29,11 +29,12 @@ export default function App() {
   const [view, setView] = useState('home')
   const [current, setCurrent] = useState(null)
 
-  const goDetail = (s) => { setCurrent(s); setView('detail'); window.scrollTo(0,0) }
-  const goHome   = ()  => { setView('home'); window.scrollTo(0,0) }
+  const goHome    = ()  => { setView('home');    window.scrollTo(0,0) }
+  const goDetail  = (s) => { setCurrent(s);  setView('detail');  window.scrollTo(0,0) }
+  const goMercato = (s) => { setCurrent(s);  setView('mercato'); window.scrollTo(0,0) }
 
-  if (view === 'detail' && current)
-    return <SeasonPage season={current} onBack={goHome} />
+  if (view === 'detail'  && current) return <SeasonPage  season={current} onBack={goHome}           onMercato={() => goMercato(current)} />
+  if (view === 'mercato' && current) return <MercatoPage season={current} onBack={() => goDetail(current)} />
 
   return <HomePage seasons={SEASONS} onSelect={goDetail} />
 }
@@ -175,7 +176,7 @@ function Sec({ title, children, mb = 60 }) {
 /* ═══════════════════════════════════════════════
    SEASON DETAIL PAGE
 ═══════════════════════════════════════════════ */
-function SeasonPage({ season: s, onBack }) {
+function SeasonPage({ season: s, onBack, onMercato }) {
   const gd = s.gf - s.ga
   const ls = LEAGUE_STYLES[s.league] || LEAGUE_STYLES['National']
 
@@ -247,7 +248,7 @@ function SeasonPage({ season: s, onBack }) {
           ))}
         </div>
 
-        {/* Performers + Transfers */}
+        {/* Performers + Mercato preview */}
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:44, marginBottom:64 }}>
           <div>
             <PerfList title="Meilleurs buteurs"  items={s.scorers}  unit="buts" />
@@ -255,8 +256,65 @@ function SeasonPage({ season: s, onBack }) {
           </div>
           <div>
             <PerfList title="Meilleurs passeurs" items={s.assists}  unit="passes D." />
-            <div style={{ marginTop:44 }}><TransfList transfers={s.transfers} /></div>
-            {s.departures?.length > 0 && <div style={{ marginTop:44 }}><DepartList departures={s.departures} /></div>}
+            <div style={{ marginTop:44 }}>
+              {/* Mercato preview card */}
+              <div
+                onClick={onMercato}
+                style={{ cursor:'pointer', border:'1px solid rgba(232,184,75,0.2)', borderLeft:`3px solid ${C.gold}`, padding:'20px 22px', transition:'background 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.background='rgba(21,45,114,0.4)'}
+                onMouseLeave={e => e.currentTarget.style.background='transparent'}
+              >
+                {/* Header */}
+                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:16 }}>
+                  <div className="bc" style={{ fontSize:10, letterSpacing:6, color:C.gold, fontWeight:700, textTransform:'uppercase' }}>Mercato</div>
+                  <div className="bc" style={{ fontSize:10, letterSpacing:3, color:C.gold, fontWeight:700 }}>VOIR TOUT →</div>
+                </div>
+
+                {/* Arrivées preview */}
+                {s.transfers?.length > 0 && (
+                  <div style={{ marginBottom:14 }}>
+                    <div className="bc" style={{ fontSize:9, letterSpacing:3, color:C.green, marginBottom:8, fontWeight:700 }}>↑ ARRIVÉES</div>
+                    {s.transfers.slice(0,3).map((t,i) => (
+                      <div key={i} style={{ display:'flex', alignItems:'center', gap:8, padding:'6px 0', borderBottom:'1px solid rgba(255,255,255,0.04)', fontSize:12 }}>
+                        <span className="bc" style={{ fontSize:8, letterSpacing:1, padding:'2px 6px', fontWeight:700, flexShrink:0,
+                          background: t.type==='free'?'rgba(61,214,140,0.12)':'rgba(232,184,75,0.12)',
+                          border:`1px solid ${t.type==='free'?C.green:C.gold}`,
+                          color: t.type==='free'?C.green:C.gold }}>
+                          {t.type==='free'?'LIBRE':'PRÊT'}
+                        </span>
+                        <span style={{ flex:1 }}>{t.name}</span>
+                        <span className="bc" style={{ fontSize:11, color:C.muted }}>{t.from}</span>
+                      </div>
+                    ))}
+                    {s.transfers.length > 3 && (
+                      <div className="bc" style={{ fontSize:10, color:C.muted, marginTop:6, letterSpacing:2 }}>+{s.transfers.length - 3} autres arrivées</div>
+                    )}
+                  </div>
+                )}
+
+                {/* Départs preview */}
+                {s.departures?.length > 0 && (
+                  <div>
+                    <div className="bc" style={{ fontSize:9, letterSpacing:3, color:C.red, marginBottom:8, fontWeight:700 }}>↓ DÉPARTS</div>
+                    {s.departures.slice(0,3).map((t,i) => (
+                      <div key={i} style={{ display:'flex', alignItems:'center', gap:8, padding:'6px 0', borderBottom:'1px solid rgba(255,255,255,0.04)', fontSize:12 }}>
+                        <span className="bc" style={{ fontSize:8, letterSpacing:1, padding:'2px 6px', fontWeight:700, flexShrink:0,
+                          background: t.type==='loan'?'rgba(232,184,75,0.12)':t.type==='sell'?'rgba(232,80,80,0.12)':'rgba(106,130,176,0.12)',
+                          border:`1px solid ${t.type==='loan'?C.gold:t.type==='sell'?C.red:C.muted}`,
+                          color: t.type==='loan'?C.gold:t.type==='sell'?C.red:C.muted }}>
+                          {t.type==='loan'?'PRÊT':t.type==='sell'?'TRANSFERT':'FIN CTR'}
+                        </span>
+                        <span style={{ flex:1 }}>{t.name}</span>
+                        <span className="bc" style={{ fontSize:11, color:C.muted }}>{t.to}</span>
+                      </div>
+                    ))}
+                    {s.departures.length > 3 && (
+                      <div className="bc" style={{ fontSize:10, color:C.muted, marginTop:6, letterSpacing:2 }}>+{s.departures.length - 3} autres départs</div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -411,7 +469,111 @@ function DepartList({ departures }) {
 }
 
 
-function StandingsTable({ rows }) {
+/* ═══════════════════════════════════════════════
+   MERCATO PAGE
+═══════════════════════════════════════════════ */
+function MercatoPage({ season: s, onBack }) {
+  const hasArr  = s.transfers?.length > 0
+  const hasDep  = s.departures?.length > 0
+
+  return (
+    <div style={{ minHeight:'100vh', background:C.navy }}>
+
+      {/* NAV */}
+      <div style={{ position:'sticky', top:0, zIndex:99, background:'rgba(7,17,31,0.96)', backdropFilter:'blur(10px)', padding:'14px 48px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
+        <button onClick={onBack} className="bc" style={{ background:'transparent', border:'none', color:C.muted, cursor:'pointer', fontSize:11, letterSpacing:4, fontFamily:'inherit' }}>
+          ← BILAN {s.year}
+        </button>
+        <div className="bb" style={{ fontSize:15, letterSpacing:5, color:C.gold }}>MERCATO · {s.year}</div>
+        <div style={{ width:120 }} />
+      </div>
+
+      {/* HERO */}
+      <div style={{ background:`linear-gradient(160deg,${C.blue} 0%,${C.navy} 65%)`, padding:'48px 56px', borderBottom:'1px solid rgba(232,184,75,0.08)' }}>
+        <div style={{ maxWidth:900, margin:'0 auto' }}>
+          <div className="bc au" style={{ fontSize:10, letterSpacing:6, color:C.gold, marginBottom:10, fontWeight:600 }}>RÉSUMÉ DES TRANSFERTS</div>
+          <div className="bb au au1" style={{ fontSize:'clamp(36px,5vw,64px)', lineHeight:0.9, letterSpacing:2 }}>
+            La Berrichonne<br /><span style={{ color:C.gold }}>de Châteauroux</span>
+          </div>
+          <div className="bc au au2" style={{ display:'inline-block', background:C.gold, color:C.navy, fontSize:11, letterSpacing:5, padding:'4px 14px', marginTop:16, fontWeight:700 }}>
+            {s.league} · {s.year}
+          </div>
+
+          {/* Summary pills */}
+          <div className="au au3" style={{ display:'flex', gap:12, marginTop:28, flexWrap:'wrap' }}>
+            {hasArr && (
+              <div style={{ background:'rgba(61,214,140,0.1)', border:'1px solid rgba(61,214,140,0.3)', padding:'8px 18px' }}>
+                <span className="bb" style={{ fontSize:28, color:C.green }}>{s.transfers.length}</span>
+                <span className="bc" style={{ fontSize:10, letterSpacing:3, color:C.green, marginLeft:8 }}>ARRIVÉES</span>
+              </div>
+            )}
+            {hasDep && (
+              <div style={{ background:'rgba(232,80,80,0.1)', border:'1px solid rgba(232,80,80,0.3)', padding:'8px 18px' }}>
+                <span className="bb" style={{ fontSize:28, color:C.red }}>{s.departures.length}</span>
+                <span className="bc" style={{ fontSize:10, letterSpacing:3, color:C.red, marginLeft:8 }}>DÉPARTS</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div style={{ maxWidth:900, margin:'0 auto', padding:'56px 56px 100px' }}>
+
+        {/* ARRIVÉES */}
+        {hasArr && (
+          <div style={{ marginBottom:56 }}>
+            <div className="bc" style={{ fontSize:10, letterSpacing:6, color:C.green, marginBottom:22, paddingBottom:11, borderBottom:'1px solid rgba(61,214,140,0.2)', fontWeight:700, textTransform:'uppercase' }}>
+              ↑ Arrivées ({s.transfers.length})
+            </div>
+            {s.transfers.map((t, i) => (
+              <div key={i} style={{ display:'flex', alignItems:'center', gap:14, padding:'15px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
+                <div className="bc" style={{ fontSize:9, letterSpacing:2, padding:'4px 10px', flexShrink:0, fontWeight:700,
+                  background: t.type==='free'?'rgba(61,214,140,0.12)':'rgba(232,184,75,0.12)',
+                  border:`1px solid ${t.type==='free'?C.green:C.gold}`,
+                  color: t.type==='free'?C.green:C.gold }}>
+                  {t.type==='free'?'LIBRE':'PRÊT'}
+                </div>
+                <div style={{ flex:1, fontSize:14, fontWeight:500 }}>{t.name}</div>
+                <div style={{ textAlign:'right' }}>
+                  <div className="bc" style={{ fontSize:13, color:C.muted }}>{t.from}</div>
+                  <div className="bc" style={{ fontSize:11, color:C.muted, marginTop:2 }}>{t.date}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* DÉPARTS */}
+        {hasDep && (
+          <div>
+            <div className="bc" style={{ fontSize:10, letterSpacing:6, color:C.red, marginBottom:22, paddingBottom:11, borderBottom:'1px solid rgba(232,80,80,0.2)', fontWeight:700, textTransform:'uppercase' }}>
+              ↓ Départs ({s.departures.length})
+            </div>
+            {s.departures.map((t, i) => (
+              <div key={i} style={{ display:'flex', alignItems:'center', gap:14, padding:'15px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
+                <div className="bc" style={{ fontSize:9, letterSpacing:2, padding:'4px 10px', flexShrink:0, fontWeight:700,
+                  background: t.type==='loan'?'rgba(232,184,75,0.12)':t.type==='sell'?'rgba(232,80,80,0.12)':'rgba(106,130,176,0.12)',
+                  border:`1px solid ${t.type==='loan'?C.gold:t.type==='sell'?C.red:C.muted}`,
+                  color: t.type==='loan'?C.gold:t.type==='sell'?C.red:C.muted }}>
+                  {t.type==='loan'?'PRÊT':t.type==='sell'?'TRANSFERT':'FIN CONTRAT'}
+                </div>
+                <div style={{ flex:1, fontSize:14, fontWeight:500 }}>{t.name}</div>
+                <div style={{ textAlign:'right' }}>
+                  <div className="bc" style={{ fontSize:13, color:C.muted }}>{t.to}</div>
+                  <div className="bc" style={{ fontSize:11, color:C.muted, marginTop:2 }}>{t.date}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+      </div>
+    </div>
+  )
+}
+
+
   return (
     <div>
       <div style={{ display:'grid', gridTemplateColumns:'34px 1fr repeat(8,42px)', gap:5, padding:'7px 14px', borderBottom:'1px solid rgba(255,255,255,0.08)' }}>
