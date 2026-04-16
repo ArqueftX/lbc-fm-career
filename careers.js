@@ -15,7 +15,7 @@ window.CAREERS = [
     short:    'Châteauroux',
     country:  'France',
     file:     'seasons-chateauroux.js',
-    logo:     'logo-chateauroux.png',
+    logo:     '../logo-chateauroux.png',
     color:    '#c0392b',   // rouge LBC
     accent:   '#e8b84b',
   },
@@ -25,7 +25,7 @@ window.CAREERS = [
     short:    'Séville',
     country:  'Espagne',
     file:     'seasons-seville.js',
-    logo:     'logo-seville.png',
+    logo:     '../logo-seville.png',
     color:    '#d4552b',
     accent:   '#ffffff',
   },
@@ -36,7 +36,7 @@ window.CAREERS = [
     country:  'Allemagne',
     tag:      'Réseau',
     file:     'seasons-wolfsburg.js',
-    logo:     'logo-wolfsburg.png',
+    logo:     '../logo-wolfsburg.png',
     color:    '#4db848',   // vert Wolfsburg
     accent:   '#ffffff',
   },
