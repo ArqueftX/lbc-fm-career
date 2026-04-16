@@ -1,0 +1,130 @@
+/**
+ * VfL WOLFSBURG — DONNÉES DES SAISONS (Partie en Réseau)
+ */
+window.SEASONS_wolfsburg = [
+
+  /* ─── SAISON 2025/26 ─────────────────────────────────── */
+  {
+    id: "wolfsburg-2025-26",
+    year:       "2025/26",
+    league:     "Bundesliga",
+    position:   5,
+    totalTeams: 18,
+    points:     52,
+    played:     34,
+    wins:       16,
+    draws:      4,
+    losses:     14,
+    gf:         66,
+    ga:         57,
+    promoted:   [],
+    relegated:  ["St Pauli", "Hamburg"],
+
+    // ⚠️ Captures manquantes — à compléter
+    scorers: [],
+    assists: [],
+    ratings: [],
+
+    transfers: [
+      { type: "loan", name: "Raheem Sterling",        from: "Chelsea",       date: "Aoû. 2025" },
+      { type: "sell", name: "Alexander Bernhardsson", from: "Holstein Kiel", date: "Sep. 2025", amount: "4,8M €" },
+      { type: "sell", name: "Mirza Ćatović",          from: "Stuttgart",     date: "Jan. 2026", amount: "8M €"   },
+      { type: "sell", name: "Maarten Vandevoordt",    from: "RB Leipzig",    date: "Jan. 2026", amount: "23,5M €"},
+    ],
+
+    departures: [
+      { type: "sell", name: "Kilian Fischer",       to: "Crystal Palace",    date: "Juil. 2025", amount: "4,3M €"   },
+      { type: "loan", name: "Mathys Angély",         to: "Red Star",          date: "Aoû. 2025"                      },
+      { type: "sell", name: "Jonas Wind",            to: "Como",              date: "Aoû. 2025",  amount: "16,75M €" },
+      { type: "loan", name: "Bence Dárdai",          to: "Auxerre",           date: "Aoû. 2025"                      },
+      { type: "loan", name: "Kyrylo Khadasevych",    to: "UCSA",              date: "Aoû. 2025"                      },
+      { type: "loan", name: "Márkó Mándity",         to: "Pécsi",             date: "Aoû. 2025"                      },
+      { type: "loan", name: "Spyridon Souliotis",    to: "Olympiakos Volou",  date: "Sep. 2025"                      },
+      { type: "sell", name: "Till Neininger",        to: "Bochum",            date: "Jan. 2026",  amount: "100K €"   },
+      { type: "sell", name: "Miguel Boog",           to: "Gladbach",          date: "Jan. 2026",  amount: "700K €"   },
+      { type: "loan", name: "Saido Baldé",           to: "Oriental Lisboa",   date: "Jan. 2026"                      },
+      { type: "sell", name: "Kamil Grabara",         to: "Dortmund",          date: "Jan. 2026",  amount: "32M €"    },
+      { type: "sell", name: "Joakim Mæhle",          to: "Man Utd",           date: "Jan. 2026",  amount: "19M €"    },
+      { type: "sell", name: "Pharell Hensel",        to: "Bochum",            date: "Fév. 2026",  amount: "43,5K €"  },
+      { type: "loan", name: "Vini Souza",            to: "Burnley",           date: "Fév. 2026"                      },
+    ],
+
+    cup: {
+      name: "DFB-Pokal",
+      rounds: [
+        { result: "W", round: "1er tour",         score: "0 – 5",  opponent: "Düren (E)"              },
+        { result: "W", round: "2e tour",          score: "4 – 1",  opponent: "1. FC Magdeburg (D)"    },
+        { result: "W", round: "3e tour",          score: "0 – 1",  opponent: "Bayer Leverkusen (E)"   },
+        { result: "L", round: "Quart de finale",  score: "7 – 1",  opponent: "Bayern München (E)"     },
+      ],
+    },
+
+    playoffs: null,
+
+    splash: {
+      eyebrow:  "2025/26 · VfL Wolfsburg · Saison 1",
+      lines:    ["BIENVENUE EN", "BUNDESLIGA."],
+      sub:      "Bundesliga · 5e · 52 pts",
+      tagline:  "Une première saison solide, un quart de finale contre le Bayern — les Loups montrent les crocs.",
+    },
+
+    matches: [
+      { r:"W", tip:"Heidenheim (E) 1-2"           },
+      { r:"W", tip:"Mainz 05 (D) 1-0"             },
+      { r:"W", tip:"FC Köln (D) 1-0"              },
+      { r:"W", tip:"Dortmund (E) 1-2"             },
+      { r:"W", tip:"RB Leipzig (D) 2-0"           },
+      { r:"D", tip:"Hoffenheim (D) 2-2"           },
+      { r:"L", tip:"Augsburg (E) 2-1"             },
+      { r:"L", tip:"Stuttgart (D) 3-4"            },
+      { r:"W", tip:"Hamburg (E) 1-4"              },
+      { r:"L", tip:"Werder Bremen (E) 1-0"        },
+      { r:"W", tip:"Bayer Leverkusen (D) 1-0"     },
+      { r:"L", tip:"Eintracht Frankfurt (E) 5-3"  },
+      { r:"D", tip:"Union Berlin (D) 1-1"         },
+      { r:"D", tip:"Gladbach (E) 1-1"             },
+      { r:"L", tip:"Freiburg (D) 0-1"             },
+      { r:"L", tip:"Bayern München (E) 5-3"       },
+      { r:"W", tip:"St Pauli (D) 3-1"             },
+      { r:"W", tip:"Heidenheim (D) 5-1"           },
+      { r:"W", tip:"Mainz 05 (E) 1-2"             },
+      { r:"L", tip:"FC Köln (E) 4-3"              },
+      { r:"L", tip:"Dortmund (D) 1-2"             },
+      { r:"W", tip:"RB Leipzig (E) 4-1"           },
+      { r:"W", tip:"Augsburg (D) 2-0"             },
+      { r:"L", tip:"Stuttgart (E) 0-1"            },
+      { r:"W", tip:"Hamburg (D) 2-0"              },
+      { r:"L", tip:"Hoffenheim (E) 4-2"           },
+      { r:"W", tip:"Werder Bremen (D) 4-0"        },
+      { r:"W", tip:"Bayer Leverkusen (E) 1-3"     },
+      { r:"L", tip:"Eintracht Frankfurt (D) 1-3"  },
+      { r:"L", tip:"Union Berlin (E) 2-1"         },
+      { r:"D", tip:"Gladbach (D) 2-2"             },
+      { r:"L", tip:"Freiburg (E) 3-2"             },
+      { r:"L", tip:"Bayern München (D) 1-3"       },
+      { r:"W", tip:"St Pauli (E) 1-3"             },
+    ],
+
+    standings: [
+      { pos:1,  team:"Bayern München",      j:34, g:26, n:2,  l:6,  bp:78, bc:34, db: 44, pts:80, zone:"promo" },
+      { pos:2,  team:"Eintracht Frankfurt", j:34, g:21, n:6,  l:7,  bp:67, bc:29, db: 38, pts:69, zone:"promo" },
+      { pos:3,  team:"Werder Bremen",       j:34, g:18, n:8,  l:8,  bp:67, bc:43, db: 24, pts:62, zone:"promo" },
+      { pos:4,  team:"Dortmund",            j:34, g:14, n:11, l:9,  bp:47, bc:32, db: 15, pts:53              },
+      { pos:5,  team:"Wolfsburg",           j:34, g:16, n:4,  l:14, bp:66, bc:57, db:  9, pts:52, highlight:true },
+      { pos:6,  team:"RB Leipzig",          j:34, g:14, n:9,  l:11, bp:56, bc:51, db:  5, pts:51              },
+      { pos:7,  team:"Stuttgart",           j:34, g:13, n:9,  l:12, bp:51, bc:47, db:  4, pts:48              },
+      { pos:8,  team:"FC Köln",             j:34, g:12, n:11, l:11, bp:47, bc:50, db: -3, pts:47              },
+      { pos:9,  team:"Gladbach",            j:34, g:12, n:9,  l:13, bp:38, bc:46, db: -8, pts:45              },
+      { pos:10, team:"Union Berlin",        j:34, g:10, n:14, l:10, bp:35, bc:40, db: -5, pts:44              },
+      { pos:11, team:"Freiburg",            j:34, g:12, n:7,  l:15, bp:39, bc:50, db:-11, pts:43              },
+      { pos:12, team:"Augsburg",            j:34, g:11, n:9,  l:14, bp:44, bc:48, db: -4, pts:42              },
+      { pos:13, team:"Hoffenheim",          j:34, g:11, n:9,  l:14, bp:38, bc:48, db:-10, pts:42              },
+      { pos:14, team:"Mainz 05",            j:34, g:10, n:8,  l:16, bp:39, bc:47, db: -8, pts:38              },
+      { pos:15, team:"Bayer Leverkusen",    j:34, g:8,  n:12, l:14, bp:38, bc:55, db:-17, pts:36              },
+      { pos:16, team:"Heidenheim",          j:34, g:8,  n:10, l:16, bp:41, bc:60, db:-19, pts:34              },
+      { pos:17, team:"St Pauli",            j:34, g:8,  n:7,  l:19, bp:38, bc:58, db:-20, pts:31, zone:"releg" },
+      { pos:18, team:"Hamburg",             j:34, g:5,  n:9,  l:20, bp:26, bc:60, db:-34, pts:24, zone:"releg" },
+    ],
+  },
+
+]

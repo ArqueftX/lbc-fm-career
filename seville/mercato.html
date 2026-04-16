@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FM26 — Mercato</title>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+<div id="career-modal-host"></div>
+<div class="sticky-nav">
+  <a id="back-btn" href="#" class="bc nav-btn"></a>
+  <div id="nav-title" class="bb nav-title"></div>
+  <div id="sw-host"></div>
+</div>
+
+<div style="background:linear-gradient(160deg,var(--blue) 0%,var(--navy) 65%);padding:48px 56px;border-bottom:1px solid rgba(232,184,75,.08)">
+  <div style="max-width:900px;margin:0 auto">
+    <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:10px;font-weight:600">RÉSUMÉ DES TRANSFERTS</div>
+    <div class="bb au au1" style="font-size:clamp(36px,5vw,64px);line-height:.9;letter-spacing:2px"><span id="hero-club-name"></span></div>
+    <div id="hero-badge" class="bc au au2" style="display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;letter-spacing:5px;padding:4px 14px;margin-top:16px;font-weight:700"></div>
+    <div id="hero-pills" class="au au3" style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap"></div>
+  </div>
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:52px 56px 100px" class="page-content">
+  <div id="arrivals"></div>
+  <div id="departures" style="margin-top:52px"></div>
+</div>
+
+<script>window.FORCE_CAREER = "seville"</script>
+<script src="../careers.js"></script>
+<script src="../seasons-chateauroux.js"></script>
+<script src="../seasons-seville.js"></script>
+<script src="../seasons-wolfsburg.js"></script>
+<script src="../utils.js"></script>
+<script>
+const id       = param('id')
+const careerId = param('career') || getCurrentCareer().id
+setCurrentCareer(careerId)
+const career = getCurrentCareer()
+const season = getSeason(id)
+if (!season) { window.location = './' }
+const s = season
+
+document.getElementById('sw-host').innerHTML = renderSwitcherBtn()
+document.getElementById('career-modal-host').innerHTML = renderCareerSwitcher()
+document.getElementById('back-btn').href        = './saison.html?id=' + id + ''
+document.getElementById('back-btn').textContent = '← BILAN ' + s.year
+document.getElementById('nav-title').textContent = 'MERCATO · ' + s.year
+document.title = 'Mercato ' + s.year + ' — FM26'
+document.getElementById('hero-badge').textContent = s.league + ' · ' + s.year
+
+const parts = career.name.split(' ')
+const half  = Math.ceil(parts.length / 2)
+document.getElementById('hero-club-name').innerHTML =
+  parts.slice(0,half).join(' ') + '<br><span style="color:var(--gold)">' + parts.slice(half).join(' ') + '</span>'
+
+const arr = s.transfers  || []
+const dep = s.departures || []
+
+// Parse amount string to float in M€
+function parseAmount(str) {
+  if (!str) return 0
+  const n = parseFloat(str.replace(/[^0-9,.]/g,'').replace(',','.'))
+  return str.includes('M') ? n : n / 1000
+}
+
+const totalAchats  = arr.filter(t => t.amount).reduce((s,t) => s + parseAmount(t.amount), 0)
+const totalVentes  = dep.filter(t => t.amount).reduce((s,t) => s + parseAmount(t.amount), 0)
+const balance      = totalVentes - totalAchats
+const balanceColor = balance >= 0 ? 'var(--green)' : 'var(--red)'
+const balanceStr   = (balance >= 0 ? '+' : '') + balance.toFixed(2).replace('.',',') + 'M €'
+const achatsStr    = totalAchats > 0 ? '-' + totalAchats.toFixed(2).replace('.',',') + 'M €' : '—'
+const ventesStr    = totalVentes > 0 ? '+' + totalVentes.toFixed(2).replace('.',',') + 'M €' : '—'
+
+document.getElementById('hero-pills').innerHTML = [
+  arr.length ? `<div style="background:rgba(61,214,140,.1);border:1px solid rgba(61,214,140,.3);padding:10px 20px">
+    <div class="bb" style="font-size:28px;color:var(--green);line-height:1">${arr.length}</div>
+    <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--green);margin-top:3px">ARRIVÉES</div>
+  </div>` : '',
+  dep.length ? `<div style="background:rgba(232,80,80,.1);border:1px solid rgba(232,80,80,.3);padding:10px 20px">
+    <div class="bb" style="font-size:28px;color:var(--red);line-height:1">${dep.length}</div>
+    <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--red);margin-top:3px">DÉPARTS</div>
+  </div>` : '',
+  totalAchats > 0 ? `<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:10px 20px">
+    <div class="bb" style="font-size:28px;color:var(--muted);line-height:1">${achatsStr}</div>
+    <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:3px">DÉPENSES</div>
+  </div>` : '',
+  totalVentes > 0 ? `<div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:10px 20px">
+    <div class="bb" style="font-size:28px;color:var(--muted);line-height:1">${ventesStr}</div>
+    <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:3px">RECETTES</div>
+  </div>` : '',
+  (totalAchats > 0 || totalVentes > 0) ? `<div style="background:rgba(255,255,255,.05);border:1px solid ${balanceColor}33;padding:10px 20px">
+    <div class="bb" style="font-size:28px;color:${balanceColor};line-height:1">${balanceStr}</div>
+    <div class="bc" style="font-size:9px;letter-spacing:3px;color:${balanceColor};margin-top:3px">BALANCE</div>
+  </div>` : '',
+].join('')
+
+function badgeArr(type) {
+  if (type === 'free') return { bg:'rgba(61,214,140,.12)', border:'var(--green)', color:'var(--green)', label:'LIBRE' }
+  if (type === 'loan') return { bg:'rgba(232,184,75,.12)', border:'var(--gold)',  color:'var(--gold)',  label:'PRÊT' }
+  return                      { bg:'rgba(232,80,80,.12)',  border:'var(--red)',   color:'var(--red)',   label:'TRANSFERT' }
+}
+function badgeDep(type) {
+  if (type === 'loan') return { bg:'rgba(232,184,75,.12)', border:'var(--gold)',  color:'var(--gold)',  label:'PRÊT' }
+  if (type === 'sell') return { bg:'rgba(232,80,80,.12)',  border:'var(--red)',   color:'var(--red)',   label:'TRANSFERT' }
+  return                      { bg:'rgba(106,130,176,.12)',border:'var(--muted)', color:'var(--muted)', label:'FIN CTR' }
+}
+
+function row(t, isArr) {
+  const b = isArr ? badgeArr(t.type) : badgeDep(t.type)
+  const club = isArr ? t.from : t.to
+  return `
+    <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+      <span class="bc" style="font-size:9px;letter-spacing:2px;padding:3px 8px;font-weight:700;flex-shrink:0;background:${b.bg};border:1px solid ${b.border};color:${b.color}">${b.label}</span>
+      <span style="flex:1;font-size:13px;font-weight:500">${t.name}</span>
+      <span class="bc" style="font-size:12px;color:var(--muted);flex-shrink:0">${club}</span>
+      ${t.amount ? `<span class="bb" style="font-size:15px;color:var(--gold);flex-shrink:0;min-width:60px;text-align:right">${t.amount}</span>` : '<span style="min-width:60px"></span>'}
+    </div>
+  `
+}
+
+if (arr.length) {
+  document.getElementById('arrivals').innerHTML = `
+    <div class="bc sec-title" style="color:var(--green);border-color:rgba(61,214,140,.2)">↑ Arrivées (${arr.length})</div>
+    ${arr.map(t => row(t, true)).join('')}
+  `
+}
+
+if (dep.length) {
+  document.getElementById('departures').innerHTML = `
+    <div class="bc sec-title" style="color:var(--red);border-color:rgba(232,80,80,.2)">↓ Départs (${dep.length})</div>
+    ${dep.map(t => row(t, false)).join('')}
+  `
+}
+</script>
+</body>
+</html>

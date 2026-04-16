@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FM26 — Carrières</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .career-card {
+      background: var(--blue); padding: 32px 36px;
+      display: flex; align-items: center; gap: 24px;
+      cursor: pointer; border-left: 3px solid transparent;
+      transition: all .2s; text-decoration: none; display: flex;
+    }
+    .career-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.4); border-left-color: var(--gold); }
+    .career-card img { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div style="min-height:100vh;background:var(--navy);display:flex;flex-direction:column">
+
+  <div style="background:linear-gradient(160deg,var(--blue) 0%,var(--navy) 65%);padding:80px 56px 72px;border-bottom:1px solid rgba(232,184,75,.08)">
+    <div style="max-width:700px;margin:0 auto">
+      <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:16px;font-weight:600">FOOTBALL MANAGER 26</div>
+      <h1 class="bb au au1" style="font-size:clamp(48px,8vw,96px);line-height:.88;letter-spacing:2px">
+        MES<br><span style="color:var(--gold)">CARRIÈRES</span>
+      </h1>
+      <div class="bc au au2" style="font-size:13px;color:var(--muted);margin-top:20px;letter-spacing:2px">Sélectionne une carrière pour voir son historique</div>
+    </div>
+  </div>
+
+  <div style="max-width:700px;margin:0 auto;padding:52px 56px 100px;width:100%">
+    <div id="career-list" style="display:flex;flex-direction:column;gap:3px"></div>
+  </div>
+
+</div>
+
+<script src="careers.js"></script>
+<script src="seasons-chateauroux.js"></script>
+<script src="seasons-seville.js"></script>
+<script src="seasons-wolfsburg.js"></script>
+<script>
+document.getElementById('career-list').innerHTML = window.CAREERS.map(c => {
+  const seasons = (window['SEASONS_' + c.id] || [])
+  const totalW   = seasons.reduce((s,x) => s+x.wins, 0)
+  const totalPts = seasons.reduce((s,x) => s+x.points, 0)
+  const tag = c.tag ? `<span class="bc" style="font-size:9px;letter-spacing:3px;background:rgba(232,184,75,.1);border:1px solid rgba(232,184,75,.3);color:var(--gold);padding:2px 8px;margin-left:8px">${c.tag}</span>` : ''
+  return `
+    <a href="./${c.id}/" class="career-card au" style="animation-delay:${window.CAREERS.indexOf(c)*.1}s">
+      <img src="${c.logo}" onerror="this.style.display='none'" alt="${c.name}"/>
+      <div style="flex:1">
+        <div class="bb" style="font-size:28px;letter-spacing:1px;color:var(--white)">${c.name}${tag}</div>
+        <div class="bc" style="font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:2px">${c.country}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="bb" style="font-size:36px;color:var(--gold);line-height:1">${seasons.length}</div>
+        <div class="bc" style="font-size:9px;color:var(--muted);letter-spacing:3px;margin-top:2px">SAISON${seasons.length!==1?'S':''}</div>
+        ${totalW > 0 ? `<div class="bc" style="font-size:10px;color:var(--muted);margin-top:4px">${totalW}V · ${totalPts} pts</div>` : ''}
+      </div>
+    </a>`
+}).join('')
+</script>
+</body>
+</html>

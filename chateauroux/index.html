@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FM26 — Carrières</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    #career-modal{position:fixed;inset:0;z-index:900;background:rgba(7,17,31,.92);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;}
+    #career-modal.open{display:flex;}
+    .career-modal-box{background:#0c2259;max-width:480px;width:calc(100% - 40px);padding:36px 32px;border:1px solid rgba(232,184,75,.15);animation:scaleIn .25s ease;}
+    .career-item{display:flex;align-items:center;gap:16px;padding:14px 18px;cursor:pointer;border:1px solid transparent;transition:all .18s;margin-bottom:6px;}
+    .career-item:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);}
+    .career-item.active{border-color:rgba(232,184,75,.4);background:rgba(232,184,75,.06);}
+    .career-item img{width:40px;height:40px;object-fit:contain;flex-shrink:0;}
+    .switcher-btn{display:flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(255,255,255,.12);padding:8px 16px;color:var(--muted);font-size:11px;letter-spacing:3px;transition:all .2s;cursor:pointer;}
+    .switcher-btn:hover{border-color:rgba(232,184,75,.4);color:var(--gold);}
+    .switcher-btn img{width:22px;height:22px;object-fit:contain;}
+  </style>
+</head>
+<body>
+
+<!-- CAREER MODAL -->
+<div id="career-modal" onclick="if(event.target===this)closeModal()">
+  <div class="career-modal-box">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px">
+      <div class="bc" style="font-size:10px;letter-spacing:6px;color:var(--gold);font-weight:700">CHANGER DE CARRIÈRE</div>
+      <button onclick="closeModal()" style="background:none;border:none;color:var(--muted);font-size:22px;line-height:1;cursor:pointer">×</button>
+    </div>
+    <div id="career-list"></div>
+  </div>
+</div>
+
+<!-- INTRO OVERLAY -->
+<div id="intro-overlay" class="overlay" style="display:none">
+  <div class="overlay-grid"></div>
+  <div style="position:relative;max-width:560px;width:100%;padding:48px 40px;margin:40px 24px">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid rgba(232,184,75,.15)">
+      <img src="../logo-chateauroux.png" style="width:48px;height:48px;object-fit:contain"/>
+      <div>
+        <div class="bc" style="font-size:9px;letter-spacing:5px;color:var(--gold);font-weight:700">COMMUNIQUÉ OFFICIEL</div>
+        <div class="bc" style="font-size:12px;color:var(--muted);margin-top:3px">La Berrichonne de Châteauroux — Été 2025</div>
+      </div>
+    </div>
+    <div style="line-height:1.8;margin-bottom:32px">
+      <p class="bc" style="font-size:15px;color:var(--white);margin-bottom:18px">La direction du club annonce la nomination de <span style="color:var(--gold);font-weight:600">Nolann Queft</span> au poste d'entraîneur principal, à compter de ce jour.</p>
+      <p class="bc" style="font-size:14px;color:var(--muted)">Le technicien prend les rênes d'un effectif qui n'a plus goûté aux divisions supérieures depuis trop longtemps. Sa mission : reconstruire, conquérir, et rendre à La Berrichonne la place qu'elle mérite dans le football français.</p>
+    </div>
+    <div style="border-left:3px solid var(--gold);padding-left:20px;margin-bottom:36px">
+      <p class="bc" style="font-size:15px;color:var(--white);font-style:italic;line-height:1.7;margin-bottom:10px">« J'ai grandi en voyant ce club aussi abîmé de l'intérieur que je l'étais. Mais j'ai regardé <em>Cyberpunk : Edgerunners</em>, alors je ferai regarder cette masterclass à tous les joueurs pour qu'ils retrouvent un niveau correct — parce que là, j'en peux plus. Si j'y arrive pas, je retourne dans ma depressive era. Merci. »</p>
+      <div class="bc" style="font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:700">— NOLANN QUEFT · Conférence de presse d'intégration, Stade Gaston-Petit</div>
+    </div>
+    <p class="bc" style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:40px;text-align:center">Bienvenue à Châteauroux, Mister.</p>
+    <button onclick="dismissIntro()" class="bc" style="width:100%;padding:16px;background:var(--gold);border:none;color:var(--navy);font-size:13px;letter-spacing:5px;font-weight:700;cursor:pointer">COMMENCER LA CARRIÈRE</button>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div id="page" style="min-height:100vh;background:var(--navy)">
+  <div id="header" style="padding:60px 56px 52px;border-bottom:1px solid rgba(232,184,75,.08);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;right:0;width:320px;height:100%;background-image:repeating-linear-gradient(90deg,rgba(232,184,75,.04) 0,rgba(232,184,75,.04) 1px,transparent 1px,transparent 24px);pointer-events:none"></div>
+    <div style="max-width:1160px;margin:0 auto">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <div>
+          <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · CARRIÈRE</div>
+          <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+            <img id="club-logo" src="" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
+            <div>
+              <h1 id="club-name" class="bb au au1" style="font-size:clamp(40px,7vw,80px);line-height:.9;letter-spacing:2px;margin-bottom:16px"></h1>
+              <div id="stats-line" class="bc au au2" style="font-size:12px;color:var(--muted);letter-spacing:3px;font-weight:400"></div>
+              <div id="coach-badge" class="bc au au3" style="display:none;align-items:center;gap:10px;margin-top:14px;padding:6px 14px;border:1px solid rgba(232,184,75,.2)">
+                <span style="font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700">ENTRAÎNEUR</span>
+                <span style="width:1px;height:10px;background:rgba(232,184,75,.25);display:inline-block"></span>
+                <span style="font-size:12px;color:var(--gold);letter-spacing:2px;font-weight:600">Nolann Queft</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button onclick="window.location='../'" class="bc switcher-btn au au4">
+          <img id="switcher-logo" src="" alt=""/>
+          <span>← CARRIÈRES</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1160px;margin:0 auto;padding:48px 56px 60px">
+    <div id="season-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px"></div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,.05);padding:20px 56px;display:flex;justify-content:flex-end">
+    <button id="replay-btn" onclick="replayIntro()" class="bc nav-btn" style="display:none;font-size:10px;letter-spacing:4px;color:rgba(106,130,176,.4)"
+      onmouseover="this.style.color='var(--muted)'" onmouseout="this.style.color='rgba(106,130,176,.4)'">↺ REJOUER L'INTRO</button>
+  </div>
+</div>
+
+<script>window.FORCE_CAREER = "chateauroux"</script>
+<script src="../careers.js"></script>
+<script src="../seasons-chateauroux.js"></script>
+<script src="../seasons-seville.js"></script>
+<script src="../seasons-wolfsburg.js"></script>
+<script src="../utils.js"></script>
+<script>
+const INTRO_KEY = 'lbc-coach-intro'
+let career = getCurrentCareer()
+
+function getSeasons() { return window['SEASONS_' + career.id] || [] }
+
+function buildPage() {
+  career = getCurrentCareer()
+  const seasons = getSeasons()
+  const sorted  = [...seasons].sort((a,b) => b.year.localeCompare(a.year))
+  const totalW   = seasons.reduce((s,x) => s+x.wins, 0)
+  const totalPts = seasons.reduce((s,x) => s+x.points, 0)
+
+  document.getElementById('header').style.background = `linear-gradient(160deg, ${career.color}22 0%, var(--navy) 65%)`
+  document.getElementById('club-logo').src     = career.logo
+  document.getElementById('switcher-logo').src = career.logo
+  const parts = career.name.split(' ')
+  const half  = Math.ceil(parts.length / 2)
+  document.getElementById('club-name').innerHTML = `${parts.slice(0,half).join(' ')}<br><span style="color:var(--gold)">${parts.slice(half).join(' ')}</span>`
+  document.getElementById('stats-line').textContent = `${seasons.length} SAISON${seasons.length!==1?'S':''} · ${totalW} VICTOIRES · ${totalPts} POINTS CUMULÉS`
+
+  const badge = document.getElementById('coach-badge')
+  const replay = document.getElementById('replay-btn')
+  if (career.id === 'chateauroux') { badge.style.display = 'inline-flex'; replay.style.display = 'block' }
+  else { badge.style.display = 'none'; replay.style.display = 'none' }
+
+  document.title = `FM26 — ${career.short}`
+
+  const grid = document.getElementById('season-grid')
+  if (!sorted.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:80px 0"><div class="bb" style="font-size:32px;letter-spacing:4px;color:var(--mid)">AUCUNE SAISON</div><div class="bc" style="margin-top:12px;font-size:13px;color:var(--muted);letter-spacing:2px">Ajoute tes saisons dans seasons-${career.id}.js</div></div>`
+  } else {
+    grid.innerHTML = sorted.map((s,i) => buildCard(s,i)).join('')
+  }
+}
+
+function buildCard(s, i) {
+  const ls = leagueStyle(s.league)
+  const winRate = Math.round((s.wins/s.played)*100)
+  const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
+  const dest = s.splash ? 'splash.html' : 'saison.html'
+  return `
+    <a href="${dest}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
+      <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
+      <div class="bc" style="display:inline-block;background:${ls.bg};border:1px solid ${ls.border};color:${ls.color};font-size:9px;letter-spacing:4px;padding:3px 10px;margin-bottom:18px;font-weight:700">${s.league}</div>
+      <div class="bb" style="font-size:38px;line-height:1;margin-bottom:4px;letter-spacing:1px">${s.year}</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:22px">
+        <span class="bb" style="font-size:66px;color:var(--gold);line-height:1">${s.position}</span>
+        <span class="bb" style="font-size:28px">e</span>
+        <span class="bc" style="font-size:12px;color:var(--muted)">/${s.totalTeams}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
+        ${[['Pts',s.points,'var(--goldL)'],['V',s.wins,'var(--green)'],['N',s.draws,'var(--gold)'],['D',s.losses,'var(--red)']].map(([l,v,c])=>`<div><div class="bb" style="font-size:26px;color:${c};line-height:1">${v}</div><div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:2px">${l}</div></div>`).join('')}
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:3px">${dots}</div>
+      <div style="margin-top:14px">
+        <div style="height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden">
+          <div style="height:100%;width:${winRate}%;background:var(--green);border-radius:2px"></div>
+        </div>
+        <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${winRate}% DE VICTOIRES</div>
+      </div>
+    </a>`
+}
+
+function openModal() {
+  document.getElementById('career-modal').classList.add('open')
+  const n = id => (window['SEASONS_'+id]||[]).length
+  document.getElementById('career-list').innerHTML = window.CAREERS.map(c => `
+    <div class="career-item ${c.id===career.id?'active':''}" onclick="switchCareer('${c.id}')">
+      <img src="${c.logo}" onerror="this.style.display='none'"/>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:500;color:var(--white)">${c.name}</div>
+        <div class="bc" style="font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:1px">${c.country}${c.tag?' · <span style="color:var(--gold)">'+c.tag+'</span>':''} · ${n(c.id)} saison${n(c.id)!==1?'s':''}</div>
+      </div>
+      ${c.id===career.id?'<div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--gold);font-weight:700">ACTIF</div>':''}
+    </div>`).join('')
+}
+function closeModal() { document.getElementById('career-modal').classList.remove('open') }
+function switchCareer(id) { setCurrentCareer(id); closeModal(); buildPage(); window.scrollTo(0,0) }
+
+function dismissIntro() {
+  localStorage.setItem(INTRO_KEY+'-'+career.id, '1')
+  const o = document.getElementById('intro-overlay')
+  o.classList.add('leaving'); setTimeout(()=>o.style.display='none', 800)
+}
+function replayIntro() {
+  const o = document.getElementById('intro-overlay')
+  o.style.display='flex'; o.classList.remove('leaving')
+}
+
+buildPage()
+if (career.id === 'chateauroux' && !localStorage.getItem(INTRO_KEY+'-chateauroux'))
+  document.getElementById('intro-overlay').style.display = 'flex'
+</script>
+</body>
+</html>
