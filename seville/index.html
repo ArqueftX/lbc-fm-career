@@ -114,8 +114,8 @@ function buildPage() {
   const totalPts = seasons.reduce((s,x) => s+x.points, 0)
 
   document.getElementById('header').style.background = `linear-gradient(160deg, ${career.color}22 0%, var(--navy) 65%)`
-  document.getElementById('club-logo').src     = career.logo
-  document.getElementById('switcher-logo').src = career.logo
+  document.getElementById('club-logo').src     = '../' + career.logo
+  document.getElementById('switcher-logo').src = '../' + career.logo
   const parts = career.name.split(' ')
   const half  = Math.ceil(parts.length / 2)
   document.getElementById('club-name').innerHTML = `${parts.slice(0,half).join(' ')}<br><span style="color:var(--gold)">${parts.slice(half).join(' ')}</span>`
@@ -169,7 +169,7 @@ function openModal() {
   const n = id => (window['SEASONS_'+id]||[]).length
   document.getElementById('career-list').innerHTML = window.CAREERS.map(c => `
     <div class="career-item ${c.id===career.id?'active':''}" onclick="switchCareer('${c.id}')">
-      <img src="${c.logo}" onerror="this.style.display='none'"/>
+      <img src="../${c.logo}" onerror="this.style.display='none'"/>
       <div style="flex:1">
         <div style="font-size:14px;font-weight:500;color:var(--white)">${c.name}</div>
         <div class="bc" style="font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:1px">${c.country}${c.tag?' · <span style="color:var(--gold)">'+c.tag+'</span>':''} · ${n(c.id)} saison${n(c.id)!==1?'s':''}</div>
