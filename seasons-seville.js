@@ -392,7 +392,7 @@ window.SEASONS_seville = [
       eyebrow:  "2027/28 · Sevilla FC · Saison 3",
       lines:    ["TOUJOURS LÀ.", "TOUJOURS SOLIDE."],
       sub:      "La Liga · 6e · 64 pts · 1/8 UCL",
-      tagline:  "Agoumé vendu 29,5M€, Juventus éliminée — mais Blu-neri coupe la route en huitième.",
+      tagline:  "Agoumé vendu 29,5M€, Juventus éliminée — mais l'Inter coupe la route en huitième.",
     },
 
     matches: [
