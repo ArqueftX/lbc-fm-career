@@ -144,12 +144,44 @@ window.SEASONS_wolfsburg = [
     promoted:   [],
     relegated:  ["Freiburg", "Heidenheim", "Hertha"],
 
-    // ⚠️ Mercato non renseigné — à compléter
     scorers:   [],
     assists:   [],
     ratings:   [],
-    transfers: [],
-    departures:[],
+
+    transfers: [
+      { type: "sell", name: "Jesper Lindstrøm",   from: "Napoli",      date: "Juin 2026",  amount: "6M €"     },
+      { type: "sell", name: "Saël Kumbedi",        from: "Lyon",        date: "Juin 2026",  amount: "6M €"     },
+      { type: "sell", name: "Jenson Seelt",        from: "Sunderland",  date: "Juil. 2026", amount: "8M €"     },
+      { type: "sell", name: "Ben Gannon Doak",     from: "Bournemouth", date: "Juil. 2026", amount: "24M €"    },
+      { type: "sell", name: "Cheveyo Tsawa",       from: "Zürich",      date: "Juil. 2026", amount: "6,25M €"  },
+      { type: "sell", name: "Deniz Undav",         from: "Stuttgart",   date: "Aoû. 2026",  amount: "17,75M €" },
+      { type: "loan", name: "Vítězslav Jaroš",    from: "Liverpool",   date: "Sep. 2026"                      },
+      { type: "loan", name: "Gift Orban",          from: "Hoffenheim",  date: "Sep. 2026"                      },
+      { type: "loan", name: "Hamza Igamane",       from: "Lille",       date: "Sep. 2026"                      },
+      { type: "sell", name: "Alejo Veliz",         from: "Tottenham",   date: "Sep. 2026",  amount: "9,25M €"  },
+      { type: "sell", name: "Arne Maier",          from: "Augsburg",    date: "Jan. 2027",  amount: "4,4M €"   },
+      { type: "sell", name: "Ryan Alebiosu",       from: "Blackburn",   date: "Jan. 2027",  amount: "8,5M €"   },
+    ],
+
+    departures: [
+      { type: "sell", name: "Bartol Franjić",      to: "Venezia",              date: "Juin 2026",  amount: "1,5M €"  },
+      { type: "sell", name: "Vini Souza",           to: "Burnley",              date: "Juin 2026",  amount: "5,25M €" },
+      { type: "free", name: "Kevin Paredes",        to: "Union Berlin",         date: "Juil. 2026"                    },
+      { type: "free", name: "Elia Dittrich",        to: "Schalke 04",           date: "Juil. 2026"                    },
+      { type: "free", name: "Karlo Simic",          to: "Austria Wien",         date: "Juil. 2026"                    },
+      { type: "free", name: "Yasin Chebil",         to: "Nürnberg",             date: "Juil. 2026"                    },
+      { type: "free", name: "Darwin Soylu",         to: "Bursaspor",            date: "Juil. 2026"                    },
+      { type: "free", name: "Ole Brammer",          to: "Grazer AK 1902",       date: "Juil. 2026"                    },
+      { type: "loan", name: "Mohamed Amoura",       to: "Al Nassr",             date: "Aoû. 2026"                     },
+      { type: "loan", name: "Mirza Ćatović",        to: "Reims",                date: "Aoû. 2026"                     },
+      { type: "loan", name: "Jan Bürger",           to: "Dynamo Dresden",       date: "Aoû. 2026"                     },
+      { type: "sell", name: "Denis Vavro",          to: "Norwich",              date: "Sep. 2026",  amount: "3,5M €"  },
+      { type: "loan", name: "Andreas Skov Olsen",   to: "Red Bull Salzburg",    date: "Jan. 2027"                     },
+      { type: "loan", name: "Mathys Angély",        to: "Eintracht Braunschweig", date: "Jan. 2027"                   },
+      { type: "loan", name: "Dženan Pejčinović",   to: "Greuther Fürth",       date: "Jan. 2027"                     },
+      { type: "loan", name: "Maarten Vandevoordt",  to: "Brighton",             date: "Fév. 2027"                     },
+      { type: "loan", name: "Spyridon Souliotis",   to: "Niki Volou",           date: "Fév. 2027"                     },
+    ],
 
     cup: {
       name: "DFB-Pokal",
