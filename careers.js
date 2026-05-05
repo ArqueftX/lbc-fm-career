@@ -42,6 +42,18 @@ window.CAREERS = [
   },
   // Template — copie ce bloc pour ajouter une carrière :
   // {
+  {
+    id:       'wolfsburg-solo',
+    name:     'VfL Wolfsburg',
+    short:    'Wolfsburg Solo',
+    country:  'Allemagne',
+    tag:      'Solo',
+    file:     'seasons-wolfsburg-solo.js',
+    logo:     'logo-wolfsburg.png',
+    color:    '#4db848',
+    accent:   '#ffffff',
+  },
+
   //   id:      'mon-club',
   //   name:    'Nom complet du club',
   //   short:   'Nom court',

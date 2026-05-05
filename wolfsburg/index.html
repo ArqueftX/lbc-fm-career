@@ -99,6 +99,7 @@
 <script src="../seasons-chateauroux.js"></script>
 <script src="../seasons-seville.js"></script>
 <script src="../seasons-wolfsburg.js"></script>
+<script src="../seasons-wolfsburg-solo.js"></script>
 <script src="../utils.js"></script>
 <script>
 const INTRO_KEY = 'lbc-coach-intro'
@@ -144,7 +145,10 @@ function buildCard(s, i) {
   return `
     <a href="${dest}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
       <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
-      <div class="bc" style="display:inline-block;background:${ls.bg};border:1px solid ${ls.border};color:${ls.color};font-size:9px;letter-spacing:4px;padding:3px 10px;margin-bottom:18px;font-weight:700">${s.league}</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px">
+        <div class="bc" style="display:inline-block;background:${ls.bg};border:1px solid ${ls.border};color:${ls.color};font-size:9px;letter-spacing:4px;padding:3px 10px;font-weight:700">${s.league}</div>
+        ${s.status==='en_cours' ? '<div class="bc" style="display:inline-block;background:rgba(61,214,140,.15);border:1px solid var(--green);color:var(--green);font-size:9px;letter-spacing:3px;padding:3px 10px;font-weight:700">EN COURS</div>' : ''}
+      </div>
       <div class="bb" style="font-size:38px;line-height:1;margin-bottom:4px;letter-spacing:1px">${s.year}</div>
       <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:22px">
         <span class="bb" style="font-size:66px;color:var(--gold);line-height:1">${s.position}</span>
