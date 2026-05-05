@@ -43,7 +43,7 @@ window.CAREERS = [
   // Template — copie ce bloc pour ajouter une carrière :
   // {
   {
-    id:       'wolfsburg-solo',
+    id:       'wolfsburgsolo',
     name:     'VfL Wolfsburg',
     short:    'Wolfsburg Solo',
     country:  'Allemagne',
