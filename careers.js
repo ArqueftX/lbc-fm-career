@@ -44,6 +44,18 @@ window.CAREERS = [
   // {
 
 
+  {
+    id:       'ajax',
+    name:     'Ajax Amsterdam',
+    short:    'Ajax',
+    country:  'Pays-Bas',
+    tag:      'Multi',
+    file:     'seasons-ajax.js',
+    logo:     'logo-ajax.png',
+    color:    '#cc0000',
+    accent:   '#ffffff',
+  },
+
   //   id:      'mon-club',
   //   name:    'Nom complet du club',
   //   short:   'Nom court',

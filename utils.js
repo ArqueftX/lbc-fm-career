@@ -10,6 +10,7 @@ const LEAGUE_STYLES = {
   'Bundesliga 2':   { bg:'rgba(220,120,30,0.18)',  border:'#dc781e', color:'#ffaa6b' },
   'La Liga':        { bg:'rgba(180,30,30,0.18)',   border:'#b41e1e', color:'#ff8c8c' },
   'Premier League': { bg:'rgba(60,0,130,0.18)',    border:'#6e00d4', color:'#bb88ff' },
+  'Eredivisie':     { bg:'rgba(220,0,0,0.18)',      border:'#cc0000', color:'#ff6666'  },
 }
 
 const C = {
