@@ -39,7 +39,7 @@ function leave() {
 
 loadCareerData(function() {
   const season = getSeason(id)
-  if (!season || !season.splash) { window.location = 'saison.html?id=' + (id||''); return; }
+  if (!season || !season.splash) { window.location = './saison.html?id=' + (id||''); return; }
   const sp = season.splash
 
   document.getElementById('sp-eyebrow').textContent = sp.eyebrow
