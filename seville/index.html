@@ -142,7 +142,7 @@ function buildCard(s, i) {
   const ls = leagueStyle(s.league)
   const winRate = Math.round((s.wins/s.played)*100)
   const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
-  const dest = s.splash ? './splash.html' : './saison.html'
+  const dest = s.splash ? '/lbc-fm-career/seville/splash.html' : '/lbc-fm-career/seville/saison.html'
   return `
     <a href="${dest}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
       <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
