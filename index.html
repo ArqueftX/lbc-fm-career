@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>FM26 — Carrières</title>
-  <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <style>
     #career-modal{position:fixed;inset:0;z-index:900;background:rgba(7,17,31,.92);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;}
     #career-modal.open{display:flex;}
@@ -36,7 +36,7 @@
   <div class="overlay-grid"></div>
   <div style="position:relative;max-width:560px;width:100%;padding:48px 40px;margin:40px 24px">
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid rgba(232,184,75,.15)">
-      <img src="../logo-chateauroux.png" style="width:48px;height:48px;object-fit:contain"/>
+      <img src="logo-chateauroux.png" style="width:48px;height:48px;object-fit:contain"/>
       <div>
         <div class="bc" style="font-size:9px;letter-spacing:5px;color:var(--gold);font-weight:700">COMMUNIQUÉ OFFICIEL</div>
         <div class="bc" style="font-size:12px;color:var(--muted);margin-top:3px">La Berrichonne de Châteauroux — Été 2025</div>
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-        <button onclick="openModal()" class="bc switcher-btn au au4">
+        <button onclick="openModal()" id="switcher-btn" class="bc switcher-btn au au4">
           <img id="switcher-logo" src="" alt=""/>
           <span>CARRIÈRES</span>
         </button>
@@ -84,25 +84,7 @@
     </div>
   </div>
 
-  <div style="max-width:1160px;margin:0 auto;padding:48px 56px 0">
-    <div style="position:relative;border:1px solid rgba(232,75,75,.22);background:linear-gradient(120deg,rgba(232,75,75,.07),rgba(255,255,255,.01));padding:30px 34px;overflow:hidden">
-      <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)"></div>
-      <div style="position:absolute;right:-10px;bottom:-34px;font-size:150px;line-height:1;color:rgba(232,75,75,.05);pointer-events:none;user-select:none">✕</div>
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;flex-wrap:wrap;position:relative">
-        <div style="flex:1;min-width:280px">
-          <div class="bc" style="font-size:10px;letter-spacing:5px;color:var(--red);font-weight:700;margin-bottom:14px">⚠ PARTIE ABANDONNÉE</div>
-          <p class="bc" style="font-size:15px;color:var(--white);line-height:1.7;margin-bottom:12px">La carrière multi de Wolfsburg s'arrête ici : la sauvegarde était <span style="color:var(--red);font-weight:600">buguée jusqu'à l'os</span>, complètement injouable.</p>
-          <p class="bc" style="font-size:14px;color:var(--muted);line-height:1.7">Le réseau a donc plié bagage et migré sur une nouvelle partie — celle de l'<span style="color:var(--gold);font-weight:600">Ajax Amsterdam</span>. C'est là que tout se passe maintenant.</p>
-        </div>
-        <a href="../ajax/index.html" class="bc" style="flex-shrink:0;display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);font-size:12px;letter-spacing:4px;font-weight:700;padding:15px 24px;text-decoration:none;transition:filter .2s" onmouseover="this.style.filter='brightness(1.12)'" onmouseout="this.style.filter='none'">
-          <img src="../logo-ajax.png" onerror="this.style.display='none'" style="width:24px;height:24px;object-fit:contain"/>
-          REJOINDRE L'AJAX →
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div style="max-width:1160px;margin:0 auto;padding:36px 56px 60px">
+  <div style="max-width:1160px;margin:0 auto;padding:48px 56px 60px">
     <div id="season-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px"></div>
   </div>
 
@@ -112,13 +94,12 @@
   </div>
 </div>
 
-<script>window.FORCE_CAREER = "wolfsburg"</script>
-<script src="../careers.js"></script>
-<script src="../seasons-chateauroux.js"></script>
-<script src="../seasons-seville.js"></script>
-<script src="../seasons-wolfsburg.js"></script>
-<script src="../seasons-ajax.js"></script>
-<script src="../utils.js"></script>
+<script src="careers.js"></script>
+<script src="seasons-chateauroux.js"></script>
+<script src="seasons-seville.js"></script>
+<script src="seasons-wolfsburg.js"></script>
+<script src="seasons-ajax.js"></script>
+<script src="utils.js"></script>
 <script>
 const INTRO_KEY = 'lbc-coach-intro'
 let career = getCurrentCareer()
@@ -133,8 +114,8 @@ function buildPage() {
   const totalPts = seasons.reduce((s,x) => s+x.points, 0)
 
   document.getElementById('header').style.background = `linear-gradient(160deg, ${career.color}22 0%, var(--navy) 65%)`
-  document.getElementById('club-logo').src     = '../' + career.logo
-  document.getElementById('switcher-logo').src = '../' + career.logo
+  document.getElementById('club-logo').src     = career.logo
+  document.getElementById('switcher-logo').src = career.logo
   const parts = career.name.split(' ')
   const half  = Math.ceil(parts.length / 2)
   document.getElementById('club-name').innerHTML = `${parts.slice(0,half).join(' ')}<br><span style="color:var(--gold)">${parts.slice(half).join(' ')}</span>`
@@ -159,9 +140,9 @@ function buildCard(s, i) {
   const ls = leagueStyle(s.league)
   const winRate = Math.round((s.wins/s.played)*100)
   const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
-  const dest = s.splash ? '/lbc-fm-career/wolfsburg/splash.html' : '/lbc-fm-career/wolfsburg/saison.html'
+  const dest = s.splash ? 'splash.html' : 'saison.html'
   return `
-    <a href="${dest}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
+    <a href="${career.id}/${dest}?id=${s.id}&career=${career.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
       <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px">
         <div class="bc" style="display:inline-block;background:${ls.bg};border:1px solid ${ls.border};color:${ls.color};font-size:9px;letter-spacing:4px;padding:3px 10px;font-weight:700">${s.league}</div>
@@ -191,7 +172,7 @@ function openModal() {
   const n = id => (window['SEASONS_'+id]||[]).length
   document.getElementById('career-list').innerHTML = window.CAREERS.map(c => `
     <div class="career-item ${c.id===career.id?'active':''}" onclick="switchCareer('${c.id}')">
-      <img src="../${c.logo}" onerror="this.style.display='none'"/>
+      <img src="${c.logo}" onerror="this.style.display='none'"/>
       <div style="flex:1">
         <div style="font-size:14px;font-weight:500;color:var(--white)">${c.name}</div>
         <div class="bc" style="font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:1px">${c.country}${c.tag?' · <span style="color:var(--gold)">'+c.tag+'</span>':''} · ${n(c.id)} saison${n(c.id)!==1?'s':''}</div>
@@ -200,7 +181,7 @@ function openModal() {
     </div>`).join('')
 }
 function closeModal() { document.getElementById('career-modal').classList.remove('open') }
-function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' }
+function switchCareer(id) { setCurrentCareer(id); closeModal(); buildPage(); window.scrollTo(0,0) }
 
 function dismissIntro() {
   localStorage.setItem(INTRO_KEY+'-'+career.id, '1')
