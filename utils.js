@@ -93,7 +93,7 @@ function closeCareerModal(e) {
 function switchCareer(id) {
   if (id === window.getCurrentCareer().id) { closeCareerModal(); return; }
   window.setCurrentCareer(id)
-  window.location = 'index.html'
+  window.location = '../'
 }
 
 /* ── Career switcher button ── */

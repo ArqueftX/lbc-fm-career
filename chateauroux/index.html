@@ -99,7 +99,6 @@
 <script src="../seasons-chateauroux.js"></script>
 <script src="../seasons-seville.js"></script>
 <script src="../seasons-wolfsburg.js"></script>
-<script src="../seasons-wolfsburg-solo.js"></script>
 <script src="../seasons-ajax.js"></script>
 <script src="../utils.js"></script>
 <script>
@@ -183,7 +182,7 @@ function openModal() {
     </div>`).join('')
 }
 function closeModal() { document.getElementById('career-modal').classList.remove('open') }
-function switchCareer(id) { setCurrentCareer(id); closeModal(); buildPage(); window.scrollTo(0,0) }
+function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' }
 
 function dismissIntro() {
   localStorage.setItem(INTRO_KEY+'-'+career.id, '1')
