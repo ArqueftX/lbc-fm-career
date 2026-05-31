@@ -108,7 +108,7 @@ loadCareerData(function(career) {
   if (s.cup2 && s.cup2.rounds && s.cup2.rounds.length) {
     const cup2rows = s.cup2.rounds.map((r,i) => {
       const arrow = i < s.cup2.rounds.length-1 ? '<div style="position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px">›</div>' : ''
-      const col = r.result==='W' ? 'var(--green)' : 'var(--red)'
+      const col = r.result==='W' ? 'var(--green)' : r.result==='D' ? 'var(--gold)' : 'var(--red)'
       return '<div style="flex:1 1 130px;text-align:center;padding:18px 8px;border-top:2px solid '+col+';position:relative">'
            + arrow
            + '<div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-bottom:8px;text-transform:uppercase">'+r.round+'</div>'
