@@ -84,6 +84,8 @@
     </div>
   </div>
 
+  <div id="abandon-slot"></div>
+
   <div style="max-width:1160px;margin:0 auto;padding:48px 56px 60px">
     <div id="season-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px"></div>
   </div>
@@ -126,6 +128,8 @@ function buildPage() {
   if (career.id === 'chateauroux') { badge.style.display = 'inline-flex'; replay.style.display = 'block' }
   else { badge.style.display = 'none'; replay.style.display = 'none' }
 
+  document.getElementById('abandon-slot').innerHTML = (career.id === 'wolfsburg') ? abandonBanner() : ''
+
   document.title = `FM26 — ${career.short}`
 
   const grid = document.getElementById('season-grid')
@@ -134,6 +138,27 @@ function buildPage() {
   } else {
     grid.innerHTML = sorted.map((s,i) => buildCard(s,i)).join('')
   }
+}
+
+function abandonBanner() {
+  return `
+    <div style="max-width:1160px;margin:0 auto;padding:48px 56px 0">
+      <div style="position:relative;border:1px solid rgba(232,75,75,.22);background:linear-gradient(120deg,rgba(232,75,75,.07),rgba(255,255,255,.01));padding:30px 34px;overflow:hidden">
+        <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)"></div>
+        <div style="position:absolute;right:-10px;bottom:-34px;font-size:150px;line-height:1;color:rgba(232,75,75,.05);pointer-events:none;user-select:none">✕</div>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:28px;flex-wrap:wrap;position:relative">
+          <div style="flex:1;min-width:280px">
+            <div class="bc" style="font-size:10px;letter-spacing:5px;color:var(--red);font-weight:700;margin-bottom:14px">⚠ PARTIE ABANDONNÉE</div>
+            <p class="bc" style="font-size:15px;color:var(--white);line-height:1.7;margin-bottom:12px">La carrière multi de Wolfsburg s'arrête ici : la sauvegarde était <span style="color:var(--red);font-weight:600">buguée jusqu'à l'os</span>, complètement injouable.</p>
+            <p class="bc" style="font-size:14px;color:var(--muted);line-height:1.7">Le réseau a donc plié bagage et migré sur une nouvelle partie — celle de l'<span style="color:var(--gold);font-weight:600">Ajax Amsterdam</span>. C'est là que tout se passe maintenant.</p>
+          </div>
+          <button onclick="switchCareer('ajax')" class="bc" style="flex-shrink:0;display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);font-size:12px;letter-spacing:4px;font-weight:700;padding:15px 24px;border:none;cursor:pointer;transition:filter .2s" onmouseover="this.style.filter='brightness(1.12)'" onmouseout="this.style.filter='none'">
+            <img src="logo-ajax.png" onerror="this.style.display='none'" style="width:24px;height:24px;object-fit:contain"/>
+            REJOINDRE L'AJAX →
+          </button>
+        </div>
+      </div>
+    </div>`
 }
 
 function buildCard(s, i) {
