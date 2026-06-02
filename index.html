@@ -64,20 +64,20 @@
         <div>
           <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · CARRIÈRE</div>
           <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
-            <img id="club-logo" src="" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
+            <img id="club-logo" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
             <div>
               <h1 id="club-name" class="bb au au1" style="font-size:clamp(40px,7vw,80px);line-height:.9;letter-spacing:2px;margin-bottom:16px"></h1>
               <div id="stats-line" class="bc au au2" style="font-size:12px;color:var(--muted);letter-spacing:3px;font-weight:400"></div>
               <div id="coach-badge" class="bc au au3" style="display:none;align-items:center;gap:10px;margin-top:14px;padding:6px 14px;border:1px solid rgba(232,184,75,.2)">
                 <span style="font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700">ENTRAÎNEUR</span>
                 <span style="width:1px;height:10px;background:rgba(232,184,75,.25);display:inline-block"></span>
-                <span style="font-size:12px;color:var(--gold);letter-spacing:2px;font-weight:600">Nolann Queft</span>
+                <span id="coach-name" style="font-size:12px;color:var(--gold);letter-spacing:2px;font-weight:600">Nolann Queft</span>
               </div>
             </div>
           </div>
         </div>
         <button onclick="openModal()" id="switcher-btn" class="bc switcher-btn au au4">
-          <img id="switcher-logo" src="" alt=""/>
+          <img id="switcher-logo" alt=""/>
           <span>CARRIÈRES</span>
         </button>
       </div>
@@ -125,8 +125,9 @@ function buildPage() {
 
   const badge = document.getElementById('coach-badge')
   const replay = document.getElementById('replay-btn')
-  if (career.id === 'chateauroux') { badge.style.display = 'inline-flex'; replay.style.display = 'block' }
-  else { badge.style.display = 'none'; replay.style.display = 'none' }
+  if (career.coach) { badge.style.display = 'inline-flex'; document.getElementById('coach-name').textContent = career.coach }
+  else { badge.style.display = 'none' }
+  replay.style.display = (career.id === 'chateauroux') ? 'block' : 'none'
 
   document.getElementById('abandon-slot').innerHTML = (career.id === 'wolfsburg') ? abandonBanner() : ''
 
@@ -162,6 +163,7 @@ function abandonBanner() {
 }
 
 function buildCard(s, i) {
+  if (s.split) return buildSplitCard(s, i)
   const ls = leagueStyle(s.league)
   const winRate = Math.round((s.wins/s.played)*100)
   const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
@@ -188,6 +190,41 @@ function buildCard(s, i) {
           <div style="height:100%;width:${winRate}%;background:var(--green);border-radius:2px"></div>
         </div>
         <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${winRate}% DE VICTOIRES</div>
+      </div>
+    </a>`
+}
+
+function buildSplitCard(s, i) {
+  const winRate = Math.round((s.wins/s.played)*100)
+  const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
+  const dest = s.splash ? 'splash.html' : 'saison.html'
+  const clubLine = (label, pos, league, color) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="width:8px;height:8px;border-radius:2px;background:${color};flex-shrink:0"></div>
+      <span style="flex:1;font-size:13px;font-weight:600;color:var(--white)">${label}</span>
+      <span class="bb" style="font-size:18px;color:var(--gold)">${pos}</span>
+      <span class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);width:74px;text-align:right">${league}</span>
+    </div>`
+  return `
+    <a href="${career.id}/${dest}?id=${s.id}&career=${career.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
+      <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:120px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;flex-wrap:wrap">
+        <div class="bc" style="background:rgba(220,0,0,0.16);border:1px solid #cc0000;color:#ff6666;font-size:9px;letter-spacing:2px;padding:3px 9px;font-weight:700">EREDIVISIE</div>
+        <span class="bc" style="color:var(--muted);font-size:12px">→</span>
+        <div class="bc" style="background:rgba(60,0,130,0.18);border:1px solid #6e00d4;color:#bb88ff;font-size:9px;letter-spacing:2px;padding:3px 9px;font-weight:700">PREMIER LEAGUE</div>
+      </div>
+      <div class="bb" style="font-size:38px;line-height:1;margin-bottom:18px;letter-spacing:1px">${s.year}</div>
+      <div style="margin-bottom:20px">
+        ${clubLine('Ajax', '1ᵉʳ', 'Eredivisie', '#cc0000')}
+        ${clubLine('Chelsea', '6ᵉ', 'Premier L.', '#2a6fdb')}
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px">
+        ${[['V',s.wins,'var(--green)'],['N',s.draws,'var(--gold)'],['D',s.losses,'var(--red)']].map(([l,v,c])=>`<div><div class="bb" style="font-size:26px;color:${c};line-height:1">${v}</div><div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:2px">${l}</div></div>`).join('')}
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:3px">${dots}</div>
+      <div style="margin-top:14px">
+        <div style="height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:${winRate}%;background:var(--green);border-radius:2px"></div></div>
+        <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${winRate}% DE VICTOIRES · 38 MATCHS DIRIGÉS</div>
       </div>
     </a>`
 }
