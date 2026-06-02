@@ -139,6 +139,7 @@ function buildPage() {
 }
 
 function buildCard(s, i) {
+  if (s.split) return buildSplitCard(s, i)
   const ls = leagueStyle(s.league)
   const winRate = Math.round((s.wins/s.played)*100)
   const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
@@ -165,6 +166,41 @@ function buildCard(s, i) {
           <div style="height:100%;width:${winRate}%;background:var(--green);border-radius:2px"></div>
         </div>
         <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${winRate}% DE VICTOIRES</div>
+      </div>
+    </a>`
+}
+
+function buildSplitCard(s, i) {
+  const winRate = Math.round((s.wins/s.played)*100)
+  const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
+  const dest = s.splash ? '/lbc-fm-career/ajax/splash.html' : '/lbc-fm-career/ajax/saison.html'
+  const clubLine = (label, pos, league, color) => `
+    <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="width:8px;height:8px;border-radius:2px;background:${color};flex-shrink:0"></div>
+      <span style="flex:1;font-size:13px;font-weight:600;color:var(--white)">${label}</span>
+      <span class="bb" style="font-size:18px;color:var(--gold)">${pos}</span>
+      <span class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);width:74px;text-align:right">${league}</span>
+    </div>`
+  return `
+    <a href="${dest}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
+      <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:120px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px;flex-wrap:wrap">
+        <div class="bc" style="background:rgba(220,0,0,0.16);border:1px solid #cc0000;color:#ff6666;font-size:9px;letter-spacing:2px;padding:3px 9px;font-weight:700">EREDIVISIE</div>
+        <span class="bc" style="color:var(--muted);font-size:12px">→</span>
+        <div class="bc" style="background:rgba(60,0,130,0.18);border:1px solid #6e00d4;color:#bb88ff;font-size:9px;letter-spacing:2px;padding:3px 9px;font-weight:700">PREMIER LEAGUE</div>
+      </div>
+      <div class="bb" style="font-size:38px;line-height:1;margin-bottom:18px;letter-spacing:1px">${s.year}</div>
+      <div style="margin-bottom:20px">
+        ${clubLine('Ajax', '1ᵉʳ', 'Eredivisie', '#cc0000')}
+        ${clubLine('Chelsea', '6ᵉ', 'Premier L.', '#2a6fdb')}
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px">
+        ${[['V',s.wins,'var(--green)'],['N',s.draws,'var(--gold)'],['D',s.losses,'var(--red)']].map(([l,v,c])=>`<div><div class="bb" style="font-size:26px;color:${c};line-height:1">${v}</div><div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:2px">${l}</div></div>`).join('')}
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:3px">${dots}</div>
+      <div style="margin-top:14px">
+        <div style="height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:${winRate}%;background:var(--green);border-radius:2px"></div></div>
+        <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${winRate}% DE VICTOIRES · 38 MATCHS DIRIGÉS</div>
       </div>
     </a>`
 }

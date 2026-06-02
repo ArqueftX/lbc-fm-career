@@ -53,7 +53,7 @@ window.CAREERS = [
     tag:      'Multi',
     coach:    'Arq Queft',
     file:     'seasons-ajax.js',
-    logo:     'logo-ajax.png',
+    logo:     'logo-chelsea.png',
     color:    '#cc0000',
     accent:   '#ffffff',
   },

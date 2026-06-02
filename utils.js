@@ -61,7 +61,7 @@ function renderCareerSwitcher() {
                        transition:background .15s"
                 onmouseover="if('${c.id}'!=='${window.getCurrentCareer().id}')this.style.background='rgba(255,255,255,.04)'"
                 onmouseout="if('${c.id}'!=='${window.getCurrentCareer().id}')this.style.background='transparent'">
-                <img src="${c.logo}" onerror="this.style.display='none'" style="width:36px;height:36px;object-fit:contain;flex-shrink:0"/>
+                <img src="${(window.LOGO_PATH||'')}${c.logo}" onerror="this.style.display='none'" style="width:36px;height:36px;object-fit:contain;flex-shrink:0"/>
                 <div style="flex:1">
                   <div style="font-size:14px;font-weight:500;color:${active?C.gold:C.white}">${c.name}</div>
                   <div class="bc" style="font-size:11px;color:${C.muted};margin-top:2px;letter-spacing:1px">${c.country}</div>

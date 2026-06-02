@@ -59,6 +59,9 @@ loadCareerData(function(career) {
   document.getElementById('nav-title').textContent = s.year + ' · ' + s.league
   document.title = s.year + ' ' + s.league + ' — FM26'
 
+  // Saison à deux clubs (split) → rendu dédié
+  if (s.stints && s.stints.length) { renderSplitSeason(s, career); return; }
+
   // Hero
   const gdVal = s.gf - s.ga
   const gdStr = gdVal >= 0 ? '+'+gdVal : ''+gdVal
@@ -178,6 +181,108 @@ loadCareerData(function(career) {
     `
   }
 })
+
+/* ═══ Rendu des saisons à deux clubs (split) ═══ */
+function renderSplitSeason(s, career) {
+  document.getElementById('hero').innerHTML = `
+    <div class="bb" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:clamp(140px,24vw,400px);color:rgba(12,34,89,.5);line-height:1;pointer-events:none;user-select:none">4</div>
+    <div style="max-width:1160px;margin:0 auto;position:relative">
+      <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:14px;font-weight:600">BILAN DE SAISON · DEUX CLUBS</div>
+      <h1 class="bb au au1" style="font-size:clamp(42px,7vw,90px);line-height:.9;letter-spacing:2px;margin-bottom:12px">${s.year} · AJAX<br><span style="color:var(--gold)">→ CHELSEA</span></h1>
+      <div class="bc au au2" style="display:inline-block;background:var(--gold);color:var(--navy);font-size:11px;letter-spacing:3px;padding:5px 16px;margin-bottom:46px;font-weight:700">EREDIVISIE 1ᵉʳ → PREMIER LEAGUE 6ᵉ · EUROPA LEAGUE</div>
+      <div class="au au3" style="display:flex;gap:40px;flex-wrap:wrap">
+        ${[[s.played,'Matchs dirigés'],[s.wins,'Victoires'],[s.gf,'Buts marqués'],['2','Clubs']].map(([v,l])=>`
+          <div><div class="bb" style="font-size:64px;line-height:1;color:var(--gold)">${v}</div><div class="bc" style="font-size:10px;letter-spacing:4px;color:var(--muted);margin-top:3px;text-transform:uppercase">${l}</div></div>
+        `).join('')}
+      </div>
+    </div>`
+  document.querySelector('.page-content').innerHTML = s.stints.map(renderStint).join('')
+}
+
+function renderStint(st) {
+  const rec = st.record || {}
+  const acc = st.accent || 'var(--gold)'
+  const gdVal = (rec.gf||0) - (rec.ga||0)
+  const gdStr = gdVal >= 0 ? '+'+gdVal : ''+gdVal
+
+  const head = `
+    <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:26px 0 22px;border-top:3px solid ${acc};margin-bottom:6px">
+      <img src="../${st.logo}" onerror="this.style.display='none'" style="width:66px;height:66px;object-fit:contain;flex-shrink:0"/>
+      <div style="flex:1;min-width:240px">
+        <div class="bc" style="font-size:10px;letter-spacing:5px;color:${acc};font-weight:700;margin-bottom:7px">${st.phase}</div>
+        <div class="bb" style="font-size:34px;letter-spacing:1px;line-height:1">${st.club}</div>
+        <div class="bc" style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:7px">${st.tenure} · ${st.league} · ${st.positionText}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;white-space:nowrap">
+        <div class="bb" style="font-size:28px;color:var(--gold);line-height:1">${rec.wins}V ${rec.draws}N ${rec.losses}D</div>
+        <div class="bc" style="font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:5px">${rec.played} MATCHS · ${rec.gf}-${rec.ga}</div>
+      </div>
+    </div>`
+
+  const strip = `
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin:18px 0 32px">
+      ${[['Victoires',rec.wins,'var(--green)'],['Nuls',rec.draws,'var(--gold)'],['Défaites',rec.losses,'var(--red)'],['Buts pour',rec.gf,'var(--white)'],['Diff.',gdStr,gdVal>=0?'var(--green)':'var(--red)']].map(([l,v,c])=>`
+        <div style="background:var(--blue);padding:18px 14px;border-left:3px solid ${acc}"><div class="bb" style="font-size:40px;line-height:1;color:${c}">${v}</div><div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:6px;text-transform:uppercase">${l}</div></div>
+      `).join('')}
+    </div>`
+
+  const matchesBlock = `<div style="margin-bottom:32px"><div class="bc" style="font-size:11px;letter-spacing:4px;color:var(--gold);font-weight:700;margin-bottom:14px;text-transform:uppercase">Parcours ${st.league} — ${(st.matches||[]).length} matchs dirigés</div>${renderDots(st.matches)}</div>`
+
+  const cupsBlock = (st.cups||[]).map(renderCupRun).join('')
+
+  let perfBlock = ''
+  if (st.scorers || st.assists || st.ratings) {
+    perfBlock = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:10px 0 32px" class="two-col">
+      <div>${renderPerfList('Meilleurs buteurs', st.scorers, 'buts')}${st.ratings?'<div style="margin-top:36px">'+renderPerfList('Meilleures notes', st.ratings, 'moy.')+'</div>':''}</div>
+      <div>${renderPerfList('Meilleurs passeurs', st.assists, 'passes D.')}</div>
+    </div>`
+  }
+
+  const hasArr = (st.transfers||[]).length, hasDep = (st.departures||[]).length
+  let mercatoBlock = ''
+  if (hasArr || hasDep) {
+    mercatoBlock = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:32px" class="two-col">
+      <div>${hasArr?'<div class="bc" style="font-size:11px;letter-spacing:4px;color:var(--green);font-weight:700;margin-bottom:10px">↑ ARRIVÉES ('+hasArr+')</div>'+renderMov(st.transfers,true):''}</div>
+      <div>${hasDep?'<div class="bc" style="font-size:11px;letter-spacing:4px;color:var(--red);font-weight:700;margin-bottom:10px">↓ DÉPARTS ('+hasDep+')</div>'+renderMov(st.departures,false):''}</div>
+    </div>`
+  }
+
+  const standBlock = (st.standings && st.standings.length) ? `<div style="margin-bottom:22px"><div class="bc sec-title">Classement final · ${st.league}</div>${renderStandings(st.standings)}</div>` : ''
+  const noteBlock = st.note ? `<div style="border-left:3px solid ${acc};padding-left:18px;margin-bottom:8px"><div class="bc" style="font-size:14px;color:var(--white);font-style:italic;line-height:1.6">${st.note}</div></div>` : ''
+
+  return `<section style="margin-bottom:66px">${head}${strip}${matchesBlock}${cupsBlock}${perfBlock}${mercatoBlock}${standBlock}${noteBlock}</section>`
+}
+
+function renderCupRun(cup) {
+  if (!cup || !cup.rounds || !cup.rounds.length) return ''
+  const rows = cup.rounds.map((r,i) => {
+    const col = r.result==='W' ? 'var(--green)' : r.result==='D' ? 'var(--gold)' : 'var(--red)'
+    const arrow = i < cup.rounds.length-1 ? '<div style="position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px">›</div>' : ''
+    return '<div style="flex:1 1 120px;text-align:center;padding:16px 8px;border-top:2px solid '+col+';position:relative">'+arrow
+         + '<div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-bottom:8px;text-transform:uppercase">'+r.round+'</div>'
+         + '<div class="bb" style="font-size:23px;color:'+col+'">'+r.score+'</div>'
+         + '<div class="bc" style="font-size:11px;color:var(--muted);margin-top:4px">'+r.opponent+'</div></div>'
+  }).join('')
+  const phaseHtml = cup.phase ? '<div class="bc" style="font-size:12px;color:var(--muted);margin-bottom:14px;letter-spacing:1px">'+cup.phase+'</div>' : ''
+  return '<div style="margin-bottom:30px"><div class="bc" style="font-size:11px;letter-spacing:4px;color:var(--gold);font-weight:700;margin-bottom:10px;text-transform:uppercase">'+cup.name+'</div>'+phaseHtml+'<div style="display:flex;flex-wrap:wrap">'+rows+'</div></div>'
+}
+
+function renderMov(list, isArr) {
+  if (!list || !list.length) return ''
+  const badge = (t) => {
+    if (isArr) { if (t.type==='free') return {c:'var(--green)',l:'LIBRE'}; if (t.type==='loan') return {c:'var(--gold)',l:'PRÊT'}; return {c:'var(--red)',l:'TRANSFERT'} }
+    if (t.type==='loan') return {c:'var(--gold)',l:'PRÊT'}; if (t.type==='sell') return {c:'var(--red)',l:'TRANSFERT'}; return {c:'var(--muted)',l:'FIN CTR'}
+  }
+  return list.map(t => {
+    const b = badge(t), club = isArr ? t.from : t.to
+    return '<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)">'
+      + '<span class="bc" style="font-size:8px;letter-spacing:1px;padding:2px 7px;font-weight:700;flex-shrink:0;border:1px solid '+b.c+';color:'+b.c+'">'+b.l+'</span>'
+      + '<span style="flex:1;font-size:12px;font-weight:500">'+t.name+'</span>'
+      + '<span class="bc" style="font-size:11px;color:var(--muted)">'+club+'</span>'
+      + (t.amount ? '<span class="bb" style="font-size:13px;color:var(--gold);min-width:54px;text-align:right">'+t.amount+'</span>' : '<span style="min-width:54px"></span>')
+      + '</div>'
+  }).join('')
+}
 </script>
 </body>
 </html>

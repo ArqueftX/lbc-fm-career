@@ -382,6 +382,10 @@ html, body {
 }
 .btn-replay:hover { color: var(--muted); }
 
+/* ── MATCH DOTS (strip) ── */
+.rdot { height: 22px; border-radius: 3px; opacity: .9; transition: transform .12s, opacity .12s; }
+.rdot:hover { opacity: 1; transform: scaleY(1.15); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 700px) {
   .home-header, .season-grid, .content, .mercato-content, .hero { padding-left: 20px; padding-right: 20px; }
