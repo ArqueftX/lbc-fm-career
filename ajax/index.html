@@ -64,20 +64,20 @@
         <div>
           <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · CARRIÈRE</div>
           <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
-            <img id="club-logo" src="" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
+            <img id="club-logo" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
             <div>
               <h1 id="club-name" class="bb au au1" style="font-size:clamp(40px,7vw,80px);line-height:.9;letter-spacing:2px;margin-bottom:16px"></h1>
               <div id="stats-line" class="bc au au2" style="font-size:12px;color:var(--muted);letter-spacing:3px;font-weight:400"></div>
               <div id="coach-badge" class="bc au au3" style="display:none;align-items:center;gap:10px;margin-top:14px;padding:6px 14px;border:1px solid rgba(232,184,75,.2)">
                 <span style="font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700">ENTRAÎNEUR</span>
                 <span style="width:1px;height:10px;background:rgba(232,184,75,.25);display:inline-block"></span>
-                <span style="font-size:12px;color:var(--gold);letter-spacing:2px;font-weight:600">Nolann Queft</span>
+                <span id="coach-name" style="font-size:12px;color:var(--gold);letter-spacing:2px;font-weight:600">Nolann Queft</span>
               </div>
             </div>
           </div>
         </div>
         <button onclick="openModal()" class="bc switcher-btn au au4">
-          <img id="switcher-logo" src="" alt=""/>
+          <img id="switcher-logo" alt=""/>
           <span>CARRIÈRES</span>
         </button>
       </div>
@@ -124,8 +124,9 @@ function buildPage() {
 
   const badge = document.getElementById('coach-badge')
   const replay = document.getElementById('replay-btn')
-  if (career.id === 'chateauroux') { badge.style.display = 'inline-flex'; replay.style.display = 'block' }
-  else { badge.style.display = 'none'; replay.style.display = 'none' }
+  if (career.coach) { badge.style.display = 'inline-flex'; document.getElementById('coach-name').textContent = career.coach }
+  else { badge.style.display = 'none' }
+  replay.style.display = (career.id === 'chateauroux') ? 'block' : 'none'
 
   document.title = `FM26 — ${career.short}`
 

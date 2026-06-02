@@ -14,6 +14,7 @@ window.CAREERS = [
     name:     'La Berrichonne de Châteauroux',
     short:    'Châteauroux',
     country:  'France',
+    coach:    'Nolann Queft',
     file:     'seasons-chateauroux.js',
     logo:     'logo-chateauroux.png',
     color:    '#c0392b',   // rouge LBC
@@ -46,10 +47,11 @@ window.CAREERS = [
 
   {
     id:       'ajax',
-    name:     'Ajax Amsterdam',
-    short:    'Ajax',
-    country:  'Pays-Bas',
+    name:     'Ajax → Chelsea',
+    short:    'Ajax → Chelsea',
+    country:  'Pays-Bas → Angleterre',
     tag:      'Multi',
+    coach:    'Arq Queft',
     file:     'seasons-ajax.js',
     logo:     'logo-ajax.png',
     color:    '#cc0000',
