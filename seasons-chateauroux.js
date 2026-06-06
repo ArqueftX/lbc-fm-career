@@ -1108,7 +1108,7 @@ window.SEASONS_chateauroux = [
       eyebrow:  "2032/33 · Saison 8 · Ligue 1",
       lines:    ["TROISIÈMES.", "DEMI-FINALISTES."],
       sub:      "Ligue 1 · 3e · 66 pts · Qualifié en Ligue des Champions",
-      tagline:  "Meilleur classement de l'histoire du club et billet pour la Ligue des Champions — porté par une épopée européenne stoppée seulement en demi-finale par Tottenham.",
+      tagline:  "Retour sur le podium et billet pour la Ligue des Champions — porté par une épopée européenne stoppée seulement en demi-finale par Tottenham.",
     },
 
     matches: [
