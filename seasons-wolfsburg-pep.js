@@ -23,7 +23,7 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Septembre 2025",
+    lastUpdate:   "Octobre 2025",
 
     // Position : laissée à null → déduite du classement (ligne highlight) quand il arrivera
     position:   null,
@@ -58,19 +58,33 @@ window['SEASONS_wolfsburg-pep'] = [
           { r:"L", tip:"RB Leipzig (D) 1-3",       comp:"BL" },
         ],
       },
+      {
+        key: "10", label: "Octobre 2025",
+        note: "Deux nuls poussifs, un derby spectaculaire gagné à Hambourg — mais élimination en coupe aux tirs au but.",
+        matches: [
+          { r:"D", tip:"Augsburg (E) 0-0",   comp:"BL"  },
+          { r:"D", tip:"Stuttgart (D) 1-1",  comp:"BL"  },
+          { r:"W", tip:"Hamburg (E) 2-3",    comp:"BL"  },
+          { r:"L", tip:"Augsburg (D) 2-2",   comp:"DFB", tag:"ÉLIM. T.A.B." },
+        ],
+      },
     ],
 
     // Stats cumulées
     scorers: [
-      { name: "Dzenan Pejcinović",          detail: "BU · Allemand · 20 ans",      value: 4 },
-      { name: "Patrick Wimmer",             detail: "AD · Autrichien · 24 ans",    value: 2 },
-      { name: "Eriksen · Koulierakis · Daghim", detail: "MOC / DC / AD · ex-aequo", value: 1 },
+      { name: "Dzenan Pejcinović", detail: "BU · Allemand · 20 ans", value: 6 },
+      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 24 ans", value: 3 },
+      { name: "Koulierakis · Daghim · Eriksen · Shiogai · Wind · Arnold", detail: "6 joueurs à égalité", value: 1 },
     ],
     assists: [
-      { name: "Dzenan Pejcinović",          detail: "BU · Allemand · 20 ans",      value: 3 },
-      { name: "Majer · Arnold · Fischer",   detail: "MOC / MDC / DD · ex-aequo",   value: 1 },
+      { name: "Dzenan Pejcinović", detail: "BU · Allemand · 20 ans", value: 4 },
+      { name: "Katseris · Wimmer · Fischer · Majer · Eriksen · Gerhardt · Arnold · Zehnter", detail: "8 joueurs à égalité", value: 1 },
     ],
-    ratings: [],
+    ratings: [
+      { name: "Dzenan Pejcinović", detail: "BU · 6 buts · 4 passes D. · 10 matchs", value: 7.32 },
+      { name: "Patrick Wimmer",    detail: "AD · 3 buts · 1 passe D. · 10 titularisations", value: 7.20 },
+      { name: "Kilian Fischer",    detail: "DD · 1 passe D. · 10 matchs", value: 7.00 },
+    ],
 
     // Mercato
     transfers: [
@@ -86,30 +100,31 @@ window['SEASONS_wolfsburg-pep'] = [
       name: "DFB-Pokal",
       rounds: [
         { result: "W", round: "1er tour", score: "0 – 2", opponent: "Arminia Bielefeld (E)" },
+        { result: "L", round: "2e tour",  score: "2 – 2 (t.a.b.)", opponent: "Augsburg · éliminé" },
       ],
     },
     cup2: null,
 
-    // Classement à jour (après J5)
+    // Classement à jour (après J8)
     standings: [
-      { pos:1,  team:"Bayer Leverkusen",    j:5, g:5, n:0, l:0, bp:10, bc:2,  db: 8, pts:15, zone:"promo" },
-      { pos:2,  team:"Bayern München",      j:5, g:4, n:1, l:0, bp:15, bc:4,  db:11, pts:13, zone:"promo" },
-      { pos:3,  team:"Gladbach",            j:5, g:4, n:0, l:1, bp:4,  bc:1,  db: 3, pts:12, zone:"promo" },
-      { pos:4,  team:"Mainz 05",            j:5, g:4, n:0, l:1, bp:7,  bc:5,  db: 2, pts:12, zone:"promo" },
-      { pos:5,  team:"Dortmund",            j:5, g:3, n:1, l:1, bp:7,  bc:4,  db: 3, pts:10 },
-      { pos:6,  team:"RB Leipzig",          j:5, g:3, n:0, l:2, bp:11, bc:6,  db: 5, pts:9  },
-      { pos:7,  team:"Eintracht Frankfurt", j:5, g:3, n:0, l:2, bp:7,  bc:6,  db: 1, pts:9  },
-      { pos:8,  team:"Wolfsburg",           j:5, g:3, n:0, l:2, bp:7,  bc:6,  db: 1, pts:9, highlight:true },
-      { pos:9,  team:"Heidenheim",          j:5, g:2, n:1, l:2, bp:4,  bc:6,  db:-2, pts:7  },
-      { pos:10, team:"Union Berlin",        j:5, g:2, n:0, l:3, bp:5,  bc:6,  db:-1, pts:6  },
-      { pos:11, team:"Stuttgart",           j:5, g:2, n:0, l:3, bp:4,  bc:5,  db:-1, pts:6  },
-      { pos:12, team:"Hoffenheim",          j:5, g:2, n:0, l:3, bp:6,  bc:12, db:-6, pts:6  },
-      { pos:13, team:"FC Köln",             j:5, g:1, n:1, l:3, bp:4,  bc:8,  db:-4, pts:4  },
-      { pos:14, team:"Freiburg",            j:5, g:0, n:3, l:2, bp:4,  bc:7,  db:-3, pts:3  },
-      { pos:15, team:"St Pauli",            j:5, g:0, n:2, l:3, bp:2,  bc:5,  db:-3, pts:2  },
-      { pos:16, team:"Hamburg",             j:5, g:0, n:2, l:3, bp:2,  bc:5,  db:-3, pts:2  },
-      { pos:17, team:"Augsburg",            j:5, g:0, n:2, l:3, bp:2,  bc:7,  db:-5, pts:2, zone:"releg" },
-      { pos:18, team:"Werder Bremen",       j:5, g:0, n:1, l:4, bp:3,  bc:9,  db:-6, pts:1, zone:"releg" },
+      { pos:1,  team:"Bayer Leverkusen",    j:8, g:7, n:0, l:1, bp:15, bc:4,  db:11, pts:21, zone:"promo" },
+      { pos:2,  team:"Bayern München",      j:8, g:6, n:2, l:0, bp:20, bc:5,  db:15, pts:20, zone:"promo" },
+      { pos:3,  team:"RB Leipzig",          j:8, g:5, n:1, l:2, bp:16, bc:8,  db: 8, pts:16, zone:"promo" },
+      { pos:4,  team:"Dortmund",            j:8, g:4, n:3, l:1, bp:11, bc:7,  db: 4, pts:15, zone:"promo" },
+      { pos:5,  team:"Wolfsburg",           j:8, g:4, n:2, l:2, bp:11, bc:9,  db: 2, pts:14, highlight:true },
+      { pos:6,  team:"Gladbach",            j:8, g:4, n:2, l:2, bp:5,  bc:5,  db: 0, pts:14 },
+      { pos:7,  team:"Eintracht Frankfurt", j:8, g:4, n:1, l:3, bp:9,  bc:8,  db: 1, pts:13 },
+      { pos:8,  team:"Mainz 05",            j:8, g:4, n:0, l:4, bp:8,  bc:10, db:-2, pts:12 },
+      { pos:9,  team:"Stuttgart",           j:8, g:3, n:2, l:3, bp:9,  bc:8,  db: 1, pts:11 },
+      { pos:10, team:"Heidenheim",          j:8, g:3, n:2, l:3, bp:9,  bc:11, db:-2, pts:11 },
+      { pos:11, team:"Union Berlin",        j:8, g:3, n:1, l:4, bp:8,  bc:9,  db:-1, pts:10 },
+      { pos:12, team:"FC Köln",             j:8, g:3, n:1, l:4, bp:9,  bc:11, db:-2, pts:10 },
+      { pos:13, team:"Werder Bremen",       j:8, g:3, n:1, l:4, bp:9,  bc:11, db:-2, pts:10 },
+      { pos:14, team:"Hoffenheim",          j:8, g:2, n:0, l:6, bp:8,  bc:18, db:-10,pts:6  },
+      { pos:15, team:"Hamburg",             j:8, g:1, n:2, l:5, bp:7,  bc:11, db:-4, pts:5  },
+      { pos:16, team:"St Pauli",            j:8, g:1, n:2, l:5, bp:5,  bc:10, db:-5, pts:5  },
+      { pos:17, team:"Freiburg",            j:8, g:0, n:5, l:3, bp:5,  bc:11, db:-6, pts:5, zone:"releg" },
+      { pos:18, team:"Augsburg",            j:8, g:0, n:3, l:5, bp:3,  bc:11, db:-8, pts:3, zone:"releg" },
     ],
 
     // splash: { ... }  ← à ajouter à la fin de la saison

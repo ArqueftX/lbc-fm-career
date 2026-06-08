@@ -135,7 +135,7 @@ loadCareerData(function(career) {
         const cl  = compLabel(m.comp)
         return `<div class="mrow" style="border-left-color:${col}">
           <div class="res" style="background:${col}">${m.r==='D'?'N':m.r}</div>
-          <div style="flex:1;min-width:0;font-size:13px;font-weight:500">${opp} <span class="bc" style="font-size:8px;letter-spacing:1.5px;color:${cl.col};background:${cl.col}1a;border:1px solid ${cl.col}66;padding:2px 6px;margin-left:6px;white-space:nowrap;font-weight:700">${cl.txt}</span></div>
+          <div style="flex:1;min-width:0;font-size:13px;font-weight:500">${opp} <span class="bc" style="font-size:8px;letter-spacing:1.5px;color:${cl.col};background:${cl.col}1a;border:1px solid ${cl.col}66;padding:2px 6px;margin-left:6px;white-space:nowrap;font-weight:700">${cl.txt}</span>${m.tag?` <span class="bc" style="font-size:8px;letter-spacing:1px;color:var(--muted);margin-left:4px;white-space:nowrap">${m.tag}</span>`:''}</div>
           <div class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);width:34px;flex-shrink:0">${venue(vn)}</div>
           <div class="bb" style="font-size:17px;color:${col};min-width:54px;text-align:right;flex-shrink:0">${sc}</div>
         </div>`
