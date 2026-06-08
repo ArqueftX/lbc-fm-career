@@ -194,7 +194,7 @@ function openModal() {
     <div class="career-item ${c.id===career.id?'active':''}" onclick="switchCareer('${c.id}')">
       <img src="../${c.logo}" onerror="this.style.display='none'"/>
       <div style="flex:1">
-        <div style="font-size:14px;font-weight:500;color:var(--white)">${c.name}</div>
+        <div style="font-size:14px;font-weight:500;color:var(--white)">${c.name}${c.coach?'<span style="color:var(--muted);font-weight:400"> - '+c.coach+'</span>':''}</div>
         <div class="bc" style="font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:1px">${c.country}${c.tag?' · <span style="color:var(--gold)">'+c.tag+'</span>':''} · ${n(c.id)} saison${n(c.id)!==1?'s':''}</div>
       </div>
       ${c.id===career.id?'<div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--gold);font-weight:700">ACTIF</div>':''}

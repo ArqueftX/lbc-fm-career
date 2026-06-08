@@ -97,7 +97,7 @@ function renderCareerSwitcher() {
                 onmouseout="if('${c.id}'!=='${window.getCurrentCareer().id}')this.style.background='transparent'">
                 <img src="${(window.LOGO_PATH||'')}${c.logo}" onerror="this.style.display='none'" style="width:36px;height:36px;object-fit:contain;flex-shrink:0"/>
                 <div style="flex:1">
-                  <div style="font-size:14px;font-weight:500;color:${active?C.gold:C.white}">${c.name}</div>
+                  <div style="font-size:14px;font-weight:500;color:${active?C.gold:C.white}">${c.name}${c.coach?'<span style="color:'+C.muted+';font-weight:400"> - '+c.coach+'</span>':''}</div>
                   <div class="bc" style="font-size:11px;color:${C.muted};margin-top:2px;letter-spacing:1px">${c.country}</div>
                 </div>
                 ${active ? `<div class="bc" style="font-size:9px;letter-spacing:3px;color:${C.gold};font-weight:700">ACTIF</div>` : ''}
