@@ -23,7 +23,7 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Août 2025",
+    lastUpdate:   "Septembre 2025",
 
     // Position : laissée à null → déduite du classement (ligne highlight) quand il arrivera
     position:   null,
@@ -49,16 +49,26 @@ window['SEASONS_wolfsburg-pep'] = [
           { r:"W", tip:"Mainz 05 (D) 2-0",         comp:"BL"  },
         ],
       },
+      {
+        key: "09", label: "Septembre 2025",
+        note: "Première victoire à domicile en championnat, puis deux revers face au haut de tableau.",
+        matches: [
+          { r:"W", tip:"FC Köln (D) 2-0",          comp:"BL" },
+          { r:"L", tip:"Dortmund (E) 2-0",         comp:"BL" },
+          { r:"L", tip:"RB Leipzig (D) 1-3",       comp:"BL" },
+        ],
+      },
     ],
 
     // Stats cumulées
     scorers: [
-      { name: "D. Pejcinović · A. Skov Olsen", detail: "BU / AD · ex-aequo (Skov Olsen prêté par les Rangers)", value: 3 },
-      { name: "Patrick Wimmer",                detail: "AD · Autrichien · 24 ans",                              value: 2 },
-      { name: "Christian Eriksen",             detail: "MOC · Danois · 33 ans",                                 value: 1 },
+      { name: "Dzenan Pejcinović",          detail: "BU · Allemand · 20 ans",      value: 4 },
+      { name: "Patrick Wimmer",             detail: "AD · Autrichien · 24 ans",    value: 2 },
+      { name: "Eriksen · Koulierakis · Daghim", detail: "MOC / DC / AD · ex-aequo", value: 1 },
     ],
     assists: [
-      { name: "Pejcinović · Arnold · Kamiński · Majer · Skov Olsen", detail: "5 joueurs à égalité", value: 1 },
+      { name: "Dzenan Pejcinović",          detail: "BU · Allemand · 20 ans",      value: 3 },
+      { name: "Majer · Arnold · Fischer",   detail: "MOC / MDC / DD · ex-aequo",   value: 1 },
     ],
     ratings: [],
 
@@ -67,7 +77,8 @@ window['SEASONS_wolfsburg-pep'] = [
       { type: "buy",  name: "Panos Katseris", from: "Lorient", date: "Été 2025", amount: "2,2M €" },
     ],
     departures: [
-      { type: "loan", name: "Moritz Jenz",    to: "Crystal Palace (clause 5,75M€)", date: "Été 2025" },
+      { type: "loan", name: "Moritz Jenz",      to: "Crystal Palace (clause 5,75M€)", date: "Été 2025" },
+      { type: "loan", name: "Mattias Svanberg", to: "Mallorca (option 4,7M€)",         date: "Sep. 2025" },
     ],
 
     // Coupes / Europe
@@ -79,26 +90,26 @@ window['SEASONS_wolfsburg-pep'] = [
     },
     cup2: null,
 
-    // Classement à jour (après J2)
+    // Classement à jour (après J5)
     standings: [
-      { pos:1,  team:"Bayern München",      j:2, g:2, n:0, l:0, bp:6, bc:2, db: 4, pts:6, zone:"promo" },
-      { pos:2,  team:"Eintracht Frankfurt", j:2, g:2, n:0, l:0, bp:5, bc:1, db: 4, pts:6, zone:"promo" },
-      { pos:3,  team:"Bayer Leverkusen",    j:2, g:2, n:0, l:0, bp:5, bc:2, db: 3, pts:6, zone:"promo" },
-      { pos:4,  team:"Wolfsburg",           j:2, g:2, n:0, l:0, bp:4, bc:1, db: 3, pts:6, zone:"promo", highlight:true },
-      { pos:5,  team:"Dortmund",            j:2, g:2, n:0, l:0, bp:3, bc:1, db: 2, pts:6 },
-      { pos:6,  team:"Gladbach",            j:2, g:2, n:0, l:0, bp:2, bc:0, db: 2, pts:6 },
-      { pos:7,  team:"RB Leipzig",          j:2, g:1, n:0, l:1, bp:5, bc:3, db: 2, pts:3 },
-      { pos:8,  team:"Union Berlin",        j:2, g:1, n:0, l:1, bp:2, bc:2, db: 0, pts:3 },
-      { pos:9,  team:"Mainz 05",            j:2, g:1, n:0, l:1, bp:2, bc:3, db:-1, pts:3 },
-      { pos:10, team:"Freiburg",            j:2, g:0, n:2, l:0, bp:2, bc:2, db: 0, pts:2 },
-      { pos:11, team:"FC Köln",             j:2, g:0, n:1, l:1, bp:2, bc:3, db:-1, pts:1 },
-      { pos:12, team:"St Pauli",            j:2, g:0, n:1, l:1, bp:2, bc:3, db:-1, pts:1 },
-      { pos:13, team:"Hamburg",             j:2, g:0, n:1, l:1, bp:1, bc:2, db:-1, pts:1 },
-      { pos:14, team:"Augsburg",            j:2, g:0, n:1, l:1, bp:1, bc:4, db:-3, pts:1 },
-      { pos:15, team:"Stuttgart",           j:2, g:0, n:0, l:2, bp:1, bc:3, db:-2, pts:0 },
-      { pos:16, team:"Werder Bremen",       j:2, g:0, n:0, l:2, bp:2, bc:5, db:-3, pts:0 },
-      { pos:17, team:"Hoffenheim",          j:2, g:0, n:0, l:2, bp:1, bc:5, db:-4, pts:0, zone:"releg" },
-      { pos:18, team:"Heidenheim",          j:2, g:0, n:0, l:2, bp:1, bc:5, db:-4, pts:0, zone:"releg" },
+      { pos:1,  team:"Bayer Leverkusen",    j:5, g:5, n:0, l:0, bp:10, bc:2,  db: 8, pts:15, zone:"promo" },
+      { pos:2,  team:"Bayern München",      j:5, g:4, n:1, l:0, bp:15, bc:4,  db:11, pts:13, zone:"promo" },
+      { pos:3,  team:"Gladbach",            j:5, g:4, n:0, l:1, bp:4,  bc:1,  db: 3, pts:12, zone:"promo" },
+      { pos:4,  team:"Mainz 05",            j:5, g:4, n:0, l:1, bp:7,  bc:5,  db: 2, pts:12, zone:"promo" },
+      { pos:5,  team:"Dortmund",            j:5, g:3, n:1, l:1, bp:7,  bc:4,  db: 3, pts:10 },
+      { pos:6,  team:"RB Leipzig",          j:5, g:3, n:0, l:2, bp:11, bc:6,  db: 5, pts:9  },
+      { pos:7,  team:"Eintracht Frankfurt", j:5, g:3, n:0, l:2, bp:7,  bc:6,  db: 1, pts:9  },
+      { pos:8,  team:"Wolfsburg",           j:5, g:3, n:0, l:2, bp:7,  bc:6,  db: 1, pts:9, highlight:true },
+      { pos:9,  team:"Heidenheim",          j:5, g:2, n:1, l:2, bp:4,  bc:6,  db:-2, pts:7  },
+      { pos:10, team:"Union Berlin",        j:5, g:2, n:0, l:3, bp:5,  bc:6,  db:-1, pts:6  },
+      { pos:11, team:"Stuttgart",           j:5, g:2, n:0, l:3, bp:4,  bc:5,  db:-1, pts:6  },
+      { pos:12, team:"Hoffenheim",          j:5, g:2, n:0, l:3, bp:6,  bc:12, db:-6, pts:6  },
+      { pos:13, team:"FC Köln",             j:5, g:1, n:1, l:3, bp:4,  bc:8,  db:-4, pts:4  },
+      { pos:14, team:"Freiburg",            j:5, g:0, n:3, l:2, bp:4,  bc:7,  db:-3, pts:3  },
+      { pos:15, team:"St Pauli",            j:5, g:0, n:2, l:3, bp:2,  bc:5,  db:-3, pts:2  },
+      { pos:16, team:"Hamburg",             j:5, g:0, n:2, l:3, bp:2,  bc:5,  db:-3, pts:2  },
+      { pos:17, team:"Augsburg",            j:5, g:0, n:2, l:3, bp:2,  bc:7,  db:-5, pts:2, zone:"releg" },
+      { pos:18, team:"Werder Bremen",       j:5, g:0, n:1, l:4, bp:3,  bc:9,  db:-6, pts:1, zone:"releg" },
     ],
 
     // splash: { ... }  ← à ajouter à la fin de la saison
