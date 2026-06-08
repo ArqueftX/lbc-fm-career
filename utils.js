@@ -48,7 +48,9 @@ function parseTip(tip) {
 }
 
 function liveSummary(season) {
-  const ms = liveMatches(season)
+  const all = liveMatches(season)
+  // Bilan = CHAMPIONNAT uniquement (amicaux 'AM' et coupes 'DFB/EL/UCL' exclus)
+  const ms = all.filter(m => !m.comp || m.comp === 'BL')
   let w = 0, d = 0, l = 0, gf = 0, ga = 0
   ms.forEach(m => {
     if (m.r === 'W') w++; else if (m.r === 'D') d++; else if (m.r === 'L') l++

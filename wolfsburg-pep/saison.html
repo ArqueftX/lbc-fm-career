@@ -116,27 +116,34 @@ loadCareerData(function(career) {
   const months = s.months || []
   if (months.length) {
     const venue = v => v==='D' ? 'DOM' : 'EXT'
+    const compLabel = c => ({
+      'AM':  {txt:'AMICAL',          col:'var(--muted)'},
+      'DFB': {txt:'DFB-POKAL',       col:'var(--gold)'},
+      'EL':  {txt:'EUROPA LEAGUE',   col:'#ff9a3d'},
+      'UCL': {txt:'CHAMPIONS LEAGUE',col:'#8c46dc'},
+    }[c] || {txt:'BUNDESLIGA', col:'#ff6b6b'})
     const blocks = [...months].reverse().map((mo, idx) => {
       const isLatest = idx === 0
       let w=0,d=0,l=0
-      ;(mo.matches||[]).forEach(m=>{ if(m.r==='W')w++; else if(m.r==='D')d++; else if(m.r==='L')l++ })
+      ;(mo.matches||[]).filter(m=>!m.comp||m.comp==='BL').forEach(m=>{ if(m.r==='W')w++; else if(m.r==='D')d++; else if(m.r==='L')l++ })
       const rows = (mo.matches||[]).map(m=>{
         const mm = (m.tip||'').match(/^(.*?)\s*\((D|E)\)\s*(\d+)\s*-\s*(\d+)/)
         const opp = mm ? mm[1].trim() : (m.tip||'')
         const vn  = mm ? mm[2] : ''
         const sc  = mm ? mm[3]+' – '+mm[4] : ''
         const col = resultColor(m.r)
+        const cl  = compLabel(m.comp)
         return `<div class="mrow" style="border-left-color:${col}">
           <div class="res" style="background:${col}">${m.r==='D'?'N':m.r}</div>
-          <div style="flex:1;font-size:13px;font-weight:500">${opp}</div>
-          <div class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);width:34px">${venue(vn)}</div>
-          <div class="bb" style="font-size:17px;color:${col};min-width:54px;text-align:right">${sc}</div>
+          <div style="flex:1;min-width:0;font-size:13px;font-weight:500">${opp} <span class="bc" style="font-size:8px;letter-spacing:1px;color:${cl.col};border:1px solid ${cl.col}55;padding:1px 5px;margin-left:4px;white-space:nowrap">${cl.txt}</span></div>
+          <div class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);width:34px;flex-shrink:0">${venue(vn)}</div>
+          <div class="bb" style="font-size:17px;color:${col};min-width:54px;text-align:right;flex-shrink:0">${sc}</div>
         </div>`
       }).join('')
       return `<div class="month-block ${isLatest?'live':''}">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap">
           <div class="bb" style="font-size:24px;letter-spacing:2px">${mo.label}${isLatest?' <span class="bc" style="font-size:10px;letter-spacing:3px;color:var(--green);font-weight:700">· DERNIER MOIS</span>':''}</div>
-          <div class="bc" style="font-size:11px;letter-spacing:2px;color:var(--muted)"><span style="color:var(--green)">${w}V</span> · <span style="color:var(--gold)">${d}N</span> · <span style="color:var(--red)">${l}D</span></div>
+          <div class="bc" style="font-size:11px;letter-spacing:2px;color:var(--muted)"><span style="color:var(--green)">${w}V</span> · <span style="color:var(--gold)">${d}N</span> · <span style="color:var(--red)">${l}D</span> <span style="opacity:.6">· championnat</span></div>
         </div>
         ${mo.note?`<div class="bc" style="font-size:12px;color:var(--muted);margin-bottom:12px;font-style:italic">${mo.note}</div>`:''}
         ${rows}
