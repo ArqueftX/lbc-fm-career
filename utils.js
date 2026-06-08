@@ -30,6 +30,40 @@ function posLabel(n) {
   return n === 1 ? '1er' : `${n}e`
 }
 
+/* ── Saison "en cours" : agrège les mois en bilan ──
+   Calcule V/N/D, buts pour/contre et points À PARTIR des matchs,
+   pour que les mises à jour mensuelles ne demandent qu'à ajouter
+   un bloc { label, matches:[...] } dans season.months.            */
+function liveMatches(season) {
+  if (season.months && season.months.length)
+    return season.months.reduce((acc, m) => acc.concat(m.matches || []), [])
+  return season.matches || []
+}
+
+function parseTip(tip) {
+  const mm = (tip || '').match(/\((D|E)\)\s*(\d+)\s*-\s*(\d+)/)
+  if (!mm) return null
+  const home = +mm[2], away = +mm[3]
+  return mm[1] === 'D' ? { gf: home, ga: away } : { gf: away, ga: home }
+}
+
+function liveSummary(season) {
+  const ms = liveMatches(season)
+  let w = 0, d = 0, l = 0, gf = 0, ga = 0
+  ms.forEach(m => {
+    if (m.r === 'W') w++; else if (m.r === 'D') d++; else if (m.r === 'L') l++
+    const sc = parseTip(m.tip)
+    if (sc) { gf += sc.gf; ga += sc.ga }
+  })
+  // Position : ligne surlignée du classement si dispo, sinon champ manuel
+  let position = season.position != null ? season.position : null
+  if (season.standings && season.standings.length) {
+    const hl = season.standings.find(r => r.highlight)
+    if (hl) position = hl.pos
+  }
+  return { matches: ms, played: ms.length, wins: w, draws: d, losses: l, gf, ga, points: 3 * w + d, position }
+}
+
 function gd(gf, ga) {
   const d = gf - ga
   return d >= 0 ? `+${d}` : `${d}`

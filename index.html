@@ -100,6 +100,7 @@
 <script src="seasons-chateauroux.js"></script>
 <script src="seasons-seville.js"></script>
 <script src="seasons-wolfsburg.js"></script>
+<script src="seasons-wolfsburg-pep.js"></script>
 <script src="seasons-ajax.js"></script>
 <script src="utils.js"></script>
 <script>
@@ -112,8 +113,8 @@ function buildPage() {
   career = getCurrentCareer()
   const seasons = getSeasons()
   const sorted  = [...seasons].sort((a,b) => b.year.localeCompare(a.year))
-  const totalW   = seasons.reduce((s,x) => s+x.wins, 0)
-  const totalPts = seasons.reduce((s,x) => s+x.points, 0)
+  const totalW   = seasons.reduce((s,x) => s + (x.status==='en_cours' ? liveSummary(x).wins   : (x.wins||0)),   0)
+  const totalPts = seasons.reduce((s,x) => s + (x.status==='en_cours' ? liveSummary(x).points : (x.points||0)), 0)
 
   document.getElementById('header').style.background = `linear-gradient(160deg, ${career.color}22 0%, var(--navy) 65%)`
   document.getElementById('club-logo').src     = career.logo
@@ -164,6 +165,7 @@ function abandonBanner() {
 
 function buildCard(s, i) {
   if (s.split) return buildSplitCard(s, i)
+  if (s.status === 'en_cours') return buildLiveCard(s, i)
   const ls = leagueStyle(s.league)
   const winRate = Math.round((s.wins/s.played)*100)
   const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
@@ -190,6 +192,37 @@ function buildCard(s, i) {
           <div style="height:100%;width:${winRate}%;background:var(--green);border-radius:2px"></div>
         </div>
         <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${winRate}% DE VICTOIRES</div>
+      </div>
+    </a>`
+}
+
+function buildLiveCard(s, i) {
+  const ls = leagueStyle(s.league)
+  const live = liveSummary(s)
+  const winRate = live.played ? Math.round((live.wins/live.played)*100) : 0
+  const dots = live.matches.map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
+  const posDisplay = live.position != null ? live.position : '—'
+  const pct = Math.round((live.played / (s.seasonLength||34)) * 100)
+  return `
+    <a href="${career.id}/saison.html?id=${s.id}&career=${career.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
+      <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${posDisplay}</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px;flex-wrap:wrap">
+        <div class="bc" style="display:inline-block;background:${ls.bg};border:1px solid ${ls.border};color:${ls.color};font-size:9px;letter-spacing:4px;padding:3px 10px;font-weight:700">${s.league}</div>
+        <div class="bc" style="display:inline-block;background:rgba(61,214,140,.15);border:1px solid var(--green);color:var(--green);font-size:9px;letter-spacing:3px;padding:3px 10px;font-weight:700">EN COURS</div>
+      </div>
+      <div class="bb" style="font-size:38px;line-height:1;margin-bottom:4px;letter-spacing:1px">${s.year}</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:22px">
+        <span class="bb" style="font-size:66px;color:var(--gold);line-height:1">${posDisplay}</span>
+        ${live.position!=null?'<span class="bb" style="font-size:28px">e</span>':''}
+        <span class="bc" style="font-size:12px;color:var(--muted)">${live.position!=null?'/'+s.totalTeams:'classement à venir'}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
+        ${[['Pts',live.points,'var(--goldL)'],['V',live.wins,'var(--green)'],['N',live.draws,'var(--gold)'],['D',live.losses,'var(--red)']].map(([l,v,c])=>`<div><div class="bb" style="font-size:26px;color:${c};line-height:1">${v}</div><div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:2px">${l}</div></div>`).join('')}
+      </div>
+      ${dots ? `<div style="display:flex;flex-wrap:wrap;gap:3px">${dots}</div>` : `<div class="bc" style="font-size:11px;color:var(--muted);letter-spacing:2px;padding:6px 0">Aucun match joué — pré-saison</div>`}
+      <div style="margin-top:14px">
+        <div style="height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden"><div style="height:100%;width:${pct}%;background:var(--green);border-radius:2px"></div></div>
+        <div class="bc" style="font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:2px">${live.played} / ${s.seasonLength||34} MATCHS · ${winRate}% DE VICTOIRES</div>
       </div>
     </a>`
 }

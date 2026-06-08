@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Wolfsburg — Saison en cours</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+    .live-dot{width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;animation:livePulse 1.6s ease-in-out infinite}
+    .month-block{border-left:2px solid rgba(232,184,75,.18);padding:0 0 30px 26px;position:relative}
+    .month-block:last-child{padding-bottom:4px}
+    .month-block::before{content:'';position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--navy)}
+    .month-block.live::before{background:var(--green);animation:livePulse 1.6s ease-in-out infinite}
+    .mrow{display:flex;align-items:center;gap:14px;padding:11px 14px;background:var(--blue);margin-bottom:4px;border-left:3px solid var(--mid)}
+    .mrow .res{width:22px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--navy);flex-shrink:0}
+    .progress-track{height:8px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:99px}
+  </style>
+</head>
+<body>
+<div id="career-modal-host"></div>
+<div class="sticky-nav">
+  <a href="./" class="bc nav-btn">← TOUTES LES SAISONS</a>
+  <div id="nav-title" class="bb nav-title"></div>
+  <div id="sw-host"></div>
+</div>
+
+<div id="hero" class="hero" style="position:relative;background:linear-gradient(150deg,rgba(77,184,72,.16) 0%,var(--navy) 58%);padding:64px 56px 70px;overflow:hidden"></div>
+
+<div class="page-content" style="max-width:1160px;margin:0 auto;padding:56px 56px 100px">
+  <div id="dashboard" style="margin-bottom:60px"></div>
+  <div id="timeline-section" style="margin-bottom:64px"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-bottom:64px" class="two-col">
+    <div>
+      <div id="scorers"></div>
+      <div id="ratings" style="margin-top:44px"></div>
+    </div>
+    <div>
+      <div id="assists"></div>
+      <div id="mercato-preview" style="margin-top:44px"></div>
+    </div>
+  </div>
+  <div id="cup-section" style="margin-bottom:60px"></div>
+  <div id="cup2-section" style="margin-bottom:60px"></div>
+  <div id="standings-section" style="margin-bottom:60px"></div>
+</div>
+
+<script>window.FORCE_CAREER = "wolfsburg-pep"</script>
+<script src="../careers.js"></script>
+<script src="../seasons-chateauroux.js"></script>
+<script src="../seasons-seville.js"></script>
+<script src="../seasons-wolfsburg.js"></script>
+<script src="../seasons-wolfsburg-pep.js"></script>
+<script src="../seasons-ajax.js"></script>
+<script src="../utils.js"></script>
+<script>
+const id = param('id')
+
+loadCareerData(function(career) {
+  const s = getSeason(id)
+  if (!s) { window.location='./'; return; }
+  const live = liveSummary(s)
+  const gdVal = live.gf - live.ga
+  const gdStr = gdVal >= 0 ? '+'+gdVal : ''+gdVal
+  const posStr = live.position != null ? posLabel(live.position) : '—'
+
+  document.getElementById('sw-host').innerHTML = renderSwitcherBtn()
+  document.getElementById('career-modal-host').innerHTML = renderCareerSwitcher()
+  document.getElementById('nav-title').textContent = s.year + ' · EN COURS'
+  document.title = 'Wolfsburg ' + s.year + ' — En cours'
+
+  // ── HERO ──
+  document.getElementById('hero').innerHTML = `
+    <div class="bb" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:clamp(150px,26vw,400px);color:rgba(77,184,72,.07);line-height:1;pointer-events:none;user-select:none">${posStr.replace(/[^0-9]/g,'')||'·'}</div>
+    <div style="max-width:1160px;margin:0 auto;position:relative">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+        <span class="bc" style="display:inline-flex;align-items:center;gap:9px;background:rgba(61,214,140,.14);border:1px solid var(--green);color:var(--green);font-size:11px;letter-spacing:4px;padding:6px 16px;font-weight:700"><span class="live-dot"></span>SAISON EN COURS</span>
+        <span class="bc" style="font-size:11px;letter-spacing:3px;color:var(--muted)">DERNIÈRE MAJ · <span style="color:var(--gold)">${s.lastUpdate||'—'}</span></span>
+      </div>
+      <h1 class="bb au au1" style="font-size:clamp(44px,7.5vw,92px);line-height:.88;letter-spacing:2px;margin-bottom:14px">VfL<br><span style="color:var(--gold)">Wolfsburg</span></h1>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <span class="bc au au2" style="display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;letter-spacing:5px;padding:5px 16px;font-weight:700">${s.league} · ${s.year}</span>
+        <span class="bc" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,184,75,.25);padding:5px 14px;font-size:11px;letter-spacing:2px;color:var(--gold)">⚙ PEP GUARDIOLA</span>
+      </div>
+    </div>`
+
+  // ── DASHBOARD ──
+  const pct = Math.round((live.played/(s.seasonLength||34))*100)
+  const cells = [
+    [posStr, 'Position', live.position!=null?'var(--gold)':'var(--muted)'],
+    [live.points, 'Points', 'var(--goldL)'],
+    [live.played, 'Joués', 'var(--white)'],
+    [gdStr, 'Diff.', gdVal>=0?'var(--green)':'var(--red)'],
+  ]
+  document.getElementById('dashboard').innerHTML = `
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:26px" class="stat-strip">
+      ${cells.map(([v,l,c])=>`
+        <div style="background:var(--blue);padding:24px 20px;border-left:3px solid var(--green)">
+          <div class="bb" style="font-size:54px;line-height:1;color:${c}">${v}</div>
+          <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-top:8px;text-transform:uppercase">${l}</div>
+        </div>`).join('')}
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:14px">
+      <div style="display:flex;gap:18px">
+        ${[['V',live.wins,'var(--green)'],['N',live.draws,'var(--gold)'],['D',live.losses,'var(--red)'],['BP',live.gf,'var(--white)'],['BC',live.ga,'var(--muted)']].map(([l,v,c])=>`
+          <div style="text-align:center"><div class="bb" style="font-size:28px;color:${c};line-height:1">${v}</div><div class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:3px">${l}</div></div>`).join('')}
+      </div>
+      <div style="flex:1;min-width:200px">
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div class="bc" style="font-size:9px;color:var(--muted);margin-top:6px;letter-spacing:2px">${live.played} / ${s.seasonLength||34} JOURNÉES DE ${s.league.toUpperCase()}</div>
+      </div>
+    </div>`
+
+  // ── TIMELINE MOIS PAR MOIS ──
+  const months = s.months || []
+  if (months.length) {
+    const venue = v => v==='D' ? 'DOM' : 'EXT'
+    const blocks = [...months].reverse().map((mo, idx) => {
+      const isLatest = idx === 0
+      let w=0,d=0,l=0
+      ;(mo.matches||[]).forEach(m=>{ if(m.r==='W')w++; else if(m.r==='D')d++; else if(m.r==='L')l++ })
+      const rows = (mo.matches||[]).map(m=>{
+        const mm = (m.tip||'').match(/^(.*?)\s*\((D|E)\)\s*(\d+)\s*-\s*(\d+)/)
+        const opp = mm ? mm[1].trim() : (m.tip||'')
+        const vn  = mm ? mm[2] : ''
+        const sc  = mm ? mm[3]+' – '+mm[4] : ''
+        const col = resultColor(m.r)
+        return `<div class="mrow" style="border-left-color:${col}">
+          <div class="res" style="background:${col}">${m.r==='D'?'N':m.r}</div>
+          <div style="flex:1;font-size:13px;font-weight:500">${opp}</div>
+          <div class="bc" style="font-size:9px;letter-spacing:2px;color:var(--muted);width:34px">${venue(vn)}</div>
+          <div class="bb" style="font-size:17px;color:${col};min-width:54px;text-align:right">${sc}</div>
+        </div>`
+      }).join('')
+      return `<div class="month-block ${isLatest?'live':''}">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+          <div class="bb" style="font-size:24px;letter-spacing:2px">${mo.label}${isLatest?' <span class="bc" style="font-size:10px;letter-spacing:3px;color:var(--green);font-weight:700">· DERNIER MOIS</span>':''}</div>
+          <div class="bc" style="font-size:11px;letter-spacing:2px;color:var(--muted)"><span style="color:var(--green)">${w}V</span> · <span style="color:var(--gold)">${d}N</span> · <span style="color:var(--red)">${l}D</span></div>
+        </div>
+        ${mo.note?`<div class="bc" style="font-size:12px;color:var(--muted);margin-bottom:12px;font-style:italic">${mo.note}</div>`:''}
+        ${rows}
+      </div>`
+    }).join('')
+    document.getElementById('timeline-section').innerHTML =
+      `<div class="bc sec-title">Mois par mois</div>${blocks}`
+  } else {
+    document.getElementById('timeline-section').innerHTML = `
+      <div class="bc sec-title">Mois par mois</div>
+      <div style="border:1px dashed rgba(232,184,75,.25);padding:46px 32px;text-align:center;background:rgba(12,34,89,.3)">
+        <div class="bb" style="font-size:30px;letter-spacing:3px;color:var(--mid);margin-bottom:12px">PRÉ-SAISON</div>
+        <div class="bc" style="font-size:13px;color:var(--muted);letter-spacing:1px;line-height:1.7;max-width:440px;margin:0 auto">
+          La saison n'a pas encore commencé. Le <span style="color:var(--gold)">mercato estival (juillet + août)</span> puis les résultats mois par mois s'afficheront ici au fil des mises à jour.
+        </div>
+      </div>`
+  }
+
+  // ── STATS CUMULÉES ──
+  document.getElementById('scorers').innerHTML = renderPerfList('Buteurs · cumul', s.scorers, 'buts')
+  document.getElementById('ratings').innerHTML = renderPerfList('Meilleures notes', s.ratings, 'moy.')
+  document.getElementById('assists').innerHTML = renderPerfList('Passeurs · cumul', s.assists, 'passes D.')
+  document.getElementById('mercato-preview').innerHTML = renderMercatoPreview(s, career.id)
+
+  // ── COUPES / EUROPE ──
+  function renderCup(target, cup) {
+    if (!cup || !cup.rounds || !cup.rounds.length) return
+    const rows = cup.rounds.map((r,i) => {
+      const col = r.result==='W' ? 'var(--green)' : r.result==='D' ? 'var(--gold)' : 'var(--red)'
+      const arrow = i < cup.rounds.length-1 ? '<div style="position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px">›</div>' : ''
+      return `<div style="flex:1 1 130px;text-align:center;padding:18px 8px;border-top:2px solid ${col};position:relative">${arrow}
+        <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);margin-bottom:8px;text-transform:uppercase">${r.round}</div>
+        <div class="bb" style="font-size:26px;color:${col}">${r.score}</div>
+        <div class="bc" style="font-size:11px;color:var(--muted);margin-top:4px">${r.opponent}</div></div>`
+    }).join('')
+    const phase = cup.phase ? `<div class="bc" style="font-size:12px;color:var(--muted);margin-bottom:18px;letter-spacing:1px">${cup.phase}</div>` : ''
+    document.getElementById(target).innerHTML = `<div class="bc sec-title">${cup.name}</div>${phase}<div style="display:flex;flex-wrap:wrap">${rows}</div>`
+  }
+  renderCup('cup2-section', s.cup2)
+  renderCup('cup-section', s.cup)
+
+  // ── CLASSEMENT ACTUEL ──
+  if (s.standings && s.standings.length) {
+    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement actuel</div>${renderStandings(s.standings)}`
+  }
+})
+</script>
+</body>
+</html>
