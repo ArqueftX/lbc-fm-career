@@ -23,7 +23,7 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Mars 2026",
+    lastUpdate:   "Avril 2026",
 
     // Position : laissée à null → déduite du classement (ligne highlight) quand il arrivera
     position:   null,
@@ -111,11 +111,21 @@ window['SEASONS_wolfsburg-pep'] = [
       },
       {
         key: "03", label: "Mars 2026",
-        note: "Mois agité côté cartons : Amoura puis Arnold expulsés. Mais à dix contre Brême, les Loups renversent tout et restent dans la course à l'Europe.",
+        note: "Mois agité côté cartons : Amoura puis Arnold expulsés. Mais les Loups renversent Brême (réduite à dix) et restent dans la course à l'Europe.",
         matches: [
           { r:"D", tip:"Hamburg (D) 0-0",      comp:"BL" },
           { r:"L", tip:"Hoffenheim (E) 2-1",   comp:"BL" },
           { r:"W", tip:"Werder Bremen (D) 3-1", comp:"BL" },
+        ],
+      },
+      {
+        key: "04", label: "Avril 2026",
+        note: "Sans-faute ou presque : nul à Leverkusen puis trois victoires de rang. Porté par un triplé d'Amoura contre Gladbach, Wolfsburg grimpe 4e, en pleine zone Champions League.",
+        matches: [
+          { r:"D", tip:"Bayer Leverkusen (E) 0-0",   comp:"BL" },
+          { r:"W", tip:"Eintracht Frankfurt (D) 2-1", comp:"BL" },
+          { r:"W", tip:"Union Berlin (E) 0-1",        comp:"BL" },
+          { r:"W", tip:"Gladbach (D) 3-2",            comp:"BL" },
         ],
       },
     ],
@@ -123,24 +133,19 @@ window['SEASONS_wolfsburg-pep'] = [
     // Stats cumulées
     scorers: [
       { name: "Dzenan Pejcinović", detail: "BU · Allemand · 21 ans", value: 9 },
-      { name: "Christian Eriksen", detail: "MOC · Danois · 34 ans", value: 6 },
-      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 24 ans", value: 5 },
+      { name: "Christian Eriksen", detail: "MOC · Danois · 34 ans", value: 7 },
+      { name: "Mohamed Amoura",    detail: "BU · Algérien · 25 ans", value: 6 },
     ],
     assists: [
       { name: "Maximilian Arnold", detail: "MDC · Allemand · 31 ans", value: 5 },
-      { name: "Dzenan Pejcinović", detail: "BU · Allemand · 21 ans", value: 4 },
+      { name: "Eriksen · Pejcinović", detail: "MOC / BU · ex-aequo", value: 4 },
       { name: "Amoura · Majer · Gerhardt", detail: "BU / MOC / MC · ex-aequo", value: 2 },
     ],
     ratings: [
-      { name: "Patrick Wimmer",    detail: "AD · 23 tit. · 5 buts · 1 passe D.", value: 7.05 },
+      { name: "Patrick Wimmer",    detail: "AD · 26 tit. · 5 buts · 1 passe D.", value: 7.07 },
       { name: "Dzenan Pejcinović", detail: "BU · 14 tit. / 10 rempl. · 9 buts · 4 passes D.", value: 7.00 },
-      { name: "Kilian Fischer",    detail: "DD · 18 tit. / 2 rempl. · 1 passe D.", value: 6.94 },
     ],
-    flops: [
-      { name: "Christian Eriksen", detail: "MOC · Danois · 34 ans · 28 tit. · 6 buts · 1 passe D.", value: 6.56 },
-      { name: "Yannick Gerhardt",  detail: "MC · Allemand · 32 ans · 2 tit. / 20 rempl. · 2 passes D.", value: 6.63 },
-      { name: "Maximilian Arnold", detail: "MDC · Allemand · 31 ans · 23 tit. · 1 but · 5 passes D.", value: 6.71 },
-    ],
+    flops: [],
 
     // Mercato
     transfers: [
@@ -165,26 +170,26 @@ window['SEASONS_wolfsburg-pep'] = [
     },
     cup2: null,
 
-    // Classement à jour (après J27)
+    // Classement à jour (après J31)
     standings: [
-      { pos:1,  team:"Bayern München",      j:27, g:19, n:5,  l:3,  bp:50, bc:17, db:33, pts:62, zone:"promo" },
-      { pos:2,  team:"Dortmund",            j:27, g:17, n:7,  l:3,  bp:43, bc:22, db:21, pts:58, zone:"promo" },
-      { pos:3,  team:"RB Leipzig",          j:27, g:15, n:7,  l:5,  bp:42, bc:25, db:17, pts:52, zone:"promo" },
-      { pos:4,  team:"Bayer Leverkusen",    j:27, g:14, n:5,  l:8,  bp:33, bc:21, db:12, pts:47, zone:"promo" },
-      { pos:5,  team:"Wolfsburg",           j:27, g:12, n:7,  l:8,  bp:28, bc:24, db: 4, pts:43, highlight:true },
-      { pos:6,  team:"Eintracht Frankfurt", j:27, g:12, n:7,  l:8,  bp:27, bc:25, db: 2, pts:43, zone:"promo" },
-      { pos:7,  team:"Stuttgart",           j:27, g:12, n:6,  l:9,  bp:34, bc:25, db: 9, pts:42 },
-      { pos:8,  team:"FC Köln",             j:27, g:12, n:4,  l:11, bp:27, bc:33, db:-6, pts:40 },
-      { pos:9,  team:"Mainz 05",            j:27, g:10, n:6,  l:11, bp:22, bc:23, db:-1, pts:36 },
-      { pos:10, team:"Heidenheim",          j:27, g:10, n:6,  l:11, bp:31, bc:36, db:-5, pts:36 },
-      { pos:11, team:"Gladbach",            j:27, g:8,  n:10, l:9,  bp:22, bc:25, db:-3, pts:34 },
-      { pos:12, team:"Union Berlin",        j:27, g:8,  n:9,  l:10, bp:25, bc:30, db:-5, pts:33 },
-      { pos:13, team:"Freiburg",            j:27, g:8,  n:7,  l:12, bp:26, bc:34, db:-8, pts:31 },
-      { pos:14, team:"Hoffenheim",          j:27, g:9,  n:4,  l:14, bp:27, bc:39, db:-12,pts:31 },
-      { pos:15, team:"Werder Bremen",       j:27, g:8,  n:2,  l:17, bp:23, bc:40, db:-17,pts:26 },
-      { pos:16, team:"Hamburg",             j:27, g:5,  n:8,  l:14, bp:23, bc:35, db:-12,pts:23 },
-      { pos:17, team:"St Pauli",            j:27, g:4,  n:7,  l:16, bp:18, bc:29, db:-11,pts:19, zone:"releg" },
-      { pos:18, team:"Augsburg",            j:27, g:2,  n:9,  l:16, bp:15, bc:33, db:-18,pts:15, zone:"releg" },
+      { pos:1,  team:"Bayern München",      j:31, g:23, n:5,  l:3,  bp:63, bc:18, db:45, pts:74, zone:"promo" },
+      { pos:2,  team:"RB Leipzig",          j:31, g:19, n:7,  l:5,  bp:47, bc:26, db:21, pts:64, zone:"promo" },
+      { pos:3,  team:"Dortmund",            j:31, g:18, n:9,  l:4,  bp:45, bc:24, db:21, pts:63, zone:"promo" },
+      { pos:4,  team:"Wolfsburg",           j:31, g:15, n:8,  l:8,  bp:34, bc:27, db: 7, pts:53, highlight:true },
+      { pos:5,  team:"Bayer Leverkusen",    j:31, g:15, n:7,  l:9,  bp:37, bc:25, db:12, pts:52, zone:"promo" },
+      { pos:6,  team:"Eintracht Frankfurt", j:31, g:14, n:7,  l:10, bp:31, bc:29, db: 2, pts:49, zone:"promo" },
+      { pos:7,  team:"Stuttgart",           j:31, g:12, n:8,  l:11, bp:34, bc:28, db: 6, pts:44 },
+      { pos:8,  team:"FC Köln",             j:31, g:13, n:5,  l:13, bp:34, bc:39, db:-5, pts:44 },
+      { pos:9,  team:"Heidenheim",          j:31, g:11, n:9,  l:11, bp:38, bc:42, db:-4, pts:42 },
+      { pos:10, team:"Mainz 05",            j:31, g:11, n:6,  l:14, bp:25, bc:30, db:-5, pts:39 },
+      { pos:11, team:"Hoffenheim",          j:31, g:11, n:6,  l:14, bp:33, bc:42, db:-9, pts:39 },
+      { pos:12, team:"Gladbach",            j:31, g:9,  n:11, l:11, bp:27, bc:31, db:-4, pts:38 },
+      { pos:13, team:"Freiburg",            j:31, g:9,  n:8,  l:14, bp:30, bc:42, db:-12,pts:35 },
+      { pos:14, team:"Union Berlin",        j:31, g:8,  n:10, l:13, bp:27, bc:35, db:-8, pts:34 },
+      { pos:15, team:"Hamburg",             j:31, g:7,  n:9,  l:15, bp:28, bc:38, db:-10,pts:30 },
+      { pos:16, team:"Werder Bremen",       j:31, g:8,  n:3,  l:20, bp:24, bc:47, db:-23,pts:27 },
+      { pos:17, team:"St Pauli",            j:31, g:4,  n:10, l:17, bp:22, bc:36, db:-14,pts:22, zone:"releg" },
+      { pos:18, team:"Augsburg",            j:31, g:3,  n:10, l:18, bp:18, bc:38, db:-20,pts:19, zone:"releg" },
     ],
 
     // splash: { ... }  ← à ajouter à la fin de la saison
