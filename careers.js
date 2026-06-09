@@ -44,10 +44,10 @@ window.CAREERS = [
   {
     id:       'wolfsburg-pep',
     name:     'VfL Wolfsburg',
-    short:    'Wolfsburg (Pep)',
+    short:    'Wolfsburg (Arq)',
     country:  'Allemagne',
     tag:      'En cours',
-    coach:    'Pep Guardiola',
+    coach:    'Arq Queft',
     file:     'seasons-wolfsburg-pep.js',
     logo:     'logo-wolfsburg.png',
     color:    '#4db848',   // vert Wolfsburg

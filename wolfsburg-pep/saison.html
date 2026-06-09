@@ -82,7 +82,7 @@ loadCareerData(function(career) {
       <h1 class="bb au au1" style="font-size:clamp(44px,7.5vw,92px);line-height:.88;letter-spacing:2px;margin-bottom:14px">VfL<br><span style="color:var(--gold)">Wolfsburg</span></h1>
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
         <span class="bc au au2" style="display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;letter-spacing:5px;padding:5px 16px;font-weight:700">${s.league} · ${s.year}</span>
-        <span class="bc" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,184,75,.25);padding:5px 14px;font-size:11px;letter-spacing:2px;color:var(--gold)">⚙ PEP GUARDIOLA</span>
+        <span class="bc" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,184,75,.25);padding:5px 14px;font-size:11px;letter-spacing:2px;color:var(--gold)">⚙ ${(career.coach||'').toUpperCase()}</span>
       </div>
     </div>`
 

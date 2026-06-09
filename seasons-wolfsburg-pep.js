@@ -1,5 +1,5 @@
 /**
- * VfL WOLFSBURG — PARTIE EN COURS (Pep Guardiola)
+ * VfL WOLFSBURG — PARTIE EN COURS (Arq Queft)
  * ────────────────────────────────────────────────
  * Saison suivie MOIS PAR MOIS.
  *
