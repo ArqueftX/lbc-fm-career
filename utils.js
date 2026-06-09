@@ -220,7 +220,7 @@ function renderTransfList(transfers) {
       ${transfers.map(t => `
         <div class="transf-row">
           <span class="bc badge" style="background:${t.type==='free'?'rgba(61,214,140,0.12)':'rgba(232,184,75,0.12)'};border:1px solid ${t.type==='free'?C.green:C.gold};color:${t.type==='free'?C.green:C.gold}">
-            ${t.type==='free'?'LIBRE':'PRÊT'}
+            ${t.type==='free'?'LIBRE':t.type==='loan'?'PRÊT':'TRANSFERT'}
           </span>
           <span style="flex:1;font-size:13px;font-weight:500">${t.name}</span>
           <div style="text-align:right">
@@ -294,7 +294,7 @@ function renderMercatoPreview(season, careerId) {
 
   const previewRow = (t, type) => {
     const isArr = type === 'arr'
-    const label = isArr ? (t.type==='free'?'LIBRE':'PRÊT') : (t.type==='loan'?'PRÊT':t.type==='sell'?'TRANSFERT':'FIN CTR')
+    const label = isArr ? (t.type==='free'?'LIBRE':t.type==='loan'?'PRÊT':'TRANSFERT') : (t.type==='loan'?'PRÊT':t.type==='sell'?'TRANSFERT':'FIN CTR')
     const col   = isArr ? (t.type==='free'?C.green:C.gold) : (t.type==='loan'?C.gold:t.type==='sell'?C.red:C.muted)
     const dest  = isArr ? t.from : t.to
     return `
