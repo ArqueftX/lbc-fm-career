@@ -23,20 +23,40 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Juin 2026 · Mercato",
+    lastUpdate:   "Juillet 2026",
     position:     null,
 
-    months: [],
+    months: [
+      {
+        key: "07", label: "Juillet 2026",
+        note: "Préparation parfaite : quatre amicaux, quatre victoires.",
+        matches: [
+          { r:"W", tip:"PAOK (D) 2-0",                comp:"AM" },
+          { r:"W", tip:"Red Bull Salzburg (E) 0-1",  comp:"AM" },
+          { r:"W", tip:"Grazer AK 1902 (E) 0-1",     comp:"AM" },
+          { r:"W", tip:"Hertha Wels (E) 0-1",        comp:"AM" },
+        ],
+      },
+    ],
 
     scorers: [],
     assists: [],
     ratings: [],
     flops:   [],
 
-    transfers: [],
+    transfers: [
+      { type: "buy",  name: "Mustafa Hekimo\u011flu", from: "Be\u015fikta\u015f",          date: "\u00c9t\u00e9 2026", amount: "7,75M \u20ac" },
+      { type: "buy",  name: "Elias Baum",         from: "Eintracht Frankfurt", date: "\u00c9t\u00e9 2026", amount: "7M \u20ac"    },
+      { type: "loan", name: "Matheo Raab",        from: "Union Berlin",        date: "\u00c9t\u00e9 2026" },
+    ],
     departures: [
-      { type: "sell", name: "Jakub Kami\u0144ski",  to: "FC K\u00f6ln (transfert d\u00e9finitif)",  date: "Juin 2026", amount: "5,5M \u20ac" },
-      { type: "sell", name: "Mattias Svanberg", to: "Mallorca (transfert d\u00e9finitif)", date: "Juin 2026", amount: "4,7M \u20ac" },
+      { type: "sell", name: "Kamil Grabara",    to: "Barcelona",                            date: "\u00c9t\u00e9 2026", amount: "15,75M \u20ac" },
+      { type: "sell", name: "Jakub Kami\u0144ski",  to: "FC K\u00f6ln (transfert d\u00e9finitif)",          date: "Juin 2026", amount: "5,5M \u20ac" },
+      { type: "sell", name: "Mattias Svanberg", to: "Mallorca (transfert d\u00e9finitif)",         date: "Juin 2026", amount: "4,7M \u20ac" },
+      { type: "sell", name: "Yannick Gerhardt", to: "Werder Bremen",                         date: "\u00c9t\u00e9 2026", amount: "1,8M \u20ac"  },
+      { type: "loan", name: "Kilian Fischer",   to: "Leeds Utd (achat obligatoire 2,2M\u20ac)",  date: "\u00c9t\u00e9 2026" },
+      { type: "free", name: "Jonas Wind",       to: "Freiburg",                              date: "\u00c9t\u00e9 2026" },
+      { type: "free", name: "Yasin Chebil",     to: "Werder Bremen",                         date: "\u00c9t\u00e9 2026" },
     ],
 
     cup:  null,
