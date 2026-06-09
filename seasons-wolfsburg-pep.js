@@ -15,7 +15,39 @@
  */
 window['SEASONS_wolfsburg-pep'] = [
 
-  /* ─── SAISON 2025/26 · EN COURS ──────────────────────── */
+  /* ─── SAISON 2026/27 · EN COURS ──────────────────────── */
+  {
+    id:           "wolfsburg-pep-2026-27",
+    year:         "2026/27",
+    league:       "Bundesliga",
+    status:       "en_cours",
+    totalTeams:   18,
+    seasonLength: 34,
+    lastUpdate:   "Juin 2026 · Mercato",
+    position:     null,
+
+    months: [],
+
+    scorers: [],
+    assists: [],
+    ratings: [],
+    flops:   [],
+
+    transfers: [],
+    departures: [
+      { type: "sell", name: "Jakub Kami\u0144ski",  to: "FC K\u00f6ln (transfert d\u00e9finitif)",  date: "Juin 2026", amount: "5,5M \u20ac" },
+      { type: "sell", name: "Mattias Svanberg", to: "Mallorca (transfert d\u00e9finitif)", date: "Juin 2026", amount: "4,7M \u20ac" },
+    ],
+
+    cup:  null,
+    cup2: null,
+
+    standings: [],
+
+    // splash: { ... }  ← à ajouter à la fin de la saison
+  },
+
+  /* ─── SAISON 2025/26 · TERMINÉE ──────────────────────── */
   {
     id:           "wolfsburg-pep-2025-26",
     year:         "2025/26",
