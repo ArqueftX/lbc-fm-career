@@ -45,6 +45,7 @@
   <div id="cup-section" style="margin-bottom:60px"></div>
   <div id="cup2-section" style="margin-bottom:60px"></div>
   <div id="standings-section" style="margin-bottom:60px"></div>
+  <div id="squad-section" style="margin-bottom:60px"></div>
 </div>
 
 <script>window.FORCE_CAREER = "wolfsburg-pep"</script>
@@ -207,6 +208,35 @@ loadCareerData(function(career) {
   // ── CLASSEMENT ACTUEL ──
   if (s.standings && s.standings.length) {
     document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement actuel</div>${renderStandings(s.standings)}`
+  }
+
+  // ── EFFECTIF ──
+  if (s.squad && s.squad.length) {
+    const groups = [
+      ['Gardiens',   ['GB']],
+      ['Défenseurs', ['DC','DD','DG']],
+      ['Milieux',    ['MDC','MC','MD','MOC']],
+      ['Attaque',    ['ALG','AG','AD','BU']],
+    ]
+    const flag = nat => `<span class="bc" style="font-size:9px;letter-spacing:1px;color:var(--mid);border:1px solid rgba(255,255,255,.1);padding:1px 5px;border-radius:3px">${nat}</span>`
+    const cols = groups.map(([label, poss]) => {
+      const players = s.squad.filter(p => poss.includes(p.p))
+      if (!players.length) return ''
+      const rows = players.map(p => `
+        <div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+          <span class="bc" style="font-size:9px;letter-spacing:1px;color:var(--gold);width:30px;flex-shrink:0">${p.p}</span>
+          <span style="flex:1;min-width:0;font-size:13px;font-weight:500;color:var(--white)">${p.n}</span>
+          ${flag(p.nat)}
+          <span class="bc" style="font-size:11px;color:var(--muted);width:34px;text-align:right;flex-shrink:0">${p.age}a</span>
+        </div>`).join('')
+      return `<div style="flex:1 1 280px">
+        <div class="bc" style="font-size:10px;letter-spacing:3px;color:var(--muted);font-weight:700;text-transform:uppercase;margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--mid)">${label} <span style="color:var(--gold)">${players.length}</span></div>
+        ${rows}
+      </div>`
+    }).join('')
+    document.getElementById('squad-section').innerHTML =
+      `<div class="bc sec-title">Effectif <span style="color:var(--muted);font-weight:400">· ${s.squad.length} joueurs</span></div>
+       <div style="display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start">${cols}</div>`
   }
 })
 </script>
