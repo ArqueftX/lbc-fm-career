@@ -91,10 +91,15 @@ function buildPage() {
   const half  = Math.ceil(parts.length / 2)
   document.getElementById('club-name').innerHTML = `${parts.slice(0,half).join(' ')}<br><span style="color:var(--gold)">${parts.slice(half).join(' ')}</span>`
 
-  // Bilan cumulé (saison en cours)
-  const live = liveSummary(seasons[0] || {months:[]})
+  // Bilan (saison en cours ou terminée)
+  const s0 = seasons[0] || {months:[]}
+  const live = liveSummary(s0)
+  const enCours0 = s0.status === 'en_cours'
+  const statusTxt = enCours0
+    ? '<span style="color:var(--green)">EN COURS</span>'
+    : '<span style="color:var(--gold)">TERMIN\u00c9E</span>'
   document.getElementById('stats-line').innerHTML =
-    `SAISON 2025/26 · <span style="color:var(--green)">EN COURS</span> · ${live.played} MATCH${live.played!==1?'S':''} DIRIGÉ${live.played!==1?'S':''}`
+    `SAISON ${s0.year||'2025/26'} · ${statusTxt} · ${live.played} MATCH${live.played!==1?'S':''} DIRIGÉ${live.played!==1?'S':''}`
 
   const badge = document.getElementById('coach-badge')
   if (career.coach) { badge.style.display = 'inline-flex'; document.getElementById('coach-name').textContent = career.coach }
@@ -113,12 +118,16 @@ function buildCard(s, i) {
   const dots = live.matches.map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
   const posDisplay = live.position != null ? live.position : '—'
   const pct = Math.round((live.played / (s.seasonLength||34)) * 100)
+  const enCours = s.status === 'en_cours'
+  const statusBadge = enCours
+    ? '<div class="bc" style="display:inline-flex;align-items:center;gap:6px;background:rgba(61,214,140,.12);border:1px solid var(--green);color:var(--green);font-size:9px;letter-spacing:3px;padding:3px 10px;font-weight:700"><span class="live-dot"></span>EN COURS</div>'
+    : '<div class="bc" style="display:inline-block;background:rgba(232,184,75,.12);border:1px solid var(--gold);color:var(--gold);font-size:9px;letter-spacing:3px;padding:3px 10px;font-weight:700">TERMINÉE</div>'
   return `
-    <a href="saison.html?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
+    <a href="${s.splash ? 'splash.html' : 'saison.html'}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
       <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${posDisplay}</div>
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:18px;flex-wrap:wrap">
         <div class="bc" style="display:inline-block;background:${ls.bg};border:1px solid ${ls.border};color:${ls.color};font-size:9px;letter-spacing:4px;padding:3px 10px;font-weight:700">${s.league}</div>
-        <div class="bc" style="display:inline-flex;align-items:center;gap:6px;background:rgba(61,214,140,.12);border:1px solid var(--green);color:var(--green);font-size:9px;letter-spacing:3px;padding:3px 10px;font-weight:700"><span class="live-dot"></span>EN COURS</div>
+        ${statusBadge}
       </div>
       <div class="bb" style="font-size:38px;line-height:1;margin-bottom:4px;letter-spacing:1px">${s.year}</div>
       <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:22px">

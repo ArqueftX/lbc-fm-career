@@ -65,19 +65,21 @@ loadCareerData(function(career) {
   const gdVal = live.gf - live.ga
   const gdStr = gdVal >= 0 ? '+'+gdVal : ''+gdVal
   const posStr = live.position != null ? posLabel(live.position) : '—'
+  const finished = s.status && s.status !== 'en_cours'
 
   document.getElementById('sw-host').innerHTML = renderSwitcherBtn()
   document.getElementById('career-modal-host').innerHTML = renderCareerSwitcher()
-  document.getElementById('nav-title').textContent = s.year + ' · EN COURS'
-  document.title = 'Wolfsburg ' + s.year + ' — En cours'
+  document.getElementById('nav-title').textContent = s.year + (finished ? ' · TERMINÉE' : ' · EN COURS')
+  document.title = 'Wolfsburg ' + s.year + (finished ? ' — Saison terminée' : ' — En cours')
 
   // ── HERO ──
   document.getElementById('hero').innerHTML = `
     <div class="bb" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:clamp(150px,26vw,400px);color:rgba(77,184,72,.07);line-height:1;pointer-events:none;user-select:none">${posStr.replace(/[^0-9]/g,'')||'·'}</div>
     <div style="max-width:1160px;margin:0 auto;position:relative">
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
-        <span class="bc" style="display:inline-flex;align-items:center;gap:9px;background:rgba(61,214,140,.14);border:1px solid var(--green);color:var(--green);font-size:11px;letter-spacing:4px;padding:6px 16px;font-weight:700"><span class="live-dot"></span>SAISON EN COURS</span>
-        <span class="bc" style="font-size:11px;letter-spacing:3px;color:var(--muted)">DERNIÈRE MAJ · <span style="color:var(--gold)">${s.lastUpdate||'—'}</span></span>
+        ${finished
+          ? '<span class="bc" style="display:inline-flex;align-items:center;gap:9px;background:rgba(232,184,75,.14);border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:4px;padding:6px 16px;font-weight:700">✓ SAISON TERMINÉE</span><span class="bc" style="font-size:11px;letter-spacing:3px;color:var(--muted)">BILAN FINAL · <span style="color:var(--gold)">'+s.league+'</span></span>'
+          : '<span class="bc" style="display:inline-flex;align-items:center;gap:9px;background:rgba(61,214,140,.14);border:1px solid var(--green);color:var(--green);font-size:11px;letter-spacing:4px;padding:6px 16px;font-weight:700"><span class="live-dot"></span>SAISON EN COURS</span><span class="bc" style="font-size:11px;letter-spacing:3px;color:var(--muted)">DERNIÈRE MAJ · <span style="color:var(--gold)">'+(s.lastUpdate||'—')+'</span></span>'}
       </div>
       <h1 class="bb au au1" style="font-size:clamp(44px,7.5vw,92px);line-height:.88;letter-spacing:2px;margin-bottom:14px">VfL<br><span style="color:var(--gold)">Wolfsburg</span></h1>
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
