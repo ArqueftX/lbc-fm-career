@@ -23,7 +23,7 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Février 2026",
+    lastUpdate:   "Mars 2026",
 
     // Position : laissée à null → déduite du classement (ligne highlight) quand il arrivera
     position:   null,
@@ -100,32 +100,46 @@ window['SEASONS_wolfsburg-pep'] = [
       },
       {
         key: "02", label: "Février 2026",
-        note: "Réaction immédiate : succès net à Cologne pour relancer la course à l'Europe. Dortmund, Leipzig, Augsbourg et Stuttgart à venir.",
+        note: "Cinq matchs, trois victoires : Cologne, Dortmund et Augsbourg tombent, nul à Leipzig — seul Stuttgart accroche les Loups sur penalty.",
         matches: [
-          { r:"W", tip:"FC Köln (E) 0-2", comp:"BL" },
+          { r:"W", tip:"FC Köln (E) 0-2",      comp:"BL" },
+          { r:"W", tip:"Dortmund (D) 2-1",     comp:"BL" },
+          { r:"D", tip:"RB Leipzig (E) 0-0",   comp:"BL" },
+          { r:"W", tip:"Augsburg (D) 1-0",     comp:"BL" },
+          { r:"L", tip:"Stuttgart (E) 1-0",    comp:"BL" },
+        ],
+      },
+      {
+        key: "03", label: "Mars 2026",
+        note: "Mois agité côté cartons : Amoura puis Arnold expulsés. Mais à dix contre Brême, les Loups renversent tout et restent dans la course à l'Europe.",
+        matches: [
+          { r:"D", tip:"Hamburg (D) 0-0",      comp:"BL" },
+          { r:"L", tip:"Hoffenheim (E) 2-1",   comp:"BL" },
+          { r:"W", tip:"Werder Bremen (D) 3-1", comp:"BL" },
         ],
       },
     ],
 
     // Stats cumulées
     scorers: [
-      { name: "Dzenan Pejcinović", detail: "BU · Allemand · 20 ans", value: 7 },
-      { name: "Patrick Wimmer · Christian Eriksen", detail: "AD / MOC · ex-aequo", value: 4 },
-      { name: "Adam Daghim",       detail: "AD · Danois · 20 ans · prêté par RB Salzburg", value: 3 },
+      { name: "Dzenan Pejcinović", detail: "BU · Allemand · 21 ans", value: 9 },
+      { name: "Christian Eriksen", detail: "MOC · Danois · 34 ans", value: 6 },
+      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 24 ans", value: 5 },
     ],
     assists: [
-      { name: "Pejcinović · Arnold", detail: "BU / MDC · ex-aequo", value: 4 },
-      { name: "Wimmer · Katseris · Daghim · Majer · Eriksen · Amoura · Zehnter · Dárdai · Gerhardt · Fischer", detail: "10 joueurs à égalité", value: 1 },
+      { name: "Maximilian Arnold", detail: "MDC · Allemand · 31 ans", value: 5 },
+      { name: "Dzenan Pejcinović", detail: "BU · Allemand · 21 ans", value: 4 },
+      { name: "Amoura · Majer · Gerhardt", detail: "BU / MOC / MC · ex-aequo", value: 2 },
     ],
     ratings: [
-      { name: "Patrick Wimmer",    detail: "AD · 16 tit. · 4 buts · 1 passe D.", value: 7.00 },
-      { name: "Dzenan Pejcinović", detail: "BU · 14 tit. / 5 rempl. · 7 buts · 4 passes D.", value: 6.99 },
-      { name: "Kilian Fischer",    detail: "DD · 16 tit. / 2 rempl. · 1 passe D.", value: 6.96 },
+      { name: "Patrick Wimmer",    detail: "AD · 23 tit. · 5 buts · 1 passe D.", value: 7.05 },
+      { name: "Dzenan Pejcinović", detail: "BU · 14 tit. / 10 rempl. · 9 buts · 4 passes D.", value: 7.00 },
+      { name: "Kilian Fischer",    detail: "DD · 18 tit. / 2 rempl. · 1 passe D.", value: 6.94 },
     ],
     flops: [
-      { name: "Lovro Majer",       detail: "MOC · Croate · 28 ans · 10 tit. · 1 but · 1 passe D.", value: 6.51 },
-      { name: "Christian Eriksen", detail: "MOC · Danois · 33 ans · 21 tit. · 4 buts", value: 6.53 },
-      { name: "Jonas Wind",        detail: "BU · Danois · 26 ans · 10 rempl. · 2 buts", value: 6.60 },
+      { name: "Christian Eriksen", detail: "MOC · Danois · 34 ans · 28 tit. · 6 buts · 1 passe D.", value: 6.56 },
+      { name: "Yannick Gerhardt",  detail: "MC · Allemand · 32 ans · 2 tit. / 20 rempl. · 2 passes D.", value: 6.63 },
+      { name: "Maximilian Arnold", detail: "MDC · Allemand · 31 ans · 23 tit. · 1 but · 5 passes D.", value: 6.71 },
     ],
 
     // Mercato
@@ -138,6 +152,7 @@ window['SEASONS_wolfsburg-pep'] = [
       { type: "loan", name: "Moritz Jenz",      to: "Crystal Palace (clause 5,75M€)", date: "Été 2025" },
       { type: "loan", name: "Mattias Svanberg", to: "Mallorca (option 4,7M€)",         date: "Sep. 2025" },
       { type: "sell", name: "Joakim Maehle",    to: "Monaco",                          date: "Jan. 2026", amount: "4,1M €" },
+      { type: "sell", name: "Pavao Pervan",     to: "Amstetten",                       date: "Mars 2026", amount: "4,1K €" },
     ],
 
     // Coupes / Europe
@@ -150,26 +165,26 @@ window['SEASONS_wolfsburg-pep'] = [
     },
     cup2: null,
 
-    // Classement à jour (après J20)
+    // Classement à jour (après J27)
     standings: [
-      { pos:1,  team:"Bayern München",      j:20, g:15, n:4, l:1,  bp:38, bc:10, db:28, pts:49, zone:"promo" },
-      { pos:2,  team:"RB Leipzig",          j:20, g:13, n:4, l:3,  bp:34, bc:16, db:18, pts:43, zone:"promo" },
-      { pos:3,  team:"Dortmund",            j:20, g:11, n:7, l:2,  bp:31, bc:16, db:15, pts:40, zone:"promo" },
-      { pos:4,  team:"Bayer Leverkusen",    j:20, g:11, n:4, l:5,  bp:26, bc:14, db:12, pts:37, zone:"promo" },
-      { pos:5,  team:"Eintracht Frankfurt", j:20, g:9,  n:6, l:5,  bp:20, bc:17, db: 3, pts:33, zone:"promo" },
-      { pos:6,  team:"Wolfsburg",           j:20, g:9,  n:5, l:6,  bp:21, bc:19, db: 2, pts:32, highlight:true },
-      { pos:7,  team:"FC Köln",             j:20, g:9,  n:2, l:9,  bp:21, bc:25, db:-4, pts:29 },
-      { pos:8,  team:"Heidenheim",          j:20, g:8,  n:4, l:8,  bp:23, bc:27, db:-4, pts:28 },
-      { pos:9,  team:"Gladbach",            j:20, g:7,  n:5, l:8,  bp:16, bc:20, db:-4, pts:26 },
-      { pos:10, team:"Stuttgart",           j:19, g:7,  n:4, l:8,  bp:21, bc:20, db: 1, pts:25 },
-      { pos:11, team:"Hoffenheim",          j:20, g:7,  n:3, l:10, bp:21, bc:30, db:-9, pts:24 },
-      { pos:12, team:"Mainz 05",            j:19, g:6,  n:5, l:8,  bp:17, bc:20, db:-3, pts:23 },
-      { pos:13, team:"Union Berlin",        j:20, g:5,  n:7, l:8,  bp:17, bc:21, db:-4, pts:22 },
-      { pos:14, team:"Freiburg",            j:18, g:5,  n:6, l:7,  bp:19, bc:23, db:-4, pts:21 },
-      { pos:15, team:"Hamburg",             j:20, g:5,  n:5, l:10, bp:17, bc:25, db:-8, pts:20 },
-      { pos:16, team:"St Pauli",            j:20, g:3,  n:5, l:12, bp:13, bc:23, db:-10,pts:14 },
-      { pos:17, team:"Werder Bremen",       j:20, g:4,  n:2, l:14, bp:15, bc:30, db:-15,pts:14, zone:"releg" },
-      { pos:18, team:"Augsburg",            j:20, g:1,  n:8, l:11, bp:10, bc:24, db:-14,pts:11, zone:"releg" },
+      { pos:1,  team:"Bayern München",      j:27, g:19, n:5,  l:3,  bp:50, bc:17, db:33, pts:62, zone:"promo" },
+      { pos:2,  team:"Dortmund",            j:27, g:17, n:7,  l:3,  bp:43, bc:22, db:21, pts:58, zone:"promo" },
+      { pos:3,  team:"RB Leipzig",          j:27, g:15, n:7,  l:5,  bp:42, bc:25, db:17, pts:52, zone:"promo" },
+      { pos:4,  team:"Bayer Leverkusen",    j:27, g:14, n:5,  l:8,  bp:33, bc:21, db:12, pts:47, zone:"promo" },
+      { pos:5,  team:"Wolfsburg",           j:27, g:12, n:7,  l:8,  bp:28, bc:24, db: 4, pts:43, highlight:true },
+      { pos:6,  team:"Eintracht Frankfurt", j:27, g:12, n:7,  l:8,  bp:27, bc:25, db: 2, pts:43, zone:"promo" },
+      { pos:7,  team:"Stuttgart",           j:27, g:12, n:6,  l:9,  bp:34, bc:25, db: 9, pts:42 },
+      { pos:8,  team:"FC Köln",             j:27, g:12, n:4,  l:11, bp:27, bc:33, db:-6, pts:40 },
+      { pos:9,  team:"Mainz 05",            j:27, g:10, n:6,  l:11, bp:22, bc:23, db:-1, pts:36 },
+      { pos:10, team:"Heidenheim",          j:27, g:10, n:6,  l:11, bp:31, bc:36, db:-5, pts:36 },
+      { pos:11, team:"Gladbach",            j:27, g:8,  n:10, l:9,  bp:22, bc:25, db:-3, pts:34 },
+      { pos:12, team:"Union Berlin",        j:27, g:8,  n:9,  l:10, bp:25, bc:30, db:-5, pts:33 },
+      { pos:13, team:"Freiburg",            j:27, g:8,  n:7,  l:12, bp:26, bc:34, db:-8, pts:31 },
+      { pos:14, team:"Hoffenheim",          j:27, g:9,  n:4,  l:14, bp:27, bc:39, db:-12,pts:31 },
+      { pos:15, team:"Werder Bremen",       j:27, g:8,  n:2,  l:17, bp:23, bc:40, db:-17,pts:26 },
+      { pos:16, team:"Hamburg",             j:27, g:5,  n:8,  l:14, bp:23, bc:35, db:-12,pts:23 },
+      { pos:17, team:"St Pauli",            j:27, g:4,  n:7,  l:16, bp:18, bc:29, db:-11,pts:19, zone:"releg" },
+      { pos:18, team:"Augsburg",            j:27, g:2,  n:9,  l:16, bp:15, bc:33, db:-18,pts:15, zone:"releg" },
     ],
 
     // splash: { ... }  ← à ajouter à la fin de la saison
