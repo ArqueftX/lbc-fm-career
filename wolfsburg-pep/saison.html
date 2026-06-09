@@ -35,6 +35,7 @@
     <div>
       <div id="scorers"></div>
       <div id="ratings" style="margin-top:44px"></div>
+      <div id="flops" style="margin-top:44px"></div>
     </div>
     <div>
       <div id="assists"></div>
@@ -165,6 +166,22 @@ loadCareerData(function(career) {
   // ── STATS CUMULÉES ──
   document.getElementById('scorers').innerHTML = renderPerfList('Buteurs · cumul', s.scorers, 'buts')
   document.getElementById('ratings').innerHTML = renderPerfList('Meilleures notes', s.ratings, 'moy.')
+  // Pires moyennes (rendu maison, teinte rouge)
+  if (s.flops && s.flops.length) {
+    const max = Math.max(...s.flops.map(p=>p.value))
+    const rows = s.flops.map(p=>{
+      const w = Math.round((p.value/max)*100)
+      return `<div style="display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:500;color:var(--white)">${p.name}</div>
+          <div class="bc" style="font-size:10px;color:var(--muted);letter-spacing:1px;margin-top:2px">${p.detail||''}</div>
+        </div>
+        <div style="width:80px;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;flex-shrink:0"><div style="height:100%;width:${w}%;background:var(--red);border-radius:2px"></div></div>
+        <div class="bb" style="font-size:22px;color:var(--red);min-width:54px;text-align:right;flex-shrink:0">${p.value}<span class="bc" style="font-size:9px;color:var(--muted);margin-left:4px">moy.</span></div>
+      </div>`
+    }).join('')
+    document.getElementById('flops').innerHTML = `<div class="bc sec-title">Pires moyennes</div>${rows}`
+  }
   document.getElementById('assists').innerHTML = renderPerfList('Passeurs · cumul', s.assists, 'passes D.')
   document.getElementById('mercato-preview').innerHTML = renderMercatoPreview(s, career.id)
 
