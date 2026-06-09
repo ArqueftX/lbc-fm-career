@@ -23,7 +23,7 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Juillet 2026",
+    lastUpdate:   "Ao\u00fbt 2026",
     position:     null,
 
     months: [
@@ -37,12 +37,34 @@ window['SEASONS_wolfsburg-pep'] = [
           { r:"W", tip:"Hertha Wels (E) 0-1",        comp:"AM" },
         ],
       },
+      {
+        key: "08", label: "Ao\u00fbt 2026",
+        note: "Reprise officielle laborieuse : qualification en coupe aux t.a.b. à Magdebourg, puis deux nuls pour lancer la Bundesliga.",
+        matches: [
+          { r:"L", tip:"Maccabi Haifa (E) 3-2",        comp:"AM"  },
+          { r:"W", tip:"1. FC Magdeburg (E) 1-1",     comp:"DFB", tag:"QUALIF. T.A.B. 5-4" },
+          { r:"D", tip:"Eintracht Frankfurt (E) 2-2", comp:"BL"  },
+          { r:"D", tip:"Hoffenheim (D) 1-1",          comp:"BL"  },
+        ],
+      },
     ],
 
-    scorers: [],
-    assists: [],
-    ratings: [],
-    flops:   [],
+    scorers: [
+      { name: "Wimmer \u00b7 Vranckx \u00b7 Jenz \u00b7 Amoura", detail: "4 joueurs \u00e0 \u00e9galit\u00e9", value: 1 },
+    ],
+    assists: [
+      { name: "Christian Eriksen \u00b7 Jan B\u00fcrger", detail: "MOC / DD \u00b7 ex-aequo", value: 1 },
+    ],
+    ratings: [
+      { name: "Jan B\u00fcrger",     detail: "DD \u00b7 1 tit. / 1 rempl. \u00b7 1 passe D.", value: 7.60 },
+      { name: "Moritz Jenz",     detail: "DC \u00b7 1 tit. \u00b7 1 but", value: 7.60 },
+      { name: "Patrick Wimmer",  detail: "AD \u00b7 2 tit. \u00b7 1 but", value: 7.35 },
+    ],
+    flops: [
+      { name: "Lovro Majer",     detail: "MOC \u00b7 Croate \u00b7 28 ans \u00b7 2 tit.", value: 6.35 },
+      { name: "Bence D\u00e1rdai",    detail: "MC \u00b7 Hongrois \u00b7 20 ans \u00b7 1 tit. / 1 rempl.", value: 6.40 },
+      { name: "Sa\u00ebl Kumbedi",   detail: "DD \u00b7 Fran\u00e7ais \u00b7 21 ans \u00b7 2 tit.", value: 6.45 },
+    ],
 
     transfers: [
       { type: "buy",  name: "Mustafa Hekimo\u011flu", from: "Be\u015fikta\u015f",          date: "\u00c9t\u00e9 2026", amount: "7,75M \u20ac" },
@@ -57,12 +79,39 @@ window['SEASONS_wolfsburg-pep'] = [
       { type: "loan", name: "Kilian Fischer",   to: "Leeds Utd (achat obligatoire 2,2M\u20ac)",  date: "\u00c9t\u00e9 2026" },
       { type: "free", name: "Jonas Wind",       to: "Freiburg",                              date: "\u00c9t\u00e9 2026" },
       { type: "free", name: "Yasin Chebil",     to: "Werder Bremen",                         date: "\u00c9t\u00e9 2026" },
+      { type: "loan", name: "Vini Souza",       to: "Flamengo (clause 4,9M\u20ac apr\u00e8s 15 matchs)", date: "\u00c9t\u00e9 2026" },
+      { type: "loan", name: "Eryk Grzywacz",    to: "SV Elversberg",                         date: "\u00c9t\u00e9 2026" },
+      { type: "free", name: "Justin Cruz",      to: "TeBe Berlin",                           date: "\u00c9t\u00e9 2026" },
     ],
 
-    cup:  null,
+    cup:  {
+      name: "DFB-Pokal",
+      rounds: [
+        { result: "W", round: "1er tour", score: "1 \u2013 1", opponent: "1. FC Magdeburg (E) \u00b7 5-4 t.a.b." },
+      ],
+    },
     cup2: null,
 
-    standings: [],
+    standings: [
+      { pos:1,  team:"Bayern M\u00fcnchen",      j:2, g:2, n:0, l:0, bp:5, bc:0, db: 5, pts:6, zone:"promo" },
+      { pos:2,  team:"Union Berlin",        j:2, g:2, n:0, l:0, bp:4, bc:1, db: 3, pts:6, zone:"promo" },
+      { pos:3,  team:"Bayer Leverkusen",    j:2, g:1, n:1, l:0, bp:3, bc:1, db: 2, pts:4, zone:"promo" },
+      { pos:4,  team:"RB Leipzig",          j:2, g:1, n:1, l:0, bp:3, bc:1, db: 2, pts:4, zone:"promo" },
+      { pos:5,  team:"Stuttgart",           j:2, g:1, n:1, l:0, bp:3, bc:1, db: 2, pts:4 },
+      { pos:6,  team:"Gladbach",            j:2, g:1, n:1, l:0, bp:3, bc:2, db: 1, pts:4 },
+      { pos:7,  team:"Holstein Kiel",       j:2, g:1, n:1, l:0, bp:2, bc:1, db: 1, pts:4 },
+      { pos:8,  team:"Freiburg",            j:2, g:1, n:0, l:1, bp:2, bc:3, db:-1, pts:3 },
+      { pos:9,  team:"Eintracht Frankfurt", j:2, g:0, n:2, l:0, bp:3, bc:3, db: 0, pts:2 },
+      { pos:10, team:"Wolfsburg",           j:2, g:0, n:2, l:0, bp:3, bc:3, db: 0, pts:2, highlight:true },
+      { pos:11, team:"Dortmund",            j:2, g:0, n:2, l:0, bp:3, bc:3, db: 0, pts:2 },
+      { pos:12, team:"FC K\u00f6ln",             j:2, g:0, n:2, l:0, bp:1, bc:1, db: 0, pts:2 },
+      { pos:13, team:"Hoffenheim",          j:2, g:0, n:1, l:1, bp:2, bc:3, db:-1, pts:1 },
+      { pos:14, team:"Heidenheim",          j:2, g:0, n:1, l:1, bp:1, bc:3, db:-2, pts:1 },
+      { pos:15, team:"Mainz 05",            j:2, g:0, n:1, l:1, bp:1, bc:3, db:-2, pts:1 },
+      { pos:16, team:"Hannover",            j:2, g:0, n:0, l:2, bp:0, bc:3, db:-3, pts:0 },
+      { pos:17, team:"Hertha",              j:2, g:0, n:0, l:2, bp:0, bc:3, db:-3, pts:0 },
+      { pos:18, team:"Hamburg",             j:2, g:0, n:0, l:2, bp:0, bc:4, db:-4, pts:0, zone:"releg" },
+    ],
 
     // splash: { ... }  ← à ajouter à la fin de la saison
   },
