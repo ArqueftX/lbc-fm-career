@@ -32,6 +32,8 @@
   </div>
   <div id="cup-section" style="margin-bottom:60px"></div>
   <div id="cup2-section" style="margin-bottom:60px"></div>
+  <div id="cups-section" style="margin-bottom:60px"></div>
+  <div id="el-table-section" style="margin-bottom:60px"></div>
   <div id="playoffs-section" style="margin-bottom:64px"></div>
   <div id="standings-section" style="margin-bottom:60px"></div>
   <div id="promo-releg"></div>
@@ -142,6 +144,16 @@ loadCareerData(function(career) {
         `).join('')}
       </div>
     `
+  }
+
+  // Cups (coupes multiples : ex. Carabao + FA Cup)
+  if (s.cups && s.cups.length) {
+    document.getElementById('cups-section').innerHTML = s.cups.map(renderCupRun).join('')
+  }
+
+  // Tableau de la phase Europa League
+  if (s.elTable && s.elTable.length) {
+    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">Classement · Phase Europa League</div>${renderStandings(s.elTable)}`
   }
 
   // Playoffs
