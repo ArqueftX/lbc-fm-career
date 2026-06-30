@@ -154,7 +154,8 @@ loadCareerData(function(career) {
 
   // Tableau de la phase Europa League
   if (s.elTable && s.elTable.length) {
-    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">Classement · Phase Europa League</div>${renderStandings(s.elTable)}`
+    const elTitle = s.elTableTitle || (s.cup2 && s.cup2.name ? s.cup2.name.replace(/🏆/g,'').replace('UEFA ','').trim() : 'Europa League')
+    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">Classement · Phase ${elTitle}</div>${renderStandings(s.elTable)}`
   }
 
   // Playoffs

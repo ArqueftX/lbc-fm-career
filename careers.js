@@ -59,13 +59,13 @@ window.CAREERS = [
 
   {
     id:       'ajax',
-    name:     'Ajax → Chelsea',
-    short:    'Ajax → Chelsea',
-    country:  'Pays-Bas → Angleterre',
+    name:     'Ajax → Chelsea → Ajax',
+    short:    'Ajax (Arq)',
+    country:  'Pays-Bas → Angleterre → Pays-Bas',
     tag:      'Multi',
     coach:    'Arq Queft',
     file:     'seasons-ajax.js',
-    logo:     'logo-chelsea.png',
+    logo:     'logo-ajax.png',
     color:    '#cc0000',
     accent:   '#ffffff',
   },
