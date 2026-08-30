@@ -180,7 +180,7 @@ loadCareerData(function(career) {
           <div class="bc" style="font-size:10px;color:var(--muted);letter-spacing:1px;margin-top:2px">${p.detail||''}</div>
         </div>
         <div style="width:80px;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;flex-shrink:0"><div style="height:100%;width:${w}%;background:var(--red);border-radius:2px"></div></div>
-        <div class="bb" style="font-size:22px;color:var(--red);min-width:54px;text-align:right;flex-shrink:0">${p.value}<span class="bc" style="font-size:9px;color:var(--muted);margin-left:4px">moy.</span></div>
+        <div class="bb" style="font-size:22px;color:var(--red);min-width:54px;text-align:right;flex-shrink:0">${Number(p.value).toFixed(2)}<span class="bc" style="font-size:9px;color:var(--muted);margin-left:4px">moy.</span></div>
       </div>`
     }).join('')
     document.getElementById('flops').innerHTML = `<div class="bc sec-title">Pires moyennes</div>${rows}`
