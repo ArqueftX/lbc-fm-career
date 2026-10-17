@@ -65,6 +65,18 @@ window.CAREERS = [
     color:    '#cc0000',
     accent:   '#ffffff',
   },
+  {
+    id:       'leverkusen',
+    name:     'Bayer 04 Leverkusen',
+    short:    'Leverkusen',
+    country:  'Allemagne',
+    tag:      'En cours',
+    coach:    'Arq Queft',
+    file:     'seasons-leverkusen.js',
+    logo:     'logo-leverkusen.png',
+    color:    '#e32221',   // rouge Leverkusen
+    accent:   '#000000',
+  },
 
   // Template — copie ce bloc pour ajouter une carrière :
   // {
