@@ -73,7 +73,7 @@ window.CAREERS = [
     tag:      'En cours',
     coach:    'Arq Queft',
     file:     'seasons-leverkusen.js',
-    logo:     'logo-leverkusen.png',
+    logo:     'logo-leverkusen.webp',
     color:    '#e32221',   // rouge Leverkusen
     accent:   '#000000',
   },
