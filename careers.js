@@ -53,10 +53,6 @@ window.CAREERS = [
     color:    '#4db848',   // vert Wolfsburg
     accent:   '#ffffff',
   },
-  // Template — copie ce bloc pour ajouter une carrière :
-  // {
-
-
   {
     id:       'ajax',
     name:     'Ajax → Chelsea → Ajax',
@@ -70,6 +66,8 @@ window.CAREERS = [
     accent:   '#ffffff',
   },
 
+  // Template — copie ce bloc pour ajouter une carrière :
+  // {
   //   id:      'mon-club',
   //   name:    'Nom complet du club',
   //   short:   'Nom court',
