@@ -126,7 +126,7 @@ loadCareerData(function(career) {
       'DFB': {txt:'DFB-POKAL',       col:'var(--gold)'},
       'EL':  {txt:'EUROPA LEAGUE',   col:'#ff9a3d'},
       'UCL': {txt:'CHAMPIONS LEAGUE',col:'#8c46dc'},
-    }[c] || (s.compNames && s.compNames[c] ? {txt:s.compNames[c].toUpperCase(), col:'var(--gold)'} : {txt:'BUNDESLIGA', col:'#ff6b6b'}))
+    }[c] || {txt:'BUNDESLIGA', col:'#ff6b6b'})
     const blocks = months.map((mo, idx) => {
       const isLatest = idx === months.length - 1
       let w=0,d=0,l=0
