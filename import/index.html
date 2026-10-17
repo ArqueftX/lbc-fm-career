@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FM26 — Importer une partie</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link rel="icon" href="../logo-chateauroux.png"/>
+  <style>
+    .wrap{max-width:960px;margin:0 auto;padding:48px 24px 80px}
+    .card{background:var(--blue);padding:28px;margin-bottom:3px}
+    .label{font-size:9px;letter-spacing:4px;color:var(--muted);font-weight:700;text-transform:uppercase;margin-bottom:10px}
+    #drop{border:1px dashed rgba(232,184,75,.35);padding:56px 24px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(12,34,89,.35)}
+    #drop:hover,#drop.over{border-color:var(--gold);background:rgba(232,184,75,.06)}
+    .btn{background:var(--gold);border:none;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:4px;font-weight:700;padding:14px 22px;cursor:pointer;transition:opacity .2s}
+    .btn:disabled{opacity:.4;cursor:default}
+    .btn.ghost{background:transparent;border:1px solid rgba(232,184,75,.4);color:var(--gold)}
+    .field{width:100%;background:var(--navy);border:1px solid rgba(106,130,176,.3);color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;padding:12px 14px;outline:none}
+    .field:focus{border-color:var(--gold)}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media (max-width:640px){.grid2{grid-template-columns:1fr}.wrap{padding:32px 16px 60px}}
+    #suggest{position:absolute;left:0;right:0;top:100%;background:#0a1a44;border:1px solid rgba(232,184,75,.25);z-index:20;max-height:280px;overflow:auto;display:none}
+    #suggest div{padding:10px 14px;cursor:pointer;font-size:14px;display:flex;justify-content:space-between;gap:10px}
+    #suggest div:hover,#suggest div.on{background:rgba(232,184,75,.1)}
+    .spin{display:inline-block;width:12px;height:12px;border:2px solid rgba(232,184,75,.25);border-top-color:var(--gold);border-radius:50%;animation:rot .8s linear infinite;vertical-align:-1px;margin-right:10px}
+    @keyframes rot{to{transform:rotate(360deg)}}
+    .mrow{display:flex;align-items:center;gap:12px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
+    .pill{display:inline-block;min-width:22px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--navy);padding:1px 4px}
+    pre{background:var(--navy);border:1px solid rgba(106,130,176,.2);padding:16px;font-size:11px;line-height:1.5;max-height:340px;overflow:auto;color:var(--muted);white-space:pre}
+    .hide{display:none}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a href="../" class="bc" style="font-size:10px;letter-spacing:4px;color:var(--muted);text-decoration:none">← RETOUR AUX CARRIÈRES</a>
+  <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin:28px 0 12px;font-weight:600">FOOTBALL MANAGER 26 · OUTIL</div>
+  <h1 class="bb au au1" style="font-size:clamp(44px,8vw,80px);line-height:.9;letter-spacing:2px;margin-bottom:16px">Importer<br><span style="color:var(--gold)">une partie</span></h1>
+  <p class="bc au au2" style="font-size:15px;color:var(--muted);line-height:1.6;max-width:640px;margin-bottom:36px">
+    Dépose ta sauvegarde <span style="color:var(--white)">.fm</span> : l'outil lit la saison en cours (résultats mois par mois, classements, coupes, buteurs, passeurs, notes)
+    et génère le fichier <span style="color:var(--white)">seasons-…js</span> du site. Le fichier est lu <span style="color:var(--gold)">dans ton navigateur</span>, rien n'est envoyé sur internet.
+  </p>
+
+  <!-- 1. FICHIER -->
+  <div class="card">
+    <div class="bc label">1 · Sauvegarde</div>
+    <div id="drop">
+      <div class="bb" style="font-size:28px;letter-spacing:3px;margin-bottom:8px">Glisse ton fichier .fm ici</div>
+      <div class="bc" style="font-size:13px;color:var(--muted);letter-spacing:1px">ou clique pour le choisir · Documents/Sports Interactive/Football Manager 26/games</div>
+      <input id="file" type="file" accept=".fm" class="hide"/>
+    </div>
+    <div id="status" class="bc" style="font-size:13px;color:var(--muted);margin-top:16px;letter-spacing:1px;min-height:18px"></div>
+  </div>
+
+  <!-- 2. CLUB + CARRIÈRE -->
+  <div id="step2" class="card hide">
+    <div class="bc label">2 · Club et carrière</div>
+    <div id="save-info" class="bc" style="font-size:13px;color:var(--muted);margin-bottom:20px;letter-spacing:1px"></div>
+    <div class="grid2">
+      <div style="position:relative">
+        <div class="bc label" style="letter-spacing:3px">Ton club dans la partie</div>
+        <input id="club" class="field" autocomplete="off" placeholder="Nom du club…"/>
+        <div id="suggest"></div>
+      </div>
+      <div>
+        <div class="bc label" style="letter-spacing:3px">Carrière du site à mettre à jour</div>
+        <select id="career" class="field"></select>
+        <input id="new-id" class="field hide" style="margin-top:8px" placeholder="identifiant, ex : mon-club"/>
+      </div>
+    </div>
+    <div style="margin-top:24px"><button id="go" class="btn" disabled>EXTRAIRE LA SAISON</button></div>
+  </div>
+
+  <!-- 3. RÉSULTAT -->
+  <div id="step3" class="hide">
+    <div class="card">
+      <div class="bc label">3 · Aperçu</div>
+      <div id="preview"></div>
+    </div>
+    <div class="card">
+      <div class="bc label">4 · Mettre le site à jour</div>
+      <p class="bc" style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:18px">
+        Tes notes de mois, étiquettes (cartons rouges…) et le mercato déjà saisis sont <span style="color:var(--white)">conservés</span>.
+        Télécharge le fichier puis envoie-le sur GitHub : <span style="color:var(--white)">Add file → Upload files</span> sur la branche <span style="color:var(--white)">main</span>, en remplaçant l'ancien.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button id="dl" class="btn">TÉLÉCHARGER</button>
+        <button id="copy" class="btn ghost">COPIER LE CODE</button>
+      </div>
+      <pre id="code" style="margin-top:20px"></pre>
+    </div>
+  </div>
+</div>
+
+<script src="../careers.js"></script>
+<script src="../seasons-chateauroux.js"></script>
+<script src="../seasons-seville.js"></script>
+<script src="../seasons-wolfsburg.js"></script>
+<script src="../seasons-wolfsburg-pep.js"></script>
+<script src="../seasons-ajax.js"></script>
+<script src="../utils.js"></script>
+<script src="import.js"></script>
+<script>
+const $ = id => document.getElementById(id)
+const fold = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+
+let worker = null, saveData = null, clubUid = null, output = null, timer = null
+
+function setStatus(text, busy) {
+  clearInterval(timer)
+  if (!busy) { $('status').innerHTML = text; return }
+  const t0 = Date.now()
+  const draw = () => { $('status').innerHTML = `<span class="spin"></span>${text} <span style="opacity:.6">· ${Math.round((Date.now() - t0) / 1000)} s</span>` }
+  draw(); timer = setInterval(draw, 1000)
+}
+
+function getWorker() {
+  if (worker) return worker
+  worker = new Worker('worker.js', { type: 'module' })
+  worker.onmessage = e => {
+    const m = e.data
+    if (m.type === 'status') setStatus(m.text, true)
+    else if (m.type === 'error') { setStatus(`<span style="color:var(--red)">Erreur : ${esc(m.text)}</span>`); $('go').disabled = !clubUid }
+    else if (m.type === 'opened') onOpened(m.data)
+    else if (m.type === 'extracted') onExtracted(m.data)
+  }
+  worker.onerror = e => setStatus(`<span style="color:var(--red)">Erreur : ${esc(e.message || 'le lecteur n\'a pas pu démarrer')}</span>`)
+  return worker
+}
+
+/* ── 1. Fichier ── */
+function pickFile(file) {
+  if (!file) return
+  if (!/\.fm$/i.test(file.name)) { setStatus('<span style="color:var(--red)">Ce n\'est pas un fichier .fm</span>'); return }
+  $('step2').classList.add('hide'); $('step3').classList.add('hide')
+  $('drop').querySelector('.bb').textContent = file.name
+  // ?pyodide=… ne sert qu'aux tests en local
+  const local = ['localhost', '127.0.0.1'].includes(location.hostname)
+  const base = (local && new URLSearchParams(location.search).get('pyodide')) || undefined
+  getWorker().postMessage({ type: 'open', file, pyodideBase: base })
+  setStatus('Démarrage…', true)
+}
+$('drop').onclick = () => $('file').click()
+$('file').onchange = e => pickFile(e.target.files[0])
+$('drop').ondragover = e => { e.preventDefault(); $('drop').classList.add('over') }
+$('drop').ondragleave = () => $('drop').classList.remove('over')
+$('drop').ondrop = e => { e.preventDefault(); $('drop').classList.remove('over'); pickFile(e.dataTransfer.files[0]) }
+
+/* ── 2. Club + carrière ── */
+function onOpened(data) {
+  saveData = data
+  const i = data.info
+  setStatus(`<span style="color:var(--green)">✓ Sauvegarde ouverte</span>`)
+  $('save-info').innerHTML = `<span style="color:var(--white)">${esc(i.name || '')}</span> · ${esc(i.game)} ${esc(i.build)} · date en jeu <span style="color:var(--gold)">${esc(i.date || '—')}</span>`
+
+  // Carrières du site
+  const sel = $('career')
+  sel.innerHTML = window.CAREERS.map(c => `<option value="${c.id}">${esc(c.short)} — ${esc(c.name)}</option>`).join('') + '<option value="__new">+ Nouvelle carrière…</option>'
+
+  // Club deviné à partir du nom de la sauvegarde
+  const name = fold(i.name)
+  const guess = data.clubs
+    .filter(c => c[2] && c[2].length > 3 && name.includes(fold(c[2])))
+    .sort((a, b) => b[2].length - a[2].length || b[4] - a[4])[0]
+  if (guess) selectClub(guess)
+  $('step2').classList.remove('hide')
+}
+
+function careerFor(club) {
+  const n = fold(club[1]), s = fold(club[2])
+  const matches = window.CAREERS.filter(c => fold(c.name).includes(s) || n.includes(fold(c.short.replace(/\s*\(.*\)/, ''))))
+  // Priorité aux carrières au format « mois par mois » avec une saison en cours
+  const seasons = c => window['SEASONS_' + c.id] || []
+  const score = c => (seasons(c).some(x => x.months) ? 2 : 0) + (seasons(c).some(x => x.status === 'en_cours') ? 1 : 0)
+  const latest = c => seasons(c).map(x => x.year).sort().pop() || ''
+  return matches.sort((a, b) => score(b) - score(a) || latest(b).localeCompare(latest(a)))[0]
+}
+
+function selectClub(club) {
+  clubUid = club[0]
+  $('club').value = club[1]
+  $('suggest').style.display = 'none'
+  const c = careerFor(club)
+  if (c) $('career').value = c.id
+  $('career').onchange()
+  $('go').disabled = false
+}
+
+$('club').oninput = () => {
+  clubUid = null; $('go').disabled = true
+  const q = fold($('club').value.trim())
+  const box = $('suggest')
+  if (q.length < 2 || !saveData) { box.style.display = 'none'; return }
+  const hits = saveData.clubs.filter(c => fold(c[1]).includes(q) || fold(c[2]).includes(q))
+    .sort((a, b) => b[4] - a[4]).slice(0, 8)
+  box.innerHTML = hits.map((c, k) => `<div data-k="${k}"><span>${esc(c[1])}</span><span class="bc" style="color:var(--muted);font-size:11px">${esc(window.FMImport.NATIONS[c[3]] || '')}</span></div>`).join('')
+  box.style.display = hits.length ? 'block' : 'none'
+  box.querySelectorAll('div').forEach(el => el.onclick = () => selectClub(hits[+el.dataset.k]))
+}
+
+$('career').onchange = () => $('new-id').classList.toggle('hide', $('career').value !== '__new')
+
+$('go').onclick = () => {
+  if (!clubUid) return
+  $('go').disabled = true
+  $('step3').classList.add('hide')
+  getWorker().postMessage({ type: 'extract', club: clubUid })
+}
+
+/* ── 3. Résultat ── */
+function careerId() {
+  if ($('career').value !== '__new') return $('career').value
+  return fold($('new-id').value).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'nouvelle-carriere'
+}
+
+async function onExtracted(d) {
+  $('go').disabled = false
+  if (d.error) { setStatus(`<span style="color:var(--red)">${esc(d.error)}</span>`); return }
+  const id = careerId()
+  const seasons = window['SEASONS_' + id] || []
+  const year = `${d.season}/${String((d.season + 1) % 100).padStart(2, '0')}`
+  const existing = seasons.find(s => s.year === year)
+  const prev = seasons.find(s => s.league)
+  const season = window.FMImport.buildSeason(d, { careerId: id, existing, league: prev && prev.league })
+  const all = window.FMImport.mergeSeasons(seasons, season)
+
+  let header = null
+  try {
+    const txt = await fetch(`../seasons-${id}.js`).then(r => r.ok ? r.text() : '')
+    const m = txt.match(/^\s*(\/\*\*[\s\S]*?\*\/)/)
+    if (m) header = m[1]
+  } catch (_) {}
+  output = { id, text: window.FMImport.serialize(all, id, header) }
+
+  const oldFormat = seasons.length && !seasons.some(s => s.months)
+  setStatus(`<span style="color:var(--green)">✓ Saison ${esc(year)} extraite</span> · ${existing ? 'remplace la saison existante' : 'nouvelle saison ajoutée'} dans seasons-${esc(id)}.js`
+    + (oldFormat ? `<br><span style="color:var(--red)">Attention : cette carrière utilise l'ancien format de page, la saison importée (format mois par mois) risque de mal s'afficher.</span>` : ''))
+  renderPreview(season)
+  $('code').textContent = output.text
+  $('dl').textContent = `TÉLÉCHARGER seasons-${id}.js`
+  $('step3').classList.remove('hide')
+  $('step3').scrollIntoView({ behavior: 'smooth' })
+}
+
+function renderPreview(s) {
+  const live = liveSummary(s)
+  const cells = [
+    [live.position != null ? posLabel(live.position) : '—', 'Position'], [live.points, 'Points'],
+    [`${live.wins}-${live.draws}-${live.losses}`, 'V-N-D'], [gd(live.gf, live.ga), 'Diff.'],
+  ]
+  const pill = r => `<span class="pill" style="background:${resultColor(r)}">${r === 'D' ? 'N' : r}</span>`
+  const months = s.months.map(m => `
+    <div style="margin-top:18px">
+      <div class="bb" style="font-size:20px;letter-spacing:2px;margin-bottom:4px">${esc(m.label)}</div>
+      ${m.matches.map(x => `<div class="mrow">${pill(x.r)}<span style="flex:1">${esc(x.tip)}</span><span class="bc" style="font-size:10px;letter-spacing:2px;color:var(--muted)">${esc(x.comp)}${x.tag ? ' · ' + esc(x.tag) : ''}</span></div>`).join('')}
+    </div>`).join('')
+  const list = (title, arr, unit) => arr && arr.length ? `<div><div class="bc label" style="margin-top:22px">${title}</div>${arr.map(p =>
+    `<div class="mrow"><span style="flex:1">${esc(p.name)} <span class="bc" style="color:var(--muted);font-size:11px">${esc(p.detail)}</span></span><span class="bb" style="font-size:18px;color:var(--gold)">${unit ? Number(p.value).toFixed(2) : p.value}</span></div>`).join('')}</div>` : ''
+  $('preview').innerHTML = `
+    <div class="bb" style="font-size:30px;letter-spacing:2px">${esc(s.league)} · ${esc(s.year)} <span class="bc" style="font-size:12px;letter-spacing:3px;color:var(--muted)">${s.status === 'en_cours' ? 'EN COURS · ' + esc(s.lastUpdate) : 'TERMINÉE'}</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:16px 0">
+      ${cells.map(([v, l]) => `<div style="background:var(--navy);padding:14px"><div class="bb" style="font-size:32px;color:var(--gold)">${v}</div><div class="bc label" style="margin:4px 0 0">${l}</div></div>`).join('')}
+    </div>
+    ${s.cup ? `<div class="bc" style="font-size:13px;color:var(--muted)">${esc(s.cup.name)} : ${s.cup.rounds.map(r => esc(r.round) + ' ' + pill(r.result)).join(' ')}</div>` : ''}
+    ${s.cup2 ? `<div class="bc" style="font-size:13px;color:var(--muted);margin-top:6px">${esc(s.cup2.name)} : ${esc(s.cup2.phase || s.cup2.rounds.length + ' matchs')}</div>` : ''}
+    <div class="grid2" style="margin-top:6px">
+      <div>${list('Buteurs', s.scorers, false)}${list('Passeurs', s.assists, false)}</div>
+      <div>${list('Meilleures notes', s.ratings, true)}${list('Pires moyennes', s.flops, true)}</div>
+    </div>
+    ${months}`
+}
+
+$('dl').onclick = () => {
+  if (!output) return
+  const a = document.createElement('a')
+  a.href = URL.createObjectURL(new Blob([output.text], { type: 'text/javascript' }))
+  a.download = `seasons-${output.id}.js`
+  a.click()
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000)
+}
+$('copy').onclick = async () => {
+  if (!output) return
+  try { await navigator.clipboard.writeText(output.text); $('copy').textContent = 'COPIÉ ✓' }
+  catch (_) { $('copy').textContent = 'SÉLECTIONNE LE CODE CI-DESSOUS' }
+  setTimeout(() => { $('copy').textContent = 'COPIER LE CODE' }, 2000)
+}
+</script>
+</body>
+</html>
