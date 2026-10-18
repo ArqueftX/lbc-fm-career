@@ -48,6 +48,7 @@
 <script src="../seasons-ajax.js"></script>
 <script src="../seasons-leverkusen.js"></script>
 <script src="../seasons-arsenal.js"></script>
+<script src="../standings-zones.js"></script>
 <script src="../utils.js"></script>
 <script>
 const id = param('id')
@@ -169,7 +170,7 @@ loadCareerData(function(career) {
 
   // Standings
   if (s.standings && s.standings.length) {
-    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement final</div>${renderStandings(s.standings)}`
+    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement final</div>${renderStandings(s.standings, {league:s.league, final:s.status!=='en_cours'&&!s.standingsTitle})}`
   }
 
   // Promo/Releg
@@ -186,7 +187,7 @@ loadCareerData(function(career) {
 
   // Tableau de la phase Ligue des Champions
   if (s.elTable && s.elTable.length) {
-    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">${s.elTableTitle||'Classement · Phase de championnat'}</div>${renderStandings(s.elTable)}`
+    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">${s.elTableTitle||'Classement · Phase de championnat'}</div>${renderStandings(s.elTable, {europe:true})}`
   }
 
   // Effectif

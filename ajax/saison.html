@@ -49,6 +49,7 @@
 <script src="../seasons-ajax.js"></script>
 <script src="../seasons-leverkusen.js"></script>
 <script src="../seasons-arsenal.js"></script>
+<script src="../standings-zones.js"></script>
 <script src="../utils.js"></script>
 <script>
 const id = param('id')
@@ -158,7 +159,7 @@ loadCareerData(function(career) {
   // Tableau de la phase Europa League
   if (s.elTable && s.elTable.length) {
     const elTitle = s.elTableTitle || (s.cup2 && s.cup2.name ? s.cup2.name.replace(/🏆/g,'').replace('UEFA ','').trim() : 'Europa League')
-    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">Classement · Phase ${elTitle}</div>${renderStandings(s.elTable)}`
+    document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">Classement · Phase ${elTitle}</div>${renderStandings(s.elTable, {europe:true})}`
   }
 
   // Playoffs
@@ -184,7 +185,7 @@ loadCareerData(function(career) {
 
   // Standings
   if (s.standings && s.standings.length) {
-    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement final</div>${renderStandings(s.standings)}`
+    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement final</div>${renderStandings(s.standings, {league:s.league, final:s.status!=='en_cours'&&!s.standingsTitle})}`
   }
 
   // Promo/Releg
@@ -292,7 +293,7 @@ function renderStint(st) {
     </div>`
   }
 
-  const standBlock = (st.standings && st.standings.length) ? `<div style="margin-bottom:22px"><div class="bc sec-title">Classement final · ${st.league}</div>${renderStandings(st.standings)}</div>` : ''
+  const standBlock = (st.standings && st.standings.length) ? `<div style="margin-bottom:22px"><div class="bc sec-title">Classement final · ${st.league}</div>${renderStandings(st.standings, {league:st.league, final:true})}</div>` : ''
   const noteBlock = st.note ? `<div style="border-left:3px solid ${acc};padding-left:18px;margin-bottom:8px"><div class="bc" style="font-size:14px;color:var(--white);font-style:italic;line-height:1.6">${st.note}</div></div>` : ''
 
   return `<section style="margin-bottom:66px">${head}${strip}${matchesBlock}${cupsBlock}${perfBlock}${mercatoBlock}${standBlock}${noteBlock}</section>`

@@ -236,9 +236,10 @@ table.std { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width
 .std td:nth-child(1) { width: 44px; position: relative; font: 600 13px/1 var(--mono); color: var(--muted); }
 .std td:nth-child(2) { text-align: left; font-weight: 500; }
 .std td.pts { font-weight: 700; }
-.std tr.promo td:nth-child(1) { box-shadow: inset 3px 0 0 var(--win); }
-.std tr.releg td:nth-child(1) { box-shadow: inset 3px 0 0 var(--loss); }
-.std tr.champ td:nth-child(1) { box-shadow: inset 3px 0 0 var(--gold); }
+.std tr.zoned td:nth-child(1) { box-shadow: inset 3px 0 0 var(--zc); }
+.std-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font: 500 11px/1.3 var(--mono); letter-spacing: .4px; text-transform: uppercase; color: var(--muted); }
+.std-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.std-legend i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
 .std tr.me td { background: color-mix(in srgb, var(--club) 11%, transparent); font-weight: 700; }
 .std tr.me td:nth-child(2)::after { content: ' ●'; color: var(--club); }
 details.fold { margin-top: 18px; }

@@ -147,15 +147,20 @@ function leaders(title, items, opts) {
   return `<div class="panel ${o.cls || ''}"><h4>${esc(title)}</h4>${rows}</div>`
 }
 
-function standingsTable(rows) {
-  const body = rows.map(r => {
-    const cls = [r.zone === 'promo' ? 'promo' : r.zone === 'releg' ? 'releg' : '', r.champion ? 'champ' : '', r.highlight ? 'me' : ''].join(' ')
+// opts : { league, europe:true (phase européenne), final:true } — zones : standings-zones.js
+function standingsTable(rows, opts) {
+  const o = opts || {}
+  const SZ = window.StandingsZones
+  const keys = SZ ? SZ.keys(rows, o) : rows.map(() => null)
+  const legend = SZ ? SZ.legend(keys, o.final) : []
+  const body = rows.map((r, i) => {
+    const cls = [keys[i] ? 'zoned' : '', r.highlight ? 'me' : ''].join(' ')
     const db = r.db != null ? r.db : (r.bp - r.bc)
-    return `<tr class="${cls}"><td>${r.pos}</td><td>${esc(r.team)}</td><td>${r.j}</td><td>${r.g}</td><td>${r.n}</td><td>${r.l}</td><td>${r.bp}</td><td>${r.bc}</td><td>${db > 0 ? '+' + db : db}</td><td class="pts">${r.pts}</td></tr>`
+    return `<tr class="${cls}"${keys[i] ? ` style="--zc:${SZ.color(keys[i])}"` : ''}><td>${r.pos}</td><td>${esc(r.team)}</td><td>${r.j}</td><td>${r.g}</td><td>${r.n}</td><td>${r.l}</td><td>${r.bp}</td><td>${r.bc}</td><td>${db > 0 ? '+' + db : db}</td><td class="pts">${r.pts}</td></tr>`
   }).join('')
   return `<div class="table-wrap"><table class="std">
     <thead><tr><th>#</th><th>Équipe</th><th>J</th><th>G</th><th>N</th><th>P</th><th>BP</th><th>BC</th><th>Diff</th><th>Pts</th></tr></thead>
-    <tbody>${body}</tbody></table></div>`
+    <tbody>${body}</tbody></table></div>${legend.length ? `<div class="std-legend">${legend.map(z => `<span><i style="background:${z.color}"></i>${esc(z.label)}</span>`).join('')}</div>` : ''}`
 }
 
 function cupCard(c) {
@@ -481,7 +486,7 @@ function viewSeason(c, s) {
       ${t.matches && t.matches.length ? `<div style="margin-top:18px">${ribbon(t.matches, 'st' + ti)}</div>` : ''}
       ${[leaders('Buteurs', t.scorers), leaders('Passeurs', t.assists), leaders('Meilleures notes', t.ratings, { rating: true })].filter(Boolean).length
         ? `<div class="cols-3" style="margin-top:22px">${[leaders('Buteurs', t.scorers), leaders('Passeurs', t.assists), leaders('Meilleures notes', t.ratings, { rating: true })].join('')}</div>` : ''}
-      ${t.standings && t.standings.length ? `<details class="fold"><summary>Classement final · ${esc(t.league || '')}</summary>${standingsTable(t.standings)}</details>` : ''}
+      ${t.standings && t.standings.length ? `<details class="fold"><summary>Classement final · ${esc(t.league || '')}</summary>${standingsTable(t.standings, { league: t.league, final: true })}</details>` : ''}
     </div>`).join('')
 
   return `
@@ -520,9 +525,9 @@ function viewSeason(c, s) {
 
     ${stints ? `<section class="section"><h2 class="h-section">Deux clubs, une saison</h2>${stints}</section>` : ''}
 
-    ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings)}
-      ${s.elTable && s.elTable.length ? `<details class="fold"><summary>${esc(s.elTableTitle || 'Classement · Phase de championnat')}</summary>${standingsTable(s.elTable)}</details>` : ''}</section>`
-      : s.elTable && s.elTable.length ? `<section class="section"><h2 class="h-section">${esc(s.elTableTitle || 'Phase de championnat')}</h2>${standingsTable(s.elTable)}</section>` : ''}
+    ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings, { league: s.league, final: !isLive(s) && !s.standingsTitle })}
+      ${s.elTable && s.elTable.length ? `<details class="fold"><summary>${esc(s.elTableTitle || 'Classement · Phase de championnat')}</summary>${standingsTable(s.elTable, { europe: true })}</details>` : ''}</section>`
+      : s.elTable && s.elTable.length ? `<section class="section"><h2 class="h-section">${esc(s.elTableTitle || 'Phase de championnat')}</h2>${standingsTable(s.elTable, { europe: true })}</section>` : ''}
 
     ${moves(s)}
 

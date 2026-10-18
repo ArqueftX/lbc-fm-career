@@ -315,9 +315,11 @@ html, body {
   border-bottom: 1px solid rgba(255,255,255,.04);
   border-left: 3px solid transparent;
 }
-.standings-row.highlight { background: rgba(232,184,75,.07); border-left-color: var(--gold); }
-.standings-row.promo { background: rgba(61,214,140,.04); }
-.standings-row.releg { background: rgba(232,80,80,.04); }
+.standings-row.highlight { background: rgba(232,184,75,.07); } /* la bande de gauche sert aux zones (légende) */
+.standings-row.zoned { box-shadow: inset 3px 0 0 var(--zc); }
+.std-legend { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 14px 14px 0; }
+.std-legend span { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.std-legend i { width: 10px; height: 10px; border-radius: 2px; flex: none; }
 .standings-row span { text-align: center; color: var(--muted); font-size: 11px; }
 .standings-row span:nth-child(2) { text-align: left; color: var(--white); }
 .standings-row span:last-child { font-family: 'Bebas Neue', sans-serif; font-size: 19px; color: var(--gold); }
