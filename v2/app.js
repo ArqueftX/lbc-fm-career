@@ -87,7 +87,7 @@ function cupsOf(s) {
 function cupOutcome(c) {
   const last = c.rounds[c.rounds.length - 1]
   const text = [c.name, last.round, last.opponent].join(' ')
-  const isFinal = /finale/i.test(last.round || '')
+  const isFinal = /^\s*finale\b/i.test(last.round || '')
   const rd = (last.round || '').replace(/\s*·\s*(aller|retour)/i, '').replace(/^phase\s*·\s*/i, 'Phase ')
   if (/🏆/.test(text) || /vainqueur/i.test(last.opponent || '') || (isFinal && last.result === 'W')) return { label: 'Vainqueur', cls: 'win', won: true }
   if (isFinal) return { label: 'Finaliste', cls: 'final' }
@@ -119,12 +119,12 @@ const fmtMoney = n => n >= 1e6 ? (n / 1e6).toLocaleString('fr-FR', { maximumFrac
 /* ── Morceaux d'interface ── */
 const logo = (c, alt) => `<img src="${ROOT}${esc(c.logo)}" alt="${esc(alt || '')}" onerror="this.style.visibility='hidden'"/>`
 
-function wdlBar(r) {
+function wdlBar(r, right) {
   const t = (r.w + r.d + r.l) || 1
   return `<div class="wdl" role="img" aria-label="${r.w} victoires, ${r.d} nuls, ${r.l} défaites">
       <i class="w" style="width:${r.w / t * 100}%"></i><i class="d" style="width:${r.d / t * 100}%"></i><i class="l" style="width:${r.l / t * 100}%"></i>
     </div>
-    <div class="wdl-lbl"><span>${r.w}V · ${r.d}N · ${r.l}D</span><span>${r.pts} pts</span></div>`
+    <div class="wdl-lbl"><span>${r.w}V · ${r.d}N · ${r.l}D</span><span>${right != null ? right : r.pts + ' pts'}</span></div>`
 }
 
 function ribbon(ms, id) {
@@ -186,10 +186,12 @@ function playoffsCard(p) {
 function transfersBlock(s) {
   const ins = s.transfers || [], outs = s.departures || []
   if (!ins.length && !outs.length) return ''
-  const spent = ins.filter(t => t.type === 'buy').reduce((a, t) => a + parseAmount(t.amount), 0)
-  const got = outs.filter(t => t.type === 'sell').reduce((a, t) => a + parseAmount(t.amount), 0)
+  // Tout montant compte (les anciennes saisons notent les achats « sell »)
+  const spent = ins.reduce((a, t) => a + parseAmount(t.amount), 0)
+  const got = outs.reduce((a, t) => a + parseAmount(t.amount), 0)
   const label = { buy: 'Achat', sell: 'Vente', loan: 'Prêt', free: 'Libre' }
-  const row = (t, dir) => `<li class="tr"><span class="ttype ${esc(t.type)}">${esc(label[t.type] || t.type)}</span>
+  const kind = (t, dir) => t.type === 'buy' || t.type === 'sell' ? (dir === 'in' ? 'buy' : 'sell') : t.type
+  const row = (t, dir) => `<li class="tr"><span class="ttype ${esc(kind(t, dir))}">${esc(label[kind(t, dir)] || t.type)}</span>
       <span><span class="who">${esc(t.name)}</span><br><span class="from">${dir === 'in' ? '← ' + esc(t.from || '') : '→ ' + esc(t.to || '')} · ${esc(t.date || '')}</span></span>
       <span class="amt">${esc(t.amount || '')}</span></li>`
   const bal = got - spent
@@ -343,6 +345,64 @@ function viewCareer(c) {
     ${ss.length > 1 ? `<section class="section"><h2 class="h-section">Trajectoire <small>Classement en championnat</small></h2><div class="chart-card">${positionChart(ss)}</div></section>` : ''}
     <section class="section"><h2 class="h-section">Saisons <small>De la plus récente à la plus ancienne</small></h2>
       ${ss.length ? `<div class="season-list">${rows}</div>` : '<div class="empty">Aucune saison pour l\'instant.</div>'}
+    </section>
+    ${careerExtras(ss)}`
+}
+
+// Bilan de carrière : vitrine, records, domicile / extérieur, mercato, adversaires (career-stats.js)
+function careerExtras(ss) {
+  if (!window.CareerStats || !ss.length) return ''
+  const st = window.CareerStats.compute(ss)
+  const money = window.CareerStats.formatMoney
+  const pct = r => r.j ? Math.round(r.w / r.j * 100) + '%' : '—'
+  const where = v => v === 'D' ? 'à domicile' : v === 'E' ? 'à l\'extérieur' : 'sur terrain neutre'
+  const cell = (k, v, d, cls) => `<div><div class="big-num ${cls || ''}">${v}</div><div class="k">${k}</div>${d ? `<div class="cx-d">${d}</div>` : ''}</div>`
+  const bal = st.mercato.received - st.mercato.spent
+  const trophies = st.trophies.map(t => `<li class="cx-t gold"><span>🏆 ${esc(t.name)}</span><span class="mono">${esc(t.year)}</span></li>`).join('')
+  const finals = st.finals.map(t => `<li class="cx-t"><span>Finaliste · ${esc(t.name)}${t.opponent ? ` <span class="cx-d">contre ${esc(t.opponent)}</span>` : ''}</span><span class="mono">${esc(t.year)}</span></li>`).join('')
+  const oppRows = st.opponents.map(o => `<tr><td></td><td>${esc(o.name)}</td><td>${o.j}</td><td>${o.w}</td><td>${o.d}</td><td>${o.l}</td><td>${o.gf}</td><td>${o.ga}</td><td>${o.gf - o.ga > 0 ? '+' : ''}${o.gf - o.ga}</td><td class="pts">${o.j ? Math.round(o.w / o.j * 100) + '%' : '—'}</td></tr>`).join('')
+  const m = x => x ? `${x.gf}–${x.ga}` : '—'
+  return `
+    <section class="section"><h2 class="h-section">Vitrine <small>${st.trophies.length} trophée${st.trophies.length > 1 ? 's' : ''} · ${st.finals.length} finale${st.finals.length > 1 ? 's' : ''} perdue${st.finals.length > 1 ? 's' : ''}</small></h2>
+      ${trophies || finals ? `<ul class="cx-list">${trophies}${finals}</ul>` : '<div class="empty">Pas encore de trophée ni de finale.</div>'}
+    </section>
+    <section class="section"><h2 class="h-section">Records <small>En championnat</small></h2>
+      <div class="kpis cx-kpis">
+        ${cell('Plus large victoire', m(st.biggestWin), st.biggestWin ? `contre ${esc(st.biggestWin.opp)} ${where(st.biggestWin.venue)} · ${esc(st.biggestWin.year)}` : '', 'c-win')}
+        ${cell('Plus lourde défaite', m(st.worstLoss), st.worstLoss ? `contre ${esc(st.worstLoss.opp)} ${where(st.worstLoss.venue)} · ${esc(st.worstLoss.year)}` : '', 'c-loss')}
+        ${cell('Victoires d\'affilée', st.winStreak ? st.winStreak.n : '—', st.winStreak ? esc(st.winStreak.year) : '')}
+        ${cell('Matchs sans défaite', st.unbeatenStreak ? st.unbeatenStreak.n : '—', st.unbeatenStreak ? esc(st.unbeatenStreak.year) : '')}
+        ${cell('Meilleure saison', st.bestSeason ? posLabel(st.bestSeason.pos) : '—', st.bestSeason ? `${esc(st.bestSeason.year)} · ${esc(st.bestSeason.league)} · ${st.bestSeason.pts} pts` : '')}
+        ${st.worstSeason ? cell('Saison la plus difficile', posLabel(st.worstSeason.pos), `${esc(st.worstSeason.year)} · ${esc(st.worstSeason.league)} · ${st.worstSeason.pts} pts`) : ''}
+      </div>
+    </section>
+    <section class="section"><h2 class="h-section">Domicile / extérieur <small>${st.total.j} matchs de championnat</small></h2>
+      <div class="cols-2">
+        ${[['À domicile', st.home], ['À l\'extérieur', st.away]].map(([t, r]) => `<div class="panel"><h4>${t}</h4>
+          <div class="big-num">${pct(r)}</div><div class="k eyebrow" style="margin:6px 0 14px">de victoires</div>
+          ${wdlBar(r, r.gf + '–' + r.ga + ' buts')}</div>`).join('')}
+      </div>
+    </section>
+    ${st.mercato.spent || st.mercato.received ? `<section class="section"><h2 class="h-section">Mercato cumulé <small>Toute la carrière</small></h2>
+      <div class="transfer-sum">
+        <div><div class="big-num">${money(st.mercato.spent)}</div><div class="eyebrow">Dépensés · ${st.mercato.buys} achats</div></div>
+        <div><div class="big-num">${money(st.mercato.received)}</div><div class="eyebrow">Encaissés · ${st.mercato.sales} ventes</div></div>
+        <div><div class="big-num ${bal >= 0 ? 'c-win' : 'c-loss'}">${bal >= 0 ? '+' : '−'}${money(Math.abs(bal))}</div><div class="eyebrow">Solde</div></div>
+      </div>
+      <div class="cols-2" style="margin-top:18px">
+        ${st.mercato.biggestBuy ? `<div class="panel"><h4>Plus gros achat</h4><div class="big-num">${esc(st.mercato.biggestBuy.amount)}</div><div class="cx-d"><b>${esc(st.mercato.biggestBuy.name)}</b> · ${esc(st.mercato.biggestBuy.club || '')} · ${esc(st.mercato.biggestBuy.year)}</div></div>` : ''}
+        ${st.mercato.biggestSale ? `<div class="panel"><h4>Plus grosse vente</h4><div class="big-num">${esc(st.mercato.biggestSale.amount)}</div><div class="cx-d"><b>${esc(st.mercato.biggestSale.name)}</b> · ${esc(st.mercato.biggestSale.club || '')} · ${esc(st.mercato.biggestSale.year)}</div></div>` : ''}
+      </div></section>` : ''}
+    <section class="section"><h2 class="h-section">Face aux adversaires <small>${st.opponents.length} adversaires</small></h2>
+      <div class="cols-2">
+        ${st.favourite ? `<div class="panel"><h4>Victime préférée</h4><div class="big-num c-win" style="font-size:28px">${esc(st.favourite.name)}</div><div class="cx-d">${st.favourite.w} victoires en ${st.favourite.j} matchs</div></div>` : ''}
+        ${st.nemesis ? `<div class="panel"><h4>Bête noire</h4><div class="big-num c-loss" style="font-size:28px">${esc(st.nemesis.name)}</div><div class="cx-d">${st.nemesis.l} défaites en ${st.nemesis.j} matchs</div></div>` : ''}
+      </div>
+      <details class="fold"><summary>Bilan contre chaque adversaire</summary>
+        <div class="table-wrap"><table class="std">
+          <thead><tr><th></th><th>Adversaire</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP</th><th>BC</th><th>Diff</th><th>% V</th></tr></thead>
+          <tbody>${oppRows}</tbody></table></div>
+      </details>
     </section>`
 }
 

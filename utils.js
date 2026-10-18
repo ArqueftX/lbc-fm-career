@@ -362,3 +362,96 @@ function renderMercatoPreview(season, careerId) {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addButton)
   else addButton()
 })()
+
+/* ── Bilan de carrière (pages carrière) ──
+   Records, vitrine, domicile / extérieur, mercato cumulé et bilan
+   par adversaire, calculés par career-stats.js à partir des saisons. */
+function renderCareerExtras(seasons) {
+  const host = document.getElementById('career-extras')
+  if (!host || !window.CareerStats || !seasons || !seasons.length) return
+  const st = window.CareerStats.compute(seasons)
+  const money = window.CareerStats.formatMoney
+  if (!document.getElementById('cx-style')) {
+    const css = document.createElement('style')
+    css.id = 'cx-style'
+    css.textContent = `
+      .cx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:3px}
+      .cx-box{background:var(--blue);padding:22px 22px 20px;position:relative;overflow:hidden}
+      .cx-k{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;font-weight:700}
+      .cx-v{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;margin-top:10px}
+      .cx-d{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:6px;line-height:1.4}
+      .cx-d b{color:var(--white);font-weight:600}
+      .cx-trophy{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(232,184,75,.08);border:1px solid rgba(232,184,75,.3);font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:1px}
+      .cx-trophy.final{background:transparent;border-color:rgba(106,130,176,.25);color:var(--muted)}
+      .cx-trophy span{font-size:11px;color:var(--muted);letter-spacing:2px;margin-left:auto;white-space:nowrap}
+      .cx-wrap{overflow-x:auto}
+      .cx-table{width:100%;border-collapse:collapse;font-family:'Barlow Condensed',sans-serif;font-size:13px;min-width:480px}
+      .cx-table th{font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700;text-align:right;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+      .cx-table th:first-child,.cx-table td:first-child{text-align:left}
+      .cx-table td{padding:8px;text-align:right;border-bottom:1px solid rgba(255,255,255,.04)}
+      .cx-fold summary{cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;padding:14px 0;list-style:none}
+      .cx-fold summary::before{content:'＋ '}
+      .cx-fold[open] summary::before{content:'− '}
+      @media (max-width:760px){.cx{padding:0 16px 48px!important}.cx-v{font-size:32px}}
+    `
+    document.head.appendChild(css)
+  }
+  const pct = r => r.j ? Math.round(r.w / r.j * 100) + '%' : '—'
+  const score = m => m ? `${m.gf} – ${m.ga}` : '—'
+  const where = v => v === 'D' ? 'domicile' : v === 'E' ? 'extérieur' : 'terrain neutre'
+  const box = (k, v, d, color) => `<div class="cx-box"><div class="cx-k">${k}</div><div class="cx-v" style="color:${color || C.white}">${v}</div><div class="cx-d">${d || ''}</div></div>`
+
+  const trophies = st.trophies.map(t => `<div class="cx-trophy">🏆 ${t.name}<span>${t.year}</span></div>`).join('')
+  const finals = st.finals.map(t => `<div class="cx-trophy final">Finaliste · ${t.name}${t.opponent ? ' (contre ' + t.opponent + ')' : ''}<span>${t.year}</span></div>`).join('')
+  const bal = st.mercato.received - st.mercato.spent
+  const oppRows = st.opponents.map(o => `<tr><td>${o.name}</td><td>${o.j}</td><td style="color:${C.green}">${o.w}</td><td style="color:${C.gold}">${o.d}</td><td style="color:${C.red}">${o.l}</td><td>${o.gf}</td><td>${o.ga}</td></tr>`).join('')
+
+  host.innerHTML = `
+    <div style="max-width:1160px;margin:0 auto;padding:0 56px 60px" class="cx">
+      <div class="bc sec-title">Vitrine à trophées</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px;margin-bottom:48px">
+        ${trophies || ''}${finals || ''}
+        ${!trophies && !finals ? `<div class="cx-d" style="padding:6px 0">Pas encore de trophée ni de finale.</div>` : ''}
+      </div>
+
+      <div class="bc sec-title">Records en championnat</div>
+      <div class="cx-grid" style="margin-bottom:48px">
+        ${box('Plus large victoire', score(st.biggestWin), st.biggestWin ? `contre <b>${st.biggestWin.opp}</b> · ${where(st.biggestWin.venue)} · ${st.biggestWin.year}` : '', C.green)}
+        ${box('Plus lourde défaite', score(st.worstLoss), st.worstLoss ? `contre <b>${st.worstLoss.opp}</b> · ${where(st.worstLoss.venue)} · ${st.worstLoss.year}` : '', C.red)}
+        ${box('Série de victoires', st.winStreak ? st.winStreak.n : '—', st.winStreak ? `matchs d'affilée · ${st.winStreak.year}` : '', C.gold)}
+        ${box('Invincibilité', st.unbeatenStreak ? st.unbeatenStreak.n : '—', st.unbeatenStreak ? `matchs sans défaite · ${st.unbeatenStreak.year}` : '')}
+        ${box('Meilleure saison', st.bestSeason ? posLabel(st.bestSeason.pos) : '—', st.bestSeason ? `<b>${st.bestSeason.year}</b> · ${st.bestSeason.league} · ${st.bestSeason.pts} pts` : '', C.gold)}
+        ${st.worstSeason ? box('Saison la plus difficile', posLabel(st.worstSeason.pos), `<b>${st.worstSeason.year}</b> · ${st.worstSeason.league} · ${st.worstSeason.pts} pts`, C.muted) : ''}
+      </div>
+
+      <div class="bc sec-title">Domicile / extérieur</div>
+      <div class="cx-grid" style="margin-bottom:48px">
+        ${box('À domicile', pct(st.home), `de victoires · <b>${st.home.w}V ${st.home.d}N ${st.home.l}D</b> · ${st.home.gf}-${st.home.ga}`, C.green)}
+        ${box("À l'extérieur", pct(st.away), `de victoires · <b>${st.away.w}V ${st.away.d}N ${st.away.l}D</b> · ${st.away.gf}-${st.away.ga}`)}
+        ${box('Toute la carrière', pct(st.total), `de victoires · <b>${st.total.j} matchs</b> · ${st.total.gf} buts marqués`)}
+      </div>
+
+      ${st.mercato.spent || st.mercato.received ? `
+      <div class="bc sec-title">Mercato cumulé</div>
+      <div class="cx-grid" style="margin-bottom:48px">
+        ${box('Dépensés', money(st.mercato.spent), `${st.mercato.buys} transfert${st.mercato.buys > 1 ? 's' : ''} payant${st.mercato.buys > 1 ? 's' : ''} à l'arrivée`)}
+        ${box('Encaissés', money(st.mercato.received), `${st.mercato.sales} vente${st.mercato.sales > 1 ? 's' : ''}`)}
+        ${box('Solde', (bal >= 0 ? '+' : '−') + money(Math.abs(bal)), bal >= 0 ? 'bénéfice sur toute la carrière' : 'investissement sur toute la carrière', bal >= 0 ? C.green : C.red)}
+        ${st.mercato.biggestBuy ? box('Plus gros achat', st.mercato.biggestBuy.amount, `<b>${st.mercato.biggestBuy.name}</b> · ${st.mercato.biggestBuy.club || ''} · ${st.mercato.biggestBuy.year}`, C.gold) : ''}
+        ${st.mercato.biggestSale ? box('Plus grosse vente', st.mercato.biggestSale.amount, `<b>${st.mercato.biggestSale.name}</b> · ${st.mercato.biggestSale.club || ''} · ${st.mercato.biggestSale.year}`, C.gold) : ''}
+      </div>` : ''}
+
+      <div class="bc sec-title">Face aux adversaires</div>
+      <div class="cx-grid">
+        ${st.favourite ? box('Victime préférée', st.favourite.name, `<b>${st.favourite.w} victoires</b> en ${st.favourite.j} matchs`, C.green) : ''}
+        ${st.nemesis ? box('Bête noire', st.nemesis.name, `<b>${st.nemesis.l} défaites</b> en ${st.nemesis.j} matchs`, C.red) : ''}
+      </div>
+      <details class="cx-fold">
+        <summary>BILAN CONTRE LES ${st.opponents.length} ADVERSAIRES</summary>
+        <div class="cx-wrap"><table class="cx-table">
+          <thead><tr><th>ADVERSAIRE</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP</th><th>BC</th></tr></thead>
+          <tbody>${oppRows}</tbody>
+        </table></div>
+      </details>
+    </div>`
+}
