@@ -329,3 +329,35 @@ function renderMercatoPreview(season, careerId) {
     </div>
   `
 }
+
+/* ── Bascule vers le nouveau design (v2/) ──
+   Un bouton sur chaque page ouvre la page équivalente du nouveau
+   design. Le choix est mémorisé : l'accueil redirige vers v2 tant
+   qu'on n'est pas revenu au design actuel depuis v2.             */
+;(function () {
+  const KEY = 'lbc-design'
+  const inCareer = typeof window.FORCE_CAREER !== 'undefined'
+  const base = inCareer ? '../' : ''
+  function target() {
+    const id = new URLSearchParams(location.search).get('id')
+    const career = inCareer ? window.FORCE_CAREER : (window.getCurrentCareer ? window.getCurrentCareer().id : '')
+    if (inCareer && id && /(saison|mercato|splash)\.html$/.test(location.pathname)) return `${base}v2/#/c/${career}/${id}`
+    return career ? `${base}v2/#/c/${career}` : `${base}v2/`
+  }
+  let pref = null
+  try { pref = localStorage.getItem(KEY) } catch (_) {}
+  if (!inCareer && pref === 'v2') { location.replace(target()); return }
+
+  function addButton() {
+    if (document.getElementById('v2-switch')) return
+    const a = document.createElement('a')
+    a.id = 'v2-switch'
+    a.href = target()
+    a.textContent = '✦ Nouveau design'
+    a.setAttribute('style', 'position:fixed;right:18px;bottom:18px;z-index:9999;font:600 12px/1 "Barlow Condensed",sans-serif;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:#07111f;background:#e8b84b;padding:12px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.35)')
+    a.addEventListener('click', () => { try { localStorage.setItem(KEY, 'v2') } catch (_) {} })
+    document.body.appendChild(a)
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addButton)
+  else addButton()
+})()

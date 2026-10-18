@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Carnets FM26</title>
+  <link rel="icon" href="../logo-chateauroux.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"/>
+  <link rel="stylesheet" href="app.css"/>
+  <script>
+    // Thème choisi (clair / sombre) appliqué avant l'affichage pour éviter un flash
+    try { const t = localStorage.getItem('lbc-v2-theme'); if (t) document.documentElement.dataset.theme = t } catch (_) {}
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">
+      <span class="brand-mark">FM</span>
+      <span class="brand-name">Carnets <em>FM26</em></span>
+    </a>
+    <nav class="career-nav" id="career-nav" aria-label="Carrières"></nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="Changer de thème" title="Clair / sombre"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
+      <a class="design-btn" id="design-back" href="../">↩ Design actuel</a>
+    </div>
+  </header>
+
+  <main id="app" class="app" aria-live="polite">
+    <p class="loading">Chargement des carrières…</p>
+  </main>
+
+  <footer class="foot">
+    <span>Nouveau design · version d'essai</span>
+    <a href="../" id="design-back-foot">Revenir au design actuel</a>
+  </footer>
+
+  <script src="../careers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
