@@ -25,7 +25,7 @@ window['SEASONS_wolfsburg-pep'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Février 2027",
+    lastUpdate:   "Mars 2027",
     position:     null,
 
     months: [
@@ -119,28 +119,37 @@ window['SEASONS_wolfsburg-pep'] = [
           { r:"L", tip:"RB Leipzig (D) 1-2",          comp:"BL" },
         ],
       },
+      {
+        key: "03", label: "Mars 2027", position: 12,
+        note: "Mois en demi-teinte : victoire à Heidenheim (1-2), puis deux revers contre Hambourg (0-1 à domicile) et à Fribourg (2-0). Wolfsburg reste 12e avec 28 points, trois longueurs au-dessus de la place de barragiste.",
+        matches: [
+          { r:"W", tip:"Heidenheim (E) 1-2",          comp:"BL" },
+          { r:"L", tip:"Hamburg (D) 0-1",             comp:"BL" },
+          { r:"L", tip:"Freiburg (E) 2-0",            comp:"BL" },
+        ],
+      },
     ],
 
     scorers: [
       { name: "D. Pejčinović · M. Hekimoğlu", detail: "BU / BU · ex-aequo",        value: 5 },
-      { name: "Eriksen · Majer · Shiogai",    detail: "3 joueurs à égalité",       value: 3 },
-      { name: "M. Arnold · P. Wimmer",        detail: "MDC / AD · ex-aequo",       value: 2 },
+      { name: "Christian Eriksen",            detail: "MOC · Danois · 35 ans",     value: 4 },
+      { name: "L. Majer · K. Shiogai",        detail: "MOC / BU · ex-aequo",       value: 3 },
     ],
     assists: [
-      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans",     value: 6 },
-      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans",     value: 5 },
-      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 25 ans",  value: 3 },
+      { name: "L. Majer · C. Eriksen", detail: "MOC / MOC · ex-aequo",      value: 6 },
+      { name: "Patrick Wimmer",        detail: "AD · Autrichien · 25 ans",  value: 3 },
+      { name: "Aaron Zehnter",         detail: "DG · Allemand · 22 ans",    value: 2 },
     ],
-    // Meilleures et pires moyennes : au moins 12 matchs joués (la moitié des 24 journées de Bundesliga jouées)
+    // Meilleures et pires moyennes : au moins 14 matchs joués (la moitié des 27 journées de Bundesliga jouées)
     ratings: [
-      { name: "Maximilian Arnold", detail: "MDC · Allemand · 32 ans · 25 tit. · 2 buts · 1 passe D.",            value: 7.07 },
-      { name: "Elias Baum",        detail: "DD · Allemand · 21 ans · 18 tit. / 6 rempl. · 1 but · 1 passe D.",   value: 6.98 },
-      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 25 ans · 23 tit. · 2 buts · 3 passes D.",          value: 6.95 },
+      { name: "Maximilian Arnold", detail: "MDC · Allemand · 32 ans · 28 tit. · 2 buts · 1 passe D.",            value: 7.09 },
+      { name: "Elias Baum",        detail: "DD · Allemand · 21 ans · 21 tit. / 6 rempl. · 1 but · 1 passe D.",   value: 6.96 },
+      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 25 ans · 25 tit. · 2 buts · 3 passes D.",          value: 6.93 },
     ],
     flops: [
-      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans · 32 tit. · 3 buts · 5 passes D.",             value: 6.54 },
-      { name: "Aster Vranckx",     detail: "MC · Belge · 24 ans · 12 tit. / 7 rempl. · 1 but · 1 passe D.",     value: 6.54 },
-      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans · 30 tit. · 3 buts · 6 passes D.",             value: 6.55 },
+      { name: "Aster Vranckx",     detail: "MC · Belge · 24 ans · 12 tit. / 9 rempl. · 1 but · 1 passe D.",     value: 6.52 },
+      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans · 33 tit. · 3 buts · 6 passes D.",             value: 6.53 },
+      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans · 35 tit. · 4 buts · 6 passes D.",             value: 6.55 },
     ],
 
     transfers: [
@@ -224,29 +233,29 @@ window['SEASONS_wolfsburg-pep'] = [
       { pos:27, team:"Lugano",              j:8, g:2, n:1, l:5, bp:5,  bc:7,  db:-2, pts:7, zone:"releg" },
     ],
 
-    // Classement après 24 journées (fin février 2027)
+    // Classement après 27 journées (fin mars 2027)
     standings: [
-      { pos:1,  team:"Bayern München",        j:24, g:19, n:2,  l:3,  bp:49, bc:14, db:35, pts:59, zone:"promo" },
-      { pos:2,  team:"Eintracht Frankfurt",   j:24, g:13, n:6,  l:5,  bp:34, bc:18, db:16, pts:45, zone:"promo" },
-      { pos:3,  team:"Stuttgart",             j:24, g:12, n:7,  l:5,  bp:34, bc:23, db:11, pts:43, zone:"promo" },
-      { pos:4,  team:"Dortmund",              j:24, g:11, n:8,  l:5,  bp:27, bc:21, db:6, pts:41, zone:"promo" },
-      { pos:5,  team:"Bayer Leverkusen",      j:24, g:10, n:9,  l:5,  bp:25, bc:16, db:9, pts:39 },
-      { pos:6,  team:"Union Berlin",          j:24, g:11, n:4,  l:9,  bp:25, bc:24, db:1, pts:37 },
-      { pos:7,  team:"Heidenheim",            j:24, g:10, n:7,  l:7,  bp:27, bc:28, db:-1, pts:37 },
-      { pos:8,  team:"RB Leipzig",            j:24, g:9,  n:9,  l:6,  bp:34, bc:27, db:7, pts:36 },
-      { pos:9,  team:"Mainz 05",              j:24, g:8,  n:8,  l:8,  bp:21, bc:23, db:-2, pts:32 },
-      { pos:10, team:"Freiburg",              j:24, g:7,  n:8,  l:9,  bp:27, bc:23, db:4, pts:29 },
-      { pos:11, team:"Hoffenheim",            j:24, g:7,  n:7,  l:10, bp:31, bc:34, db:-3, pts:28 },
-      { pos:12, team:"Wolfsburg",             j:24, g:7,  n:4,  l:13, bp:22, bc:31, db:-9, pts:25, highlight:true },
-      { pos:13, team:"FC Köln",               j:24, g:5,  n:10, l:9,  bp:17, bc:28, db:-11, pts:25 },
-      { pos:14, team:"Hertha",                j:24, g:7,  n:3,  l:14, bp:20, bc:30, db:-10, pts:24 },
-      { pos:15, team:"Hamburg",               j:24, g:6,  n:6,  l:12, bp:11, bc:24, db:-13, pts:24 },
-      { pos:16, team:"Gladbach",              j:24, g:5,  n:9,  l:10, bp:21, bc:36, db:-15, pts:24 },
-      { pos:17, team:"Holstein Kiel",         j:24, g:4,  n:10, l:10, bp:15, bc:28, db:-13, pts:22, zone:"releg" },
-      { pos:18, team:"Hannover",              j:24, g:3,  n:7,  l:14, bp:12, bc:24, db:-12, pts:16, zone:"releg" },
+      { pos:1,  team:"Bayern München",        j:27, g:22, n:2,  l:3,  bp:58, bc:16, db:42, pts:68, zone:"promo" },
+      { pos:2,  team:"Eintracht Frankfurt",   j:27, g:13, n:8,  l:6,  bp:37, bc:22, db:15, pts:47, zone:"promo" },
+      { pos:3,  team:"Stuttgart",             j:27, g:13, n:8,  l:6,  bp:39, bc:28, db:11, pts:47, zone:"promo" },
+      { pos:4,  team:"Dortmund",              j:27, g:12, n:10, l:5,  bp:31, bc:23, db:8, pts:46, zone:"promo" },
+      { pos:5,  team:"Bayer Leverkusen",      j:27, g:11, n:10, l:6,  bp:29, bc:19, db:10, pts:43 },
+      { pos:6,  team:"RB Leipzig",            j:27, g:11, n:9,  l:7,  bp:40, bc:30, db:10, pts:42 },
+      { pos:7,  team:"Heidenheim",            j:27, g:11, n:8,  l:8,  bp:30, bc:30, db:0, pts:41 },
+      { pos:8,  team:"Freiburg",              j:27, g:10, n:8,  l:9,  bp:33, bc:24, db:9, pts:38 },
+      { pos:9,  team:"Union Berlin",          j:27, g:11, n:5,  l:11, bp:25, bc:28, db:-3, pts:38 },
+      { pos:10, team:"Mainz 05",              j:27, g:9,  n:9,  l:9,  bp:25, bc:27, db:-2, pts:36 },
+      { pos:11, team:"Hoffenheim",            j:27, g:8,  n:8,  l:11, bp:34, bc:38, db:-4, pts:32 },
+      { pos:12, team:"Wolfsburg",             j:27, g:8,  n:4,  l:15, bp:24, bc:35, db:-11, pts:28, highlight:true },
+      { pos:13, team:"FC Köln",               j:27, g:5,  n:13, l:9,  bp:20, bc:31, db:-11, pts:28 },
+      { pos:14, team:"Hamburg",               j:27, g:7,  n:7,  l:13, bp:13, bc:27, db:-14, pts:28 },
+      { pos:15, team:"Gladbach",              j:27, g:6,  n:9,  l:12, bp:23, bc:41, db:-18, pts:27 },
+      { pos:16, team:"Hertha",                j:27, g:7,  n:4,  l:16, bp:21, bc:37, db:-16, pts:25 },
+      { pos:17, team:"Holstein Kiel",         j:27, g:4,  n:11, l:12, bp:16, bc:32, db:-16, pts:23, zone:"releg" },
+      { pos:18, team:"Hannover",              j:27, g:4,  n:9,  l:14, bp:16, bc:26, db:-10, pts:21, zone:"releg" },
     ],
 
-    // Effectif au 1er mars 2027
+    // Effectif au 1er avril 2027
     squad: [
       { n:"Mario De Luis",       p:"GB",  nat:"ESP", age:24 },
       { n:"Spyridon Souliotis",  p:"GB",  nat:"GRE", age:20 },
@@ -259,9 +268,9 @@ window['SEASONS_wolfsburg-pep'] = [
       { n:"Till Neininger",      p:"DC",  nat:"GER", age:19 },
       { n:"Kostas Koulierakis",  p:"DC",  nat:"GRE", age:23 },
       { n:"Moritz Jenz",         p:"DC",  nat:"NGA", age:27 },
-      { n:"Gastón Álvarez",      p:"DG",  nat:"URU", age:26 },
+      { n:"Gastón Álvarez",      p:"DG",  nat:"URU", age:27 },
       { n:"Jan Bürger",          p:"DD",  nat:"GER", age:20 },
-      { n:"Saël Kumbedi",        p:"DD",  nat:"FRA", age:21 },
+      { n:"Saël Kumbedi",        p:"DD",  nat:"FRA", age:22 },
       { n:"Kevin Paredes",       p:"DG",  nat:"USA", age:23 },
       { n:"Nicolas Cozza",       p:"DG",  nat:"FRA", age:28 },
       { n:"Mathys Angély",       p:"DG",  nat:"FRA", age:19 },
@@ -275,7 +284,7 @@ window['SEASONS_wolfsburg-pep'] = [
       { n:"Miguel Boog",         p:"MDC", nat:"GER", age:19 },
       { n:"Pharell Hensel",      p:"MDC", nat:"GER", age:19 },
       { n:"Christian Eriksen",   p:"MOC", nat:"DEN", age:35 },
-      { n:"Darwin Soylu",        p:"MC",  nat:"TUR", age:19 },
+      { n:"Darwin Soylu",        p:"MC",  nat:"TUR", age:20 },
       { n:"Lovro Majer",         p:"MOC", nat:"CRO", age:29 },
       { n:"Patrick Wimmer",      p:"AD",  nat:"AUT", age:25 },
       { n:"Andreas Skov Olsen",  p:"AD",  nat:"DEN", age:27 },
@@ -283,7 +292,7 @@ window['SEASONS_wolfsburg-pep'] = [
       { n:"Dženan Pejčinović",   p:"BU",  nat:"GER", age:22 },
       { n:"Derry Scherhant",     p:"BU",  nat:"GER", age:24 },
       { n:"Mustafa Hekimoğlu",   p:"BU",  nat:"TUR", age:19 },
-      { n:"Kento Shiogai",       p:"BU",  nat:"JPN", age:21 },
+      { n:"Kento Shiogai",       p:"BU",  nat:"JPN", age:22 },
       { n:"Karlo Simic",         p:"BU",  nat:"CRO", age:19 },
     ],
 
