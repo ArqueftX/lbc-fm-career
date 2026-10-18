@@ -5,16 +5,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>FM26 — Les CARQrières</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@500&display=swap"/>
   <link rel="icon" href="logo-chateauroux.png"/>
   <style>
     .home-wrap{max-width:1160px;margin:0 auto;padding:0 56px}
-    .news{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;margin:44px 0 0;padding:26px 30px;background:linear-gradient(120deg,rgba(232,184,75,.12),rgba(12,34,89,.55));border:1px solid rgba(232,184,75,.45);overflow:hidden}
-    .news::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
-    .news-badge{justify-self:start;font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:4px;font-weight:700;color:var(--navy);background:var(--gold);padding:6px 12px;white-space:nowrap}
-    .news h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:30px;letter-spacing:2px;line-height:1;margin-bottom:8px}
-    .news p{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--muted);line-height:1.5;max-width:620px}
-    .news-cta{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:4px;font-weight:700;color:var(--navy);background:var(--gold);padding:15px 22px;text-decoration:none;white-space:nowrap;transition:transform .2s}
+    /* Encadré « Nouveauté » : un morceau du nouveau design (v2) dans le design actuel */
+    .news{--n-bg:#f3efe6;--n-surface:#fffdf8;--n-ink:#17191d;--n-ink2:#3a3d44;--n-muted:#6d7078;--n-line:#ddd5c5;--n-win:#1d8a57;--n-gold:#a8781c;
+      position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:center;margin:44px 0 0;padding:34px 36px;
+      background:var(--n-bg);color:var(--n-ink);border-radius:20px;box-shadow:0 0 0 1px rgba(232,184,75,.35),0 24px 60px -30px rgba(0,0,0,.9);
+      font:400 15px/1.55 'Inter Tight',system-ui,sans-serif;overflow:hidden}
+    .news::after{content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;background:radial-gradient(120% 90% at 100% 0%,rgba(168,120,28,.10),transparent 60%)}
+    .news-eyebrow{font:500 11px/1.4 'JetBrains Mono',ui-monospace,monospace;letter-spacing:1.6px;text-transform:uppercase;color:var(--n-muted)}
+    .news-eyebrow b{display:inline-block;font-weight:500;color:var(--n-surface);background:var(--n-ink);padding:4px 8px;border-radius:6px;margin-right:8px;letter-spacing:1px}
+    .news h2{font:800 clamp(30px,4vw,46px)/1 'Fraunces',Georgia,serif;letter-spacing:-1.2px;margin:14px 0 0;color:var(--n-ink)}
+    .news h2 em{font-style:italic;font-weight:400;color:#8a1c1c}
+    .news p{font:400 17px/1.55 'Fraunces',Georgia,serif;color:var(--n-ink2);margin:14px 0 22px;max-width:560px}
+    .news-cta{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 'Inter Tight',system-ui,sans-serif;color:var(--n-bg);background:var(--n-ink);padding:13px 18px;border-radius:999px;text-decoration:none;transition:transform .2s}
     .news-cta:hover{transform:translateX(3px)}
+    .news-note{font:500 11px/1.4 'JetBrains Mono',ui-monospace,monospace;color:var(--n-muted);margin-left:14px}
+    .np-card{position:relative;background:var(--n-surface);border:1px solid var(--n-line);border-radius:16px;padding:20px;box-shadow:0 1px 0 rgba(23,25,29,.04),0 8px 24px -16px rgba(23,25,29,.25);overflow:hidden;transform:rotate(1.2deg)}
+    .np-card::before{content:'';position:absolute;inset:0 0 auto 0;height:4px;background:var(--np-c,#8a1c1c)}
+    .np-top{display:flex;gap:14px;align-items:center}
+    .np-top img{width:46px;height:46px;object-fit:contain}
+    .np-name{font:600 19px/1.1 'Fraunces',Georgia,serif;letter-spacing:-.3px}
+    .np-sub{font-size:12.5px;color:var(--n-muted);margin-top:3px}
+    .np-spark{display:block;width:100%;height:52px;margin:14px 0 12px}
+    .np-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .np-stats b{display:block;font:600 20px/1 'Fraunces',Georgia,serif}
+    .np-stats span{font:500 9.5px/1.3 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.8px;text-transform:uppercase;color:var(--n-muted)}
+    .np-label{position:absolute;top:-11px;right:18px;font:500 10px/1 'JetBrains Mono',ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;background:var(--n-ink);color:var(--n-bg);padding:6px 9px;border-radius:999px;z-index:2}
     .clist{padding-bottom:70px}
     .clist-head,.crow{display:grid;grid-template-columns:44px 64px minmax(0,1fr) 90px 90px 90px 90px 170px 24px;gap:16px;align-items:center}
     .clist-head{padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -48,8 +67,9 @@
     @media (max-width:760px){
       .home-wrap{padding:0 16px}
       #header{padding:44px 16px 36px!important}
-      .news{grid-template-columns:1fr;gap:14px;padding:22px 20px}
-      .news-cta{text-align:center}
+      .news{grid-template-columns:1fr;gap:26px;padding:26px 20px}
+      .news-note{display:block;margin:12px 0 0}
+      .np-card{transform:none}
     }
   </style>
 </head>
@@ -68,12 +88,16 @@
   <div class="home-wrap">
     <!-- NOUVEAUTÉ : nouveau design disponible -->
     <section class="news au au3" aria-labelledby="news-title">
-      <span class="news-badge">✦ NOUVEAUTÉ</span>
       <div>
-        <h2 id="news-title">Un nouveau design est disponible</h2>
+        <div class="news-eyebrow"><b>✦ Nouveauté</b>Version d'essai</div>
+        <h2 id="news-title">Un nouveau design<br><em>est disponible.</em></h2>
         <p>Le site a été entièrement repensé : page d'accueil des carrières, courbe des classements saison par saison, palmarès, mercato avec le solde des transferts, thème clair ou sombre. Toutes les saisons y sont déjà. Tu peux revenir au design actuel à tout moment.</p>
+        <a class="news-cta" id="news-cta" href="v2/">Découvrir le nouveau design →</a><span class="news-note">Retour possible en un clic</span>
       </div>
-      <a class="news-cta" id="news-cta" href="v2/">DÉCOUVRIR →</a>
+      <div style="position:relative" aria-hidden="true">
+        <span class="np-label">Aperçu</span>
+        <div class="np-card" id="news-preview"></div>
+      </div>
     </section>
 
     <div class="bc sec-title" style="margin-top:56px">Toutes les carrières</div>
@@ -145,7 +169,33 @@ function careerRow(c, i) {
     </a>`
 }
 
+function newsPreview() {
+  const c = window.CAREERS.slice().sort((a, b) => (window['SEASONS_' + b.id] || []).length - (window['SEASONS_' + a.id] || []).length)[0]
+  if (!c) return
+  const seasons = (window['SEASONS_' + c.id] || []).slice().sort((a, b) => a.year.localeCompare(b.year))
+  const recs = seasons.map(seasonRecord)
+  const pts = recs.map((r, i) => ({ r, s: seasons[i] })).filter(x => x.r.pos != null)
+  const max = Math.max(...seasons.map(s => s.totalTeams || 20), 4)
+  const xy = pts.map((p, i) => [8 + i * (284 / Math.max(pts.length - 1, 1)), 8 + (p.r.pos - 1) / (max - 1) * 36])
+  const best = recs.reduce((b, r) => r.pos != null && (b == null || r.pos < b) ? r.pos : b, null)
+  const card = document.getElementById('news-preview')
+  card.style.setProperty('--np-c', c.color || '#8a1c1c')
+  card.innerHTML = `
+    <div class="np-top"><img src="${c.logo}" alt=""/><div><div class="np-name">${c.name}</div><div class="np-sub">${c.country}${c.coach ? ' · ' + c.coach : ''}</div></div></div>
+    <svg class="np-spark" viewBox="0 0 300 52">
+      <polyline points="${xy.map(p => p.join(',')).join(' ')}" fill="none" stroke="${c.color || '#8a1c1c'}" stroke-width="2" stroke-linejoin="round"/>
+      ${xy.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="${pts[i].r.pos === 1 ? 4 : 2.5}" fill="${pts[i].r.pos === 1 ? '#a8781c' : (c.color || '#8a1c1c')}"/>`).join('')}
+    </svg>
+    <div class="np-stats">
+      <div><b>${seasons.length}</b><span>Saisons</span></div>
+      <div><b>${recs.reduce((a, r) => a + (r.w || 0), 0)}</b><span>Victoires</span></div>
+      <div><b>${seasons.reduce((a, s) => a + trophies(s), 0)}</b><span>Trophées</span></div>
+      <div><b>${best == null ? '—' : posLabel(best)}</b><span>Meilleur</span></div>
+    </div>`
+}
+
 loadSeasons().then(() => {
+  newsPreview()
   const all = window.CAREERS
   const totS = all.reduce((a, c) => a + (window['SEASONS_' + c.id] || []).length, 0)
   document.getElementById('stats-line').textContent = `${all.length} CARRIÈRES · ${totS} SAISONS`
