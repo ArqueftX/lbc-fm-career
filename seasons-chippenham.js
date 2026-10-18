@@ -29,7 +29,7 @@ window['SEASONS_chippenham'] = [
     status:       "en_cours",
     totalTeams:   24,
     seasonLength: 46,
-    lastUpdate:   "Octobre 2025",
+    lastUpdate:   "Novembre 2025",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy" },
 
@@ -80,6 +80,19 @@ window['SEASONS_chippenham'] = [
           { r:"W", tip:"Dag & Red (D) 2-1",              comp:"L" },
         ],
       },
+      {
+        key: "11", label: "Novembre 2025",
+        note: "Toujours invaincu en championnat : trois victoires d'affilée (dont 2-0 contre le leader Salisbury et un 3-4 fou à Maidstone), puis trois nuls. En FA Trophy, Horsham sort Chippenham aux tirs au but (3-3, 3 t.a.b. à 1) dès le 2e tour.",
+        matches: [
+          { r:"W", tip:"Chesham United (E) 2-4",         comp:"L" },
+          { r:"W", tip:"Salisbury (D) 2-0",              comp:"L" },
+          { r:"W", tip:"Maidstone United (E) 3-4",       comp:"L" },
+          { r:"L", tip:"Horsham (E) 3-3",                comp:"FAT", tag:"2E TOUR · ÉLIMINÉ T.A.B. 3-1" },
+          { r:"D", tip:"Tonbridge Angels (D) 2-2",       comp:"L" },
+          { r:"D", tip:"Farnborough (D) 1-1",            comp:"L" },
+          { r:"D", tip:"Maidenhead United (E) 2-2",      comp:"L" },
+        ],
+      },
     ],
 
     scorers: [],
@@ -99,6 +112,7 @@ window['SEASONS_chippenham'] = [
       { type: "free", name: "Jay Naylor",     from: "Sans contrat (MG · Anglais · 16 ans · régen)",  date: "Oct. 2025" },
       { type: "loan", name: "Kevin Mfuamba",  from: "West Brom (MDC · Anglais · 19 ans)",           date: "Oct. 2025" },
       { type: "loan", name: "Kai Source",     from: "Luton Town (DG · Anglais · 19 ans)",           date: "Oct. 2025" },
+      { type: "free", name: "Sam Subuloye",   from: "Sans contrat (MD · Anglais · 16 ans · régen)",  date: "Nov. 2025" },
     ],
     departures: [
       { type: "loan", name: "Lewis Colwell",  to: "Concord Rangers (ALD · Anglais · 20 ans)",       date: "Août 2025" },
@@ -112,6 +126,12 @@ window['SEASONS_chippenham'] = [
       rounds: [
         { result: "W", round: "2e tour qualif.", score: "5 – 0", opponent: "Tiverton (D)" },
         { result: "L", round: "3e tour qualif.", score: "1 – 2", opponent: "Dartford (D) · éliminé" },
+      ],
+    },
+    cup2: {
+      name: "FA Trophy",
+      rounds: [
+        { result: "L", round: "2e tour", score: "3 – 3", opponent: "Horsham (E) · 3-1 t.a.b., éliminé" },
       ],
     },
 
