@@ -202,8 +202,8 @@ function renderPerfList(title, items, unit, color) {
             <div class="bc" style="font-size:11px;color:${C.muted};margin-top:2px">${item.detail}</div>
           </div>
           <div style="text-align:right">
-            <div class="bb" style="font-size:32px;color:${C.goldL};line-height:1">${String(unit).indexOf('moy')===0?Number(item.value).toFixed(2):item.value}</div>
-            <div class="bc" style="font-size:9px;color:${C.muted};letter-spacing:2px;text-transform:uppercase">${unit}</div>
+            <div class="bb" style="font-size:32px;color:${C.goldL};line-height:1">${item.value==null?'':String(unit).indexOf('moy')===0?Number(item.value).toFixed(2):item.value}</div>
+            ${item.value==null?'':`<div class="bc" style="font-size:9px;color:${C.muted};letter-spacing:2px;text-transform:uppercase">${unit}</div>`}
           </div>
         </div>
       `).join('')}

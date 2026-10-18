@@ -77,6 +77,18 @@ window.CAREERS = [
     color:    '#e32221',   // rouge Leverkusen
     accent:   '#000000',
   },
+  {
+    id:       'arsenal',
+    name:     'Arsenal FC',
+    short:    'Arsenal',
+    country:  'Angleterre',
+    tag:      'En cours',
+    coach:    'Arq Queft',
+    file:     'seasons-arsenal.js',
+    logo:     'logo-arsenal.png',
+    color:    '#ef0107',   // rouge Arsenal
+    accent:   '#ffffff',
+  },
 
   // Template — copie ce bloc pour ajouter une carrière :
   // {
