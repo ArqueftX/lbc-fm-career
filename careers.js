@@ -24,6 +24,18 @@ window.CAREERS = [
     accent:   '#ffffff',
   },
   {
+    id:       'chippenham',
+    name:     'Chippenham Town',
+    short:    'Chippenham',
+    country:  'Angleterre',
+    status:   'en_cours',
+    coach:    'Nolann Queft',
+    file:     'seasons-chippenham.js',
+    logo:     'logo-chippenham.png',
+    color:    '#2b4b9b',   // bleu Chippenham
+    accent:   '#ffffff',
+  },
+  {
     id:       'chateauroux',
     name:     'La Berrichonne de Châteauroux',
     short:    'Châteauroux',

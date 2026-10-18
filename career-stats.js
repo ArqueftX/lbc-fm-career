@@ -20,7 +20,7 @@ window.CareerStats = (function () {
   // Matchs de championnat d'une saison, quel que soit le format
   function leagueMatches(s) {
     if (s.months && s.months.length)
-      return s.months.flatMap(m => m.matches || []).filter(m => !m.comp || m.comp === 'BL')
+      return s.months.flatMap(m => m.matches || []).filter(m => !m.comp || m.comp === 'L' || m.comp === 'BL')
     if (s.matches && s.matches.length) return s.matches
     return (s.stints || []).flatMap(t => t.matches || [])
   }
