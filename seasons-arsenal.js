@@ -6,11 +6,214 @@
  *  une saison = un objet (bilan, matchs de championnat,
  *  coupes, classements, stats, mercato, splash).
  *  Spécifique à cette carrière : "cup3" (deuxième coupe
- *  nationale) et "ratingsTitle" (titre de la liste des notes).
+ *  nationale), "ratingsTitle" (titre de la liste des notes) et
+ *  "standingsTitle" (titre du classement, si ce n'est pas le final).
  * ═══════════════════════════════════════════════════════════
  */
 
 window.SEASONS_arsenal = [
+
+  /* ─── SAISON 2026/27 · PREMIER LEAGUE · DÉMISSION EN AVRIL ─── */
+  {
+    id:         "2026-27",
+    year:       "2026/27",
+    league:     "Premier League",
+    position:   5,
+    totalTeams: 20,
+    points:     57,
+    played:     34,
+    wins:       16,
+    draws:      9,
+    losses:     9,
+    gf:         75,
+    ga:         51,
+    relegated:  ["West Ham", "Sheffield United"],
+
+    splash: {
+      eyebrow:  "2026/27 · Arsenal · Saison 2 · Dernière saison",
+      lines:    ["LA FIN", "D'UNE ÈRE."],
+      sub:      "Premier League · 5e après 34 journées · Quart de finale de Ligue des Champions · Démission en avril",
+      tagline:  "3e de la phase de Ligue des Champions, Porto sorti en 8e mais le Barça trop fort en quart. Après l'humiliation 4-0 face à Tottenham en demi-finale de FA Cup, Nolann Queft quitte Arsenal, 5e de Premier League à quatre journées de la fin.",
+    },
+
+    scorers: [
+      { name: "Gabriel Martinelli",       detail: "AG · Brésilien · 25 ans",  value: 17 },
+      { name: "M. Ødegaard · V. Gyökeres", detail: "MC / BU · ex-aequo",      value: 14 },
+      { name: "Bukayo Saka",              detail: "AD · Anglais · 25 ans",    value: 12 },
+    ],
+    assists: [
+      { name: "Bukayo Saka",              detail: "AD · Anglais · 25 ans",    value: 17 },
+      { name: "Myles Lewis-Skelly",       detail: "DG · Anglais · 20 ans",    value: 12 },
+      { name: "M. Ødegaard · E. Eze",     detail: "MC / MOC · ex-aequo",      value: 9  },
+    ],
+    // Meilleures moyennes : minimum 19 matchs joués (la moitié de la Premier League)
+    ratings: [
+      { name: "Bukayo Saka",        detail: "37 tit. / 4 rempl. · 12 buts · 17 passes D.", value: 7.18 },
+      { name: "Gabriel Martinelli", detail: "35 tit. / 8 rempl. · 17 buts · 6 passes D.",  value: 7.15 },
+      { name: "Ebere Eze",          detail: "19 tit. / 14 rempl. · 9 buts · 9 passes D.",  value: 7.04 },
+    ],
+
+    matches: [
+      { r:"W", tip:"Chelsea (D) 4-3" },
+      { r:"W", tip:"Everton (E) 1-4" },
+      { r:"W", tip:"Brighton (D) 3-0" },
+      { r:"L", tip:"Bournemouth (E) 3-2" },
+      { r:"L", tip:"Nottm Forest (E) 5-0" },
+      { r:"W", tip:"Ipswich Town (D) 4-0" },
+      { r:"D", tip:"Aston Villa (E) 0-0" },
+      { r:"D", tip:"Newcastle (D) 1-1" },
+      { r:"D", tip:"Fulham (E) 2-2" },
+      { r:"W", tip:"Liverpool (D) 3-1" },
+      { r:"D", tip:"Sheffield United (D) 0-0" },
+      { r:"D", tip:"Man Utd (E) 2-2" },
+      { r:"W", tip:"Sunderland (D) 4-1" },
+      { r:"W", tip:"Wolves (E) 2-3" },
+      { r:"L", tip:"Watford (E) 1-0" },
+      { r:"L", tip:"Tottenham (D) 0-2" },
+      { r:"D", tip:"West Ham (E) 1-1" },
+      { r:"D", tip:"Man City (D) 3-3" },
+      { r:"W", tip:"Brentford (E) 1-3" },
+      { r:"L", tip:"Chelsea (E) 4-2" },
+      { r:"W", tip:"Nottm Forest (D) 5-2" },
+      { r:"W", tip:"Bournemouth (D) 3-0" },
+      { r:"L", tip:"Everton (D) 0-3" },
+      { r:"L", tip:"Brighton (E) 2-1" },
+      { r:"W", tip:"Ipswich Town (E) 1-4" },
+      { r:"W", tip:"Sunderland (E) 1-2" },
+      { r:"W", tip:"Tottenham (E) 1-2" },
+      { r:"W", tip:"Man Utd (D) 4-1" },
+      { r:"D", tip:"Wolves (D) 2-2" },
+      { r:"D", tip:"Sheffield United (E) 2-2" },
+      { r:"W", tip:"West Ham (D) 4-0" },
+      { r:"L", tip:"Man City (E) 1-0" },
+      { r:"W", tip:"Brentford (D) 4-0" },
+      { r:"L", tip:"Newcastle (E) 2-1" },
+    ],
+
+    cup2: {
+      name: "UEFA Champions League",
+      phase: "Phase de championnat : 3ᵉ/36 · 6V 1N 1D · 19 pts · qualifié directement en 8e · Porto éliminé, sorti en quart par le Barça (2-3 sur les deux matchs).",
+      rounds: [
+        { result:"W", round:"Phase · J1",     score:"5 – 3", opponent:"Eintracht Frankfurt (D)" },
+        { result:"W", round:"Phase · J2",     score:"1 – 3", opponent:"Bodø/Glimt (E)" },
+        { result:"L", round:"Phase · J3",     score:"2 – 1", opponent:"Rangers (E)" },
+        { result:"W", round:"Phase · J4",     score:"4 – 0", opponent:"Red Bull Salzburg (D)" },
+        { result:"W", round:"Phase · J5",     score:"2 – 0", opponent:"Bologna (D)" },
+        { result:"W", round:"Phase · J6",     score:"2 – 4", opponent:"Feyenoord (E)" },
+        { result:"D", round:"Phase · J7",     score:"1 – 1", opponent:"Man City (D)" },
+        { result:"W", round:"Phase · J8",     score:"1 – 2", opponent:"Dortmund (E)" },
+        { result:"W", round:"8e · aller",     score:"1 – 3", opponent:"Porto (E)" },
+        { result:"L", round:"8e · retour",    score:"1 – 2", opponent:"Porto (D) · cumul 4-3 ✓" },
+        { result:"L", round:"Quart · aller",  score:"0 – 1", opponent:"Barcelona (D)" },
+        { result:"D", round:"Quart · retour", score:"2 – 2", opponent:"Barcelona (E) · cumul 2-3, éliminé" },
+      ],
+    },
+
+    cup: {
+      name: "FA Cup",
+      rounds: [
+        { result:"W", round:"3e tour", score:"4 – 0",      opponent:"Tranmere (D)" },
+        { result:"W", round:"4e tour", score:"1 – 2",      opponent:"Newcastle (E)" },
+        { result:"W", round:"5e tour", score:"2 – 2 a.p.", opponent:"Liverpool (D) · qualifié aux t.a.b." },
+        { result:"W", round:"Quart",   score:"3 – 1 a.p.", opponent:"Birmingham (D)" },
+        { result:"L", round:"Demi",    score:"0 – 4",      opponent:"Tottenham (N) · éliminé, démission" },
+      ],
+    },
+
+    cup3: {
+      name: "Carabao Cup",
+      rounds: [
+        { result:"W", round:"3e tour", score:"1 – 4", opponent:"Peterborough (E)" },
+        { result:"W", round:"4e tour", score:"1 – 2", opponent:"Wolves (E)" },
+        { result:"L", round:"Quart",   score:"4 – 2", opponent:"Chelsea (E) · éliminé" },
+      ],
+    },
+
+    playoffs: {
+      competition: "FA Community Shield",
+      opponent:    "Tottenham",
+      outcome:     "Finaliste",
+      leg1: { result:"L", score:"1 – 2", venue:"Finale · terrain neutre" },
+    },
+
+    elTableTitle: "Classement · Phase de championnat (Ligue des Champions)",
+    elTable: [
+      { pos:1,  team:"Man City",            j:8, g:7, n:1, l:0, bp:27, bc:6,  db:21, pts:22, zone:"promo" },
+      { pos:2,  team:"Paris Saint-Germain", j:8, g:6, n:1, l:1, bp:23, bc:7,  db:16, pts:19, zone:"promo" },
+      { pos:3,  team:"Arsenal",             j:8, g:6, n:1, l:1, bp:22, bc:10, db:12, pts:19, zone:"promo", highlight:true },
+      { pos:4,  team:"Real Madrid",         j:8, g:6, n:1, l:1, bp:14, bc:4,  db:10, pts:19, zone:"promo" },
+      { pos:5,  team:"Blu-neri",            j:8, g:6, n:1, l:1, bp:13, bc:5,  db:8,  pts:19, zone:"promo" },
+      { pos:6,  team:"Tottenham",           j:8, g:5, n:2, l:1, bp:18, bc:9,  db:9,  pts:17, zone:"promo" },
+      { pos:7,  team:"Liverpool",           j:8, g:5, n:1, l:2, bp:29, bc:10, db:19, pts:16, zone:"promo" },
+      { pos:8,  team:"RB Leipzig",          j:8, g:5, n:1, l:2, bp:17, bc:7,  db:10, pts:16, zone:"promo" },
+      { pos:9,  team:"Porto",               j:8, g:5, n:1, l:2, bp:16, bc:12, db:4,  pts:16 },
+      { pos:10, team:"Aston Villa",         j:8, g:5, n:1, l:2, bp:11, bc:7,  db:4,  pts:16 },
+      { pos:11, team:"Barcelona",           j:8, g:4, n:3, l:1, bp:14, bc:9,  db:5,  pts:15 },
+      { pos:12, team:"Galatasaray SK",      j:8, g:5, n:0, l:3, bp:16, bc:12, db:4,  pts:15 },
+      { pos:13, team:"Bayern München",      j:8, g:5, n:0, l:3, bp:13, bc:10, db:3,  pts:15 },
+      { pos:14, team:"Eintracht Frankfurt", j:8, g:4, n:2, l:2, bp:16, bc:13, db:3,  pts:14 },
+      { pos:15, team:"Bergamo",             j:8, g:4, n:1, l:3, bp:10, bc:8,  db:2,  pts:13 },
+      { pos:16, team:"Legia Warszawa",      j:8, g:4, n:0, l:4, bp:8,  bc:14, db:-6, pts:12 },
+      { pos:17, team:"Atlético de Madrid",  j:8, g:3, n:2, l:3, bp:15, bc:11, db:4,  pts:11 },
+      { pos:18, team:"Dortmund",            j:8, g:3, n:2, l:3, bp:13, bc:10, db:3,  pts:11 },
+      { pos:19, team:"Monaco",              j:8, g:3, n:2, l:3, bp:14, bc:14, db:0,  pts:11 },
+      { pos:20, team:"Juventus",            j:8, g:3, n:2, l:3, bp:15, bc:18, db:-3, pts:11 },
+      { pos:21, team:"Nottm Forest",        j:8, g:3, n:1, l:4, bp:15, bc:8,  db:7,  pts:10 },
+      { pos:22, team:"Bologna",             j:8, g:2, n:3, l:3, bp:10, bc:10, db:0,  pts:9 },
+      { pos:23, team:"Celesti",             j:8, g:2, n:3, l:3, bp:7,  bc:9,  db:-2, pts:9 },
+      { pos:24, team:"Benfica",             j:8, g:2, n:2, l:4, bp:14, bc:17, db:-3, pts:8 },
+      { pos:25, team:"Lille",               j:8, g:2, n:2, l:4, bp:5,  bc:9,  db:-4, pts:8, zone:"releg" },
+      { pos:26, team:"Rangers",             j:8, g:2, n:2, l:4, bp:12, bc:17, db:-5, pts:8, zone:"releg" },
+      { pos:27, team:"Slavia Prague",       j:8, g:2, n:1, l:5, bp:9,  bc:13, db:-4, pts:7, zone:"releg" },
+    ],
+
+    standingsTitle: "Classement au moment de la démission",
+    standings: [
+      { pos:1,  team:"Liverpool",        j:34, g:24, n:7,  l:3,  bp:89, bc:29, db:60,  pts:79, zone:"promo" },
+      { pos:2,  team:"Man City",         j:34, g:22, n:6,  l:6,  bp:82, bc:44, db:38,  pts:72, zone:"promo" },
+      { pos:3,  team:"Tottenham",        j:34, g:20, n:9,  l:5,  bp:66, bc:39, db:27,  pts:69, zone:"promo" },
+      { pos:4,  team:"Brighton",         j:35, g:20, n:6,  l:9,  bp:73, bc:53, db:20,  pts:66, zone:"promo" },
+      { pos:5,  team:"Arsenal",          j:34, g:16, n:9,  l:9,  bp:75, bc:51, db:24,  pts:57, highlight:true, zone:"promo" },
+      { pos:6,  team:"Chelsea",          j:34, g:14, n:14, l:6,  bp:54, bc:31, db:23,  pts:56 },
+      { pos:7,  team:"Fulham",           j:35, g:15, n:11, l:9,  bp:56, bc:42, db:14,  pts:56 },
+      { pos:8,  team:"Aston Villa",      j:35, g:13, n:11, l:11, bp:53, bc:46, db:7,   pts:50 },
+      { pos:9,  team:"Newcastle",        j:35, g:13, n:9,  l:13, bp:58, bc:54, db:4,   pts:48 },
+      { pos:10, team:"Brentford",        j:34, g:14, n:6,  l:14, bp:46, bc:53, db:-7,  pts:48 },
+      { pos:11, team:"Man Utd",          j:34, g:13, n:7,  l:14, bp:46, bc:54, db:-8,  pts:46 },
+      { pos:12, team:"Everton",          j:35, g:11, n:9,  l:15, bp:44, bc:55, db:-11, pts:42 },
+      { pos:13, team:"Sunderland",       j:35, g:10, n:11, l:14, bp:42, bc:59, db:-17, pts:41 },
+      { pos:14, team:"Wolves",           j:35, g:9,  n:13, l:13, bp:43, bc:46, db:-3,  pts:40 },
+      { pos:15, team:"Bournemouth",      j:35, g:9,  n:13, l:13, bp:38, bc:41, db:-3,  pts:40 },
+      { pos:16, team:"Nottm Forest",     j:35, g:11, n:7,  l:17, bp:55, bc:65, db:-10, pts:40 },
+      { pos:17, team:"Watford",          j:34, g:9,  n:6,  l:19, bp:41, bc:66, db:-25, pts:33 },
+      { pos:18, team:"Ipswich Town",     j:35, g:8,  n:8,  l:19, bp:39, bc:67, db:-28, pts:32, zone:"releg" },
+      { pos:19, team:"West Ham",         j:35, g:6,  n:5,  l:24, bp:27, bc:70, db:-43, pts:23, zone:"releg" },
+      { pos:20, team:"Sheffield United", j:35, g:3,  n:5,  l:27, bp:28, bc:90, db:-62, pts:14, zone:"releg" },
+    ],
+
+    transfers: [
+      { type:"buy",  name:"Aurélien Tchouaméni", from:"Real Madrid (jusqu'à 106M€)",          date:"Été 2026",   amount:"75M €"   },
+      { type:"buy",  name:"Piero Hincapié",      from:"Bayer Leverkusen (transfert définitif)", date:"Été 2026", amount:"46M €"   },
+      { type:"buy",  name:"José Ángel Carmona",  from:"Sevilla",                              date:"Été 2026",   amount:"44,5M €" },
+      { type:"free", name:"Javaughn Barrow",     from:"Toronto FC Academy",                   date:"Été 2026" },
+      { type:"buy",  name:"Victor Ozhianvuna",   from:"Shamrock Rovers",                      date:"Hiver 2027", amount:"2M €"    },
+    ],
+    departures: [
+      { type:"sell", name:"Jurriën Timber",      to:"Bayern München",                      date:"Été 2026",   amount:"59M €"    },
+      { type:"sell", name:"Leandro Trossard",    to:"Napoli",                              date:"Été 2026",   amount:"37,5M €"  },
+      { type:"sell", name:"Jakub Kiwior",        to:"Porto (transfert définitif)",         date:"Été 2026",   amount:"29M €"    },
+      { type:"sell", name:"Karl Hein",           to:"Osasuna",                             date:"Été 2026",   amount:"7M €"     },
+      { type:"sell", name:"Ben Cooper",          to:"Man City",                            date:"Été 2026",   amount:"5,75M €"  },
+      { type:"loan", name:"Kepa Arrizabalaga",   to:"Fulham (achat obligatoire 38,5M€)",   date:"Été 2026" },
+      { type:"loan", name:"Christian Nørgaard",  to:"FC Porto (option 20M€ si titre)",     date:"Été 2026" },
+      { type:"loan", name:"Joane Gadou",         to:"Nottm Forest",                        date:"Été 2026" },
+      { type:"loan", name:"Jack Porter",         to:"Celtic",                              date:"Été 2026" },
+      { type:"sell", name:"Josh Nichols",        to:"Brentford",                           date:"Hiver 2027", amount:"13,5M €"  },
+      { type:"loan", name:"Fábio Vieira",        to:"Benfica",                             date:"Hiver 2027" },
+      { type:"loan", name:"Steve Morris",        to:"Blackburn",                           date:"Hiver 2027" },
+      { type:"loan", name:"Alan Dobson",         to:"Rotherham",                           date:"Hiver 2027" },
+    ],
+  },
 
   /* ─── SAISON 2025/26 · PREMIER LEAGUE · CHAMPIONS + FA CUP ─── */
   {

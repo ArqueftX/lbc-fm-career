@@ -172,7 +172,7 @@ loadCareerData(function(career) {
 
   // Standings
   if (s.standings && s.standings.length) {
-    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">Classement final</div>${renderStandings(s.standings)}`
+    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">${s.standingsTitle||'Classement final'}</div>${renderStandings(s.standings)}`
   }
 
   // Promo/Releg
