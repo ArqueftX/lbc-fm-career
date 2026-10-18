@@ -1,5 +1,5 @@
 /**
- * VfL WOLFSBURG — PARTIE EN COURS (Arq Queft)
+ * VfL WOLFSBURG — PARTIE EN COURS (Pep Guardiola)
  * ────────────────────────────────────────────────
  * Saison suivie MOIS PAR MOIS.
  *
@@ -423,7 +423,7 @@ window['SEASONS_wolfsburg-pep'] = [
       eyebrow:  "2025/26 · VfL Wolfsburg · Saison 1",
       lines:    ["CINQUIÈMES.", "CAP SUR L'EUROPE."],
       sub:      "Bundesliga · 5e · 56 pts · Qualifié en Europa League",
-      tagline:  "Pour sa première saison sur le banc, Arq Queft installe les Loups dans le Top 5 et décroche un billet européen — au terme d'un sprint final haletant.",
+      tagline:  "Pour sa première saison sur le banc, Pep Guardiola installe les Loups dans le Top 5 et décroche un billet européen — au terme d'un sprint final haletant.",
     },
   },
 

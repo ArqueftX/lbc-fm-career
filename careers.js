@@ -9,11 +9,26 @@
  * ═══════════════════════════════════════════════════════════
  */
 window.CAREERS = [
+  // Dans l'ordre de création des carrières.
+  // status : 'en_cours' ou 'terminee'
+  {
+    id:       'arsenal',
+    name:     'Arsenal FC',
+    short:    'Arsenal',
+    country:  'Angleterre',
+    status:   'terminee',
+    coach:    'Nolann Queft',
+    file:     'seasons-arsenal.js',
+    logo:     'logo-arsenal.webp',
+    color:    '#ef0107',   // rouge Arsenal
+    accent:   '#ffffff',
+  },
   {
     id:       'chateauroux',
     name:     'La Berrichonne de Châteauroux',
     short:    'Châteauroux',
     country:  'France',
+    status:   'en_cours',
     coach:    'Nolann Queft',
     file:     'seasons-chateauroux.js',
     logo:     'logo-chateauroux.png',
@@ -25,6 +40,7 @@ window.CAREERS = [
     name:     'Sevilla FC',
     short:    'Séville',
     country:  'Espagne',
+    status:   'terminee',
     file:     'seasons-seville.js',
     logo:     'logo-seville.png',
     color:    '#d4552b',
@@ -35,20 +51,9 @@ window.CAREERS = [
     name:     'VfL Wolfsburg',
     short:    'Wolfsburg',
     country:  'Allemagne',
+    status:   'terminee',
     tag:      'Réseau',
     file:     'seasons-wolfsburg.js',
-    logo:     'logo-wolfsburg.png',
-    color:    '#4db848',   // vert Wolfsburg
-    accent:   '#ffffff',
-  },
-  {
-    id:       'wolfsburg-pep',
-    name:     'VfL Wolfsburg',
-    short:    'Wolfsburg (Arq)',
-    country:  'Allemagne',
-    tag:      'En cours',
-    coach:    'Arq Queft',
-    file:     'seasons-wolfsburg-pep.js',
     logo:     'logo-wolfsburg.png',
     color:    '#4db848',   // vert Wolfsburg
     accent:   '#ffffff',
@@ -58,6 +63,7 @@ window.CAREERS = [
     name:     'Ajax → Chelsea → Ajax',
     short:    'Ajax (Arq)',
     country:  'Pays-Bas → Angleterre → Pays-Bas',
+    status:   'terminee',
     tag:      'Multi',
     coach:    'Arq Queft',
     file:     'seasons-ajax.js',
@@ -66,28 +72,28 @@ window.CAREERS = [
     accent:   '#ffffff',
   },
   {
+    id:       'wolfsburg-pep',
+    name:     'VfL Wolfsburg',
+    short:    'Wolfsburg (Pep)',
+    country:  'Allemagne',
+    status:   'en_cours',
+    coach:    'Pep Guardiola',
+    file:     'seasons-wolfsburg-pep.js',
+    logo:     'logo-wolfsburg.png',
+    color:    '#4db848',   // vert Wolfsburg
+    accent:   '#ffffff',
+  },
+  {
     id:       'leverkusen',
     name:     'Bayer 04 Leverkusen',
     short:    'Leverkusen',
     country:  'Allemagne',
-    tag:      'En cours',
+    status:   'en_cours',
     coach:    'Arq Queft',
     file:     'seasons-leverkusen.js',
     logo:     'logo-leverkusen.webp',
     color:    '#e32221',   // rouge Leverkusen
     accent:   '#000000',
-  },
-  {
-    id:       'arsenal',
-    name:     'Arsenal FC',
-    short:    'Arsenal',
-    country:  'Angleterre',
-    tag:      'En cours',
-    coach:    'Nolann Queft',
-    file:     'seasons-arsenal.js',
-    logo:     'logo-arsenal.webp',
-    color:    '#ef0107',   // rouge Arsenal
-    accent:   '#ffffff',
   },
 
   // Template — copie ce bloc pour ajouter une carrière :
@@ -96,6 +102,7 @@ window.CAREERS = [
   //   name:    'Nom complet du club',
   //   short:   'Nom court',
   //   country: 'Pays',
+  //   status:  'en_cours',            // ou 'terminee'
   //   file:    'seasons-mon-club.js',
   //   logo:    'logo-mon-club.png',
   //   color:   '#couleur-principale',
