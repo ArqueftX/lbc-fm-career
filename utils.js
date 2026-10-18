@@ -260,9 +260,15 @@ function renderDepartList(departures) {
   `
 }
 
-/* Render standings table */
-function renderStandings(rows) {
+/* Render standings table
+   opts : { league, europe:true (phase de championnat européenne), final:true (classement final) }
+   Zones et légende : standings-zones.js */
+function renderStandings(rows, opts) {
   if (!rows || !rows.length) return ''
+  const o = opts || {}
+  const SZ = window.StandingsZones
+  const keys = SZ ? SZ.keys(rows, o) : rows.map(() => null)
+  const legend = SZ ? SZ.legend(keys, o.final) : []
   const headers = ['','Équipe','J','G','N','D','BP','BC','DB','Pts']
   return `
     <div>
@@ -271,8 +277,8 @@ function renderStandings(rows) {
           <div class="bc" style="font-size:9px;letter-spacing:2px;color:${C.muted};text-align:${i>1?'center':'left'};font-weight:700">${c}</div>
         `).join('')}
       </div>
-      ${rows.map(row => `
-        <div class="standings-row ${row.highlight?'highlight':row.zone==='promo'?'promo':row.zone==='releg'?'releg':''}">
+      ${rows.map((row, i) => `
+        <div class="standings-row ${row.highlight?'highlight':''} ${keys[i]?'zoned':''}"${keys[i]?` style="--zc:${SZ.color(keys[i])}"`:''}>
           <div class="bb" style="font-size:15px;color:${row.pos<=2?C.gold:C.muted}">${row.pos}</div>
           <div style="font-weight:${row.highlight?600:400};font-size:13px">${row.team}</div>
           ${[row.j,row.g,row.n,row.l,row.bp,row.bc,row.db>0?'+'+row.db:row.db].map(v=>`
@@ -281,6 +287,7 @@ function renderStandings(rows) {
           <div class="bb" style="text-align:center;font-size:19px;color:${C.gold}">${row.pts}</div>
         </div>
       `).join('')}
+      ${legend.length ? `<div class="std-legend">${legend.map(z => `<span class="bc"><i style="background:${z.color}"></i>${z.label}</span>`).join('')}</div>` : ''}
     </div>
   `
 }
