@@ -252,7 +252,7 @@ function viewHome() {
       wins: recs.reduce((a, r) => a + (r.w || 0), 0),
       titles: ss.reduce((a, s) => a + honours(s).filter(h => h.gold).length, 0),
       best: recs.reduce((b, r) => r.pos != null && (b == null || r.pos < b) ? r.pos : b, null),
-      live: ss.some(isLive) || /en cours/i.test(c.tag || ''),
+      live: c.status ? c.status === 'en_cours' : ss.some(isLive),
     }
   })
   const totS = all.reduce((a, x) => a + x.ss.length, 0)
@@ -271,7 +271,7 @@ function viewHome() {
         <div><b>${x.titles}</b><span>Trophées</span></div>
         <div><b>${posLabel(x.best)}</b><span>Meilleur</span></div>
       </div>
-      <div>${x.live ? '<span class="tag live">● En cours</span> ' : ''}${x.c.tag && !/en cours/i.test(x.c.tag) ? `<span class="tag">${esc(x.c.tag)}</span>` : ''}</div>
+      <div>${x.live ? '<span class="tag live">● En cours</span> ' : x.c.status === 'terminee' ? '<span class="tag">Terminée</span> ' : ''}${x.c.tag ? `<span class="tag">${esc(x.c.tag)}</span>` : ''}</div>
     </a>`).join('')
   document.title = 'Carnets FM26'
   setClub(null)
@@ -328,7 +328,7 @@ function viewCareer(c) {
     <div class="crumbs"><a href="#/">Carrières</a><span>/</span><span>${esc(c.short)}</span></div>
     <div class="career-hero">${logo(c, c.name)}
       <div>
-        <div class="eyebrow">${esc(c.country)}${c.tag ? ' · ' + esc(c.tag) : ''}</div>
+        <div class="eyebrow">${esc(c.country)}${c.status === 'en_cours' ? ' · <span class="c-win">● En cours</span>' : c.status === 'terminee' ? ' · Terminée' : ''}${c.tag ? ' · ' + esc(c.tag) : ''}</div>
         <h1 class="h-display">${esc(c.name)}</h1>
         <div class="meta-line">${c.coach ? `<span>Entraîneur <b>${esc(c.coach)}</b></span>` : ''}<span><b>${ss.length}</b> saison${ss.length > 1 ? 's' : ''}</span></div>
       </div>

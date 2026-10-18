@@ -48,6 +48,7 @@
     .crow-sub{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:5px}
     .crow-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;font-weight:700;padding:2px 8px;margin-left:8px;border:1px solid rgba(232,184,75,.35);color:var(--gold);vertical-align:2px}
     .crow-tag.live{border-color:var(--green);color:var(--green)}
+    .crow-tag.done{border-color:rgba(106,130,176,.4);color:var(--muted)}
     .crow-stats{display:contents}
     .crow-stat{text-align:center;font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1}
     .crow-stat small{display:none}
@@ -147,8 +148,8 @@ function careerRow(c, i) {
   const titles = seasons.reduce((a, s) => a + trophies(s), 0)
   const last = seasons[0]
   const lastRec = last ? seasonRecord(last) : null
-  const live = seasons.some(s => s.status === 'en_cours') || /en cours/i.test(c.tag || '')
-  const tags = (live ? '<span class="crow-tag live">● EN COURS</span>' : '')
+  const live = c.status ? c.status === 'en_cours' : seasons.some(s => s.status === 'en_cours')
+  const tags = (live ? '<span class="crow-tag live">● EN COURS</span>' : c.status === 'terminee' ? '<span class="crow-tag done">TERMINÉE</span>' : '')
     + (c.tag && !/en cours/i.test(c.tag) ? `<span class="crow-tag">${c.tag.toUpperCase()}</span>` : '')
   return `
     <a class="crow au" href="${c.id}/" style="--club:${c.color || 'var(--gold)'};animation-delay:${i * .05}s" onclick="setCurrentCareer('${c.id}')">
