@@ -41,6 +41,7 @@
     <div style="max-width:1160px;margin:0 auto">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap">
         <div>
+          <a href="../" class="bc home-link" style="display:inline-block;font-size:10px;letter-spacing:4px;color:var(--muted);text-decoration:none;margin-bottom:16px">← ACCUEIL · TOUTES LES CARRIÈRES</a>
           <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · CARRIÈRE EN COURS</div>
           <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
             <img id="club-logo" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
@@ -165,7 +166,7 @@ function openModal() {
     </div>`).join('')
 }
 function closeModal() { document.getElementById('career-modal').classList.remove('open') }
-function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' }
+function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' + id + '/' }
 
 buildPage()
 </script>

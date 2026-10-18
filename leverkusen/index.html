@@ -63,6 +63,7 @@
     <div style="max-width:1160px;margin:0 auto">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap">
         <div>
+          <a href="../" class="bc home-link" style="display:inline-block;font-size:10px;letter-spacing:4px;color:var(--muted);text-decoration:none;margin-bottom:16px">← ACCUEIL · TOUTES LES CARRIÈRES</a>
           <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · CARRIÈRE</div>
           <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
             <img id="club-logo" src="" alt="" class="au au1" style="width:110px;height:110px;object-fit:contain;flex-shrink:0"/>
@@ -145,7 +146,7 @@ function buildCard(s, i) {
   const ls = leagueStyle(s.league)
   const winRate = Math.round((s.wins/s.played)*100)
   const dots = (s.matches||[]).map(m=>`<div style="width:7px;height:7px;border-radius:2px;background:${resultColor(m.r)};opacity:.85"></div>`).join('')
-  const dest = s.splash ? '/lbc-fm-career/leverkusen/splash.html' : '/lbc-fm-career/leverkusen/saison.html'
+  const dest = s.splash ? './splash.html' : './saison.html'
   return `
     <a href="${dest}?id=${s.id}" class="scard au" style="animation-delay:${i*.08}s;display:block">
       <div class="bb" style="position:absolute;right:-8px;bottom:-20px;font-size:140px;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none">${s.position}</div>
@@ -186,7 +187,7 @@ function openModal() {
     </div>`).join('')
 }
 function closeModal() { document.getElementById('career-modal').classList.remove('open') }
-function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' }
+function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' + id + '/' }
 
 function dismissIntro() {
   localStorage.setItem(INTRO_KEY+'-'+career.id, '1')
