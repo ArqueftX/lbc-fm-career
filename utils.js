@@ -129,7 +129,7 @@ function closeCareerModal(e) {
 function switchCareer(id) {
   if (id === window.getCurrentCareer().id) { closeCareerModal(); return; }
   window.setCurrentCareer(id)
-  window.location = '../'
+  window.location = '../' + id + '/'
 }
 
 /* ── Career switcher button ── */
@@ -342,14 +342,15 @@ function renderMercatoPreview(season, careerId) {
     const id = new URLSearchParams(location.search).get('id')
     const career = inCareer ? window.FORCE_CAREER : (window.getCurrentCareer ? window.getCurrentCareer().id : '')
     if (inCareer && id && /(saison|mercato|splash)\.html$/.test(location.pathname)) return `${base}v2/#/c/${career}/${id}`
-    return career ? `${base}v2/#/c/${career}` : `${base}v2/`
+    return inCareer && career ? `${base}v2/#/c/${career}` : `${base}v2/`
   }
   let pref = null
   try { pref = localStorage.getItem(KEY) } catch (_) {}
   if (!inCareer && pref === 'v2') { location.replace(target()); return }
 
   function addButton() {
-    if (document.getElementById('v2-switch')) return
+    // L'accueil a déjà son encadré « Nouveauté »
+    if (document.getElementById('v2-switch') || document.getElementById('news-cta')) return
     const a = document.createElement('a')
     a.id = 'v2-switch'
     a.href = target()
