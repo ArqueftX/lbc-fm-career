@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>FM26 — Carrières</title>
+  <title>FM26 — Les CARQrières</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="logo-chateauroux.png"/>
   <style>
@@ -15,19 +15,36 @@
     .news p{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--muted);line-height:1.5;max-width:620px}
     .news-cta{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:4px;font-weight:700;color:var(--navy);background:var(--gold);padding:15px 22px;text-decoration:none;white-space:nowrap;transition:transform .2s}
     .news-cta:hover{transform:translateX(3px)}
-    .ccard{display:flex;flex-direction:column;gap:20px;background:var(--blue);padding:26px;border-top:3px solid var(--club,var(--gold));text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
-    .ccard:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
-    .ccard-head{display:flex;gap:16px;align-items:center}
-    .ccard-head img{width:56px;height:56px;object-fit:contain;flex-shrink:0}
-    .ccard-name{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;line-height:1}
-    .ccard-sub{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:5px}
-    .ccard-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-    .ccard-stats b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:28px;line-height:1}
-    .ccard-stats span{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;color:var(--muted)}
-    .ccard-last{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);border-top:1px solid rgba(255,255,255,.07);padding-top:14px;display:flex;justify-content:space-between;gap:10px}
-    .ccard-tag{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;font-weight:700;padding:3px 9px;border:1px solid rgba(232,184,75,.35);color:var(--gold)}
-    .ccard-tag.live{border-color:var(--green);color:var(--green)}
-    .ccard-bg{position:absolute;right:-14px;bottom:-34px;width:150px;height:150px;object-fit:contain;opacity:.05;pointer-events:none}
+    .clist{padding-bottom:70px}
+    .clist-head,.crow{display:grid;grid-template-columns:44px 64px minmax(0,1fr) 90px 90px 90px 90px 170px 24px;gap:16px;align-items:center}
+    .clist-head{padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.06)}
+    .clist-head span:nth-child(n+4){text-align:center}
+    .crow{position:relative;padding:18px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(255,255,255,.06);transition:background .2s}
+    .crow::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--club,var(--gold));opacity:.55;transition:opacity .2s,width .2s}
+    .crow:hover{background:rgba(255,255,255,.035)}
+    .crow:hover::before{opacity:1;width:5px}
+    .crow-n{font-family:'Bebas Neue',sans-serif;font-size:30px;color:rgba(232,184,75,.35);line-height:1}
+    .crow img{width:48px;height:48px;object-fit:contain}
+    .crow-name{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;line-height:1;overflow-wrap:anywhere}
+    .crow-sub{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:5px}
+    .crow-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;font-weight:700;padding:2px 8px;margin-left:8px;border:1px solid rgba(232,184,75,.35);color:var(--gold);vertical-align:2px}
+    .crow-tag.live{border-color:var(--green);color:var(--green)}
+    .crow-stats{display:contents}
+    .crow-stat{text-align:center;font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1}
+    .crow-stat small{display:none}
+    .crow-last{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:1px;color:var(--muted);line-height:1.35}
+    .crow-last b{color:var(--white);font-weight:600}
+    .crow-arrow{color:var(--gold);font-size:18px;transition:transform .2s}
+    .crow:hover .crow-arrow{transform:translateX(4px)}
+    @media (max-width:980px){
+      .clist-head{display:none}
+      .crow{grid-template-columns:48px minmax(0,1fr) 24px;row-gap:14px}
+      .crow-n{display:none}
+      .crow-stats{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+      .crow-stat small{display:block;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:4px}
+      .crow-last{grid-column:1 / -1}
+      .crow-arrow{grid-row:1;grid-column:3}
+    }
     @media (max-width:760px){
       .home-wrap{padding:0 16px}
       #header{padding:44px 16px 36px!important}
@@ -43,7 +60,7 @@
     <div style="position:absolute;top:0;right:0;width:320px;height:100%;background-image:repeating-linear-gradient(90deg,rgba(232,184,75,.04) 0,rgba(232,184,75,.04) 1px,transparent 1px,transparent 24px);pointer-events:none"></div>
     <div style="max-width:1160px;margin:0 auto">
       <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · ACCUEIL</div>
-      <h1 class="bb au au1" style="font-size:clamp(44px,8vw,92px);line-height:.9;letter-spacing:2px;margin-bottom:16px">Mes<br><span style="color:var(--gold)">carrières</span></h1>
+      <h1 class="bb au au1" style="font-size:clamp(44px,8vw,92px);line-height:.9;letter-spacing:2px;margin-bottom:16px" aria-label="Les CARQrières">Les<br><span style="color:var(--gold)">CAR<span style="color:var(--white)">Q</span>rières</span></h1>
       <div id="stats-line" class="bc au au2" style="font-size:12px;color:var(--muted);letter-spacing:3px"></div>
     </div>
   </div>
@@ -54,13 +71,16 @@
       <span class="news-badge">✦ NOUVEAUTÉ</span>
       <div>
         <h2 id="news-title">Un nouveau design est disponible</h2>
-        <p>Le site a été entièrement repensé : page d'accueil des carrières, courbe des classements saison par saison, palmarès, mercato avec le solde des transferts, thème clair ou sombre. Toutes tes saisons y sont déjà. Tu peux revenir au design actuel à tout moment.</p>
+        <p>Le site a été entièrement repensé : page d'accueil des carrières, courbe des classements saison par saison, palmarès, mercato avec le solde des transferts, thème clair ou sombre. Toutes les saisons y sont déjà. Tu peux revenir au design actuel à tout moment.</p>
       </div>
       <a class="news-cta" id="news-cta" href="v2/">DÉCOUVRIR →</a>
     </section>
 
     <div class="bc sec-title" style="margin-top:56px">Toutes les carrières</div>
-    <div id="career-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:3px;padding-bottom:70px"></div>
+    <div class="clist">
+      <div class="clist-head" aria-hidden="true"><span></span><span></span><span>CARRIÈRE</span><span>SAISONS</span><span>VICTOIRES</span><span>TROPHÉES</span><span>MEILLEUR</span><span>DERNIÈRE SAISON</span><span></span></div>
+      <div id="career-list"></div>
+    </div>
   </div>
 </div>
 
@@ -95,39 +115,33 @@ function trophies(s) {
   return n
 }
 
-function careerCard(c, i) {
+function careerRow(c, i) {
   const seasons = (window['SEASONS_' + c.id] || []).slice().sort((a, b) => b.year.localeCompare(a.year))
   const recs = seasons.map(seasonRecord)
   const wins = recs.reduce((a, r) => a + (r.w || 0), 0)
   const best = recs.reduce((b, r) => r.pos != null && (b == null || r.pos < b) ? r.pos : b, null)
   const titles = seasons.reduce((a, s) => a + trophies(s), 0)
   const last = seasons[0]
-  const live = seasons.some(s => s.status === 'en_cours') || /en cours/i.test(c.tag || '')
   const lastRec = last ? seasonRecord(last) : null
+  const live = seasons.some(s => s.status === 'en_cours') || /en cours/i.test(c.tag || '')
+  const tags = (live ? '<span class="crow-tag live">● EN COURS</span>' : '')
+    + (c.tag && !/en cours/i.test(c.tag) ? `<span class="crow-tag">${c.tag.toUpperCase()}</span>` : '')
   return `
-    <a class="ccard au" href="${c.id}/" style="--club:${c.color || 'var(--gold)'};animation-delay:${i * .06}s" onclick="setCurrentCareer('${c.id}')">
-      <img class="ccard-bg" src="${c.logo}" alt="" onerror="this.remove()"/>
-      <div class="ccard-head">
-        <img src="${c.logo}" alt="" onerror="this.style.visibility='hidden'"/>
-        <div>
-          <div class="ccard-name">${c.name}</div>
-          <div class="ccard-sub">${c.country}${c.coach ? ' · ' + c.coach : ''}</div>
-        </div>
+    <a class="crow au" href="${c.id}/" style="--club:${c.color || 'var(--gold)'};animation-delay:${i * .05}s" onclick="setCurrentCareer('${c.id}')">
+      <span class="crow-n">${String(i + 1).padStart(2, '0')}</span>
+      <img src="${c.logo}" alt="" onerror="this.style.visibility='hidden'"/>
+      <div>
+        <div class="crow-name">${c.name}${tags}</div>
+        <div class="crow-sub">${c.country}${c.coach ? ' · ' + c.coach : ''}</div>
       </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap">
-        ${live ? '<span class="ccard-tag live">● EN COURS</span>' : ''}
-        ${c.tag && !/en cours/i.test(c.tag) ? `<span class="ccard-tag">${c.tag.toUpperCase()}</span>` : ''}
+      <div class="crow-stats">
+        <div class="crow-stat">${seasons.length}<small>SAISONS</small></div>
+        <div class="crow-stat" style="color:var(--green)">${wins}<small>VICTOIRES</small></div>
+        <div class="crow-stat" style="color:var(--gold)">${titles}<small>TROPHÉES</small></div>
+        <div class="crow-stat">${best == null ? '—' : posLabel(best)}<small>MEILLEUR</small></div>
       </div>
-      <div class="ccard-stats">
-        <div><b>${seasons.length}</b><span>SAISONS</span></div>
-        <div><b style="color:var(--green)">${wins}</b><span>VICTOIRES</span></div>
-        <div><b style="color:var(--gold)">${titles}</b><span>TROPHÉES</span></div>
-        <div><b>${best == null ? '—' : posLabel(best)}</b><span>MEILLEUR</span></div>
-      </div>
-      <div class="ccard-last">
-        <span>${last ? 'DERNIÈRE SAISON · ' + last.year + ' · ' + last.league : 'AUCUNE SAISON'}</span>
-        <span style="color:var(--white)">${lastRec && lastRec.pos != null ? posLabel(lastRec.pos) : ''}</span>
-      </div>
+      <div class="crow-last">${last ? `<b>${last.year}</b> · ${last.league}${lastRec && lastRec.pos != null ? ' · ' + posLabel(lastRec.pos) : ''}` : 'Aucune saison'}</div>
+      <span class="crow-arrow">→</span>
     </a>`
 }
 
@@ -135,7 +149,7 @@ loadSeasons().then(() => {
   const all = window.CAREERS
   const totS = all.reduce((a, c) => a + (window['SEASONS_' + c.id] || []).length, 0)
   document.getElementById('stats-line').textContent = `${all.length} CARRIÈRES · ${totS} SAISONS`
-  document.getElementById('career-grid').innerHTML = all.map(careerCard).join('')
+  document.getElementById('career-list').innerHTML = all.map(careerRow).join('')
 })
 
 document.getElementById('news-cta').addEventListener('click', () => {
