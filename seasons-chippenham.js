@@ -82,7 +82,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "11", label: "Novembre 2025", position: 3,
-        note: "Toujours invaincu en championnat : trois victoires d'affilée (dont 2-0 contre le leader Salisbury et un 3-4 fou à Maidstone), puis trois nuls. Chippenham grimpe à la 3e place, à cinq points du leader Worthing. En FA Trophy, Horsham sort Chippenham aux tirs au but (3-3, 3 t.a.b. à 1) dès le 2e tour.",
+        note: "Aucune défaite en championnat ce mois-ci (douze matchs sans perdre depuis le revers contre Hampton & Richmond début septembre) : trois victoires d'affilée (dont 2-0 contre le leader Salisbury et un 3-4 fou à Maidstone), puis trois nuls. Chippenham grimpe à la 3e place, à cinq points du leader Worthing. En FA Trophy, Horsham sort Chippenham aux tirs au but (3-3, 3 t.a.b. à 1) dès le 2e tour.",
         matches: [
           { r:"W", tip:"Chesham United (E) 2-4",         comp:"L" },
           { r:"W", tip:"Salisbury (D) 2-0",              comp:"L" },
