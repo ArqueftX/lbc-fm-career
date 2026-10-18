@@ -232,10 +232,32 @@ function monthsBlock(s) {
         <span class="comp">${t ? (t.venue === 'D' ? 'Dom.' : t.venue === 'E' ? 'Ext.' : 'Neutre') : ''}</span>
         <span class="sc mono">${t ? t.h + ' – ' + t.a : ''}</span></div>`
     }).join('')
-    return `<div class="month"><div class="month-head"><b>${esc(m.label)}</b><span class="comp">${w}V ${d}N ${l}D en championnat</span></div>
-      ${m.note ? `<p class="month-note">${esc(m.note)}</p>` : ''}${rows}</div>`
+    const last = m === s.months[s.months.length - 1]
+    return `<details class="month"${last ? ' open' : ''}><summary><div class="month-head"><b><span class="chev">▸</span>${esc(m.label)}${m.position != null ? ` <span class="comp">· ${posLabel(m.position)}</span>` : ''}</b><span class="comp">${w}V ${d}N ${l}D en championnat</span></div>
+      ${m.note ? `<p class="month-note">${esc(m.note)}</p>` : ''}</summary>${rows}</details>`
   }).join('')
-  return `<section class="section"><h2 class="h-section">Mois par mois <small>${s.months.length} mois</small></h2><div class="months">${blocks}</div></section>`
+  return `${monthTrajectory(s)}<section class="section"><h2 class="h-section">Mois par mois <span class="h-actions"><small>${s.months.length} mois</small><button type="button" class="fold-btn" data-months-toggle></button></span></h2><div class="months">${blocks}</div></section>`
+}
+
+// Trajectoire de la saison : classement en fin de mois (champ "position" des mois)
+function monthTrajectory(s) {
+  const months = s.months || []
+  const known = months.map((m, i) => ({ m, i })).filter(x => x.m.position != null)
+  if (known.length < 2) return ''
+  const teams = s.totalTeams || 18
+  const W = 1000, H = 240, L = 64, R = 40, T = 30, B = 40
+  const x = i => L + i * (W - L - R) / Math.max(months.length - 1, 1)
+  const y = p => T + (p - 1) / (teams - 1) * (H - T - B)
+  const short = l => ({ Janvier: 'janv.', Février: 'févr.', Mars: 'mars', Avril: 'avr.', Mai: 'mai', Juin: 'juin', Juillet: 'juil.', Août: 'août', Septembre: 'sept.', Octobre: 'oct.', Novembre: 'nov.', Décembre: 'déc.' })[l.split(' ')[0]] || l
+  const grid = [1, Math.ceil(teams / 2), teams].map(p => `<line x1="${L}" x2="${W - R}" y1="${y(p)}" y2="${y(p)}" stroke="var(--line)" stroke-dasharray="${p === 1 ? '0' : '4 6'}"/>
+    <text x="${L - 34}" y="${y(p) + 4}" text-anchor="end" font-family="var(--mono)" font-size="12" fill="var(--muted)">${p}</text>`).join('')
+  const line = `<polyline points="${known.map(k => x(k.i) + ',' + y(k.m.position)).join(' ')}" fill="none" stroke="var(--club)" stroke-width="2.5" stroke-linejoin="round"/>`
+  const dots = known.map(k => `<g><circle cx="${x(k.i)}" cy="${y(k.m.position)}" r="6" fill="var(--surface)" stroke="var(--club)" stroke-width="2.5"/>
+    <text x="${x(k.i)}" y="${y(k.m.position) - 14}" text-anchor="middle" font-family="var(--serif)" font-weight="600" font-size="15" fill="var(--ink)">${posLabel(k.m.position)}</text>
+    <title>${esc(k.m.label)} · ${posLabel(k.m.position)}</title></g>`).join('')
+  const labels = months.map((m, i) => `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="${m.position != null ? 'var(--ink-2)' : 'var(--muted)'}">${esc(short(m.label))}</text>`).join('')
+  return `<section class="section"><h2 class="h-section">Trajectoire <small>Classement en fin de mois</small></h2>
+    <div class="chart-card"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Classement en fin de mois">${grid}${line}${dots}${labels}</svg></div></section>`
 }
 
 function moves(s) {
@@ -343,7 +365,7 @@ function viewCareer(c) {
       <div><div class="big-num" style="color:var(--gold)">${titles}</div><div class="k">Trophées</div></div>
     </div>
     ${ss.length > 1 ? `<section class="section"><h2 class="h-section">Trajectoire <small>Classement en championnat</small></h2><div class="chart-card">${positionChart(ss)}</div></section>` : ''}
-    <section class="section"><h2 class="h-section">Saisons <small>De la plus récente à la plus ancienne</small></h2>
+    <section class="section"><h2 class="h-section">Saisons <span class="h-actions"><small>De la plus récente à la plus ancienne</small>${ss.length ? `<button type="button" class="fold-btn" data-seasons-toggle="${esc(c.id)}"></button>` : ''}</span></h2>
       ${ss.length ? `<div class="season-list">${rows}</div>` : '<div class="empty">Aucune saison pour l\'instant.</div>'}
     </section>
     ${careerExtras(ss)}`
@@ -552,7 +574,28 @@ function render() {
   $('#design-back').href = back
   $('#design-back-foot').href = back
   bindRibbons()
+  bindToggles()
   window.scrollTo(0, 0)
+}
+
+// Boutons masquer / afficher (saisons d'une carrière, détail des mois)
+function bindToggles() {
+  const sb = document.querySelector('[data-seasons-toggle]')
+  const list = document.querySelector('.season-list')
+  if (sb && list) {
+    const key = 'lbc-seasons-hidden-' + sb.dataset.seasonsToggle
+    const apply = hidden => { list.hidden = hidden; sb.textContent = hidden ? '+ Afficher' : '− Masquer'; sb.setAttribute('aria-expanded', String(!hidden)) }
+    apply(store.get(key) === '1')
+    sb.addEventListener('click', () => { const h = !list.hidden; apply(h); store.set(key, h ? '1' : '0') })
+  }
+  const mb = document.querySelector('[data-months-toggle]')
+  if (mb) {
+    const all = () => [...document.querySelectorAll('details.month')]
+    const sync = () => { const open = all().every(d => d.open); mb.textContent = open ? '− Masquer le détail' : '+ Afficher le détail' }
+    mb.addEventListener('click', () => { const open = all().every(d => d.open); all().forEach(d => { d.open = !open }); sync() })
+    all().forEach(d => d.addEventListener('toggle', sync))
+    sync()
+  }
 }
 
 function bindRibbons() {

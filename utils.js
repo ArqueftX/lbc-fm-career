@@ -455,3 +455,33 @@ function renderCareerExtras(seasons) {
       </details>
     </div>`
 }
+
+/* ── Pages carrière : bouton pour masquer / afficher les saisons ──
+   Le choix est retenu par carrière dans le navigateur.          */
+function initSeasonsToggle(careerId) {
+  const grid = document.getElementById('season-grid')
+  if (!grid || document.getElementById('seasons-bar')) return
+  const key = 'lbc-seasons-hidden-' + careerId
+  const n = (window['SEASONS_' + careerId] || []).length
+  const bar = document.createElement('div')
+  bar.id = 'seasons-bar'
+  bar.className = 'bc sec-title'
+  bar.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:12px'
+  bar.innerHTML = `<span>Saisons en détail <span style="color:var(--muted);font-weight:400">· ${n}</span></span>
+    <button type="button" id="seasons-btn" style="background:transparent;border:1px solid rgba(232,184,75,.35);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;font-weight:700;padding:7px 12px;cursor:pointer"></button>`
+  grid.parentNode.insertBefore(bar, grid)
+  const btn = bar.querySelector('#seasons-btn')
+  const apply = hidden => {
+    grid.style.display = hidden ? 'none' : 'grid'
+    btn.textContent = hidden ? '+ AFFICHER LES SAISONS' : '− MASQUER LES SAISONS'
+    btn.setAttribute('aria-expanded', String(!hidden))
+  }
+  let hidden = false
+  try { hidden = localStorage.getItem(key) === '1' } catch (_) {}
+  apply(hidden)
+  btn.addEventListener('click', () => {
+    hidden = !hidden
+    apply(hidden)
+    try { localStorage.setItem(key, hidden ? '1' : '0') } catch (_) {}
+  })
+}
