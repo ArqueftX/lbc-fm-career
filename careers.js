@@ -83,9 +83,9 @@ window.CAREERS = [
     short:    'Arsenal',
     country:  'Angleterre',
     tag:      'En cours',
-    coach:    'Arq Queft',
+    coach:    'Nolann Queft',
     file:     'seasons-arsenal.js',
-    logo:     'logo-arsenal.png',
+    logo:     'logo-arsenal.webp',
     color:    '#ef0107',   // rouge Arsenal
     accent:   '#ffffff',
   },
