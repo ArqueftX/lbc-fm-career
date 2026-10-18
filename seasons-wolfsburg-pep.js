@@ -319,7 +319,7 @@ window['SEASONS_wolfsburg-pep'] = [
 
     splash: {
       eyebrow:  "2026/27 · VfL Wolfsburg · Saison 2",
-      lines:    ["DOUZIÈMES.", "L'EUROPE EN BONUS."],
+      lines:    ["DOUZIÈMES.", "LA TÊTE HORS DE L'EAU."],
       sub:      "Bundesliga · 12e · 38 pts · Barrages d'Europa League",
       tagline:  "Une saison à deux visages pour Pep Guardiola : des Loups longtemps à la peine en Bundesliga (16es en janvier), une campagne européenne poussée jusqu'aux barrages face à Valence, puis un printemps plus serein conclu par quatre matchs sans défaite.",
     },
