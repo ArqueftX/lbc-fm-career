@@ -12,6 +12,8 @@
  *  ▸ "scorers/assists/ratings" : stats cumulées, mises à jour chaque mois.
  *  ▸ "transfers/departures"    : mercato (juillet + août d'un coup, puis hiver).
  *  ▸ "splash" : à AJOUTER seulement quand la saison est terminée.
+ *  ▸ "position" (dans un mois, facultatif) : classement en championnat à la fin du mois.
+ *    Dès que 2 mois en ont une, la trajectoire mois par mois s'affiche.
  */
 window['SEASONS_wolfsburg-pep'] = [
 
@@ -93,7 +95,7 @@ window['SEASONS_wolfsburg-pep'] = [
         ],
       },
       {
-        key: "01", label: "Janvier 2027",
+        key: "01", label: "Janvier 2027", position: 16,
         note: "Mois catastrophique : un seul point en Bundesliga, trois défaites sans marquer contre Hoffenheim, Francfort et le Bayern. Wolfsburg tombe 16e, en barrage de relégation. En Europa League, Qarabağ est battu malgré le rouge d'Arnold — la 18e place envoie les Loups en barrages.",
         matches: [
           { r:"W", tip:"PSV Eindhoven (D) 2-0",       comp:"AM" },
@@ -334,7 +336,7 @@ window['SEASONS_wolfsburg-pep'] = [
         ],
       },
       {
-        key: "04", label: "Avril 2026",
+        key: "04", label: "Avril 2026", position: 4,
         note: "Sans-faute ou presque : nul à Leverkusen puis trois victoires de rang. Porté par un triplé d'Amoura contre Gladbach, Wolfsburg grimpe 4e, en pleine zone Champions League.",
         matches: [
           { r:"D", tip:"Bayer Leverkusen (E) 0-0",   comp:"BL" },
@@ -344,7 +346,7 @@ window['SEASONS_wolfsburg-pep'] = [
         ],
       },
       {
-        key: "05", label: "Mai 2026",
+        key: "05", label: "Mai 2026", position: 5,
         note: "Fin de saison en demi-teinte : défaites à Fribourg et face au champion bavarois, mais une victoire à St Pauli scelle la 5e place — et l'Europa League.",
         matches: [
           { r:"L", tip:"Freiburg (E) 1-0",        comp:"BL" },

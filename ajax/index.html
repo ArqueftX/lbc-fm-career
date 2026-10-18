@@ -239,6 +239,7 @@ function replayIntro() {
 }
 
 buildPage()
+initSeasonsToggle(career.id)
 renderCareerExtras(getSeasons())
 if (career.id === 'chateauroux' && !localStorage.getItem(INTRO_KEY+'-chateauroux'))
   document.getElementById('intro-overlay').style.display = 'flex'

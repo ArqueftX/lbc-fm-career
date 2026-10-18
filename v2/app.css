@@ -254,6 +254,15 @@ details.fold[open] summary::before { content: '− '; }
 .month { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
 .month-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
 .month-head b { font: 600 18px/1 var(--serif); }
+details.month > summary { list-style: none; cursor: pointer; }
+details.month > summary::-webkit-details-marker { display: none; }
+.month .chev { display: inline-block; width: 16px; color: var(--muted); font-size: 12px; transition: transform .2s; }
+details.month[open] .chev { transform: rotate(90deg); }
+details.month:not([open]) .month-note { margin-bottom: 0; }
+.h-actions { display: flex; align-items: baseline; gap: 14px; }
+.fold-btn { font: 600 12px/1 var(--sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); white-space: nowrap; }
+.fold-btn:hover { border-color: var(--ink-2); }
+.season-list[hidden] { display: none; }
 .month-note { font: italic 400 14px/1.5 var(--serif); color: var(--ink-2); margin: 8px 0 6px; }
 .mrow { display: grid; grid-template-columns: 26px 1fr auto auto; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); font-size: 13.5px; }
 .res { width: 22px; height: 22px; border-radius: 5px; display: grid; place-items: center; color: #fff; font: 600 11px/1 var(--mono); }
@@ -310,6 +319,7 @@ details.fold[open] summary::before { content: '− '; }
   .srow .rec { display: none; }
 }
 @media (max-width: 640px) {
+  .h-actions small { display: none; }
   .topbar { padding: 10px 16px; gap: 10px; flex-wrap: wrap; }
   .career-nav { order: 3; flex-basis: 100%; }
   .brand-name { font-size: 17px; }
