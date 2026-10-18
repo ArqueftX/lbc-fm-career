@@ -9,6 +9,8 @@
  *    Le bilan (V/N/D, buts, points) se calcule TOUT SEUL à partir des matchs.
  *
  *  ▸ "standings"  : colle le classement à jour (la ligne highlight:true donne la position).
+ *    "zone" d'une ligne : ucl, uel, uecl, releg-playoff, releg (+ champion:true) —
+ *    la légende sous le classement se construit toute seule (voir standings-zones.js).
  *  ▸ "scorers/assists/ratings" : stats cumulées, mises à jour chaque mois.
  *  ▸ "transfers/departures"    : mercato (juillet + août d'un coup, puis hiver).
  *  ▸ "splash" : à AJOUTER seulement quand la saison est terminée.
@@ -17,15 +19,15 @@
  */
 window['SEASONS_wolfsburg-pep'] = [
 
-  /* ─── SAISON 2026/27 · EN COURS ──────────────────────── */
+  /* ─── SAISON 2026/27 · TERMINÉE ──────────────────────── */
   {
     id:           "wolfsburg-pep-2026-27",
     year:         "2026/27",
     league:       "Bundesliga",
-    status:       "en_cours",
+    status:       "termine",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Avril 2027",
+    lastUpdate:   "Saison terminée",
     position:     null,
 
     months: [
@@ -138,28 +140,37 @@ window['SEASONS_wolfsburg-pep'] = [
           { r:"W", tip:"Holstein Kiel (D) 2-0",       comp:"BL" },
         ],
       },
+      {
+        key: "05", label: "Mai 2027", position: 12,
+        note: "Fin de saison sans défaite : nul à Hanovre (1-1), nul spectaculaire contre Stuttgart (2-2), puis victoire à Mönchengladbach (0-1) lors de la dernière journée. Wolfsburg termine 12e avec 38 points, quatre matchs sans perdre pour finir.",
+        matches: [
+          { r:"D", tip:"Hannover (E) 1-1",            comp:"BL" },
+          { r:"D", tip:"Stuttgart (D) 2-2",           comp:"BL" },
+          { r:"W", tip:"Gladbach (E) 0-1",            comp:"BL" },
+        ],
+      },
     ],
 
     scorers: [
-      { name: "Dženan Pejčinović",          detail: "BU · Allemand · 22 ans",    value: 7 },
-      { name: "Mustafa Hekimoğlu",          detail: "BU · Turc · 20 ans",        value: 6 },
-      { name: "Eriksen · Majer · Shiogai",  detail: "3 joueurs à égalité",       value: 4 },
+      { name: "Mustafa Hekimoğlu", detail: "BU · Turc · 20 ans",        value: 8 },
+      { name: "Dženan Pejčinović", detail: "BU · Allemand · 22 ans",    value: 7 },
+      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans",     value: 5 },
     ],
     assists: [
-      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans",     value: 8 },
-      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans",     value: 7 },
-      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 25 ans",  value: 3 },
+      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans",     value: 10 },
+      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans",     value: 8 },
+      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 26 ans",  value: 3 },
     ],
-    // Meilleures et pires moyennes : au moins 16 matchs joués (la moitié des 31 journées de Bundesliga jouées)
+    // Meilleures et pires moyennes : au moins 17 matchs joués (la moitié des 34 journées de Bundesliga)
     ratings: [
-      { name: "Maximilian Arnold", detail: "MDC · Allemand · 32 ans · 32 tit. · 2 buts · 1 passe D.",            value: 7.08 },
-      { name: "Elias Baum",        detail: "DD · Allemand · 21 ans · 25 tit. / 6 rempl. · 1 but · 1 passe D.",   value: 6.93 },
-      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 25 ans · 25 tit. · 2 buts · 3 passes D.",          value: 6.93 },
+      { name: "Maximilian Arnold", detail: "MDC · Allemand · 33 ans · 35 tit. · 2 buts · 1 passe D.",            value: 7.08 },
+      { name: "Elias Baum",        detail: "DD · Allemand · 21 ans · 27 tit. / 6 rempl. · 1 but · 1 passe D.",   value: 6.94 },
+      { name: "Patrick Wimmer",    detail: "AD · Autrichien · 26 ans · 25 tit. · 2 buts · 3 passes D.",          value: 6.93 },
     ],
     flops: [
-      { name: "Aster Vranckx",     detail: "MC · Belge · 24 ans · 12 tit. / 12 rempl. · 1 but · 1 passe D.",    value: 6.52 },
-      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans · 39 tit. · 4 buts · 8 passes D.",             value: 6.54 },
-      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans · 37 tit. · 4 buts · 7 passes D.",             value: 6.55 },
+      { name: "Aster Vranckx",     detail: "MC · Belge · 24 ans · 13 tit. / 14 rempl. · 1 but · 1 passe D.",    value: 6.51 },
+      { name: "Christian Eriksen", detail: "MOC · Danois · 35 ans · 42 tit. · 4 buts · 10 passes D.",            value: 6.55 },
+      { name: "Lovro Majer",       detail: "MOC · Croate · 29 ans · 39 tit. · 5 buts · 8 passes D.",             value: 6.57 },
     ],
 
     transfers: [
@@ -243,31 +254,31 @@ window['SEASONS_wolfsburg-pep'] = [
       { pos:27, team:"Lugano",              j:8, g:2, n:1, l:5, bp:5,  bc:7,  db:-2, pts:7, zone:"releg" },
     ],
 
-    // Classement après 31 journées (fin avril 2027) · Bayern déjà champion
+    // Classement final (zones affichées par le jeu en fin de saison)
     standings: [
-      { pos:1,  team:"Bayern München",        j:31, g:25, n:3,  l:3,  bp:64, bc:17, db:47, pts:78, zone:"promo", champion:true },
-      { pos:2,  team:"Stuttgart",             j:32, g:16, n:9,  l:7,  bp:46, bc:33, db:13, pts:57, zone:"promo" },
-      { pos:3,  team:"Dortmund",              j:31, g:15, n:11, l:5,  bp:37, bc:24, db:13, pts:56, zone:"promo" },
-      { pos:4,  team:"Eintracht Frankfurt",   j:31, g:15, n:8,  l:8,  bp:42, bc:26, db:16, pts:53, zone:"promo" },
-      { pos:5,  team:"RB Leipzig",            j:31, g:13, n:10, l:8,  bp:47, bc:36, db:11, pts:49 },
-      { pos:6,  team:"Heidenheim",            j:31, g:13, n:8,  l:10, bp:33, bc:33, db:0, pts:47 },
-      { pos:7,  team:"Bayer Leverkusen",      j:31, g:11, n:12, l:8,  bp:31, bc:24, db:7, pts:45 },
-      { pos:8,  team:"Mainz 05",              j:31, g:11, n:10, l:10, bp:32, bc:33, db:-1, pts:43 },
-      { pos:9,  team:"Union Berlin",          j:31, g:12, n:6,  l:13, bp:27, bc:33, db:-6, pts:42 },
-      { pos:10, team:"Freiburg",              j:32, g:10, n:8,  l:14, bp:35, bc:32, db:3, pts:38 },
-      { pos:11, team:"Hoffenheim",            j:31, g:9,  n:8,  l:14, bp:37, bc:44, db:-7, pts:35 },
-      { pos:12, team:"Hamburg",               j:31, g:9,  n:7,  l:15, bp:18, bc:30, db:-12, pts:34 },
-      { pos:13, team:"Wolfsburg",             j:31, g:9,  n:6,  l:16, bp:29, bc:39, db:-10, pts:33, highlight:true },
-      { pos:14, team:"FC Köln",               j:31, g:6,  n:15, l:10, bp:23, bc:34, db:-11, pts:33 },
-      { pos:15, team:"Hertha",                j:31, g:9,  n:4,  l:18, bp:25, bc:42, db:-17, pts:31 },
-      { pos:16, team:"Gladbach",              j:31, g:7,  n:10, l:14, bp:27, bc:46, db:-19, pts:31 },
-      { pos:17, team:"Holstein Kiel",         j:31, g:6,  n:11, l:14, bp:19, bc:37, db:-18, pts:29, zone:"releg" },
-      { pos:18, team:"Hannover",              j:31, g:6,  n:10, l:15, bp:21, bc:30, db:-9, pts:28, zone:"releg" },
+      { pos:1,  team:"Bayern München",        j:34, g:27, n:4,  l:3,  bp:71, bc:19, db:52, pts:85, zone:"ucl", champion:true },
+      { pos:2,  team:"Dortmund",              j:34, g:18, n:11, l:5,  bp:42, bc:24, db:18, pts:65, zone:"ucl" },
+      { pos:3,  team:"Stuttgart",             j:34, g:16, n:10, l:8,  bp:48, bc:37, db:11, pts:58, zone:"ucl" },
+      { pos:4,  team:"Eintracht Frankfurt",   j:34, g:16, n:9,  l:9,  bp:46, bc:31, db:15, pts:57, zone:"ucl" },
+      { pos:5,  team:"RB Leipzig",            j:34, g:14, n:10, l:10, bp:52, bc:42, db:10, pts:52, zone:"uel" },
+      { pos:6,  team:"Bayer Leverkusen",      j:34, g:13, n:13, l:8,  bp:36, bc:27, db:9, pts:52, zone:"uel" },
+      { pos:7,  team:"Heidenheim",            j:34, g:14, n:8,  l:12, bp:37, bc:39, db:-2, pts:50, zone:"uecl" },
+      { pos:8,  team:"Union Berlin",          j:34, g:13, n:7,  l:14, bp:30, bc:37, db:-7, pts:46 },
+      { pos:9,  team:"Mainz 05",              j:34, g:11, n:12, l:11, bp:33, bc:35, db:-2, pts:45 },
+      { pos:10, team:"Hoffenheim",            j:34, g:12, n:8,  l:14, bp:42, bc:46, db:-4, pts:44 },
+      { pos:11, team:"Freiburg",              j:34, g:10, n:9,  l:15, bp:38, bc:36, db:2, pts:39 },
+      { pos:12, team:"Wolfsburg",             j:34, g:10, n:8,  l:16, bp:33, bc:42, db:-9, pts:38, highlight:true },
+      { pos:13, team:"FC Köln",               j:34, g:6,  n:17, l:11, bp:26, bc:38, db:-12, pts:35 },
+      { pos:14, team:"Hamburg",               j:34, g:9,  n:8,  l:17, bp:19, bc:33, db:-14, pts:35 },
+      { pos:15, team:"Gladbach",              j:34, g:8,  n:11, l:15, bp:30, bc:49, db:-19, pts:35 },
+      { pos:16, team:"Hannover",              j:34, g:7,  n:11, l:16, bp:23, bc:33, db:-10, pts:32 },
+      { pos:17, team:"Hertha",                j:34, g:9,  n:5,  l:20, bp:25, bc:44, db:-19, pts:32, zone:"releg" },
+      { pos:18, team:"Holstein Kiel",         j:34, g:6,  n:13, l:15, bp:20, bc:39, db:-19, pts:31, zone:"releg" },
     ],
 
-    // Effectif au 1er mai 2027
+    // Effectif en fin de saison (mai 2027)
     squad: [
-      { n:"Mario De Luis",       p:"GB",  nat:"ESP", age:24 },
+      { n:"Mario De Luis",       p:"GB",  nat:"ESP", age:25 },
       { n:"Spyridon Souliotis",  p:"GB",  nat:"GRE", age:20 },
       { n:"Marius Müller",       p:"GB",  nat:"GER", age:33 },
       { n:"Matheo Raab",         p:"GB",  nat:"GER", age:28 },
@@ -281,14 +292,14 @@ window['SEASONS_wolfsburg-pep'] = [
       { n:"Gastón Álvarez",      p:"DG",  nat:"URU", age:27 },
       { n:"Jan Bürger",          p:"DD",  nat:"GER", age:20 },
       { n:"Saël Kumbedi",        p:"DD",  nat:"FRA", age:22 },
-      { n:"Kevin Paredes",       p:"DG",  nat:"USA", age:23 },
+      { n:"Kevin Paredes",       p:"DG",  nat:"USA", age:24 },
       { n:"Nicolas Cozza",       p:"DG",  nat:"FRA", age:28 },
       { n:"Mathys Angély",       p:"DG",  nat:"FRA", age:20 },
       { n:"Aaron Zehnter",       p:"DG",  nat:"GER", age:22 },
       { n:"Elias Baum",          p:"DD",  nat:"GER", age:21 },
       { n:"Bence Dárdai",        p:"MDC", nat:"HUN", age:21 },
       { n:"Eduard Löwen",        p:"MDC", nat:"GER", age:30 },
-      { n:"Maximilian Arnold",   p:"MDC", nat:"GER", age:32 },
+      { n:"Maximilian Arnold",   p:"MDC", nat:"GER", age:33 },
       { n:"Aster Vranckx",       p:"MC",  nat:"BEL", age:24 },
       { n:"Elia Dittrich",       p:"MDC", nat:"GER", age:19 },
       { n:"Miguel Boog",         p:"MDC", nat:"GER", age:19 },
@@ -296,7 +307,7 @@ window['SEASONS_wolfsburg-pep'] = [
       { n:"Christian Eriksen",   p:"MOC", nat:"DEN", age:35 },
       { n:"Darwin Soylu",        p:"MC",  nat:"TUR", age:20 },
       { n:"Lovro Majer",         p:"MOC", nat:"CRO", age:29 },
-      { n:"Patrick Wimmer",      p:"AD",  nat:"AUT", age:25 },
+      { n:"Patrick Wimmer",      p:"AD",  nat:"AUT", age:26 },
       { n:"Andreas Skov Olsen",  p:"AD",  nat:"DEN", age:27 },
       { n:"Trevor Benedict",     p:"AG",  nat:"NGA", age:20 },
       { n:"Dženan Pejčinović",   p:"BU",  nat:"GER", age:22 },
@@ -306,8 +317,12 @@ window['SEASONS_wolfsburg-pep'] = [
       { n:"Karlo Simic",         p:"BU",  nat:"CRO", age:19 },
     ],
 
-
-    // splash: { ... }  ← à ajouter à la fin de la saison
+    splash: {
+      eyebrow:  "2026/27 · VfL Wolfsburg · Saison 2",
+      lines:    ["DOUZIÈMES.", "L'EUROPE EN BONUS."],
+      sub:      "Bundesliga · 12e · 38 pts · Barrages d'Europa League",
+      tagline:  "Une saison à deux visages pour Pep Guardiola : des Loups longtemps à la peine en Bundesliga (16es en janvier), une campagne européenne poussée jusqu'aux barrages face à Valence, puis un printemps plus serein conclu par quatre matchs sans défaite.",
+    },
   },
 
   /* ─── SAISON 2025/26 · TERMINÉE ──────────────────────── */
