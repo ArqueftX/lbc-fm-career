@@ -135,7 +135,7 @@ function trophies(s) {
   cups.forEach(c => {
     if (!c || !c.rounds || !c.rounds.length) return
     const last = c.rounds[c.rounds.length - 1]
-    if (/🏆/.test(c.name + last.round + last.opponent) || (/finale/i.test(last.round) && last.result === 'W')) n++
+    if (/🏆/.test(c.name + last.round + last.opponent) || (/^\s*finale\b/i.test(last.round) && last.result === 'W')) n++
   })
   return n
 }

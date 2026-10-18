@@ -107,6 +107,7 @@
   <div style="max-width:1160px;margin:0 auto;padding:36px 56px 60px">
     <div id="season-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px"></div>
   </div>
+  <div id="career-extras"></div>
 
   <div style="border-top:1px solid rgba(255,255,255,.05);padding:20px 56px;display:flex;justify-content:flex-end">
     <button id="replay-btn" onclick="replayIntro()" class="bc nav-btn" style="display:none;font-size:10px;letter-spacing:4px;color:rgba(106,130,176,.4)"
@@ -123,6 +124,7 @@
 <script src="../seasons-ajax.js"></script>
 <script src="../seasons-leverkusen.js"></script>
 <script src="../seasons-arsenal.js"></script>
+<script src="../career-stats.js"></script>
 <script src="../utils.js"></script>
 <script>
 const INTRO_KEY = 'lbc-coach-intro'
@@ -218,6 +220,7 @@ function replayIntro() {
 }
 
 buildPage()
+renderCareerExtras(getSeasons())
 if (career.id === 'chateauroux' && !localStorage.getItem(INTRO_KEY+'-chateauroux'))
   document.getElementById('intro-overlay').style.display = 'flex'
 </script>

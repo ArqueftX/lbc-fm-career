@@ -67,6 +67,7 @@
   <div style="max-width:1160px;margin:0 auto;padding:48px 56px 80px">
     <div id="season-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px"></div>
   </div>
+  <div id="career-extras"></div>
 </div>
 
 <script>window.FORCE_CAREER = "wolfsburg-pep"</script>
@@ -78,6 +79,7 @@
 <script src="../seasons-ajax.js"></script>
 <script src="../seasons-leverkusen.js"></script>
 <script src="../seasons-arsenal.js"></script>
+<script src="../career-stats.js"></script>
 <script src="../utils.js"></script>
 <script>
 let career = getCurrentCareer()
@@ -169,6 +171,7 @@ function closeModal() { document.getElementById('career-modal').classList.remove
 function switchCareer(id) { if (id === career.id) { closeModal(); return; } setCurrentCareer(id); window.location = '../' + id + '/' }
 
 buildPage()
+renderCareerExtras(getSeasons())
 </script>
 </body>
 </html>
