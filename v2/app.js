@@ -438,7 +438,7 @@ function viewSeason(c, s) {
 
     ${stints ? `<section class="section"><h2 class="h-section">Deux clubs, une saison</h2>${stints}</section>` : ''}
 
-    ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">Classement ${isLive(s) ? 'actuel' : 'final'} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings)}
+    ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings)}
       ${s.elTable && s.elTable.length ? `<details class="fold"><summary>${esc(s.elTableTitle || 'Classement · Phase de championnat')}</summary>${standingsTable(s.elTable)}</details>` : ''}</section>`
       : s.elTable && s.elTable.length ? `<section class="section"><h2 class="h-section">${esc(s.elTableTitle || 'Phase de championnat')}</h2>${standingsTable(s.elTable)}</section>` : ''}
 
