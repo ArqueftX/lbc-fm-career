@@ -47,7 +47,7 @@ function parseTip(tip) {
 // Matchs de championnat (suite de résultats)
 function leagueMatches(s) {
   if (s.months && s.months.length)
-    return s.months.flatMap(m => m.matches || []).filter(m => !m.comp || m.comp === 'BL')
+    return s.months.flatMap(m => m.matches || []).filter(m => !m.comp || m.comp === 'L' || m.comp === 'BL')
   if (s.stints && s.stints.length && !(s.matches && s.matches.length))
     return s.stints.flatMap(t => t.matches || [])
   return s.matches || []
@@ -226,9 +226,9 @@ function squadBlock(squad) {
 
 function monthsBlock(s) {
   if (!s.months || !s.months.length) return ''
-  const names = Object.assign({ AM: 'Amical', BL: s.league, DFB: 'DFB-Pokal', EL: 'Europa League', UCL: 'Ligue des Champions' }, s.compNames || {})
+  const names = Object.assign({ AM: 'Amical', BL: s.league, L: s.league, DFB: 'DFB-Pokal', EL: 'Europa League', UCL: 'Ligue des Champions' }, s.compNames || {})
   const blocks = s.months.map(m => {
-    const lg = (m.matches || []).filter(x => !x.comp || x.comp === 'BL')
+    const lg = (m.matches || []).filter(x => !x.comp || x.comp === 'L' || x.comp === 'BL')
     const w = lg.filter(x => x.r === 'W').length, d = lg.filter(x => x.r === 'D').length, l = lg.filter(x => x.r === 'L').length
     const rows = (m.matches || []).map(x => {
       const t = parseTip(x.tip)

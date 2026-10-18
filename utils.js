@@ -11,6 +11,7 @@ const LEAGUE_STYLES = {
   'La Liga':        { bg:'rgba(180,30,30,0.18)',   border:'#b41e1e', color:'#ff8c8c' },
   'Premier League': { bg:'rgba(60,0,130,0.18)',    border:'#6e00d4', color:'#bb88ff' },
   'Eredivisie':     { bg:'rgba(220,0,0,0.18)',      border:'#cc0000', color:'#ff6666'  },
+  'National League South': { bg:'rgba(43,75,155,0.22)', border:'#2b4b9b', color:'#8fa8ff' },
 }
 
 const C = {
@@ -49,8 +50,8 @@ function parseTip(tip) {
 
 function liveSummary(season) {
   const all = liveMatches(season)
-  // Bilan = CHAMPIONNAT uniquement (amicaux 'AM' et coupes 'DFB/EL/UCL' exclus)
-  const ms = all.filter(m => !m.comp || m.comp === 'BL')
+  // Bilan = CHAMPIONNAT uniquement (comp absent, 'L' ou 'BL' ; amicaux 'AM' et coupes exclus)
+  const ms = all.filter(m => !m.comp || m.comp === 'L' || m.comp === 'BL')
   let w = 0, d = 0, l = 0, gf = 0, ga = 0
   ms.forEach(m => {
     if (m.r === 'W') w++; else if (m.r === 'D') d++; else if (m.r === 'L') l++

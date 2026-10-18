@@ -68,6 +68,7 @@
 <script src="../seasons-ajax.js"></script>
 <script src="../seasons-leverkusen.js"></script>
 <script src="../seasons-arsenal.js"></script>
+<script src="../seasons-chippenham.js"></script>
 <script src="../standings-zones.js"></script>
 <script src="../utils.js"></script>
 <script>
@@ -102,6 +103,12 @@ function monthTrajectory(s) {
     <div class="traj"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Classement à la fin de chaque mois">${grid}<polyline points="${line}" fill="none" stroke="#e8b84b" stroke-width="2.5" stroke-linejoin="round"/>${dots}${labels}</svg></div>`
 }
 
+// « VfL Wolfsburg » → VfL / Wolfsburg (2e moitié en doré)
+function clubTitle(name) {
+  const parts = name.split(' '), half = Math.ceil(parts.length / 2)
+  return parts.slice(0, half).join(' ') + '<br><span style="color:var(--gold)">' + parts.slice(half).join(' ') + '</span>'
+}
+
 loadCareerData(function(career) {
   const s = getSeason(id)
   if (!s) { window.location='./'; return; }
@@ -114,18 +121,18 @@ loadCareerData(function(career) {
   document.getElementById('sw-host').innerHTML = renderSwitcherBtn()
   document.getElementById('career-modal-host').innerHTML = renderCareerSwitcher()
   document.getElementById('nav-title').textContent = s.year + (finished ? ' · TERMINÉE' : ' · EN COURS')
-  document.title = 'Wolfsburg ' + s.year + (finished ? ' — Saison terminée' : ' — En cours')
+  document.title = career.short + ' ' + s.year + (finished ? ' — Saison terminée' : ' — En cours')
 
   // ── HERO ──
   document.getElementById('hero').innerHTML = `
-    <div class="bb" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:clamp(150px,26vw,400px);color:rgba(77,184,72,.07);line-height:1;pointer-events:none;user-select:none">${posStr.replace(/[^0-9]/g,'')||'·'}</div>
+    <div class="bb" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-size:clamp(150px,26vw,400px);color:${career.color}12;line-height:1;pointer-events:none;user-select:none">${posStr.replace(/[^0-9]/g,'')||'·'}</div>
     <div style="max-width:1160px;margin:0 auto;position:relative">
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
         ${finished
           ? '<span class="bc" style="display:inline-flex;align-items:center;gap:9px;background:rgba(232,184,75,.14);border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:4px;padding:6px 16px;font-weight:700">✓ SAISON TERMINÉE</span><span class="bc" style="font-size:11px;letter-spacing:3px;color:var(--muted)">BILAN FINAL · <span style="color:var(--gold)">'+s.league+'</span></span>'
           : '<span class="bc" style="display:inline-flex;align-items:center;gap:9px;background:rgba(61,214,140,.14);border:1px solid var(--green);color:var(--green);font-size:11px;letter-spacing:4px;padding:6px 16px;font-weight:700"><span class="live-dot"></span>SAISON EN COURS</span><span class="bc" style="font-size:11px;letter-spacing:3px;color:var(--muted)">DERNIÈRE MAJ · <span style="color:var(--gold)">'+(s.lastUpdate||'—')+'</span></span>'}
       </div>
-      <h1 class="bb au au1" style="font-size:clamp(44px,7.5vw,92px);line-height:.88;letter-spacing:2px;margin-bottom:14px">VfL<br><span style="color:var(--gold)">Wolfsburg</span></h1>
+      <h1 class="bb au au1" style="font-size:clamp(44px,7.5vw,92px);line-height:.88;letter-spacing:2px;margin-bottom:14px">${clubTitle(career.name)}</h1>
       <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
         <span class="bc au au2" style="display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;letter-spacing:5px;padding:5px 16px;font-weight:700">${s.league} · ${s.year}</span>
         <span class="bc" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,184,75,.25);padding:5px 14px;font-size:11px;letter-spacing:2px;color:var(--gold)">⚙ ${(career.coach||'').toUpperCase()}</span>
@@ -163,16 +170,21 @@ loadCareerData(function(career) {
   const months = s.months || []
   if (months.length) {
     const venue = v => v==='D' ? 'DOM' : 'EXT'
-    const compLabel = c => ({
-      'AM':  {txt:'AMICAL',          col:'var(--muted)'},
-      'DFB': {txt:'DFB-POKAL',       col:'var(--gold)'},
-      'EL':  {txt:'EUROPA LEAGUE',   col:'#ff9a3d'},
-      'UCL': {txt:'CHAMPIONS LEAGUE',col:'#8c46dc'},
-    }[c] || {txt:'BUNDESLIGA', col:'#ff6b6b'})
+    // Championnat : comp absent, 'L' ou 'BL' · coupes : codes ci-dessous ou "compNames" de la saison
+    const compLabel = c => {
+      if (!c || c==='L' || c==='BL') return {txt:s.league.toUpperCase(), col:'#ff6b6b'}
+      if (s.compNames && s.compNames[c]) return {txt:s.compNames[c].toUpperCase(), col:'var(--gold)'}
+      return ({
+        'AM':  {txt:'AMICAL',          col:'var(--muted)'},
+        'DFB': {txt:'DFB-POKAL',       col:'var(--gold)'},
+        'EL':  {txt:'EUROPA LEAGUE',   col:'#ff9a3d'},
+        'UCL': {txt:'CHAMPIONS LEAGUE',col:'#8c46dc'},
+      }[c] || {txt:c, col:'var(--gold)'})
+    }
     const blocks = months.map((mo, idx) => {
       const isLatest = idx === months.length - 1
       let w=0,d=0,l=0
-      ;(mo.matches||[]).filter(m=>!m.comp||m.comp==='BL').forEach(m=>{ if(m.r==='W')w++; else if(m.r==='D')d++; else if(m.r==='L')l++ })
+      ;(mo.matches||[]).filter(m=>!m.comp||m.comp==='L'||m.comp==='BL').forEach(m=>{ if(m.r==='W')w++; else if(m.r==='D')d++; else if(m.r==='L')l++ })
       const rows = (mo.matches||[]).map(m=>{
         const mm = (m.tip||'').match(/^(.*?)\s*\((D|E)\)\s*(\d+)\s*-\s*(\d+)/)
         const opp = mm ? mm[1].trim() : (m.tip||'')
