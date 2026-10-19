@@ -137,14 +137,14 @@ window['SEASONS_chippenham'] = [
     ],
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 11 },
-      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 8 },
+      { name: "J. Jones · J. Okine-Peters",   detail: "AG / AD · ex-aequo",      value: 8 },
       { name: "Caine Bradbury",               detail: "MC · Anglais · 25 ans",   value: 7 },
     ],
     // Meilleures et pires moyennes : au moins 18 matchs joués (la moitié des 36 journées de championnat jouées)
     ratings: [
       { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 28 ans · 33 tit. / 3 rempl. · 15 buts · 6 passes D.", value: 7.14 },
+      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 28 tit. / 1 rempl. · 7 buts · 8 passes D.",   value: 7.14 },
       { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 30 tit. / 1 rempl. · 13 buts · 8 passes D.",  value: 7.09 },
-      { name: "Caine Bradbury",        detail: "MC · Anglais · 25 ans · 15 tit. / 7 rempl. · 4 buts · 7 passes D.",   value: 7.04 },
     ],
     flops: [
       { name: "Reece Fleet",           detail: "MDC · Anglais · 34 ans · 11 tit. / 13 rempl. · 1 passe D.",            value: 6.68 },
@@ -241,6 +241,7 @@ window['SEASONS_chippenham'] = [
       { n:"Quévin Castro",         p:"MC",   nat:"POR", age:24 },
       { n:"Tom Owen-Evans",        p:"MOC",  nat:"ENG", age:28 },
       { n:"Cole Fleming",          p:"AD",   nat:"WAL", age:20 },
+      { n:"Jeremiah Okine-Peters", p:"AD",   nat:"ENG", age:20 },
       { n:"Jerae Jones",           p:"AG",   nat:"ENG", age:19 },
       { n:"Olaf Koszela",          p:"BU",   nat:"POL", age:23 },
       { n:"Solomon Wanjau-Smith",  p:"BU",   nat:"ENG", age:26 },
