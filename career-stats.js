@@ -145,5 +145,14 @@ window.CareerStats = (function () {
     return out
   }
 
-  return { compute, parseTip, parseAmount, formatMoney, isFinal }
+  // Records du club annoncés par le jeu (champ "records" de chaque saison).
+  // Un même record ("key") battu plusieurs fois : seule la version la plus récente reste.
+  function clubRecords(rawSeasons) {
+    const best = new Map()
+    ;(rawSeasons || []).slice().sort((a, b) => a.year.localeCompare(b.year))
+      .forEach(s => (s.records || []).forEach(r => best.set(r.key || r.label, Object.assign({ year: s.year }, r))))
+    return [...best.values()]
+  }
+
+  return { compute, clubRecords, parseTip, parseAmount, formatMoney, isFinal }
 })()

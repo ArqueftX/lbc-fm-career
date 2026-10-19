@@ -15,6 +15,10 @@
  *    la légende sous le classement se construit toute seule (voir standings-zones.js).
  *  ▸ "scorers/assists/ratings" : stats cumulées, mises à jour chaque mois.
  *  ▸ "transfers/departures"    : mercato.
+ *  ▸ "records" : records du club battus pendant la saison (annoncés par le jeu) :
+ *       { key:"buts-match", label:"…", value:"7", detail:"…", date:"…" }
+ *    Tous restent sur la page de la saison ; sur la page carrière, un même "key"
+ *    battu à nouveau remplace l'ancien.
  *  ▸ "splash" : à AJOUTER seulement quand la saison est terminée.
  *  ▸ "position" (dans un mois, facultatif) : classement en championnat à la fin du mois.
  *    Dès que 2 mois en ont une, la trajectoire mois par mois s'affiche.
@@ -117,16 +121,21 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "02", label: "Février 2026", position: 4,
-        note: "Mois offensif : quatre victoires, dont trois de suite pour finir et un 7-4 fou contre Maidenhead, mais deux revers (4-2 chez Dag & Red, 0-1 contre Maidstone). Chippenham est 4e, à un point de la 2e place, toujours en zone de barrages.",
+        note: "Mois offensif : quatre victoires, dont trois de suite pour finir, mais deux revers (4-2 chez Dag & Red, 0-1 contre Maidstone). Le 7-4 contre Maidenhead devient le record du club du plus grand nombre de buts marqués en un match. Chippenham est 4e, à un point de la 2e place, en zone de barrages et en passe de battre le meilleur classement de l'histoire du club (7e en 2021/22).",
         matches: [
           { r:"L", tip:"Dag & Red (E) 4-2",              comp:"L" },
           { r:"W", tip:"Torquay United (D) 2-0",         comp:"L" },
           { r:"L", tip:"Maidstone United (D) 0-1",       comp:"L" },
           { r:"W", tip:"Tonbridge Angels (E) 1-2",       comp:"L" },
           { r:"W", tip:"Farnborough (E) 1-2",            comp:"L" },
-          { r:"W", tip:"Maidenhead United (D) 7-4",      comp:"L" },
+          { r:"W", tip:"Maidenhead United (D) 7-4",      comp:"L", tag:"RECORD DU CLUB" },
         ],
       },
+    ],
+
+    // Records du club battus cette saison
+    records: [
+      { key:"buts-match", label:"Buts marqués en un match", value:"7", detail:"7-4 contre Maidenhead United (D)", date:"28 fév. 2026" },
     ],
 
     // Stats toutes compétitions, au 1er mars 2026
