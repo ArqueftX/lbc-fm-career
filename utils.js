@@ -293,6 +293,22 @@ function renderStandings(rows, opts) {
   `
 }
 
+/* Records battus pendant une saison (champ "records") — tous restent affichés,
+   même quand un record tombe plusieurs fois dans la saison */
+function renderSeasonRecords(s) {
+  const rs = (s && s.records) || []
+  if (!rs.length) return ''
+  return `<div style="margin-bottom:60px"><div class="bc sec-title">Records battus</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:3px">
+      ${rs.map(r => `
+        <div style="background:var(--blue);padding:22px 22px 20px;border-left:3px solid var(--gold)">
+          <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;font-weight:700">${r.label}</div>
+          <div class="bb" style="font-size:40px;line-height:1;margin-top:10px;color:var(--gold)">${r.value}</div>
+          <div class="bc" style="font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:6px;line-height:1.4">${[r.detail, r.date].filter(Boolean).join(' · ')}</div>
+        </div>`).join('')}
+    </div></div>`
+}
+
 /* Mercato preview card */
 function renderMercatoPreview(season, careerId) {
   careerId = careerId || getCurrentCareer().id
@@ -412,6 +428,7 @@ function renderCareerExtras(seasons) {
   const trophies = st.trophies.map(t => `<div class="cx-trophy">🏆 ${t.name}<span>${t.year}</span></div>`).join('')
   const finals = st.finals.map(t => `<div class="cx-trophy final">Finaliste · ${t.name}${t.opponent ? ' (contre ' + t.opponent + ')' : ''}<span>${t.year}</span></div>`).join('')
   const bal = st.mercato.received - st.mercato.spent
+  const clubRecs = window.CareerStats.clubRecords ? window.CareerStats.clubRecords(seasons) : []
   const oppRows = st.opponents.map(o => `<tr><td>${o.name}</td><td>${o.j}</td><td style="color:${C.green}">${o.w}</td><td style="color:${C.gold}">${o.d}</td><td style="color:${C.red}">${o.l}</td><td>${o.gf}</td><td>${o.ga}</td></tr>`).join('')
 
   host.innerHTML = `
@@ -421,6 +438,12 @@ function renderCareerExtras(seasons) {
         ${trophies || ''}${finals || ''}
         ${!trophies && !finals ? `<div class="cx-d" style="padding:6px 0">Pas encore de trophée ni de finale.</div>` : ''}
       </div>
+
+      ${clubRecs.length ? `
+      <div class="bc sec-title">Records du club</div>
+      <div class="cx-grid" style="margin-bottom:48px">
+        ${clubRecs.map(r => box(r.label, r.value, [r.detail, r.date || r.year].filter(Boolean).join(' · '), C.gold)).join('')}
+      </div>` : ''}
 
       <div class="bc sec-title">Records en championnat</div>
       <div class="cx-grid" style="margin-bottom:48px">

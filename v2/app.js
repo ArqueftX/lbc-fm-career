@@ -163,6 +163,14 @@ function standingsTable(rows, opts) {
     <tbody>${body}</tbody></table></div>${legend.length ? `<div class="std-legend">${legend.map(z => `<span><i style="background:${z.color}"></i>${esc(z.label)}</span>`).join('')}</div>` : ''}`
 }
 
+// Records battus pendant la saison : tous restent, même un record battu deux fois
+function seasonRecords(s) {
+  const rs = s.records || []
+  if (!rs.length) return ''
+  return `<section class="section"><h2 class="h-section">Records battus <small>Pendant la saison</small></h2>
+    <div class="kpis cx-kpis rec-kpis">${rs.map(r => `<div><div class="big-num">${esc(r.value)}</div><div class="k">${esc(r.label)}</div><div class="cx-d">${esc([r.detail, r.date].filter(Boolean).join(' · '))}</div></div>`).join('')}</div></section>`
+}
+
 function cupCard(c) {
   const o = cupOutcome(c)
   const color = r => r === 'W' ? 'var(--win)' : r === 'D' ? 'var(--draw)' : 'var(--loss)'
@@ -389,10 +397,14 @@ function careerExtras(ss) {
   const finals = st.finals.map(t => `<li class="cx-t"><span>Finaliste · ${esc(t.name)}${t.opponent ? ` <span class="cx-d">contre ${esc(t.opponent)}</span>` : ''}</span><span class="mono">${esc(t.year)}</span></li>`).join('')
   const oppRows = st.opponents.map(o => `<tr><td></td><td>${esc(o.name)}</td><td>${o.j}</td><td>${o.w}</td><td>${o.d}</td><td>${o.l}</td><td>${o.gf}</td><td>${o.ga}</td><td>${o.gf - o.ga > 0 ? '+' : ''}${o.gf - o.ga}</td><td class="pts">${o.j ? Math.round(o.w / o.j * 100) + '%' : '—'}</td></tr>`).join('')
   const m = x => x ? `${x.gf}–${x.ga}` : '—'
+  const recs = window.CareerStats.clubRecords ? window.CareerStats.clubRecords(ss) : []
   return `
     <section class="section"><h2 class="h-section">Vitrine <small>${st.trophies.length} trophée${st.trophies.length > 1 ? 's' : ''} · ${st.finals.length} finale${st.finals.length > 1 ? 's' : ''} perdue${st.finals.length > 1 ? 's' : ''}</small></h2>
       ${trophies || finals ? `<ul class="cx-list">${trophies}${finals}</ul>` : '<div class="empty">Pas encore de trophée ni de finale.</div>'}
     </section>
+    ${recs.length ? `<section class="section"><h2 class="h-section">Records du club <small>Les plus récents</small></h2>
+      <div class="kpis cx-kpis rec-kpis">${recs.map(r => cell(esc(r.label), esc(r.value), esc([r.detail, r.date || r.year].filter(Boolean).join(' · ')))).join('')}</div>
+    </section>` : ''}
     <section class="section"><h2 class="h-section">Records <small>En championnat</small></h2>
       <div class="kpis cx-kpis">
         ${cell('Plus large victoire', m(st.biggestWin), st.biggestWin ? `contre ${esc(st.biggestWin.opp)} ${where(st.biggestWin.venue)} · ${esc(st.biggestWin.year)}` : '', 'c-win')}
@@ -525,6 +537,7 @@ function viewSeason(c, s) {
 
     ${stints ? `<section class="section"><h2 class="h-section">Deux clubs, une saison</h2>${stints}</section>` : ''}
 
+    ${seasonRecords(s)}
     ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings, { league: s.league, final: !isLive(s) && !s.standingsTitle })}
       ${s.elTable && s.elTable.length ? `<details class="fold"><summary>${esc(s.elTableTitle || 'Classement · Phase de championnat')}</summary>${standingsTable(s.elTable, { europe: true })}</details>` : ''}</section>`
       : s.elTable && s.elTable.length ? `<section class="section"><h2 class="h-section">${esc(s.elTableTitle || 'Phase de championnat')}</h2>${standingsTable(s.elTable, { europe: true })}</section>` : ''}

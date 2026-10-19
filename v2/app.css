@@ -338,3 +338,7 @@ details.month:not([open]) .month-note { margin-bottom: 0; }
   .pager { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Records du club : cartes séparées (une seule carte ne laisse pas de vide) */
+.kpis.rec-kpis { display: flex; flex-wrap: wrap; gap: 12px; background: transparent; border: 0; border-radius: 0; overflow: visible; }
+.rec-kpis > div { flex: 1 1 240px; max-width: 380px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 14px; }

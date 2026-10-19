@@ -15,6 +15,10 @@
  *    la légende sous le classement se construit toute seule (voir standings-zones.js).
  *  ▸ "scorers/assists/ratings" : stats cumulées, mises à jour chaque mois.
  *  ▸ "transfers/departures"    : mercato.
+ *  ▸ "records" : records du club battus pendant la saison (annoncés par le jeu) :
+ *       { key:"buts-match", label:"…", value:"7", detail:"…", date:"…" }
+ *    Tous restent sur la page de la saison ; sur la page carrière, un même "key"
+ *    battu à nouveau remplace l'ancien.
  *  ▸ "splash" : à AJOUTER seulement quand la saison est terminée.
  *  ▸ "position" (dans un mois, facultatif) : classement en championnat à la fin du mois.
  *    Dès que 2 mois en ont une, la trajectoire mois par mois s'affiche.
@@ -127,6 +131,11 @@ window['SEASONS_chippenham'] = [
           { r:"W", tip:"Maidenhead United (D) 7-4",      comp:"L", tag:"RECORD DU CLUB" },
         ],
       },
+    ],
+
+    // Records du club battus cette saison
+    records: [
+      { key:"buts-match", label:"Buts marqués en un match", value:"7", detail:"7-4 contre Maidenhead United (D)", date:"28 fév. 2026" },
     ],
 
     // Stats toutes compétitions, au 1er mars 2026

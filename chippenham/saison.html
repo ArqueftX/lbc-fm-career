@@ -55,6 +55,7 @@
   <div id="cup-section" style="margin-bottom:60px"></div>
   <div id="cup2-section" style="margin-bottom:60px"></div>
   <div id="el-table-section" style="margin-bottom:60px"></div>
+  <div id="records-section"></div>
   <div id="standings-section" style="margin-bottom:60px"></div>
   <div id="squad-section" style="margin-bottom:60px"></div>
 </div>
@@ -264,6 +265,9 @@ loadCareerData(function(career) {
   if (s.elTable && s.elTable.length) {
     document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">${s.elTableTitle||'Classement · Phase de championnat'}</div>${renderStandings(s.elTable, {europe:true})}`
   }
+
+  // Records battus pendant la saison
+  document.getElementById('records-section').innerHTML = renderSeasonRecords(s)
 
   // ── CLASSEMENT ──
   if (s.standings && s.standings.length) {
