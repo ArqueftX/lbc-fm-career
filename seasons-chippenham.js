@@ -162,7 +162,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "05", label: "Mai 2026",
-        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale.",
+        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale. Les 3 000 spectateurs du derby contre Bath City constituent la plus grosse affluence de l'histoire du club.",
         matches: [
           { r:"W", tip:"Bath City (D) 2-0",              comp:"PO", tag:"DEMI-FINALE · QUALIFIÉ" },
         ],
@@ -180,6 +180,7 @@ window['SEASONS_chippenham'] = [
       { key:"buts-match", label:"Buts marqués en un match", value:"7", detail:"7-4 contre Maidenhead United (D)", date:"28 fév. 2026" },
       // Mettre à jour à chaque but de championnat, puis au total final
       { key:"buts-saison", label:"Buts marqués en championnat sur une saison", value:"98", detail:"Total de la saison régulière (46 journées) · record battu à deux journées de la fin", date:"12 avr. 2026" },
+      { key:"affluence", label:"Affluence au Thornbury Surfacing Stadium", value:"3 000", detail:"Demi-finale des barrages contre Bath City (2-0) · ancien record : 2 625 contre Northampton en novembre 2019", date:"3 mai 2026" },
       { key:"classement-nls", label:"Meilleur classement en National League South", value:"2e", detail:"86 pts en saison régulière · ancien record : 7e en 2021/22", date:"25 avr. 2026" },
     ],
 
