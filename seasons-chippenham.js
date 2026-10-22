@@ -162,7 +162,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "05", label: "Mai 2026",
-        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League.",
+        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale.",
         matches: [
           { r:"W", tip:"Bath City (D) 2-0",              comp:"PO", tag:"DEMI-FINALE · QUALIFIÉ" },
         ],
