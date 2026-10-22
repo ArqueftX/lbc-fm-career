@@ -394,6 +394,7 @@ html, body {
   .sticky-nav { padding: 12px 20px; }
   .two-col { grid-template-columns: 1fr; gap: 32px; }
   .big-stats { grid-template-columns: repeat(3,1fr); }
+  .stat-strip { grid-template-columns: repeat(2,1fr) !important; } /* chiffres clés des pages saison */
   .standings-head, .standings-row { grid-template-columns: 28px 1fr repeat(4,36px); }
   .standings-head span:nth-child(n+5):nth-child(-n+8),
   .standings-row span:nth-child(n+5):nth-child(-n+8) { display: none; }
