@@ -148,9 +148,10 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "04", label: "Avril 2026",
-        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien.",
+        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien. Le 6 avril, Chippenham bat Totton (2-1, but contre son camp de Wells-Morrison puis Jeremiah Okine-Peters, élu homme du match avec 8,2) et repasse 2e. Le lendemain, c'est officiel : la place en barrages est assurée et, à trois journées de la fin, le club battra le meilleur classement de son histoire en National League South (7e en 2021/22).",
         matches: [
           { r:"D", tip:"Bath City (E) 1-1",              comp:"L" },
+          { r:"W", tip:"Totton (D) 2-1",                 comp:"L" },
         ],
       },
     ],
@@ -163,13 +164,15 @@ window['SEASONS_chippenham'] = [
     // Records du club battus cette saison
     records: [
       { key:"buts-match", label:"Buts marqués en un match", value:"7", detail:"7-4 contre Maidenhead United (D)", date:"28 fév. 2026" },
+      // À la fin de la saison : remplacer value/detail par le classement final
+      { key:"classement-nls", label:"Meilleur classement en National League South", value:"Top 6", detail:"Au pire 6e, assuré à 3 journées de la fin (2e à ce moment-là) · ancien record : 7e en 2021/22", date:"7 avr. 2026" },
     ],
 
-    // Stats toutes compétitions : buteurs et passeurs au 3 avril 2026, moyennes au 1er avril 2026
+    // Stats toutes compétitions : buteurs et passeurs au 6 avril 2026, moyennes au 1er avril 2026
     scorers: [
       { name: "T. Owen-Evans · J. Jones",     detail: "MOC / AG · ex-aequo",     value: 18 },
       { name: "Solomon Wanjau-Smith",         detail: "BU · Anglais · 26 ans",   value: 16 },
-      { name: "Ezio Touray",                  detail: "BU · Italien · 23 ans",   value: 8 },
+      { name: "E. Touray · J. Okine-Peters",  detail: "BU / AD · ex-aequo",      value: 8 },
     ],
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 12 },
@@ -227,33 +230,33 @@ window['SEASONS_chippenham'] = [
       ],
     },
 
-    // Classement après 42 journées (3 avril 2026) · Worthing et Dag & Red assurés des barrages au moins
+    // Classement après 43 journées (6 avril 2026) · Worthing, Chippenham, Dag & Red et Totton assurés des barrages au moins
     // 1er promu, 2e-7e barrages pour la montée, 21e-24e relégués
     standings: [
-      { pos:1,  team:"Worthing",               j:42, g:25, n:9,  l:8,  bp:66, bc:36, db:30, pts:84, zone:"promo" },
-      { pos:2,  team:"Dag & Red",              j:42, g:21, n:14, l:7,  bp:69, bc:35, db:34, pts:77, zone:"promo-playoff" },
-      { pos:3,  team:"Chippenham Town",        j:42, g:21, n:13, l:8,  bp:91, bc:59, db:32, pts:76, zone:"promo-playoff", highlight:true },
-      { pos:4,  team:"Totton",                 j:42, g:22, n:10, l:10, bp:64, bc:41, db:23, pts:76, zone:"promo-playoff" },
-      { pos:5,  team:"Bath City",              j:42, g:20, n:9,  l:13, bp:69, bc:56, db:13, pts:69, zone:"promo-playoff" },
-      { pos:6,  team:"Salisbury",              j:42, g:19, n:10, l:13, bp:58, bc:52, db:6, pts:67, zone:"promo-playoff" },
-      { pos:7,  team:"Hornchurch",             j:42, g:19, n:8,  l:15, bp:59, bc:50, db:9, pts:65, zone:"promo-playoff" },
-      { pos:8,  team:"Tonbridge Angels",       j:42, g:17, n:13, l:12, bp:51, bc:42, db:9, pts:64 },
-      { pos:9,  team:"Enfield Town",           j:42, g:19, n:6,  l:17, bp:54, bc:53, db:1, pts:63 },
-      { pos:10, team:"Torquay United",         j:42, g:16, n:14, l:12, bp:58, bc:52, db:6, pts:62 },
-      { pos:11, team:"Ebbsfleet United",       j:42, g:16, n:11, l:15, bp:46, bc:47, db:-1, pts:59 },
-      { pos:12, team:"Maidstone United",       j:42, g:15, n:12, l:15, bp:52, bc:46, db:6, pts:57 },
-      { pos:13, team:"Dover Athletic",         j:42, g:15, n:12, l:15, bp:53, bc:55, db:-2, pts:57 },
-      { pos:14, team:"Dorking",                j:42, g:14, n:12, l:16, bp:53, bc:59, db:-6, pts:54 },
-      { pos:15, team:"Eastbourne Borough",     j:42, g:14, n:11, l:17, bp:54, bc:55, db:-1, pts:53 },
-      { pos:16, team:"Chelmsford City",        j:42, g:14, n:9,  l:19, bp:47, bc:61, db:-14, pts:51 },
-      { pos:17, team:"Slough Town",            j:42, g:13, n:11, l:18, bp:44, bc:59, db:-15, pts:50 },
-      { pos:18, team:"Farnborough",            j:42, g:11, n:12, l:19, bp:57, bc:67, db:-10, pts:45 },
-      { pos:19, team:"Chesham United",         j:42, g:11, n:12, l:19, bp:50, bc:66, db:-16, pts:45 },
-      { pos:20, team:"Weston-super-Mare",      j:42, g:12, n:8,  l:22, bp:47, bc:66, db:-19, pts:44 },
-      { pos:21, team:"Maidenhead United",      j:42, g:10, n:13, l:19, bp:48, bc:57, db:-9, pts:43, zone:"releg" },
-      { pos:22, team:"Hemel Hempstead Town",   j:42, g:10, n:12, l:20, bp:39, bc:61, db:-22, pts:42, zone:"releg" },
-      { pos:23, team:"Hampton & Richmond",     j:42, g:11, n:9,  l:22, bp:49, bc:75, db:-26, pts:42, zone:"releg" },
-      { pos:24, team:"Horsham",                j:42, g:9,  n:10, l:23, bp:40, bc:68, db:-28, pts:37, zone:"releg" },
+      { pos:1,  team:"Worthing",               j:43, g:25, n:10, l:8,  bp:67, bc:37, db:30, pts:85, zone:"promo" },
+      { pos:2,  team:"Chippenham Town",        j:43, g:22, n:13, l:8,  bp:93, bc:60, db:33, pts:79, zone:"promo-playoff", highlight:true },
+      { pos:3,  team:"Dag & Red",              j:43, g:21, n:14, l:8,  bp:70, bc:37, db:33, pts:77, zone:"promo-playoff" },
+      { pos:4,  team:"Totton",                 j:43, g:22, n:10, l:11, bp:65, bc:43, db:22, pts:76, zone:"promo-playoff" },
+      { pos:5,  team:"Salisbury",              j:43, g:20, n:10, l:13, bp:61, bc:54, db:7, pts:70, zone:"promo-playoff" },
+      { pos:6,  team:"Bath City",              j:43, g:20, n:9,  l:14, bp:71, bc:59, db:12, pts:69, zone:"promo-playoff" },
+      { pos:7,  team:"Enfield Town",           j:43, g:20, n:6,  l:17, bp:56, bc:53, db:3, pts:66, zone:"promo-playoff" },
+      { pos:8,  team:"Hornchurch",             j:43, g:19, n:8,  l:16, bp:61, bc:53, db:8, pts:65 },
+      { pos:9,  team:"Torquay United",         j:43, g:17, n:14, l:12, bp:61, bc:54, db:7, pts:65 },
+      { pos:10, team:"Tonbridge Angels",       j:43, g:17, n:13, l:13, bp:52, bc:45, db:7, pts:64 },
+      { pos:11, team:"Maidstone United",       j:43, g:16, n:12, l:15, bp:55, bc:48, db:7, pts:60 },
+      { pos:12, team:"Dover Athletic",         j:43, g:16, n:12, l:15, bp:56, bc:56, db:0, pts:60 },
+      { pos:13, team:"Ebbsfleet United",       j:43, g:16, n:11, l:16, bp:47, bc:50, db:-3, pts:59 },
+      { pos:14, team:"Eastbourne Borough",     j:43, g:15, n:11, l:17, bp:57, bc:56, db:1, pts:56 },
+      { pos:15, team:"Dorking",                j:43, g:14, n:13, l:16, bp:54, bc:60, db:-6, pts:55 },
+      { pos:16, team:"Chelmsford City",        j:43, g:15, n:9,  l:19, bp:49, bc:62, db:-13, pts:54 },
+      { pos:17, team:"Slough Town",            j:43, g:13, n:11, l:19, bp:44, bc:60, db:-16, pts:50 },
+      { pos:18, team:"Farnborough",            j:43, g:12, n:12, l:19, bp:58, bc:67, db:-9, pts:48 },
+      { pos:19, team:"Chesham United",         j:43, g:12, n:12, l:19, bp:51, bc:66, db:-15, pts:48 },
+      { pos:20, team:"Maidenhead United",      j:43, g:10, n:14, l:19, bp:50, bc:59, db:-9, pts:44 },
+      { pos:21, team:"Weston-super-Mare",      j:43, g:12, n:8,  l:23, bp:49, bc:69, db:-20, pts:44, zone:"releg" },
+      { pos:22, team:"Hampton & Richmond",     j:43, g:11, n:10, l:22, bp:51, bc:77, db:-26, pts:43, zone:"releg" },
+      { pos:23, team:"Hemel Hempstead Town",   j:43, g:10, n:12, l:21, bp:39, bc:63, db:-24, pts:42, zone:"releg" },
+      { pos:24, team:"Horsham",                j:43, g:9,  n:10, l:24, bp:40, bc:69, db:-29, pts:37, zone:"releg" },
     ],
     // Effectif au 1er avril 2026
     squad: [
