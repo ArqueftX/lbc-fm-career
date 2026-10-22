@@ -342,3 +342,9 @@ details.month:not([open]) .month-note { margin-bottom: 0; }
 /* Records du club : cartes séparées (une seule carte ne laisse pas de vide) */
 .kpis.rec-kpis { display: flex; flex-wrap: wrap; gap: 12px; background: transparent; border: 0; border-radius: 0; overflow: visible; }
 .rec-kpis > div { flex: 1 1 240px; max-width: 380px; border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 14px; }
+
+/* Profil de l'entraîneur */
+.coach-list { grid-template-columns: 1fr; gap: 6px; }
+.coach-list .cx-t { padding: 10px 14px; font-weight: 500; }
+.traits { display: flex; flex-wrap: wrap; gap: 6px; }
+.traits span { font-size: 12.5px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }

@@ -19,6 +19,8 @@
  *       { key:"buts-match", label:"…", value:"7", detail:"…", date:"…" }
  *    Tous restent sur la page de la saison ; sur la page carrière, un même "key"
  *    battu à nouveau remplace l'ancien.
+ *  ▸ "awards" : distinctions (entraîneur du mois…) : { label, winner, period, detail }
+ *    Toutes restent, sur la page de la saison comme sur la page carrière.
  *  ▸ "splash" : à AJOUTER seulement quand la saison est terminée.
  *  ▸ "position" (dans un mois, facultatif) : classement en championnat à la fin du mois.
  *    Dès que 2 mois en ont une, la trajectoire mois par mois s'affiche.
@@ -133,7 +135,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "03", label: "Mars 2026", position: 2,
-        note: "Cinq matchs sans défaite (quatre victoires, un nul), dont un 0-4 à Dover et un 5-1 contre Chelmsford. Doublés de Jerae Jones à Dover et de Tom Owen-Evans contre Chelmsford. Chippenham remonte à la 2e place, à six points de Worthing à cinq journées de la fin.",
+        note: "Cinq matchs sans défaite (quatre victoires, un nul), dont un 0-4 à Dover et un 5-1 contre Chelmsford. Doublés de Jerae Jones à Dover et de Tom Owen-Evans contre Chelmsford. Chippenham remonte à la 2e place, à six points de Worthing à cinq journées de la fin, et Nolann Queft est élu entraîneur du mois.",
         matches: [
           { r:"W", tip:"Enfield Town (D) 1-0",           comp:"L" },
           { r:"D", tip:"Hemel Hempstead Town (E) 1-1",   comp:"L" },
@@ -142,6 +144,11 @@ window['SEASONS_chippenham'] = [
           { r:"W", tip:"Chelmsford City (D) 5-1",        comp:"L" },
         ],
       },
+    ],
+
+    // Distinctions de la saison
+    awards: [
+      { label:"Entraîneur du mois", winner:"Nolann Queft", period:"Mars 2026", detail:"National League South · 4 victoires en 5 matchs · devant Alan Dunne (Tonbridge Angels) et Neil McDonald (Dag & Red)" },
     ],
 
     // Records du club battus cette saison
