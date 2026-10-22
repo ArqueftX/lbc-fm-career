@@ -33,7 +33,7 @@ window['SEASONS_chippenham'] = [
     status:       "en_cours",
     totalTeams:   24,
     seasonLength: 46,
-    lastUpdate:   "Février 2026",
+    lastUpdate:   "Mars 2026",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy" },
 
@@ -131,6 +131,17 @@ window['SEASONS_chippenham'] = [
           { r:"W", tip:"Maidenhead United (D) 7-4",      comp:"L", tag:"RECORD DU CLUB" },
         ],
       },
+      {
+        key: "03", label: "Mars 2026", position: 2,
+        note: "Cinq matchs sans défaite (quatre victoires, un nul), dont un 0-4 à Dover et un 5-1 contre Chelmsford. Doublés de Jerae Jones à Dover et de Tom Owen-Evans contre Chelmsford. Chippenham remonte à la 2e place, à six points de Worthing à cinq journées de la fin.",
+        matches: [
+          { r:"W", tip:"Enfield Town (D) 1-0",           comp:"L" },
+          { r:"D", tip:"Hemel Hempstead Town (E) 1-1",   comp:"L" },
+          { r:"W", tip:"Dover Athletic (E) 0-4",         comp:"L" },
+          { r:"W", tip:"Eastbourne Borough (D) 1-0",     comp:"L" },
+          { r:"W", tip:"Chelmsford City (D) 5-1",        comp:"L" },
+        ],
+      },
     ],
 
     // Records du club battus cette saison
@@ -138,27 +149,27 @@ window['SEASONS_chippenham'] = [
       { key:"buts-match", label:"Buts marqués en un match", value:"7", detail:"7-4 contre Maidenhead United (D)", date:"28 fév. 2026" },
     ],
 
-    // Stats toutes compétitions, au 1er mars 2026
+    // Stats toutes compétitions, au 1er avril 2026
     scorers: [
-      { name: "T. Owen-Evans · S. Wanjau-Smith", detail: "MOC / BU · ex-aequo",  value: 15 },
-      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 13 },
-      { name: "Ezio Touray",                  detail: "BU · Italien · 23 ans",   value: 8 },
+      { name: "Tom Owen-Evans",               detail: "MOC · Anglais · 29 ans",  value: 18 },
+      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 17 },
+      { name: "Solomon Wanjau-Smith",         detail: "BU · Anglais · 26 ans",   value: 16 },
     ],
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 11 },
-      { name: "J. Jones · J. Okine-Peters",   detail: "AG / AD · ex-aequo",      value: 8 },
-      { name: "Caine Bradbury",               detail: "MC · Anglais · 25 ans",   value: 7 },
+      { name: "Jeremiah Okine-Peters",        detail: "AD · Anglais · 20 ans",   value: 10 },
+      { name: "C. Bradbury · J. Jones",       detail: "MC / AG · ex-aequo",      value: 9 },
     ],
-    // Meilleures et pires moyennes : au moins 18 matchs joués (la moitié des 36 journées de championnat jouées)
+    // Meilleures et pires moyennes : au moins 21 matchs joués (la moitié des 41 journées de championnat jouées)
     ratings: [
-      { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 28 ans · 33 tit. / 3 rempl. · 15 buts · 6 passes D.", value: 7.14 },
-      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 28 tit. / 1 rempl. · 7 buts · 8 passes D.",   value: 7.14 },
-      { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 30 tit. / 1 rempl. · 13 buts · 8 passes D.",  value: 7.09 },
+      { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 35 tit. / 1 rempl. · 17 buts · 9 passes D.",  value: 7.22 },
+      { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 29 ans · 38 tit. / 3 rempl. · 18 buts · 8 passes D.", value: 7.17 },
+      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 30 tit. / 1 rempl. · 7 buts · 10 passes D.",  value: 7.15 },
     ],
     flops: [
-      { name: "Reece Fleet",           detail: "MDC · Anglais · 34 ans · 11 tit. / 13 rempl. · 1 passe D.",            value: 6.68 },
-      { name: "Tom Mehew",             detail: "MDC · Anglais · 24 ans · 8 tit. / 12 rempl. · 1 passe D.",             value: 6.69 },
-      { name: "Will Henry",            detail: "GB · Anglais · 27 ans · 38 tit.",                                      value: 6.72 },
+      { name: "Reece Fleet",           detail: "MDC · Anglais · 34 ans · 11 tit. / 15 rempl. · 1 passe D.",            value: 6.69 },
+      { name: "Tom Mehew",             detail: "MDC · Anglais · 24 ans · 8 tit. / 15 rempl. · 2 passes D.",            value: 6.72 },
+      { name: "Will Henry",            detail: "GB · Anglais · 27 ans · 43 tit.",                                      value: 6.74 },
     ],
 
     transfers: [
@@ -183,6 +194,7 @@ window['SEASONS_chippenham'] = [
       { type: "loan", name: "Harry Messenger", to: "Hendon (DC · Anglais · 17 ans)",                date: "Oct. 2025" },
       { type: "loan", name: "Lewis Royston",  to: "Hayes & Yeading United (MC · Anglais · 18 ans)", date: "Déc. 2025" },
       { type: "loan", name: "Tom Harrison",   to: "Fin de prêt (DC · Anglais · 24 ans)",            date: "Jan. 2026" },
+      { type: "free", name: "Aaron Amadi-Holloway", to: "Billericay Town (DC · Gallois · 33 ans)",   date: "Mars 2026" },
     ],
 
     cup: {
@@ -199,35 +211,35 @@ window['SEASONS_chippenham'] = [
       ],
     },
 
-    // Classement après 36 journées (fin février 2026)
+    // Classement après 41 journées (fin mars 2026)
     // 1er promu, 2e-7e barrages pour la montée, 21e-24e relégués
     standings: [
-      { pos:1,  team:"Worthing",               j:36, g:23, n:8,  l:5,  bp:62, bc:30, db:32, pts:77, zone:"promo" },
-      { pos:2,  team:"Dag & Red",              j:36, g:17, n:12, l:7,  bp:56, bc:30, db:26, pts:63, zone:"promo-playoff" },
-      { pos:3,  team:"Totton",                 j:36, g:18, n:9,  l:9,  bp:56, bc:37, db:19, pts:63, zone:"promo-playoff" },
-      { pos:4,  team:"Chippenham Town",        j:36, g:17, n:11, l:8,  bp:78, bc:56, db:22, pts:62, zone:"promo-playoff", highlight:true },
-      { pos:5,  team:"Bath City",              j:36, g:18, n:6,  l:12, bp:60, bc:47, db:13, pts:60, zone:"promo-playoff" },
-      { pos:6,  team:"Ebbsfleet United",       j:36, g:16, n:10, l:10, bp:44, bc:37, db:7, pts:58, zone:"promo-playoff" },
-      { pos:7,  team:"Enfield Town",           j:36, g:17, n:6,  l:13, bp:52, bc:46, db:6, pts:57, zone:"promo-playoff" },
-      { pos:8,  team:"Salisbury",              j:36, g:16, n:8,  l:12, bp:47, bc:46, db:1, pts:56 },
-      { pos:9,  team:"Hornchurch",             j:36, g:16, n:7,  l:13, bp:51, bc:44, db:7, pts:55 },
-      { pos:10, team:"Tonbridge Angels",       j:36, g:14, n:10, l:12, bp:43, bc:39, db:4, pts:52 },
-      { pos:11, team:"Chelmsford City",        j:36, g:14, n:9,  l:13, bp:44, bc:48, db:-4, pts:51 },
-      { pos:12, team:"Dover Athletic",         j:36, g:13, n:11, l:12, bp:48, bc:45, db:3, pts:50 },
-      { pos:13, team:"Maidstone United",       j:36, g:13, n:10, l:13, bp:44, bc:38, db:6, pts:49 },
-      { pos:14, team:"Torquay United",         j:36, g:12, n:13, l:11, bp:45, bc:46, db:-1, pts:49 },
-      { pos:15, team:"Eastbourne Borough",     j:36, g:12, n:11, l:13, bp:49, bc:47, db:2, pts:47 },
-      { pos:16, team:"Dorking",                j:36, g:11, n:11, l:14, bp:44, bc:50, db:-6, pts:44 },
-      { pos:17, team:"Farnborough",            j:36, g:11, n:9,  l:16, bp:54, bc:61, db:-7, pts:42 },
-      { pos:18, team:"Slough Town",            j:36, g:11, n:8,  l:17, bp:40, bc:55, db:-15, pts:41 },
-      { pos:19, team:"Maidenhead United",      j:36, g:8,  n:12, l:16, bp:41, bc:52, db:-11, pts:36 },
-      { pos:20, team:"Hemel Hempstead Town",   j:36, g:9,  n:9,  l:18, bp:33, bc:52, db:-19, pts:36 },
-      { pos:21, team:"Chesham United",         j:36, g:8,  n:11, l:17, bp:42, bc:59, db:-17, pts:35, zone:"releg" },
-      { pos:22, team:"Horsham",                j:36, g:8,  n:10, l:18, bp:34, bc:53, db:-19, pts:34, zone:"releg" },
-      { pos:23, team:"Hampton & Richmond",     j:36, g:8,  n:9,  l:19, bp:40, bc:68, db:-28, pts:33, zone:"releg" },
-      { pos:24, team:"Weston-super-Mare",      j:36, g:8,  n:8,  l:20, bp:38, bc:59, db:-21, pts:32, zone:"releg" },
+      { pos:1,  team:"Worthing",               j:41, g:24, n:9,  l:8,  bp:65, bc:36, db:29, pts:81, zone:"promo" },
+      { pos:2,  team:"Chippenham Town",        j:41, g:21, n:12, l:8,  bp:90, bc:58, db:32, pts:75, zone:"promo-playoff", highlight:true },
+      { pos:3,  team:"Dag & Red",              j:41, g:20, n:14, l:7,  bp:66, bc:34, db:32, pts:74, zone:"promo-playoff" },
+      { pos:4,  team:"Totton",                 j:41, g:21, n:10, l:10, bp:62, bc:41, db:21, pts:73, zone:"promo-playoff" },
+      { pos:5,  team:"Bath City",              j:41, g:20, n:8,  l:13, bp:68, bc:55, db:13, pts:68, zone:"promo-playoff" },
+      { pos:6,  team:"Salisbury",              j:41, g:19, n:10, l:12, bp:58, bc:50, db:8, pts:67, zone:"promo-playoff" },
+      { pos:7,  team:"Hornchurch",             j:41, g:19, n:8,  l:14, bp:58, bc:47, db:11, pts:65, zone:"promo-playoff" },
+      { pos:8,  team:"Tonbridge Angels",       j:41, g:17, n:12, l:12, bp:50, bc:41, db:9, pts:63 },
+      { pos:9,  team:"Enfield Town",           j:41, g:18, n:6,  l:17, bp:53, bc:53, db:0, pts:60 },
+      { pos:10, team:"Torquay United",         j:41, g:15, n:14, l:12, bp:56, bc:52, db:4, pts:59 },
+      { pos:11, team:"Ebbsfleet United",       j:41, g:16, n:10, l:15, bp:45, bc:46, db:-1, pts:58 },
+      { pos:12, team:"Dover Athletic",         j:41, g:15, n:12, l:14, bp:52, bc:53, db:-1, pts:57 },
+      { pos:13, team:"Maidstone United",       j:41, g:14, n:12, l:15, bp:50, bc:45, db:5, pts:54 },
+      { pos:14, team:"Dorking",                j:41, g:14, n:12, l:15, bp:53, bc:56, db:-3, pts:54 },
+      { pos:15, team:"Eastbourne Borough",     j:41, g:14, n:11, l:16, bp:54, bc:54, db:0, pts:53 },
+      { pos:16, team:"Chelmsford City",        j:41, g:14, n:9,  l:18, bp:47, bc:60, db:-13, pts:51 },
+      { pos:17, team:"Slough Town",            j:41, g:13, n:10, l:18, bp:44, bc:59, db:-15, pts:49 },
+      { pos:18, team:"Farnborough",            j:41, g:11, n:12, l:18, bp:57, bc:66, db:-9, pts:45 },
+      { pos:19, team:"Chesham United",         j:41, g:11, n:11, l:19, bp:48, bc:64, db:-16, pts:44 },
+      { pos:20, team:"Weston-super-Mare",      j:41, g:12, n:8,  l:21, bp:47, bc:64, db:-17, pts:44 },
+      { pos:21, team:"Maidenhead United",      j:41, g:10, n:12, l:19, bp:48, bc:57, db:-9, pts:42, zone:"releg" },
+      { pos:22, team:"Hemel Hempstead Town",   j:41, g:10, n:11, l:20, bp:37, bc:59, db:-22, pts:41, zone:"releg" },
+      { pos:23, team:"Hampton & Richmond",     j:41, g:10, n:9,  l:22, bp:48, bc:75, db:-27, pts:39, zone:"releg" },
+      { pos:24, team:"Horsham",                j:41, g:8,  n:10, l:23, bp:37, bc:68, db:-31, pts:34, zone:"releg" },
     ],
-    // Effectif au 1er mars 2026
+    // Effectif au 1er avril 2026
     squad: [
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:27 },
       { n:"Josh Sawyer",           p:"GB",   nat:"ENG", age:17 },
@@ -235,7 +247,6 @@ window['SEASONS_chippenham'] = [
       { n:"Canice Carroll",        p:"DC",   nat:"IRL", age:27 },
       { n:"Luke Haines",           p:"DC",   nat:"ENG", age:25 },
       { n:"Freddie Grant",         p:"DC",   nat:"ENG", age:29 },
-      { n:"Aaron Amadi-Holloway",  p:"DC",   nat:"WAL", age:33 },
       { n:"Grant Knowles",         p:"DG",   nat:"ENG", age:17 },
       { n:"Kai Source",            p:"DG",   nat:"ENG", age:19 },
       { n:"Will King",             p:"DG",   nat:"ENG", age:23 },
@@ -248,11 +259,11 @@ window['SEASONS_chippenham'] = [
       { n:"Tom Mehew",             p:"MDC",  nat:"ENG", age:24 },
       { n:"Caine Bradbury",        p:"MC",   nat:"ENG", age:25 },
       { n:"Quévin Castro",         p:"MC",   nat:"POR", age:24 },
-      { n:"Tom Owen-Evans",        p:"MOC",  nat:"ENG", age:28 },
+      { n:"Tom Owen-Evans",        p:"MOC",  nat:"ENG", age:29 },
       { n:"Cole Fleming",          p:"AD",   nat:"WAL", age:20 },
       { n:"Jeremiah Okine-Peters", p:"AD",   nat:"ENG", age:20 },
       { n:"Jerae Jones",           p:"AG",   nat:"ENG", age:19 },
-      { n:"Olaf Koszela",          p:"BU",   nat:"POL", age:23 },
+      { n:"Olaf Koszela",          p:"BU",   nat:"POL", age:24 },
       { n:"Solomon Wanjau-Smith",  p:"BU",   nat:"ENG", age:26 },
       { n:"Ezio Touray",           p:"BU",   nat:"ITA", age:23 },
       { n:"Harry Parsons",         p:"BU",   nat:"ENG", age:23 },
