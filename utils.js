@@ -321,7 +321,7 @@ function renderCoachProfile(career) {
       <div style="background:var(--blue);padding:22px 24px">
         <div class="bb" style="font-size:34px;line-height:1;letter-spacing:1px">${career.coach}</div>
         <div class="bc" style="font-size:12px;color:var(--gold);letter-spacing:2px;margin:6px 0 12px">${[p.nat, p.born ? 'né le ' + p.born : ''].filter(Boolean).join(' · ')}</div>
-        ${line('Réputation', p.reputation)}${line('Style tactique', p.style)}${line('Personnalité', p.personality)}${line('Langues', p.languages)}${line('Contrat', p.contract)}
+        ${line('Réputation', p.reputation)}${line('Style tactique', p.style)}${line('Personnalité', p.personality)}${line('Langues', p.languages)}${line('Diplôme', p.diploma)}${line('Contrat', p.contract)}
       </div>
       <div style="background:var(--blue);padding:22px 24px">
         <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700;margin-bottom:6px">POINTS FORTS</div>
