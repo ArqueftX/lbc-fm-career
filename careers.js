@@ -42,6 +42,7 @@ window.CAREERS = [
       style:       'Contrôle de la possession',
       personality: 'Assez déterminé',
       languages:   'Français, swahili, anglais',
+      diploma:     'Diplôme continental Pro',
       contract:    "Jusqu'au 30/06/2028 (prolongé le 02/04/2026)",
       strengths:   [['Capacité à motiver', 'Exceptionnel'], ['Tactique', 'Très bon'], ['Détermination', 'Très bon'], ['Gestion des personnes', 'Très bon']],
       traits:      ['Football spectaculaire', 'Football énergique', 'Bricoleur de tactiques', 'Fait jouer à des postes non naturels', 'Leader-né'],

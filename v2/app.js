@@ -400,7 +400,7 @@ function coachProfile(c) {
   const row = (k, v) => v ? `<li class="cx-t"><span class="mono">${esc(k)}</span><span>${v}</span></li>` : ''
   return `<section class="section"><h2 class="h-section">Profil de l'entraîneur <small>${esc([p.nat, p.born ? 'né le ' + p.born : ''].filter(Boolean).join(' · '))}</small></h2>
     <div class="cols-2">
-      <div class="panel"><h4>${esc(c.coach)}</h4><ul class="cx-list coach-list">${row('Réputation', esc(p.reputation || ''))}${row('Style tactique', esc(p.style || ''))}${row('Personnalité', esc(p.personality || ''))}${row('Langues', esc(p.languages || ''))}${row('Contrat', esc(p.contract || ''))}</ul></div>
+      <div class="panel"><h4>${esc(c.coach)}</h4><ul class="cx-list coach-list">${row('Réputation', esc(p.reputation || ''))}${row('Style tactique', esc(p.style || ''))}${row('Personnalité', esc(p.personality || ''))}${row('Langues', esc(p.languages || ''))}${row('Diplôme', esc(p.diploma || ''))}${row('Contrat', esc(p.contract || ''))}</ul></div>
       <div class="panel"><h4>Points forts</h4><ul class="cx-list coach-list">${(p.strengths || []).map(([k, v]) => row(k, `<span class="c-win">${esc(v)}</span>`)).join('')}</ul>
         ${p.traits && p.traits.length ? `<h4 style="margin-top:18px">Tendances</h4><div class="traits">${p.traits.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}</div>
     </div></section>`
