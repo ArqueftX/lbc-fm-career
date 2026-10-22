@@ -35,7 +35,7 @@ window['SEASONS_chippenham'] = [
     status:       "en_cours",
     totalTeams:   24,
     seasonLength: 46,
-    lastUpdate:   "Mars 2026",
+    lastUpdate:   "Avril 2026",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy" },
 
@@ -142,6 +142,12 @@ window['SEASONS_chippenham'] = [
           { r:"W", tip:"Dover Athletic (E) 0-4",         comp:"L" },
           { r:"W", tip:"Eastbourne Borough (D) 1-0",     comp:"L" },
           { r:"W", tip:"Chelmsford City (D) 5-1",        comp:"L" },
+        ],
+      },
+      {
+        key: "04", label: "Avril 2026",
+        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028. Dirigeants et supporters sont « fous de joie », la dynamique de groupe est jugée excellente.",
+        matches: [
         ],
       },
     ],

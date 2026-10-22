@@ -4,7 +4,9 @@ Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé pu
 
 ## Fonctionnement des mises à jour
 
-- Le propriétaire dépose ses captures du jeu sur l'artefact « Mes images » (https://claude.ai/artifact/RLLqr1yVgTcoVAy8HouQBL), dans la collection `photos`. Le champ `date` des documents est souvent faux : filtrer avec `createdAt`. Pour lire une image : `Artifact read` avec `path=<assetId>`, une image à la fois.
+- Le propriétaire dépose ses captures du jeu sur l'artefact « Mes images » (https://claude.ai/artifact/RLLqr1yVgTcoVAy8HouQBL), dans la collection `photos`. Repérer les nouvelles avec `createdAt`. Pour lire une image : `Artifact read` avec `path=<assetId>`, une image à la fois.
+- Depuis le 22/10/2026 (captures du 02/04/2026 in-game et après), le champ `date` / `sortKey` d'une image est **la date in-game** de l'actu : s'en servir pour ranger chaque actu dans le bon mois. Avant, ce champ était faux (souvent 16/03/27).
+- Un mois en cours peut être ouvert dès la première actu (matchs ajoutés au fil des actus) ; sa `position` et le classement se mettent à jour avec les captures de fin de mois.
 - **Depuis octobre 2026, il envoie les actus de la boîte de réception du jeu** (comptes rendus de matchs, classements, transferts, distinctions, records…) au lieu de récaps mensuels. C'est à Claude de tout déduire et de tenir le site à jour seul :
   - les matchs du mois, leurs scores et leurs compétitions ;
   - le classement et la position à la fin de chaque mois ;
