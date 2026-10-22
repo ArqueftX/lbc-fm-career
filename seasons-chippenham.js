@@ -148,7 +148,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "04", label: "Avril 2026",
-        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien. Le 6 avril, Chippenham bat Totton (2-1, but contre son camp de Wells-Morrison puis Jeremiah Okine-Peters, élu homme du match avec 8,2) et repasse 2e. Le lendemain, c'est officiel : la place en barrages est assurée et, à trois journées de la fin, le club battra le meilleur classement de son histoire en National League South (7e en 2021/22). Le 11 avril, succès 0-2 à Hampton & Richmond (Owen-Evans dès la 2e minute, puis Jones) : à deux journées de la fin, Chippenham est à quatre points de Worthing, le titre reste mathématiquement possible. Le lendemain, les 95 buts inscrits en championnat deviennent le record du club sur une saison. Côté effectif, Reece Fleet (34 ans) rejoint gratuitement Concord Rangers le 14 avril, Canice Carroll (27 ans) part libre à Banbury United le 16, et le jeune attaquant Kieran Talbot (17 ans) signe un nouveau contrat jusqu'en 2028. Le 18 avril, scénario fou contre Hornchurch : Chippenham mène 2-0 (Bradbury, Okine-Peters), se fait rejoindre à 2-2, puis Jerae Jones délivre le stade dans le temps additionnel (3-2, un but et deux passes décisives, 9,6 de note). Worthing chute dans le même temps : avant la dernière journée, Chippenham n'est plus qu'à un point du titre.",
+        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien. Le 6 avril, Chippenham bat Totton (2-1, but contre son camp de Wells-Morrison puis Jeremiah Okine-Peters, élu homme du match avec 8,2) et repasse 2e. Le lendemain, c'est officiel : la place en barrages est assurée et, à trois journées de la fin, le club battra le meilleur classement de son histoire en National League South (7e en 2021/22). Le 11 avril, succès 0-2 à Hampton & Richmond (Owen-Evans dès la 2e minute, puis Jones) : à deux journées de la fin, Chippenham est à quatre points de Worthing, le titre reste mathématiquement possible. Le lendemain, les 95 buts inscrits en championnat deviennent le record du club sur une saison. Côté effectif, Reece Fleet (34 ans) rejoint gratuitement Concord Rangers le 14 avril, Canice Carroll (27 ans) part libre à Banbury United le 16, et le jeune attaquant Kieran Talbot (17 ans) signe un nouveau contrat jusqu'en 2028. Le 18 avril, scénario fou contre Hornchurch : Chippenham mène 2-0 (Bradbury, Okine-Peters), se fait rejoindre à 2-2, puis Jerae Jones délivre le stade dans le temps additionnel (3-2, un but et deux passes décisives, 9,6 de note). Worthing chute dans le même temps : avant la dernière journée, Chippenham n'est plus qu'à un point du titre. Le 22 avril, Harlee Vozza revient de son prêt à Concord Rangers en grande forme (15 matchs, 7,91 de moyenne, 1 but et 4 passes décisives).",
         matches: [
           { r:"D", tip:"Bath City (E) 1-1",              comp:"L" },
           { r:"W", tip:"Totton (D) 2-1",                 comp:"L" },
@@ -209,6 +209,7 @@ window['SEASONS_chippenham'] = [
       { type: "loan", name: "Kai Source",     from: "Luton Town (DG · Anglais · 19 ans)",           date: "Oct. 2025" },
       { type: "free", name: "Sam Subuloye",   from: "Sans contrat (MD · Anglais · 16 ans · régen)",  date: "Nov. 2025" },
       { type: "free", name: "Roman Robertson", from: "Sans contrat (AD · Anglais · 16 ans · régen)", date: "Jan. 2026" },
+      { type: "loan", name: "Harlee Vozza",   from: "Retour de prêt de Concord Rangers (BU · Irlandais · 22 ans)", date: "Avr. 2026" },
     ],
     departures: [
       { type: "loan", name: "Lewis Colwell",  to: "Concord Rangers (ALD · Anglais · 20 ans)",       date: "Août 2025" },
@@ -264,7 +265,7 @@ window['SEASONS_chippenham'] = [
       { pos:23, team:"Hampton & Richmond",     j:45, g:11, n:10, l:24, bp:52, bc:81, db:-29, pts:43, zone:"releg" },
       { pos:24, team:"Horsham",                j:45, g:10, n:11, l:24, bp:43, bc:71, db:-28, pts:41, zone:"releg" },
     ],
-    // Effectif au 16 avril 2026
+    // Effectif au 22 avril 2026
     squad: [
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:27 },
       { n:"Josh Sawyer",           p:"GB",   nat:"ENG", age:17 },
@@ -288,6 +289,7 @@ window['SEASONS_chippenham'] = [
       { n:"Jerae Jones",           p:"AG",   nat:"ENG", age:19 },
       { n:"Olaf Koszela",          p:"BU",   nat:"POL", age:24 },
       { n:"Solomon Wanjau-Smith",  p:"BU",   nat:"ENG", age:26 },
+      { n:"Harlee Vozza",          p:"BU",   nat:"IRL", age:22 },
       { n:"Ezio Touray",           p:"BU",   nat:"ITA", age:23 },
       { n:"Harry Parsons",         p:"BU",   nat:"ENG", age:23 },
     ],
