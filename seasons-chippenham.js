@@ -175,27 +175,27 @@ window['SEASONS_chippenham'] = [
       { key:"classement-nls", label:"Meilleur classement en National League South", value:"2e", detail:"86 pts en saison régulière · ancien record : 7e en 2021/22", date:"25 avr. 2026" },
     ],
 
-    // Stats toutes compétitions : buteurs et passeurs au 18 avril 2026, moyennes au 1er avril 2026
+    // Stats toutes compétitions, au 1er mai 2026 (fin de la saison régulière, avant les barrages)
     scorers: [
       { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 20 },
       { name: "Tom Owen-Evans",               detail: "MOC · Anglais · 29 ans",  value: 19 },
-      { name: "Solomon Wanjau-Smith",         detail: "BU · Anglais · 26 ans",   value: 16 },
+      { name: "Solomon Wanjau-Smith",         detail: "BU · Anglais · 27 ans",   value: 16 },
     ],
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 14 },
       { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 11 },
       { name: "Jeremiah Okine-Peters",        detail: "AD · Anglais · 20 ans",   value: 10 },
     ],
-    // Meilleures et pires moyennes : au moins 21 matchs joués (la moitié des 41 journées de championnat jouées)
+    // Meilleures et pires moyennes : au moins 23 matchs joués (la moitié des 46 journées de la saison)
     ratings: [
-      { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 35 tit. / 1 rempl. · 17 buts · 9 passes D.",  value: 7.22 },
-      { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 29 ans · 38 tit. / 3 rempl. · 18 buts · 8 passes D.", value: 7.17 },
-      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 30 tit. / 1 rempl. · 7 buts · 10 passes D.",  value: 7.15 },
+      { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 40 tit. / 1 rempl. · 20 buts · 11 passes D.", value: 7.25 },
+      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 35 tit. / 1 rempl. · 9 buts · 10 passes D.",  value: 7.18 },
+      { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 29 ans · 43 tit. / 3 rempl. · 19 buts · 8 passes D.", value: 7.13 },
     ],
     flops: [
-      { name: "Reece Fleet",           detail: "MDC · Anglais · 34 ans · 11 tit. / 15 rempl. · 1 passe D.",            value: 6.69 },
-      { name: "Tom Mehew",             detail: "MDC · Anglais · 24 ans · 8 tit. / 15 rempl. · 2 passes D.",            value: 6.72 },
-      { name: "Will Henry",            detail: "GB · Anglais · 27 ans · 43 tit.",                                      value: 6.74 },
+      { name: "Tom Mehew",             detail: "MDC · Anglais · 24 ans · 8 tit. / 18 rempl. · 2 passes D.",            value: 6.70 },
+      { name: "Will Henry",            detail: "GB · Anglais · 27 ans · 48 tit.",                                      value: 6.76 },
+      { name: "George Alston",         detail: "MDC · Anglais · 19 ans · 40 tit. / 1 rempl. · 3 passes D.",            value: 6.81 },
     ],
 
     transfers: [
@@ -270,7 +270,7 @@ window['SEASONS_chippenham'] = [
       { pos:23, team:"Hampton & Richmond",     j:46, g:11, n:11, l:24, bp:54, bc:83, db:-29, pts:44, zone:"releg" },
       { pos:24, team:"Horsham",                j:46, g:10, n:12, l:24, bp:43, bc:71, db:-28, pts:42, zone:"releg" },
     ],
-    // Effectif au 22 avril 2026
+    // Effectif au 1er mai 2026
     squad: [
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:27 },
       { n:"Josh Sawyer",           p:"GB",   nat:"ENG", age:17 },
@@ -281,7 +281,7 @@ window['SEASONS_chippenham'] = [
       { n:"Kai Source",            p:"DG",   nat:"ENG", age:19 },
       { n:"Will King",             p:"DG",   nat:"ENG", age:23 },
       { n:"Ethan Vaughan",         p:"DD",   nat:"WAL", age:22 },
-      { n:"Jake Evans",            p:"DD",   nat:"ENG", age:27 },
+      { n:"Jake Evans",            p:"DD",   nat:"ENG", age:28 },
       { n:"George Alston",         p:"MDC",  nat:"ENG", age:19 },
       { n:"Henry Sady",            p:"MDC",  nat:"ENG", age:20 },
       { n:"Kevin Mfuamba",         p:"MDC",  nat:"ENG", age:19 },
@@ -293,7 +293,7 @@ window['SEASONS_chippenham'] = [
       { n:"Jeremiah Okine-Peters", p:"AD",   nat:"ENG", age:20 },
       { n:"Jerae Jones",           p:"AG",   nat:"ENG", age:19 },
       { n:"Olaf Koszela",          p:"BU",   nat:"POL", age:24 },
-      { n:"Solomon Wanjau-Smith",  p:"BU",   nat:"ENG", age:26 },
+      { n:"Solomon Wanjau-Smith",  p:"BU",   nat:"ENG", age:27 },
       { n:"Harlee Vozza",          p:"BU",   nat:"IRL", age:22 },
       { n:"Ezio Touray",           p:"BU",   nat:"ITA", age:23 },
       { n:"Harry Parsons",         p:"BU",   nat:"ENG", age:23 },
