@@ -148,7 +148,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "04", label: "Avril 2026",
-        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien. Le 6 avril, Chippenham bat Totton (2-1, but contre son camp de Wells-Morrison puis Jeremiah Okine-Peters, élu homme du match avec 8,2) et repasse 2e. Le lendemain, c'est officiel : la place en barrages est assurée et, à trois journées de la fin, le club battra le meilleur classement de son histoire en National League South (7e en 2021/22). Le 11 avril, succès 0-2 à Hampton & Richmond (Owen-Evans dès la 2e minute, puis Jones) : à deux journées de la fin, Chippenham est à quatre points de Worthing, le titre reste mathématiquement possible. Le lendemain, les 95 buts inscrits en championnat deviennent le record du club sur une saison.",
+        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien. Le 6 avril, Chippenham bat Totton (2-1, but contre son camp de Wells-Morrison puis Jeremiah Okine-Peters, élu homme du match avec 8,2) et repasse 2e. Le lendemain, c'est officiel : la place en barrages est assurée et, à trois journées de la fin, le club battra le meilleur classement de son histoire en National League South (7e en 2021/22). Le 11 avril, succès 0-2 à Hampton & Richmond (Owen-Evans dès la 2e minute, puis Jones) : à deux journées de la fin, Chippenham est à quatre points de Worthing, le titre reste mathématiquement possible. Le lendemain, les 95 buts inscrits en championnat deviennent le record du club sur une saison. Côté effectif, Reece Fleet (34 ans) rejoint gratuitement Concord Rangers le 14 avril, et le jeune attaquant Kieran Talbot (17 ans) signe un nouveau contrat jusqu'en 2028.",
         matches: [
           { r:"D", tip:"Bath City (E) 1-1",              comp:"L" },
           { r:"W", tip:"Totton (D) 2-1",                 comp:"L" },
@@ -217,6 +217,7 @@ window['SEASONS_chippenham'] = [
       { type: "loan", name: "Lewis Royston",  to: "Hayes & Yeading United (MC · Anglais · 18 ans)", date: "Déc. 2025" },
       { type: "loan", name: "Tom Harrison",   to: "Fin de prêt (DC · Anglais · 24 ans)",            date: "Jan. 2026" },
       { type: "free", name: "Aaron Amadi-Holloway", to: "Billericay Town (DC · Gallois · 33 ans)",   date: "Mars 2026" },
+      { type: "free", name: "Reece Fleet",    to: "Concord Rangers (MDC · Anglais · 34 ans)",       date: "Avr. 2026" },
     ],
 
     cup: {
@@ -261,7 +262,7 @@ window['SEASONS_chippenham'] = [
       { pos:23, team:"Hampton & Richmond",     j:44, g:11, n:10, l:23, bp:51, bc:79, db:-28, pts:43, zone:"releg" },
       { pos:24, team:"Horsham",                j:44, g:9,  n:11, l:24, bp:42, bc:71, db:-29, pts:38, zone:"releg" },
     ],
-    // Effectif au 1er avril 2026
+    // Effectif au 15 avril 2026
     squad: [
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:27 },
       { n:"Josh Sawyer",           p:"GB",   nat:"ENG", age:17 },
@@ -276,7 +277,6 @@ window['SEASONS_chippenham'] = [
       { n:"Jake Evans",            p:"DD",   nat:"ENG", age:27 },
       { n:"George Alston",         p:"MDC",  nat:"ENG", age:19 },
       { n:"Henry Sady",            p:"MDC",  nat:"ENG", age:20 },
-      { n:"Reece Fleet",           p:"MDC",  nat:"ENG", age:34 },
       { n:"Kevin Mfuamba",         p:"MDC",  nat:"ENG", age:19 },
       { n:"Tom Mehew",             p:"MDC",  nat:"ENG", age:24 },
       { n:"Caine Bradbury",        p:"MC",   nat:"ENG", age:25 },
