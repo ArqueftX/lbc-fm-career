@@ -162,8 +162,9 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "05", label: "Mai 2026",
-        note: "Place aux barrages : Chippenham reçoit son grand rival Bath City en demi-finale le dimanche 3 mai (13h30), au Thornbury Surfacing Stadium.",
+        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League.",
         matches: [
+          { r:"W", tip:"Bath City (D) 2-0",              comp:"PO", tag:"DEMI-FINALE · QUALIFIÉ" },
         ],
       },
     ],
@@ -182,7 +183,7 @@ window['SEASONS_chippenham'] = [
       { key:"classement-nls", label:"Meilleur classement en National League South", value:"2e", detail:"86 pts en saison régulière · ancien record : 7e en 2021/22", date:"25 avr. 2026" },
     ],
 
-    // Stats toutes compétitions, au 1er mai 2026 (fin de la saison régulière, avant les barrages)
+    // Stats toutes compétitions : buteurs et passeurs au 3 mai 2026 (barrages compris), moyennes au 1er mai 2026
     scorers: [
       { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 20 },
       { name: "Tom Owen-Evans",               detail: "MOC · Anglais · 29 ans",  value: 19 },
@@ -190,7 +191,7 @@ window['SEASONS_chippenham'] = [
     ],
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 14 },
-      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 11 },
+      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 12 },
       { name: "Jeremiah Okine-Peters",        detail: "AD · Anglais · 20 ans",   value: 10 },
     ],
     // Meilleures et pires moyennes : au moins 23 matchs joués (la moitié des 46 journées de la saison)
@@ -244,6 +245,13 @@ window['SEASONS_chippenham'] = [
       name: "FA Trophy",
       rounds: [
         { result: "L", round: "2e tour", score: "3 – 3", opponent: "Horsham (E) · 3-1 t.a.b., éliminé" },
+      ],
+    },
+    cup3: {
+      name: "Barrages de National League South",
+      phase: "2e de la saison régulière : exempté du premier tour",
+      rounds: [
+        { result: "W", round: "Demi-finale", score: "2 – 0", opponent: "Bath City (D)" },
       ],
     },
 
