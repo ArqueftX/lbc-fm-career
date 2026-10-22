@@ -266,8 +266,8 @@ loadCareerData(function(career) {
     document.getElementById('el-table-section').innerHTML = `<div class="bc sec-title">${s.elTableTitle||'Classement · Phase de championnat'}</div>${renderStandings(s.elTable, {europe:true})}`
   }
 
-  // Records battus pendant la saison
-  document.getElementById('records-section').innerHTML = renderSeasonRecords(s)
+  // Distinctions et records battus pendant la saison
+  document.getElementById('records-section').innerHTML = renderSeasonAwards(s) + renderSeasonRecords(s)
 
   // ── CLASSEMENT ──
   if (s.standings && s.standings.length) {

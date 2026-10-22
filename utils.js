@@ -293,6 +293,45 @@ function renderStandings(rows, opts) {
   `
 }
 
+/* Distinctions de la saison (champ "awards") : entraîneur du mois, etc. */
+function awardRow(a, right) {
+  return `<div style="display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(232,184,75,.08);border:1px solid rgba(232,184,75,.3)">
+    <span style="font-size:20px">🏅</span>
+    <div style="flex:1;min-width:0">
+      <div class="bc" style="font-size:14px;letter-spacing:1px">${a.label}${a.winner ? ` · <span style="color:var(--gold)">${a.winner}</span>` : ''}</div>
+      ${a.detail ? `<div class="bc" style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:3px;line-height:1.4">${a.detail}</div>` : ''}
+    </div>
+    <span class="bc" style="font-size:11px;color:var(--muted);letter-spacing:2px;white-space:nowrap">${right || ''}</span>
+  </div>`
+}
+function renderSeasonAwards(s) {
+  const as = (s && s.awards) || []
+  if (!as.length) return ''
+  return `<div style="margin-bottom:60px"><div class="bc sec-title">Distinctions</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:3px">${as.map(a => awardRow(a, a.period)).join('')}</div></div>`
+}
+
+/* Profil de l'entraîneur (champ "coachProfile" de careers.js) */
+function renderCoachProfile(career) {
+  const p = career && career.coachProfile
+  if (!p) return ''
+  const line = (k, v) => v ? `<div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)"><span class="bc" style="font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase">${k}</span><span class="bc" style="font-size:14px;text-align:right">${v}</span></div>` : ''
+  return `<div class="bc sec-title">Profil de l'entraîneur</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3px;margin-bottom:48px">
+      <div style="background:var(--blue);padding:22px 24px">
+        <div class="bb" style="font-size:34px;line-height:1;letter-spacing:1px">${career.coach}</div>
+        <div class="bc" style="font-size:12px;color:var(--gold);letter-spacing:2px;margin:6px 0 12px">${[p.nat, p.born ? 'né le ' + p.born : ''].filter(Boolean).join(' · ')}</div>
+        ${line('Réputation', p.reputation)}${line('Style tactique', p.style)}${line('Personnalité', p.personality)}${line('Langues', p.languages)}${line('Contrat', p.contract)}
+      </div>
+      <div style="background:var(--blue);padding:22px 24px">
+        <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700;margin-bottom:6px">POINTS FORTS</div>
+        ${(p.strengths || []).map(([k, v]) => line(k, `<span style="color:var(--green)">${v}</span>`)).join('')}
+        ${p.traits && p.traits.length ? `<div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:700;margin:18px 0 8px">TENDANCES</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">${p.traits.map(t => `<span class="bc" style="font-size:12px;border:1px solid rgba(255,255,255,.14);padding:4px 10px">${t}</span>`).join('')}</div>` : ''}
+      </div>
+    </div>`
+}
+
 /* Records battus pendant une saison (champ "records") — tous restent affichés,
    même quand un record tombe plusieurs fois dans la saison */
 function renderSeasonRecords(s) {
@@ -429,15 +468,23 @@ function renderCareerExtras(seasons) {
   const finals = st.finals.map(t => `<div class="cx-trophy final">Finaliste · ${t.name}${t.opponent ? ' (contre ' + t.opponent + ')' : ''}<span>${t.year}</span></div>`).join('')
   const bal = st.mercato.received - st.mercato.spent
   const clubRecs = window.CareerStats.clubRecords ? window.CareerStats.clubRecords(seasons) : []
+  const awards = window.CareerStats.awards ? window.CareerStats.awards(seasons) : []
   const oppRows = st.opponents.map(o => `<tr><td>${o.name}</td><td>${o.j}</td><td style="color:${C.green}">${o.w}</td><td style="color:${C.gold}">${o.d}</td><td style="color:${C.red}">${o.l}</td><td>${o.gf}</td><td>${o.ga}</td></tr>`).join('')
 
   host.innerHTML = `
     <div style="max-width:1160px;margin:0 auto;padding:0 56px 60px" class="cx">
+      ${renderCoachProfile(getCurrentCareer())}
       <div class="bc sec-title">Vitrine à trophées</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px;margin-bottom:48px">
         ${trophies || ''}${finals || ''}
         ${!trophies && !finals ? `<div class="cx-d" style="padding:6px 0">Pas encore de trophée ni de finale.</div>` : ''}
       </div>
+
+      ${awards.length ? `
+      <div class="bc sec-title">Distinctions · ${awards.length}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:3px;margin-bottom:48px">
+        ${awards.map(a => awardRow(a, a.period || a.year)).join('')}
+      </div>` : ''}
 
       ${clubRecs.length ? `
       <div class="bc sec-title">Records du club</div>

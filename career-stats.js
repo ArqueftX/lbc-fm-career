@@ -154,5 +154,11 @@ window.CareerStats = (function () {
     return [...best.values()]
   }
 
-  return { compute, clubRecords, parseTip, parseAmount, formatMoney, isFinal }
+  // Distinctions (champ "awards" de chaque saison) : toutes conservées, dans l'ordre chronologique
+  function awards(rawSeasons) {
+    return (rawSeasons || []).slice().sort((a, b) => a.year.localeCompare(b.year))
+      .flatMap(s => (s.awards || []).map(a => Object.assign({ year: s.year }, a)))
+  }
+
+  return { compute, clubRecords, awards, parseTip, parseAmount, formatMoney, isFinal }
 })()

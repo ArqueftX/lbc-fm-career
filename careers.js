@@ -34,6 +34,18 @@ window.CAREERS = [
     logo:     'logo-chippenham.png',
     color:    '#2b4b9b',   // bleu Chippenham
     accent:   '#ffffff',
+    // Fiche de l'entraîneur dans le jeu (affichée sur la page de la carrière)
+    coachProfile: {
+      nat:         'Zanzibar',
+      born:        '20/08/1993',
+      reputation:  'Nationale',
+      style:       'Contrôle de la possession',
+      personality: 'Assez déterminé',
+      languages:   'Français, swahili, anglais',
+      contract:    "Jusqu'au 30/06/2027",
+      strengths:   [['Capacité à motiver', 'Exceptionnel'], ['Tactique', 'Très bon'], ['Détermination', 'Très bon'], ['Gestion des personnes', 'Très bon']],
+      traits:      ['Football spectaculaire', 'Football énergique', 'Bricoleur de tactiques', 'Fait jouer à des postes non naturels', 'Leader-né'],
+    },
   },
   {
     id:       'chateauroux',

@@ -163,6 +163,14 @@ function standingsTable(rows, opts) {
     <tbody>${body}</tbody></table></div>${legend.length ? `<div class="std-legend">${legend.map(z => `<span><i style="background:${z.color}"></i>${esc(z.label)}</span>`).join('')}</div>` : ''}`
 }
 
+// Distinctions de la saison (entraîneur du mois, etc.)
+function seasonAwards(s) {
+  const as = s.awards || []
+  if (!as.length) return ''
+  return `<section class="section"><h2 class="h-section">Distinctions <small>${as.length}</small></h2>
+    <ul class="cx-list">${as.map(a => `<li class="cx-t gold"><span>🏅 ${esc(a.label)}${a.winner ? ` · ${esc(a.winner)}` : ''}${a.detail ? `<span class="cx-d" style="display:block;font-weight:400">${esc(a.detail)}</span>` : ''}</span><span class="mono">${esc(a.period || '')}</span></li>`).join('')}</ul></section>`
+}
+
 // Records battus pendant la saison : tous restent, même un record battu deux fois
 function seasonRecords(s) {
   const rs = s.records || []
@@ -381,11 +389,24 @@ function viewCareer(c) {
     <section class="section"><h2 class="h-section">Saisons <span class="h-actions"><small>De la plus récente à la plus ancienne</small>${ss.length ? `<button type="button" class="fold-btn" data-seasons-toggle="${esc(c.id)}"></button>` : ''}</span></h2>
       ${ss.length ? `<div class="season-list">${rows}</div>` : '<div class="empty">Aucune saison pour l\'instant.</div>'}
     </section>
-    ${careerExtras(ss)}`
+    ${careerExtras(ss, c)}`
 }
 
 // Bilan de carrière : vitrine, records, domicile / extérieur, mercato, adversaires (career-stats.js)
-function careerExtras(ss) {
+// Profil de l'entraîneur (champ "coachProfile" de careers.js)
+function coachProfile(c) {
+  const p = c && c.coachProfile
+  if (!p) return ''
+  const row = (k, v) => v ? `<li class="cx-t"><span class="mono">${esc(k)}</span><span>${v}</span></li>` : ''
+  return `<section class="section"><h2 class="h-section">Profil de l'entraîneur <small>${esc([p.nat, p.born ? 'né le ' + p.born : ''].filter(Boolean).join(' · '))}</small></h2>
+    <div class="cols-2">
+      <div class="panel"><h4>${esc(c.coach)}</h4><ul class="cx-list coach-list">${row('Réputation', esc(p.reputation || ''))}${row('Style tactique', esc(p.style || ''))}${row('Personnalité', esc(p.personality || ''))}${row('Langues', esc(p.languages || ''))}${row('Contrat', esc(p.contract || ''))}</ul></div>
+      <div class="panel"><h4>Points forts</h4><ul class="cx-list coach-list">${(p.strengths || []).map(([k, v]) => row(k, `<span class="c-win">${esc(v)}</span>`)).join('')}</ul>
+        ${p.traits && p.traits.length ? `<h4 style="margin-top:18px">Tendances</h4><div class="traits">${p.traits.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}</div>
+    </div></section>`
+}
+
+function careerExtras(ss, c) {
   if (!window.CareerStats || !ss.length) return ''
   const st = window.CareerStats.compute(ss)
   const money = window.CareerStats.formatMoney
@@ -398,10 +419,15 @@ function careerExtras(ss) {
   const oppRows = st.opponents.map(o => `<tr><td></td><td>${esc(o.name)}</td><td>${o.j}</td><td>${o.w}</td><td>${o.d}</td><td>${o.l}</td><td>${o.gf}</td><td>${o.ga}</td><td>${o.gf - o.ga > 0 ? '+' : ''}${o.gf - o.ga}</td><td class="pts">${o.j ? Math.round(o.w / o.j * 100) + '%' : '—'}</td></tr>`).join('')
   const m = x => x ? `${x.gf}–${x.ga}` : '—'
   const recs = window.CareerStats.clubRecords ? window.CareerStats.clubRecords(ss) : []
+  const awards = window.CareerStats.awards ? window.CareerStats.awards(ss) : []
   return `
+    ${coachProfile(c)}
     <section class="section"><h2 class="h-section">Vitrine <small>${st.trophies.length} trophée${st.trophies.length > 1 ? 's' : ''} · ${st.finals.length} finale${st.finals.length > 1 ? 's' : ''} perdue${st.finals.length > 1 ? 's' : ''}</small></h2>
       ${trophies || finals ? `<ul class="cx-list">${trophies}${finals}</ul>` : '<div class="empty">Pas encore de trophée ni de finale.</div>'}
     </section>
+    ${awards.length ? `<section class="section"><h2 class="h-section">Distinctions <small>${awards.length} au total</small></h2>
+      <ul class="cx-list">${awards.map(a => `<li class="cx-t gold"><span>🏅 ${esc(a.label)}${a.winner ? ` · ${esc(a.winner)}` : ''}${a.detail ? `<span class="cx-d" style="display:block;font-weight:400">${esc(a.detail)}</span>` : ''}</span><span class="mono">${esc(a.period || a.year)}</span></li>`).join('')}</ul>
+    </section>` : ''}
     ${recs.length ? `<section class="section"><h2 class="h-section">Records du club <small>Les plus récents</small></h2>
       <div class="kpis cx-kpis rec-kpis">${recs.map(r => cell(esc(r.label), esc(r.value), esc([r.detail, r.date || r.year].filter(Boolean).join(' · ')))).join('')}</div>
     </section>` : ''}
@@ -537,6 +563,7 @@ function viewSeason(c, s) {
 
     ${stints ? `<section class="section"><h2 class="h-section">Deux clubs, une saison</h2>${stints}</section>` : ''}
 
+    ${seasonAwards(s)}
     ${seasonRecords(s)}
     ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings, { league: s.league, final: !isLive(s) && !s.standingsTitle })}
       ${s.elTable && s.elTable.length ? `<details class="fold"><summary>${esc(s.elTableTitle || 'Classement · Phase de championnat')}</summary>${standingsTable(s.elTable, { europe: true })}</details>` : ''}</section>`

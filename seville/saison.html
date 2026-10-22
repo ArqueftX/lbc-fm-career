@@ -168,8 +168,8 @@ loadCareerData(function(career) {
     `
   }
 
-  // Records battus pendant la saison
-  document.getElementById('records-section').innerHTML = renderSeasonRecords(s)
+  // Distinctions et records battus pendant la saison
+  document.getElementById('records-section').innerHTML = renderSeasonAwards(s) + renderSeasonRecords(s)
 
   // Standings
   if (s.standings && s.standings.length) {
