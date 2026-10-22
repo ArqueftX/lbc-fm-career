@@ -162,7 +162,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "05", label: "Mai 2026",
-        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale. Les 3 000 spectateurs du derby contre Bath City constituent la plus grosse affluence de l'histoire du club.",
+        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale. Les 3 000 spectateurs du derby contre Bath City constituent la plus grosse affluence de l'histoire du club. Le 4 mai, Lewis Colwell revient de son prêt à Concord Rangers (11 matchs, 7,68 de moyenne).",
         matches: [
           { r:"W", tip:"Bath City (D) 2-0",              comp:"PO", tag:"DEMI-FINALE · QUALIFIÉ" },
         ],
@@ -222,6 +222,7 @@ window['SEASONS_chippenham'] = [
       { type: "free", name: "Sam Subuloye",   from: "Sans contrat (MD · Anglais · 16 ans · régen)",  date: "Nov. 2025" },
       { type: "free", name: "Roman Robertson", from: "Sans contrat (AD · Anglais · 16 ans · régen)", date: "Jan. 2026" },
       { type: "loan", name: "Harlee Vozza",   from: "Retour de prêt de Concord Rangers (BU · Irlandais · 22 ans)", date: "Avr. 2026" },
+      { type: "loan", name: "Lewis Colwell",  from: "Retour de prêt de Concord Rangers (DD · Anglais · 20 ans)",   date: "Mai 2026" },
     ],
     departures: [
       { type: "loan", name: "Lewis Colwell",  to: "Concord Rangers (ALD · Anglais · 20 ans)",       date: "Août 2025" },
@@ -286,7 +287,7 @@ window['SEASONS_chippenham'] = [
       { pos:23, team:"Hampton & Richmond",     j:46, g:11, n:11, l:24, bp:54, bc:83, db:-29, pts:44, zone:"releg" },
       { pos:24, team:"Horsham",                j:46, g:10, n:12, l:24, bp:43, bc:71, db:-28, pts:42, zone:"releg" },
     ],
-    // Effectif au 1er mai 2026
+    // Effectif au 4 mai 2026
     squad: [
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:27 },
       { n:"Josh Sawyer",           p:"GB",   nat:"ENG", age:17 },
@@ -296,6 +297,7 @@ window['SEASONS_chippenham'] = [
       { n:"Grant Knowles",         p:"DG",   nat:"ENG", age:17 },
       { n:"Kai Source",            p:"DG",   nat:"ENG", age:19 },
       { n:"Will King",             p:"DG",   nat:"ENG", age:23 },
+      { n:"Lewis Colwell",         p:"DD",   nat:"ENG", age:20 },
       { n:"Ethan Vaughan",         p:"DD",   nat:"WAL", age:22 },
       { n:"Jake Evans",            p:"DD",   nat:"ENG", age:28 },
       { n:"George Alston",         p:"MDC",  nat:"ENG", age:19 },
