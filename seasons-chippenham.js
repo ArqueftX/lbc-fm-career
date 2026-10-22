@@ -211,7 +211,7 @@ window['SEASONS_chippenham'] = [
       { key:"classement-nls", label:"Meilleur classement en National League South", value:"2e", detail:"86 pts en saison régulière · ancien record : 7e en 2021/22", date:"25 avr. 2026" },
     ],
 
-    // Stats toutes compétitions : buteurs et passeurs en fin de saison (barrages compris), moyennes au 1er mai 2026
+    // Stats toutes compétitions, fin de saison (barrages compris)
     scorers: [
       { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 20 },
       { name: "Tom Owen-Evans",               detail: "MOC · Anglais · 29 ans",  value: 19 },
@@ -220,18 +220,18 @@ window['SEASONS_chippenham'] = [
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 14 },
       { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 13 },
-      { name: "Jeremiah Okine-Peters",        detail: "AD · Anglais · 20 ans",   value: 10 },
+      { name: "C. Bradbury · J. Okine-Peters", detail: "MC / AD · ex-aequo",     value: 10 },
     ],
     // Meilleures et pires moyennes : au moins 23 matchs joués (la moitié des 46 journées de la saison)
     ratings: [
-      { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 40 tit. / 1 rempl. · 20 buts · 11 passes D.", value: 7.25 },
-      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 35 tit. / 1 rempl. · 9 buts · 10 passes D.",  value: 7.18 },
-      { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 29 ans · 43 tit. / 3 rempl. · 19 buts · 8 passes D.", value: 7.13 },
+      { name: "Jerae Jones",           detail: "AG · Anglais · 19 ans · 42 tit. / 1 rempl. · 20 buts · 13 passes D.", value: 7.29 },
+      { name: "Jeremiah Okine-Peters", detail: "AD · Anglais · 20 ans · 37 tit. / 1 rempl. · 13 buts · 10 passes D.", value: 7.26 },
+      { name: "Tom Owen-Evans",        detail: "MOC · Anglais · 29 ans · 44 tit. / 3 rempl. · 19 buts · 9 passes D.",  value: 7.14 },
     ],
     flops: [
       { name: "Tom Mehew",             detail: "MDC · Anglais · 24 ans · 8 tit. / 18 rempl. · 2 passes D.",            value: 6.70 },
-      { name: "Will Henry",            detail: "GB · Anglais · 27 ans · 48 tit.",                                      value: 6.76 },
-      { name: "George Alston",         detail: "MDC · Anglais · 19 ans · 40 tit. / 1 rempl. · 3 passes D.",            value: 6.81 },
+      { name: "Will Henry",            detail: "GB · Anglais · 27 ans · 50 tit.",                                      value: 6.78 },
+      { name: "Freddie Grant",         detail: "DC · Anglais · 29 ans · 33 tit. / 1 rempl. · 2 passes D.",             value: 6.81 },
     ],
 
     transfers: [
@@ -316,7 +316,7 @@ window['SEASONS_chippenham'] = [
       { pos:23, team:"Hampton & Richmond",     j:46, g:11, n:11, l:24, bp:54, bc:83, db:-29, pts:44, zone:"releg" },
       { pos:24, team:"Horsham",                j:46, g:10, n:12, l:24, bp:43, bc:71, db:-28, pts:42, zone:"releg" },
     ],
-    // Effectif au 6 mai 2026
+    // Effectif en fin de saison (10 mai 2026)
     squad: [
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:27 },
       { n:"Josh Sawyer",           p:"GB",   nat:"ENG", age:17 },
@@ -351,7 +351,7 @@ window['SEASONS_chippenham'] = [
       eyebrow:  "2025/26 · Chippenham Town · Saison 1",
       lines:    ["DEUXIÈMES.", "PROMUS !"],
       sub:      "National League South · 2e · 86 pts · Vainqueur des barrages",
-      tagline:  "On leur demandait le maintien, ils ont offert la montée : 98 buts, une 2e place historique et des barrages maîtrisés (2-0 contre Bath City, 4-1 contre Tonbridge Angels). Chippenham Town découvre la National League.",
+      tagline:  "On leur demandait le maintien, ils ont offert la montée : 98 buts, une 2e place historique et des barrages maîtrisés (2-0 contre Bath City, 4-1 contre Tonbridge Angels). Cap sur la National League.",
     },
   },
 
