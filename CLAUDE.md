@@ -28,6 +28,7 @@ Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé pu
 - **Toujours vérifier par script** que la somme des matchs de championnat (V/N/D, buts) donne exactement la ligne du classement, et que le tableau est cohérent (somme BP = somme BC).
 - Records du club (`records`, `key` unique par record : le plus récent remplace l'ancien sur la page carrière) ; distinctions (`awards`, toutes conservées).
 - Objectif de la saison fixé par les dirigeants : champ `objective` de la saison (affiché dans l'en-tête des deux designs). Le reprendre dans les notes et le message d'intro (objectif atteint, dépassé ou manqué).
+- **Ne pas afficher** : les attributs détaillés des joueurs (fiches techniques/mentales/physiques), ni les demandes faites aux dirigeants. Une fiche joueur sert seulement à en tirer poste, âge, nationalité, contrat ou transfert.
 
 ## Carrières
 
