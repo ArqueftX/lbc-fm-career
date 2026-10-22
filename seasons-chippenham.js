@@ -39,7 +39,7 @@ window['SEASONS_chippenham'] = [
     status:       "en_cours",
     totalTeams:   24,
     seasonLength: 46,
-    lastUpdate:   "Avril 2026",
+    lastUpdate:   "Mai 2026",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy", PO: "Barrages" },
     objective:    "Maintien en National League South",
@@ -158,6 +158,12 @@ window['SEASONS_chippenham'] = [
           { r:"W", tip:"Hampton & Richmond (E) 0-2",     comp:"L" },
           { r:"W", tip:"Hornchurch (D) 3-2",             comp:"L" },
           { r:"D", tip:"Horsham (E) 0-0",                comp:"L" },
+        ],
+      },
+      {
+        key: "05", label: "Mai 2026",
+        note: "Place aux barrages : Chippenham reçoit son grand rival Bath City en demi-finale le dimanche 3 mai (13h30), au Thornbury Surfacing Stadium.",
+        matches: [
         ],
       },
     ],
