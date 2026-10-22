@@ -566,7 +566,7 @@ function viewSeason(c, s) {
 
     ${seasonAwards(s)}
     ${seasonRecords(s)}
-    ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings, { league: s.league, final: !isLive(s) && !s.standingsTitle })}
+    ${s.standings && s.standings.length ? `<section class="section"><h2 class="h-section">${s.standingsTitle ? esc(s.standingsTitle) : 'Classement ' + (isLive(s) ? 'actuel' : 'final')} <small>${esc(s.league)}</small></h2>${standingsTable(s.standings, { league: s.league, final: s.standingsFinal || (!isLive(s) && !s.standingsTitle) })}
       ${s.elTable && s.elTable.length ? `<details class="fold"><summary>${esc(s.elTableTitle || 'Classement · Phase de championnat')}</summary>${standingsTable(s.elTable, { europe: true })}</details>` : ''}</section>`
       : s.elTable && s.elTable.length ? `<section class="section"><h2 class="h-section">${esc(s.elTableTitle || 'Phase de championnat')}</h2>${standingsTable(s.elTable, { europe: true })}</section>` : ''}
 
