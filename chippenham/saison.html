@@ -272,7 +272,7 @@ loadCareerData(function(career) {
 
   // ── CLASSEMENT ──
   if (s.standings && s.standings.length) {
-    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">${finished?'Classement final':'Classement actuel'}</div>${renderStandings(s.standings, {league:s.league, final:s.status!=='en_cours'&&!s.standingsTitle})}`
+    document.getElementById('standings-section').innerHTML = `<div class="bc sec-title">${s.standingsTitle||(finished?'Classement final':'Classement actuel')}</div>${renderStandings(s.standings, {league:s.league, final:s.standingsFinal||(s.status!=='en_cours'&&!s.standingsTitle)})}`
   }
 
   // Effectif
