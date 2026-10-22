@@ -535,6 +535,7 @@ function viewSeason(c, s) {
         <h1 class="h-display">${title}</h1>
         ${sp.tagline ? `<p class="lede">${esc(sp.tagline)}</p>` : sp.sub ? `<p class="lede">${esc(sp.sub)}</p>` : ''}
         ${hs.length ? `<div class="honours">${hs.map(h => `<span class="honour ${h.gold ? 'gold' : ''}">${h.gold ? '🏆 ' : ''}${esc(h.t)}</span>`).join('')}</div>` : ''}
+        ${s.objective ? `<div class="honours"><span class="honour">🎯 Objectif des dirigeants : ${esc(s.objective)}</span></div>` : ''}
       </div>
       <div class="rank">
         <div class="rank-num">${posSup(r.pos)}</div>

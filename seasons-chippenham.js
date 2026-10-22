@@ -19,6 +19,7 @@
  *       { key:"buts-match", label:"…", value:"7", detail:"…", date:"…" }
  *    Tous restent sur la page de la saison ; sur la page carrière, un même "key"
  *    battu à nouveau remplace l'ancien.
+ *  ▸ "objective" : objectif de la saison fixé par les dirigeants (affiché dans l'en-tête).
  *  ▸ "awards" : distinctions (entraîneur du mois…) : { label, winner, period, detail }
  *    Toutes restent, sur la page de la saison comme sur la page carrière.
  *  ▸ "splash" : à AJOUTER seulement quand la saison est terminée.
@@ -38,6 +39,7 @@ window['SEASONS_chippenham'] = [
     lastUpdate:   "Avril 2026",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy" },
+    objective:    "Maintien en National League South",
 
     months: [
       {
@@ -146,7 +148,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "04", label: "Avril 2026",
-        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3.",
+        note: "Le 2 avril, Nolann Queft prolonge son contrat jusqu'en juin 2028 : dirigeants et supporters sont « fous de joie ». Le lendemain, Chippenham doit se contenter d'un nul à Bath City (1-1, but de Jerae Jones sur un service d'Ethan Vaughan) malgré 65 % de possession et 16 tirs contre 3. Le 5 avril, le club lance le projet d'achat de son stade, le Thornbury Surfacing Stadium, à boucler d'ici juin 2026 : de quoi fêter une saison qui dépasse déjà largement l'objectif fixé, le simple maintien.",
         matches: [
           { r:"D", tip:"Bath City (E) 1-1",              comp:"L" },
         ],
