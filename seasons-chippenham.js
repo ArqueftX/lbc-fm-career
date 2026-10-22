@@ -31,15 +31,41 @@
  */
 window['SEASONS_chippenham'] = [
 
-  /* ─── SAISON 2025/26 · EN COURS ──────────────────────── */
+  /* ─── SAISON 2026/27 · EN COURS ──────────────────────── */
+  {
+    id:           "chippenham-2026-27",
+    year:         "2026/27",
+    league:       "National League",
+    status:       "en_cours",
+    totalTeams:   24,
+    seasonLength: 46,
+    lastUpdate:   "Intersaison",
+    position:     null,
+    compNames:    { FAC: "FA Cup", FAT: "FA Trophy", PO: "Barrages" },
+
+    months: [],
+
+    scorers: [],
+    assists: [],
+    ratings: [],
+    flops:   [],
+    transfers:  [],
+    departures: [],
+    standings:  [],
+    squad:      [],
+
+    // splash: { ... }  ← à ajouter à la fin de la saison
+  },
+
+  /* ─── SAISON 2025/26 · TERMINÉE ──────────────────────── */
   {
     id:           "chippenham-2025-26",
     year:         "2025/26",
     league:       "National League South",
-    status:       "en_cours",
+    status:       "termine",
     totalTeams:   24,
     seasonLength: 46,
-    lastUpdate:   "Mai 2026",
+    lastUpdate:   "Saison terminée",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy", PO: "Barrages" },
     objective:    "Maintien en National League South",
@@ -161,10 +187,11 @@ window['SEASONS_chippenham'] = [
         ],
       },
       {
-        key: "05", label: "Mai 2026",
-        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale. Les 3 000 spectateurs du derby contre Bath City constituent la plus grosse affluence de l'histoire du club. Le 4 mai, Lewis Colwell revient de son prêt à Concord Rangers (11 matchs, 7,68 de moyenne). Le 5, Solomon Wanjau-Smith prolonge d'un an, jusqu'en juin 2027. Le 6, Lewis Royston rentre à son tour de Hayes & Yeading (28 matchs, 7,40, 4 buts et 3 passes décisives), mais Tom Owen-Evans se blesse à un orteil à l'entraînement (2 à 9 jours d'absence) : sa présence en finale est incertaine. Le 8 mai, treize jeunes à l'essai signent leur premier contrat (équipe U18, jusqu'en 2028) : Marvin Bell, Dylan Bryant, Andy Fish, Ben Johnston, Liam Holt, Liam Rowley, Tom Arthur, Andrew Howson, Kevin Leek, Alex Martin, Kailan Hankins, Lewis Cole et Jake Leach. Mauvaise nouvelle en revanche : Tom Mehew se tord le genou à l'entraînement et manquera la finale (5 à 9 jours d'absence).",
+        key: "05", label: "Mai 2026", position: 2,
+        note: "Place aux barrages : le 3 mai, Chippenham domine son grand rival Bath City en demi-finale (2-0). Jeremiah Okine-Peters frappe deux fois en sept minutes (11e et 18e) et finit avec 8,8 ; 28 tirs à 6 pour Chippenham. Direction la finale, à un match de la National League : grâce à son meilleur classement, Chippenham la jouera à domicile, le dimanche 10 mai, contre Tonbridge Angels (7e), tombeur de Dag & Red dans l'autre demi-finale. Les 3 000 spectateurs du derby contre Bath City constituent la plus grosse affluence de l'histoire du club. Le 4 mai, Lewis Colwell revient de son prêt à Concord Rangers (11 matchs, 7,68 de moyenne). Le 5, Solomon Wanjau-Smith prolonge d'un an, jusqu'en juin 2027. Le 6, Lewis Royston rentre à son tour de Hayes & Yeading (28 matchs, 7,40, 4 buts et 3 passes décisives), mais Tom Owen-Evans se blesse à un orteil à l'entraînement (2 à 9 jours d'absence) : sa présence en finale est incertaine. Le 8 mai, treize jeunes à l'essai signent leur premier contrat (équipe U18, jusqu'en 2028) : Marvin Bell, Dylan Bryant, Andy Fish, Ben Johnston, Liam Holt, Liam Rowley, Tom Arthur, Andrew Howson, Kevin Leek, Alex Martin, Kailan Hankins, Lewis Cole et Jake Leach. Mauvaise nouvelle en revanche : Tom Mehew se tord le genou à l'entraînement et manquera la finale (5 à 9 jours d'absence). Le 10 mai, devant son public, Chippenham écrase Tonbridge Angels en finale (4-1) : Okine-Peters encore auteur d'un doublé en cinq minutes (3e, 5e), puis Ethan Vaughan et Harry Parsons. Chippenham Town monte en National League.",
         matches: [
           { r:"W", tip:"Bath City (D) 2-0",              comp:"PO", tag:"DEMI-FINALE · QUALIFIÉ" },
+          { r:"W", tip:"Tonbridge Angels (D) 4-1",       comp:"PO", tag:"FINALE · PROMU EN NATIONAL LEAGUE" },
         ],
       },
     ],
@@ -184,7 +211,7 @@ window['SEASONS_chippenham'] = [
       { key:"classement-nls", label:"Meilleur classement en National League South", value:"2e", detail:"86 pts en saison régulière · ancien record : 7e en 2021/22", date:"25 avr. 2026" },
     ],
 
-    // Stats toutes compétitions : buteurs et passeurs au 3 mai 2026 (barrages compris), moyennes au 1er mai 2026
+    // Stats toutes compétitions : buteurs et passeurs en fin de saison (barrages compris), moyennes au 1er mai 2026
     scorers: [
       { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 20 },
       { name: "Tom Owen-Evans",               detail: "MOC · Anglais · 29 ans",  value: 19 },
@@ -192,7 +219,7 @@ window['SEASONS_chippenham'] = [
     ],
     assists: [
       { name: "Ethan Vaughan",                detail: "DD · Gallois · 22 ans",   value: 14 },
-      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 12 },
+      { name: "Jerae Jones",                  detail: "AG · Anglais · 19 ans",   value: 13 },
       { name: "Jeremiah Okine-Peters",        detail: "AD · Anglais · 20 ans",   value: 10 },
     ],
     // Meilleures et pires moyennes : au moins 23 matchs joués (la moitié des 46 journées de la saison)
@@ -252,15 +279,16 @@ window['SEASONS_chippenham'] = [
     },
     cup3: {
       name: "Barrages de National League South",
-      phase: "2e de la saison régulière : exempté du premier tour",
+      phase: "2e de la saison régulière : exempté du premier tour · vainqueur, promu en National League",
       rounds: [
         { result: "W", round: "Demi-finale", score: "2 – 0", opponent: "Bath City (D)" },
+        { result: "W", round: "Finale", score: "4 – 1", opponent: "Tonbridge Angels (D) · vainqueur 🏆" },
       ],
     },
 
     // Classement final de la saison régulière (46 journées, 25 avril 2026) · barrages à venir
     // 1er champion et promu, 2e-7e barrages pour la montée, 21e-24e relégués
-    standingsTitle: "Classement final · saison régulière",
+    standingsTitle: "Classement final · saison régulière (vainqueur des barrages : Chippenham Town)",
     standingsFinal: true,
     standings: [
       { pos:1,  team:"Worthing",               j:46, g:26, n:11, l:9,  bp:71, bc:41, db:30, pts:89, zone:"promo", champion:true },
@@ -319,7 +347,12 @@ window['SEASONS_chippenham'] = [
       { n:"Harry Parsons",         p:"BU",   nat:"ENG", age:23 },
     ],
 
-    // splash: { ... }  ← à ajouter à la fin de la saison
+    splash: {
+      eyebrow:  "2025/26 · Chippenham Town · Saison 1",
+      lines:    ["DEUXIÈMES.", "PROMUS !"],
+      sub:      "National League South · 2e · 86 pts · Vainqueur des barrages",
+      tagline:  "On leur demandait le maintien, ils ont offert la montée : 98 buts, une 2e place historique et des barrages maîtrisés (2-0 contre Bath City, 4-1 contre Tonbridge Angels). Chippenham Town découvre la National League.",
+    },
   },
 
 ]

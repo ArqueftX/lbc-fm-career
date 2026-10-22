@@ -12,6 +12,7 @@ const LEAGUE_STYLES = {
   'Premier League': { bg:'rgba(60,0,130,0.18)',    border:'#6e00d4', color:'#bb88ff' },
   'Eredivisie':     { bg:'rgba(220,0,0,0.18)',      border:'#cc0000', color:'#ff6666'  },
   'National League South': { bg:'rgba(43,75,155,0.22)', border:'#2b4b9b', color:'#8fa8ff' },
+  'National League':       { bg:'rgba(214,120,30,0.20)', border:'#d6781e', color:'#ffb066' },
 }
 
 const C = {
