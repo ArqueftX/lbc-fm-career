@@ -52,6 +52,7 @@
       <div id="mercato-preview" style="margin-top:44px"></div>
     </div>
   </div>
+  <div id="cup3-section" style="margin-bottom:60px"></div>
   <div id="cup-section" style="margin-bottom:60px"></div>
   <div id="cup2-section" style="margin-bottom:60px"></div>
   <div id="el-table-section" style="margin-bottom:60px"></div>
@@ -261,6 +262,7 @@ loadCareerData(function(career) {
     document.getElementById(target).innerHTML = `<div class="bc sec-title">${cup.name}</div>${phase}<div style="display:flex;flex-wrap:wrap">${rows}</div>`
   }
   renderCup('cup2-section', s.cup2)
+  renderCup('cup3-section', s.cup3)
   renderCup('cup-section', s.cup)
 
   if (s.elTable && s.elTable.length) {
