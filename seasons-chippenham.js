@@ -57,7 +57,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "07", label: "Juillet 2026 · pré-saison",
-        note: "Le 1er juillet, l'attaquant polonais Olaf Koszela (24 ans), en fin de contrat, quitte le club pour rejoindre Stal Stalowa Wola, en Pologne. Le programme de pré-saison s'étoffe : après Mold Alexandra (le 4, à l'extérieur), Millwall (le 7) et Swindon Town (le 14), Chippenham recevra aussi Enfield Town le samedi 25 juillet.",
+        note: "Le 1er juillet, l'attaquant polonais Olaf Koszela (24 ans), en fin de contrat, quitte le club pour rejoindre Stal Stalowa Wola, en Pologne. Le même jour, le jeune gardien Marvin Bell (16 ans) est promu des U18 en équipe première. Le programme de pré-saison s'étoffe : après Mold Alexandra (le 4, à l'extérieur), Millwall (le 7) et Swindon Town (le 14), Chippenham recevra aussi Enfield Town le samedi 25 juillet.",
         matches: [],
       },
     ],
