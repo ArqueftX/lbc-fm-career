@@ -46,7 +46,7 @@ window['SEASONS_chippenham'] = [
     months: [
       {
         key: "05", label: "Mai 2026 · intersaison",
-        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques. Le 27 mai, le jeune milieu central gallois Alex Martin, 15 ans, est promu des U18 en équipe première (contrat jusqu'en 2028). Le lendemain, la presse annonce que le président Neil Blackmore chercherait à céder le club : un investisseur de la région serait très intéressé, et les supporters sont partagés sur l'avenir.",
+        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques. Le 27 mai, le jeune milieu central gallois Alex Martin, 15 ans, est promu des U18 en équipe première (contrat jusqu'en 2028). Le 28, la presse annonce que le président Neil Blackmore pourrait bientôt se retirer et laisser le contrôle du club à un autre membre du comité directeur ; dans la foulée, un groupe de supporters chercherait à racheter le club et pourrait faire une offre au président d'ici peu. Les fans sont partagés. Côté effectif, trois joueurs prolongent d'un an, jusqu'en juin 2027 : le latéral droit Lewis Colwell (20 ans) le 29 mai, puis le défenseur central gallois Jac Poffley (20 ans) et le milieu Lewis Royston (19 ans) le 30. Le même jour, le milieu offensif portugais Quévin Castro (24 ans) quitte le club libre.",
         matches: [],
       },
     ],
@@ -59,7 +59,9 @@ window['SEASONS_chippenham'] = [
     transfers:  [
       { type: "free", name: "Toby Byron",     from: "Sans contrat, ex-Worthing (DC · Anglais · 24 ans)", date: "Mai 2026" },
     ],
-    departures: [],
+    departures: [
+      { type: "free", name: "Quévin Castro",  to: "Libéré, sans club (MC / MO · Portugais · 24 ans)", date: "Mai 2026" },
+    ],
     standings:  [],
     squad:      [],
 
