@@ -259,7 +259,7 @@ details.month > summary { list-style: none; cursor: pointer; }
 details.month > summary::-webkit-details-marker { display: none; }
 .month .chev { display: inline-block; width: 16px; color: var(--muted); font-size: 12px; transition: transform .2s; }
 details.month[open] .chev { transform: rotate(90deg); }
-details.month:not([open]) .month-note { margin-bottom: 0; }
+details.month:not([open]) .month-note { margin-bottom: 0; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
 .h-actions { display: flex; align-items: baseline; gap: 14px; }
 .fold-btn { font: 600 12px/1 var(--sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); white-space: nowrap; }
 .fold-btn:hover { border-color: var(--ink-2); }
