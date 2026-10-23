@@ -13,6 +13,7 @@ Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé pu
   - le mercato (arrivées, départs, prêts, fins de prêt) ;
   - les distinctions (`awards`) et les records du club (`records`) ;
   - **la fin de saison, sans qu'on la lui signale** : passer `status: "termine"`, `lastUpdate: "Saison terminée"`, classement final avec `champion:true`, stats finales et **le message d'intro (`splash`)**. Puis ouvrir la saison suivante.
+  - **la bascule se fait au mail « Fin de la saison »** (l'effectif part en vacances) : ce mail et tout ce qui arrive avant restent dans l'ancienne saison, même après le dernier match ; après ce mail, toutes les actus (intersaison, mercato d'été, prolongations…) vont dans la **nouvelle saison**. L'effectif de l'ancienne saison reste figé à la date des dernières captures d'effectif.
 - **À chaque fin de mois**, le propriétaire envoie au moins le classement du championnat et les stats des joueurs : de quoi mettre à jour `standings`, la `position` du mois, `scorers`, `assists`, `ratings`, `flops` et `squad`.
 - Si une info manque pour qu'un récap soit juste (classement, stats des joueurs…), la demander plutôt que l'inventer.
 - Les notes de mois et les messages d'intro sont rédigés par Claude : le dire au propriétaire à chaque fois.
