@@ -46,7 +46,12 @@ window['SEASONS_chippenham'] = [
     months: [
       {
         key: "05", label: "Mai 2026 · intersaison",
-        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques. Le 27 mai, le jeune milieu central gallois Alex Martin, 15 ans, est promu des U18 en équipe première (contrat jusqu'en 2028). Le 28, la presse annonce que le président Neil Blackmore pourrait bientôt se retirer et laisser le contrôle du club à un autre membre du comité directeur ; dans la foulée, un groupe de supporters chercherait à racheter le club et pourrait faire une offre au président d'ici peu. Les fans sont partagés. Côté contrats, trois joueurs prolongent d'un an, jusqu'en juin 2027 : le latéral droit Lewis Colwell (20 ans) le 29 mai, puis le défenseur central gallois Jac Poffley (20 ans) et le milieu Lewis Royston (19 ans), toujours en U18, le 30. Le même jour, le milieu offensif portugais Quévin Castro (24 ans) quitte le club libre.",
+        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques. Le 27 mai, le jeune milieu central gallois Alex Martin, 15 ans, est promu des U18 en équipe première (contrat jusqu'en 2028). Le 28, la presse annonce que le président Neil Blackmore pourrait bientôt se retirer et laisser le contrôle du club à un autre membre du comité directeur ; dans la foulée, un groupe de supporters chercherait à racheter le club et pourrait faire une offre au président d'ici peu. Les fans sont partagés. Côté contrats, trois joueurs prolongent d'un an, jusqu'en juin 2027 : le latéral droit Lewis Colwell (20 ans) le 29 mai, puis le défenseur central gallois Jac Poffley (20 ans) et le milieu Lewis Royston (19 ans), toujours en U18, le 30. Le même jour, le milieu offensif portugais Quévin Castro (24 ans) quitte le club libre. Le 31 mai, le latéral droit Joshua Addae (22 ans) s'engage jusqu'en 2027. Ce même jour, neuf joueurs arrivés en fin de contrat sont laissés libres : Jake Evans, Tom Mehew, Harry Parsons, Caine Bradbury, Cole Fleming, Harlee Vozza, Ezio Touray, Bevan Cross et Henry Sady. Côté prêts, Harry Messenger (7,44 de moyenne) et Bradley Macrae (6,91) rentrent de Hendon, et le jeune gardien des U18 Massimo Sardo (18 ans) revient de Welton Rovers après une belle saison (42 matchs, 7,27 de moyenne).",
+        matches: [],
+      },
+      {
+        key: "06", label: "Juin 2026 · intersaison",
+        note: "Le 1er juin, les rumeurs de reprise se précisent : Chippenham Town serait en pourparlers avec une association de supporters nouvellement fondée, menée par Gary Lewis, abonné du club et investisseur de la région. En attendant que la situation s'éclaircisse, les dirigeants imposent un embargo sur les transferts : plus aucun mouvement n'est autorisé.",
         matches: [],
       },
     ],
@@ -58,9 +63,22 @@ window['SEASONS_chippenham'] = [
     // Mercato d'été 2026
     transfers:  [
       { type: "free", name: "Toby Byron",     from: "Sans contrat, ex-Worthing (DC · Anglais · 24 ans)", date: "Mai 2026" },
+      { type: "free", name: "Joshua Addae",   from: "Sans contrat (DD · Anglais · 22 ans)",             date: "Mai 2026" },
+      { type: "loan", name: "Harry Messenger", from: "Retour de prêt de Hendon (DC · Anglais)",          date: "Mai 2026" },
+      { type: "loan", name: "Bradley Macrae", from: "Retour de prêt de Hendon (MC · Anglais)",           date: "Mai 2026" },
+      { type: "loan", name: "Massimo Sardo",  from: "Retour de prêt de Welton Rovers (GB · Anglais · 18 ans)", date: "Mai 2026" },
     ],
     departures: [
-      { type: "free", name: "Quévin Castro",  to: "Libéré, sans club (MC / MO · Portugais · 24 ans)", date: "Mai 2026" },
+      { type: "free", name: "Quévin Castro",         to: "Sans club (MC · Portugais · 24 ans)", date: "Mai 2026" },
+      { type: "free", name: "Jake Evans",            to: "Sans club (DD · Anglais · 28 ans)", date: "Mai 2026" },
+      { type: "free", name: "Tom Mehew",             to: "Sans club (MDC · Anglais · 25 ans)", date: "Mai 2026" },
+      { type: "free", name: "Harry Parsons",         to: "Sans club (BU · Anglais · 23 ans)", date: "Mai 2026" },
+      { type: "free", name: "Caine Bradbury",        to: "Sans club (MC · Anglais · 25 ans)", date: "Mai 2026" },
+      { type: "free", name: "Cole Fleming",          to: "Sans club (AD · Gallois · 20 ans)", date: "Mai 2026" },
+      { type: "free", name: "Harlee Vozza",          to: "Sans club (BU · Irlandais · 22 ans)", date: "Mai 2026" },
+      { type: "free", name: "Ezio Touray",           to: "Sans club (BU · Italien · 23 ans)", date: "Mai 2026" },
+      { type: "free", name: "Bevan Cross",           to: "Sans club (MO / BU · Anglais · 23 ans)", date: "Mai 2026" },
+      { type: "free", name: "Henry Sady",            to: "Sans club (MDC · Anglais · 20 ans)", date: "Mai 2026" },
     ],
     standings:  [],
     squad:      [],
