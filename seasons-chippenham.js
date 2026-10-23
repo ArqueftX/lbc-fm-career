@@ -43,7 +43,13 @@ window['SEASONS_chippenham'] = [
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy", PO: "Barrages" },
 
-    months: [],
+    months: [
+      {
+        key: "05", label: "Mai 2026 · intersaison",
+        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif.",
+        matches: [],
+      },
+    ],
 
     scorers: [],
     assists: [],
