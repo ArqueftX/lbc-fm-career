@@ -18,6 +18,7 @@
     .month-block.open .month-head .chev{transform:rotate(90deg)}
     .month-block:not(.open) .month-matches{display:none}
     .month-block:not(.open){padding-bottom:18px}
+    .month-block:not(.open) .month-note{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
     .months-btn{background:transparent;border:1px solid rgba(232,184,75,.35);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:3px;font-weight:700;padding:7px 12px;cursor:pointer}
     .months-btn:hover{border-color:var(--gold)}
     .traj{background:var(--blue);padding:22px 22px 10px;margin-bottom:34px}
@@ -207,7 +208,7 @@ loadCareerData(function(career) {
           <div class="bb" style="font-size:24px;letter-spacing:2px"><span class="chev">▸</span>${mo.label}${mo.position!=null?` <span class="bc" style="font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:700">· ${posLabel(mo.position).toUpperCase()}</span>`:''}${isLatest?' <span class="bc" style="font-size:10px;letter-spacing:3px;color:var(--green);font-weight:700">· DERNIER MOIS</span>':''}</div>
           <div class="bc" style="font-size:11px;letter-spacing:2px;color:var(--muted)"><span style="color:var(--green)">${w}V</span> · <span style="color:var(--gold)">${d}N</span> · <span style="color:var(--red)">${l}D</span> <span style="opacity:.6">· championnat</span></div>
         </div>
-        ${mo.note?`<div class="bc" style="font-size:12px;color:var(--muted);margin-bottom:12px;font-style:italic">${mo.note}</div>`:''}
+        ${mo.note?`<div class="bc month-note" style="font-size:12px;color:var(--muted);margin-bottom:12px;font-style:italic">${mo.note}</div>`:''}
         <div class="month-matches">${rows}</div>
       </div>`
     }).join('')
