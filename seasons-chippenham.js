@@ -46,7 +46,7 @@ window['SEASONS_chippenham'] = [
     months: [
       {
         key: "05", label: "Mai 2026 · intersaison",
-        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif.",
+        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques.",
         matches: [],
       },
     ],
@@ -55,7 +55,10 @@ window['SEASONS_chippenham'] = [
     assists: [],
     ratings: [],
     flops:   [],
-    transfers:  [],
+    // Mercato d'été 2026
+    transfers:  [
+      { type: "free", name: "Toby Byron",     from: "Sans contrat, ex-Worthing (DC · Anglais · 24 ans)", date: "Mai 2026" },
+    ],
     departures: [],
     standings:  [],
     squad:      [],
