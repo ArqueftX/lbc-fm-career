@@ -46,7 +46,7 @@ window['SEASONS_chippenham'] = [
     months: [
       {
         key: "05", label: "Mai 2026 · intersaison",
-        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques.",
+        note: "Le 22 mai, Ethan Vaughan, recordman des passes décisives du club (14), prolonge d'un an jusqu'en juin 2027 : les supporters saluent l'engagement d'un des éléments les plus prometteurs de l'effectif. Premier renfort de l'été le 25 mai : le défenseur central Toby Byron (24 ans), libre, champion de National League South avec Worthing, signe jusqu'en 2027 — un choix qui laisse dirigeants et supporters sceptiques. Le 27 mai, le jeune milieu central gallois Alex Martin, 15 ans, est promu des U18 en équipe première (contrat jusqu'en 2028). Le lendemain, la presse annonce que le président Neil Blackmore chercherait à céder le club : un investisseur de la région serait très intéressé, et les supporters sont partagés sur l'avenir.",
         matches: [],
       },
     ],
