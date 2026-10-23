@@ -49,8 +49,11 @@ window['SEASONS_chippenham'] = [
     assists: [],
     ratings: [],
     flops:   [],
+    // Mercato d'été 2026 (après la saison 2025/26)
     transfers:  [],
-    departures: [],
+    departures: [
+      { type: "free", name: "Will King",      to: "Metropolitan Police (DG / MC · Anglais · 23 ans)", date: "Mai 2026" },
+    ],
     standings:  [],
     squad:      [],
 
