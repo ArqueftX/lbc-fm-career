@@ -51,7 +51,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "06", label: "Juin 2026 · intersaison",
-        note: "Le 1er juin, les rumeurs de reprise se précisent : Chippenham Town serait en pourparlers avec une association de supporters nouvellement fondée, menée par Gary Lewis, abonné du club et investisseur de la région. En attendant que la situation s'éclaircisse, les dirigeants imposent un embargo sur les transferts : plus aucun mouvement n'est autorisé.",
+        note: "Le 1er juin, les rumeurs de reprise se précisent : Chippenham Town serait en pourparlers avec une association de supporters nouvellement fondée, menée par Gary Lewis, abonné du club et investisseur de la région. En attendant que la situation s'éclaircisse, les dirigeants imposent un embargo sur les transferts : plus aucun mouvement n'est autorisé. Le 3 juin, le président Neil Blackmore (65 ans) prépare sa retraite : il ne travaillera plus au quotidien avec l'équipe et n'occupera désormais que des fonctions à temps partiel.",
         matches: [],
       },
     ],
