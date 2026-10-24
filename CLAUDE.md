@@ -21,6 +21,7 @@ Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé pu
 ## Règles des récaps
 
 - Score toujours écrit **DOMICILE-EXTÉRIEUR** dans `tip` : `"Adversaire (D|E|N) dom-ext"`. Quand le propriétaire écrit un score du point de vue de son équipe (« Dover, Ext : 4-0 » = victoire 4-0 à l'extérieur), le remettre dans l'ordre domicile-extérieur (`Dover Athletic (E) 0-4`).
+- **Lire un rapport de match** : dans « Évènements du match », le buteur est le nom collé à l'icône, l'autre nom est le passeur. Ballon blanc = but, icône verte = penalty, ballon rouge = but contre son camp (affiché du côté de l'équipe qui en profite).
 - Coupe décidée aux tirs au but : `r` = issue des t.a.b. (W ou L), score du match nul, détail dans `tag` / `opponent`.
 - Saisons mois par mois : `months:[{ key, label, position, note, matches }]`. Championnat = `comp` absent, `"L"` ou `"BL"` ; amical `"AM"` ; coupes nommées dans `compNames`.
 - **Moyennes (ratings / flops)** : seuls les joueurs ayant joué au moins la moitié des journées de championnat déjà jouées (toutes compétitions confondues). En fin de saison : la moitié de la saison (17 en Bundesliga, 19 en Premier League, 23 en National League South).
