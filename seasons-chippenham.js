@@ -67,7 +67,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "08", label: "Août 2026",
-        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première.",
+        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première. Le 13 août, Chippenham se renforce en attaque : Joseph Owiti (18 ans), l'avant-centre de Swindon Town qui avait marqué l'unique but de l'amical du 14 juillet, est prêté jusqu'à la fin de la saison. Courtisé par plusieurs clubs, dont Eastbourne Borough, il portera le numéro 32. Dirigeants et supporters sont enthousiastes.",
         matches: [
           { r:"L", tip:"Woking (E) 2-0" },
           { r:"L", tip:"Halifax Town (D) 0-2" },
@@ -92,6 +92,7 @@ window['SEASONS_chippenham'] = [
       { type: "loan", name: "Bradley Macrae", from: "Retour de prêt de Hendon (MC · Anglais · 17 ans)",  date: "Juin 2026" },
       { type: "free", name: "Charlie Pavey",  from: "Sans contrat, ex-Aston Villa (AD · Anglais · 20 ans)", date: "Juil. 2026" },
       { type: "free", name: "Tate Ferdinand", from: "Sans contrat, ex-Brighton (DC · Anglais · 18 ans)", date: "Juil. 2026" },
+      { type: "loan", name: "Joseph Owiti",   from: "Prêt de Swindon Town jusqu'à la fin de la saison (BU · Anglais · 18 ans)", date: "Août 2026" },
     ],
     departures: [
       { type: "free", name: "Quévin Castro",         to: "Sans club (MC · Portugais · 24 ans)", date: "Mai 2026" },
@@ -143,7 +144,7 @@ window['SEASONS_chippenham'] = [
       { key:"plus-jeune-joueur", label:"Plus jeune joueur à disputer un match", value:"16 ans et 73 jours", detail:"Jake Leach · à Woking (National League) · ancien record : Harry Messenger, 16 ans et 310 jours à Ebbsfleet United", date:"8 août 2026" },
     ],
 
-    // Effectif au 1er août 2026 (+ Lewis Royston, promu le 12 août)
+    // Effectif au 1er août 2026 (+ Lewis Royston, promu le 12 août, et Joseph Owiti, prêté le 13 août)
     squad: [
       { n:"Marvin Bell",           p:"GB",   nat:"ENG", age:16 },
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:28 },
@@ -171,6 +172,7 @@ window['SEASONS_chippenham'] = [
       { n:"Jake Leach",            p:"AD",   nat:"WAL", age:16 },
       { n:"Lewis Cole",            p:"AD",   nat:"ENG", age:16 },
       { n:"Solomon Wanjau-Smith",  p:"BU",   nat:"ENG", age:27 },
+      { n:"Joseph Owiti",          p:"BU",   nat:"ENG", age:18 },
       { n:"Kailan Hankins",        p:"BU",   nat:"ENG", age:16 },
     ],
 
