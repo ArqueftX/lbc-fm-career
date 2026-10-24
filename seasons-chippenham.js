@@ -67,7 +67,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "08", label: "Août 2026",
-        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première. Le 13 août, Chippenham se renforce en attaque : Joseph Owiti (18 ans), l'avant-centre de Swindon Town qui avait marqué l'unique but de l'amical du 14 juillet, est prêté jusqu'à la fin de la saison. Courtisé par plusieurs clubs, dont Eastbourne Borough, il portera le numéro 9. Dirigeants et supporters sont enthousiastes. Le 15 août, sous un vent de tempête à l'Attis Arena, Chippenham décroche sa première victoire en National League à Scunthorpe (0-1) : dès la 8e minute, Luciano D'Auria-Henry, servi par Charlie Pavey, inscrit l'unique but du match. Le latéral droit est élu homme du match (7,9), tandis qu'Owiti fait ses débuts professionnels sur l'aile gauche. Chippenham remonte à la 18e place.",
+        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première. Le 13 août, Chippenham se renforce en attaque : Joseph Owiti (18 ans), l'avant-centre de Swindon Town qui avait marqué l'unique but de l'amical du 14 juillet, est prêté jusqu'à la fin de la saison. Courtisé par plusieurs clubs, dont Eastbourne Borough, il portera le numéro 9. Dirigeants et supporters sont enthousiastes. Le 15 août, sous un vent de tempête à l'Attis Arena, Chippenham décroche sa première victoire en National League à Scunthorpe (0-1) : dès la 8e minute, Luciano D'Auria-Henry, servi par Charlie Pavey, inscrit l'unique but du match. Le latéral droit est élu homme du match (7,9), tandis qu'Owiti fait ses débuts professionnels sur l'aile gauche. Chippenham remonte à la 18e place. Le 20 août, nouveau renfort en défense : le latéral gauche Jahmari Lindsay (21 ans), formé à Manchester United, est prêté par Leicester, club de Premier League, jusqu'à la fin de la saison. Il portera le numéro 33 ; les supporters se réjouissent de l'arrivée d'un titulaire en puissance.",
         matches: [
           { r:"L", tip:"Woking (E) 2-0" },
           { r:"L", tip:"Halifax Town (D) 0-2" },
@@ -94,6 +94,7 @@ window['SEASONS_chippenham'] = [
       { type: "free", name: "Charlie Pavey",  from: "Sans contrat, ex-Aston Villa (AD · Anglais · 20 ans)", date: "Juil. 2026" },
       { type: "free", name: "Tate Ferdinand", from: "Sans contrat, ex-Brighton (DC · Anglais · 18 ans)", date: "Juil. 2026" },
       { type: "loan", name: "Joseph Owiti",   from: "Prêt de Swindon Town jusqu'à la fin de la saison (BU · Anglais · 18 ans)", date: "Août 2026" },
+      { type: "loan", name: "Jahmari Lindsay", from: "Prêt de Leicester jusqu'à la fin de la saison (DG · Anglais · 21 ans)", date: "Août 2026" },
     ],
     departures: [
       { type: "free", name: "Quévin Castro",         to: "Sans club (MC · Portugais · 24 ans)", date: "Mai 2026" },
@@ -145,7 +146,7 @@ window['SEASONS_chippenham'] = [
       { key:"plus-jeune-joueur", label:"Plus jeune joueur à disputer un match", value:"16 ans et 73 jours", detail:"Jake Leach · à Woking (National League) · ancien record : Harry Messenger, 16 ans et 310 jours à Ebbsfleet United", date:"8 août 2026" },
     ],
 
-    // Effectif au 1er août 2026 (+ Lewis Royston, promu le 12 août, et Joseph Owiti, prêté le 13 août)
+    // Effectif au 1er août 2026 (+ Lewis Royston, promu le 12 août, et Joseph Owiti et Jahmari Lindsay, prêtés les 13 et 20 août)
     squad: [
       { n:"Marvin Bell",           p:"GB",   nat:"ENG", age:16 },
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:28 },
@@ -157,6 +158,7 @@ window['SEASONS_chippenham'] = [
       { n:"Luke Haines",           p:"DC",   nat:"ENG", age:25 },
       { n:"Freddie Grant",         p:"DC",   nat:"ENG", age:29 },
       { n:"Grant Knowles",         p:"DG",   nat:"ENG", age:17 },
+      { n:"Jahmari Lindsay",       p:"DG",   nat:"ENG", age:21 },
       { n:"Liam Rowley",           p:"DG",   nat:"ENG", age:16 },
       { n:"Lewis Colwell",         p:"DD",   nat:"ENG", age:20 },
       { n:"Joshua Addae",          p:"DD",   nat:"ENG", age:23 },
