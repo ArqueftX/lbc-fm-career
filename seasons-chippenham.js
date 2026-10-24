@@ -67,7 +67,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "08", label: "Août 2026",
-        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours).",
+        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière.",
         matches: [
           { r:"L", tip:"Woking (E) 2-0" },
         ],
