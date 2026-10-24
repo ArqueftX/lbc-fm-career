@@ -94,7 +94,7 @@ window['SEASONS_chippenham'] = [
       { type: "free", name: "Charlie Pavey",  from: "Sans contrat, ex-Aston Villa (AD · Anglais · 20 ans)", date: "Juil. 2026" },
       { type: "free", name: "Tate Ferdinand", from: "Sans contrat, ex-Brighton (DC · Anglais · 18 ans)", date: "Juil. 2026" },
       { type: "loan", name: "Joseph Owiti",   from: "Prêt de Swindon Town jusqu'à la fin de la saison (BU · Anglais · 18 ans)", date: "Août 2026" },
-      { type: "loan", name: "Jahmari Lindsay", from: "Prêt de Leicester jusqu'à la fin de la saison (DG · Anglais · 21 ans)", date: "Août 2026" },
+      { type: "loan", name: "Jahmari Lindsay", from: "Prêt de Leicester jusqu'à la fin de la saison, indemnité de prêt de 15,75K € (DG · Anglais · 21 ans)", date: "Août 2026" },
     ],
     departures: [
       { type: "free", name: "Quévin Castro",         to: "Sans club (MC · Portugais · 24 ans)", date: "Mai 2026" },
