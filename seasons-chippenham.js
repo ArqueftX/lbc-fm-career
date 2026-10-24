@@ -163,7 +163,7 @@ window['SEASONS_chippenham'] = [
       { n:"Tom Arthur",            p:"MD",   nat:"ENG", age:16 },
       { n:"Andrew Howson",         p:"MD",   nat:"ENG", age:16 },
       { n:"Bradley Macrae",        p:"MC",   nat:"ENG", age:17 },
-      { n:"Lewis Royston",           p:"MC",    nat:"ENG", age:19 },
+      { n:"Lewis Royston",         p:"MC",   nat:"ENG", age:19 },
       { n:"Alex Martin",           p:"MC",   nat:"WAL", age:15 },
       { n:"Tom Owen-Evans",        p:"MOC",  nat:"ENG", age:29 },
       { n:"Tarik Gidaree",         p:"AD",   nat:"ENG", age:23 },
