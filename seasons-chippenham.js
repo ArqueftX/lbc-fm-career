@@ -39,7 +39,7 @@ window['SEASONS_chippenham'] = [
     status:       "en_cours",
     totalTeams:   24,
     seasonLength: 46,
-    lastUpdate:   "Intersaison",
+    lastUpdate:   "Août 2026 · J1",
     position:     null,
     compNames:    { FAC: "FA Cup", FAT: "FA Trophy", PO: "Barrages" },
     objective:    "Maintien en National League",
@@ -63,6 +63,13 @@ window['SEASONS_chippenham'] = [
           { r:"L", tip:"Millwall (D) 2-3",               comp:"AM" },
           { r:"L", tip:"Swindon Town (D) 0-1",           comp:"AM" },
           { r:"W", tip:"Enfield Town (D) 2-0",           comp:"AM" },
+        ],
+      },
+      {
+        key: "08", label: "Août 2026",
+        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir à la 89e.",
+        matches: [
+          { r:"L", tip:"Woking (E) 2-0" },
         ],
       },
     ],
