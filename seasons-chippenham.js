@@ -67,7 +67,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "08", label: "Août 2026",
-        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué.",
+        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première.",
         matches: [
           { r:"L", tip:"Woking (E) 2-0" },
           { r:"L", tip:"Halifax Town (D) 0-2" },
@@ -143,7 +143,7 @@ window['SEASONS_chippenham'] = [
       { key:"plus-jeune-joueur", label:"Plus jeune joueur à disputer un match", value:"16 ans et 73 jours", detail:"Jake Leach · à Woking (National League) · ancien record : Harry Messenger, 16 ans et 310 jours à Ebbsfleet United", date:"8 août 2026" },
     ],
 
-    // Effectif au 1er août 2026
+    // Effectif au 1er août 2026 (+ Lewis Royston, promu le 12 août)
     squad: [
       { n:"Marvin Bell",           p:"GB",   nat:"ENG", age:16 },
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:28 },
@@ -163,6 +163,7 @@ window['SEASONS_chippenham'] = [
       { n:"Tom Arthur",            p:"MD",   nat:"ENG", age:16 },
       { n:"Andrew Howson",         p:"MD",   nat:"ENG", age:16 },
       { n:"Bradley Macrae",        p:"MC",   nat:"ENG", age:17 },
+      { n:"Lewis Royston",           p:"MC",    nat:"ENG", age:19 },
       { n:"Alex Martin",           p:"MC",   nat:"WAL", age:15 },
       { n:"Tom Owen-Evans",        p:"MOC",  nat:"ENG", age:29 },
       { n:"Tarik Gidaree",         p:"AD",   nat:"ENG", age:23 },
