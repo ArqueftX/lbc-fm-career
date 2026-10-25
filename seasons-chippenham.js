@@ -67,7 +67,7 @@ window['SEASONS_chippenham'] = [
       },
       {
         key: "08", label: "Août 2026", position: 14,
-        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première. Le 13 août, Chippenham se renforce en attaque : Joseph Owiti (18 ans), l'avant-centre de Swindon Town qui avait marqué l'unique but de l'amical du 14 juillet, est prêté jusqu'à la fin de la saison. Courtisé par plusieurs clubs, dont Eastbourne Borough, il portera le numéro 9. Dirigeants et supporters sont enthousiastes. Le 15 août, sous un vent de tempête à l'Attis Arena, Chippenham décroche sa première victoire en National League à Scunthorpe (0-1) : dès la 8e minute, Luciano D'Auria-Henry, servi par Charlie Pavey, inscrit l'unique but du match. Le latéral droit est élu homme du match (7,9), tandis qu'Owiti fait ses débuts professionnels sur l'aile gauche. Chippenham remonte à la 18e place. Le 20 août, nouveau renfort en défense : le latéral gauche Jahmari Lindsay (21 ans), formé à Manchester United, est prêté par Leicester, club de Premier League, jusqu'à la fin de la saison. Il portera le numéro 5 ; les supporters se réjouissent de l'arrivée d'un titulaire en puissance. Ses débuts tournent pourtant au cauchemar le 22 août contre Truro City, alors dernier : mené dès la 2e minute sur un penalty de Marsh, Chippenham perd Lindsay, expulsé à la 9e pour un tacle dangereux. Réduit à dix, il encaisse deux nouveaux buts, de Law (14e) et d'Ajayi (35e), avant que Tom Owen-Evans, servi par D'Auria-Henry, ne réduise l'écart juste avant la pause (42e). Défaite 1-3 malgré 61 % de possession : Chippenham glisse à la 20e place, et Lindsay sera suspendu pour le déplacement à Morecambe. Le même jour, le gardien titulaire Will Henry (28 ans), recordman des clean sheets du club, prolonge de deux ans, jusqu'en juin 2028, au grand bonheur des supporters. Le 25 août, troisième prêt du mois : le milieu offensif irlandais Glory Nzingo (21 ans), arrivé à Swansea en provenance de Reims en 2023, rejoint Chippenham jusqu'à la fin de la saison. Il portera le numéro 35, et les supporters sont contents d'accueillir un joueur important. Titularisé le soir même au Mazuma Mobile Stadium, Nzingo fait ses débuts professionnels lors d'une victoire de caractère à Morecambe (1-2). Privé de Lindsay, suspendu, Chippenham perd encore un joueur sur expulsion, Solomon Wanjau-Smith (37e, tacle dangereux), mais ouvre le score juste avant la pause par Tom Owen-Evans, servi par D'Auria-Henry (45e+2). Azeez égalise à la 68e, avant que Charlie Pavey, sur une passe d'Owen-Evans, n'offre la victoire à la 75e. D'Auria-Henry est une nouvelle fois élu homme du match, et Chippenham remonte à la 16e place ; Wanjau-Smith manquera la réception de Hartlepool. Le 26 août, le jeune milieu défensif Tom Arthur (16 ans), qui a disputé les cinq premières journées, est officiellement promu des U18 en équipe première. Le 29 août, la commission de discipline alourdit la sanction de Jahmari Lindsay après son expulsion contre Truro City : deux matchs de suspension supplémentaires, qui le privent de la réception de Hartlepool le jour même et du match suivant face à Gateshead. Privé aussi de Wanjau-Smith, Chippenham enchaîne pourtant un deuxième succès de rang en battant Hartlepool (2-1) : Luciano D'Auria-Henry ouvre le score dès la 11e minute sur une passe de Lewis Royston, Francis égalise à la 24e, puis Glory Nzingo, servi par Harry Messenger, offre la victoire à la 86e. Nzingo, auteur de son premier but sous ses nouvelles couleurs, est le mieux noté (7,6). Seule ombre : Charlie Pavey, entré en jeu, souffre d'une légère contracture aux ischio-jambiers (1 à 2 jours d'absence). Chippenham termine le mois à la 14e place, avec trois victoires et trois défaites.",
+        note: "Premiers pas en National League le 8 août au Laithwaite Community Stadium, et premier revers : Chippenham s'incline 2-0 à Woking malgré une nette domination (18 tirs à 5, 10 cadrés à 4). Le tournant survient à la 31e minute, quand Toby Byron marque contre son camp ; Beautyman achève les espoirs de revenir en transformant un penalty à la 89e. Seule consolation : titularisé sur l'aile droite, le jeune Gallois Jake Leach devient, à 16 ans et 73 jours, le plus jeune joueur de l'histoire du club, effaçant Harry Messenger (16 ans et 310 jours). Le 9 août, la billetterie annonce 246 abonnements vendus pour cette première saison en National League, contre 200 la saison dernière. Le 11 août, pour le premier match de National League au Thornbury Surfacing Stadium, Halifax Town s'impose 2-0 : Hmami transforme un penalty à la 20e puis double la mise neuf minutes plus tard, sur une passe de Howells. Malgré 12 tirs (6 cadrés) contre 8, Chippenham reste muet et pointe à la 24e et dernière place après deux journées, sans point ni but marqué. Le 12 août, Lewis Royston (19 ans), redescendu en U18 pendant la pré-saison, est de nouveau promu en équipe première. Le 13 août, Chippenham se renforce en attaque : Joseph Owiti (18 ans), l'avant-centre de Swindon Town qui avait marqué l'unique but de l'amical du 14 juillet, est prêté jusqu'à la fin de la saison. Courtisé par plusieurs clubs, dont Eastbourne Borough, il portera le numéro 9. Dirigeants et supporters sont enthousiastes. Le 15 août, sous un vent de tempête à l'Attis Arena, Chippenham décroche sa première victoire en National League à Scunthorpe (0-1) : dès la 8e minute, Luciano D'Auria-Henry, servi par Charlie Pavey, inscrit l'unique but du match. Le latéral droit est élu homme du match (7,9), tandis qu'Owiti fait ses débuts professionnels sur l'aile gauche. Chippenham remonte à la 18e place. Le 20 août, nouveau renfort en défense : le latéral gauche Jahmari Lindsay (21 ans), formé à Manchester United, est prêté par Leicester, club de Premier League, jusqu'à la fin de la saison. Il portera le numéro 5 ; les supporters se réjouissent de l'arrivée d'un titulaire en puissance. Ses débuts tournent pourtant au cauchemar le 22 août contre Truro City, alors dernier : mené dès la 2e minute sur un penalty de Marsh, Chippenham perd Lindsay, expulsé à la 9e pour un tacle dangereux. Réduit à dix, il encaisse deux nouveaux buts, de Law (14e) et d'Ajayi (35e), avant que Tom Owen-Evans, servi par D'Auria-Henry, ne réduise l'écart juste avant la pause (42e). Défaite 1-3 malgré 61 % de possession : Chippenham glisse à la 20e place, et Lindsay sera suspendu pour le déplacement à Morecambe. Le même jour, le gardien titulaire Will Henry (28 ans), recordman des clean sheets du club, prolonge de deux ans, jusqu'en juin 2028, au grand bonheur des supporters. Le 25 août, troisième prêt du mois : le milieu offensif irlandais Glory Nzingo (21 ans), arrivé à Swansea en provenance de Reims en 2023, rejoint Chippenham jusqu'à la fin de la saison. Il portera le numéro 35, et les supporters sont contents d'accueillir un joueur important. Titularisé le soir même au Mazuma Mobile Stadium, Nzingo fait ses débuts professionnels lors d'une victoire de caractère à Morecambe (1-2). Privé de Lindsay, suspendu, Chippenham perd encore un joueur sur expulsion, Solomon Wanjau-Smith (37e, tacle dangereux), mais ouvre le score juste avant la pause par Tom Owen-Evans, servi par D'Auria-Henry (45e+2). Azeez égalise à la 68e, avant que Charlie Pavey, sur une passe d'Owen-Evans, n'offre la victoire à la 75e. D'Auria-Henry est une nouvelle fois élu homme du match, et Chippenham remonte à la 16e place ; Wanjau-Smith manquera la réception de Hartlepool. Le 26 août, le jeune milieu défensif Tom Arthur (16 ans), qui a disputé les cinq premières journées, est officiellement promu des U18 en équipe première. Le 29 août, la commission de discipline alourdit la sanction de Jahmari Lindsay après son expulsion contre Truro City : deux matchs de suspension supplémentaires, qui le privent de la réception de Hartlepool le jour même et du match suivant face à Gateshead. Privé aussi de Wanjau-Smith, Chippenham enchaîne pourtant un deuxième succès de rang en battant Hartlepool (2-1) : Luciano D'Auria-Henry ouvre le score dès la 11e minute sur une passe de Lewis Royston, Francis égalise à la 24e, puis Glory Nzingo, servi par Harry Messenger, offre la victoire à la 86e. Nzingo, auteur de son premier but sous ses nouvelles couleurs, est le mieux noté (7,6). Seule ombre : Charlie Pavey, entré en jeu, souffre d'une légère contracture aux ischio-jambiers (1 à 2 jours d'absence). Chippenham termine le mois à la 14e place, avec trois victoires et trois défaites. Au programme de septembre : à Gateshead (5), contre Aldershot Town (12), à Boreham Wood (15), contre Sutton United (19) et à Yeovil Town (26).",
         matches: [
           { r:"L", tip:"Woking (E) 2-0" },
           { r:"L", tip:"Halifax Town (D) 0-2" },
@@ -79,10 +79,26 @@ window['SEASONS_chippenham'] = [
       },
     ],
 
-    scorers: [],
-    assists: [],
-    ratings: [],
-    flops:   [],
+    // Stats au 1er septembre 2026 (6 journées de National League)
+    scorers: [
+      { name: "L. D'Auria-Henry · T. Owen-Evans", detail: "DD / MOC · ex-aequo",   value: 2 },
+      { name: "G. Nzingo · C. Pavey",            detail: "MOC / AD · ex-aequo",   value: 1 },
+    ],
+    assists: [
+      { name: "Luciano D'Auria-Henry",           detail: "DD · Anglais · 23 ans", value: 2 },
+      { name: "Messenger · Owen-Evans · Pavey · Royston", detail: "4 joueurs à égalité", value: 1 },
+    ],
+    // Meilleures et pires moyennes : au moins 3 matchs joués (la moitié des 6 journées)
+    ratings: [
+      { name: "Luciano D'Auria-Henry", detail: "DD · Anglais · 23 ans · 3 tit. / 3 rempl. · 2 buts · 2 passes D.", value: 7.20 },
+      { name: "Harry Messenger",       detail: "DC · Anglais · 17 ans · 3 tit. · 1 passe D.",                     value: 6.97 },
+      { name: "Jac Poffley",           detail: "DC · Gallois · 20 ans · 3 tit.",                                  value: 6.90 },
+    ],
+    flops: [
+      { name: "S. Wanjau-Smith · J. Owiti", detail: "BU / BU · ex-aequo",                    value: 6.40 },
+      { name: "Tom Arthur",            detail: "MD · Anglais · 16 ans · 5 tit. / 1 rempl.",  value: 6.47 },
+      { name: "Luke Haines",           detail: "DC · Anglais · 25 ans · 6 tit.",             value: 6.48 },
+    ],
     // Mercato d'été 2026
     transfers:  [
       { type: "free", name: "Toby Byron",     from: "Sans contrat, ex-Worthing (DC · Anglais · 24 ans)", date: "Mai 2026" },
@@ -150,7 +166,7 @@ window['SEASONS_chippenham'] = [
       { key:"plus-jeune-joueur", label:"Plus jeune joueur à disputer un match", value:"16 ans et 73 jours", detail:"Jake Leach · à Woking (National League) · ancien record : Harry Messenger, 16 ans et 310 jours à Ebbsfleet United", date:"8 août 2026" },
     ],
 
-    // Effectif au 1er août 2026 (+ Lewis Royston, promu le 12 août, et Joseph Owiti, Jahmari Lindsay et Glory Nzingo, prêtés les 13, 20 et 25 août)
+    // Effectif au 1er septembre 2026
     squad: [
       { n:"Marvin Bell",           p:"GB",   nat:"ENG", age:16 },
       { n:"Will Henry",            p:"GB",   nat:"ENG", age:28 },
@@ -158,7 +174,7 @@ window['SEASONS_chippenham'] = [
       { n:"Harry Messenger",       p:"DC",   nat:"ENG", age:17 },
       { n:"Jac Poffley",           p:"DC",   nat:"WAL", age:20 },
       { n:"Tate Ferdinand",        p:"DC",   nat:"ENG", age:18 },
-      { n:"Toby Byron",            p:"DC",   nat:"ENG", age:24 },
+      { n:"Toby Byron",            p:"DC",   nat:"ENG", age:25 },
       { n:"Luke Haines",           p:"DC",   nat:"ENG", age:25 },
       { n:"Freddie Grant",         p:"DC",   nat:"ENG", age:29 },
       { n:"Grant Knowles",         p:"DG",   nat:"ENG", age:17 },
@@ -167,12 +183,12 @@ window['SEASONS_chippenham'] = [
       { n:"Lewis Colwell",         p:"DD",   nat:"ENG", age:20 },
       { n:"Joshua Addae",          p:"DD",   nat:"ENG", age:23 },
       { n:"Luciano D'Auria-Henry", p:"DD",   nat:"ENG", age:23 },
-      { n:"Ethan Vaughan",         p:"DD",   nat:"WAL", age:22 },
+      { n:"Ethan Vaughan",         p:"DD",   nat:"WAL", age:23 },
       { n:"Tom Arthur",            p:"MD",   nat:"ENG", age:16 },
       { n:"Andrew Howson",         p:"MD",   nat:"ENG", age:16 },
       { n:"Bradley Macrae",        p:"MC",   nat:"ENG", age:17 },
       { n:"Lewis Royston",         p:"MC",   nat:"ENG", age:19 },
-      { n:"Alex Martin",           p:"MC",   nat:"WAL", age:15 },
+      { n:"Alex Martin",           p:"MC",   nat:"WAL", age:16 },
       { n:"Glory Nzingo",          p:"MOC",  nat:"IRL", age:21 },
       { n:"Tom Owen-Evans",        p:"MOC",  nat:"ENG", age:29 },
       { n:"Tarik Gidaree",         p:"AD",   nat:"ENG", age:23 },
