@@ -130,7 +130,7 @@ window.CAREERS = [
     short:    'Brest',
     country:  'France',
     status:   'en_cours',
-    coach:    'Arq Queft',
+    coach:    'Arq Queft 1er du Nom',
     file:     'seasons-brest.js',
     logo:     'logo-brest.png',
     color:    '#e30613',   // rouge Brest
