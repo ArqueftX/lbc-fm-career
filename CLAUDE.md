@@ -1,6 +1,6 @@
-# Les CARQrières — récaps de carrières Football Manager 26
+# Les CARQrières — récaps de carrières Football Manager 26 et 27
 
-Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé publiquement : les récaps doivent être exacts et soignés.
+Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est partagé publiquement : les récaps doivent être exacts et soignés.
 
 ## Fonctionnement des mises à jour
 
@@ -35,10 +35,12 @@ Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé pu
 
 ## Carrières
 
-Ordre de création (ordre de `careers.js`) : Arsenal, Chippenham Town, Châteauroux, Séville, Wolfsburg (Réseau), Ajax, Wolfsburg (Pep), Leverkusen.
+Ordre de création (ordre de `careers.js`) : Arsenal, Chippenham Town, Châteauroux, Séville, Wolfsburg (Réseau), Ajax, Wolfsburg (Pep), Leverkusen (toutes sur FM26), puis Brest (FM27).
 
-- En cours : Chippenham, Châteauroux, Wolfsburg (Pep), Leverkusen. Terminées : Arsenal, Séville, Wolfsburg (Réseau), Ajax.
-- Entraîneurs : Nolann Queft (Arsenal, Chippenham, Châteauroux), Arq Queft (Ajax, Leverkusen), Pep Guardiola (Wolfsburg Pep).
+- **Version du jeu** : champ `game` de `careers.js` (`'FM27'`, `'FM26'` si absent). Les accueils et les menus des deux designs regroupent les carrières par jeu, le plus récent en premier (liste `window.GAMES`).
+- En cours : Chippenham, Châteauroux, Wolfsburg (Pep), Leverkusen, Brest. Terminées : Arsenal, Séville, Wolfsburg (Réseau), Ajax.
+- Entraîneurs : Nolann Queft (Arsenal, Chippenham, Châteauroux), Arq Queft (Ajax, Leverkusen, Brest), Pep Guardiola (Wolfsburg Pep).
+- Brest (FM27) : Ligue 1, 18 clubs, 34 journées ; saison mois par mois (même format que Chippenham) ; coupe = `CDF` (Coupe de France). Logo `logo-brest.png` découpé dans une capture du jeu (à remplacer par un logo officiel en meilleure qualité si possible).
 
 ## Technique
 

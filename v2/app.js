@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   CARNETS FM26 — NOUVEAU DESIGN (v2)
+   CARNETS FM — NOUVEAU DESIGN (v2)
    Une seule page, trois vues (hash) :
      #/                 toutes les carrières
      #/c/<carrière>     une carrière
@@ -25,6 +25,10 @@ const store = {
 const careers = () => window.CAREERS || []
 const seasonsOf = id => (window['SEASONS_' + id] || []).slice().sort((a, b) => b.year.localeCompare(a.year))
 const careerById = id => careers().find(c => c.id === id)
+// Versions du jeu (careers.js), de la plus récente à la plus ancienne
+const games = () => window.GAMES || [{ id: 'FM26', label: 'Football Manager 26' }]
+const gameOf = c => (window.gameOf ? window.gameOf(c) : (c && c.game) || 'FM26')
+const gameLabel = c => (games().find(g => g.id === gameOf(c)) || { label: gameOf(c) }).label
 
 function loadData() {
   return Promise.all(careers().map(c => new Promise(resolve => {
@@ -303,7 +307,7 @@ function viewHome() {
   const totS = all.reduce((a, x) => a + x.ss.length, 0)
   const totW = all.reduce((a, x) => a + x.wins, 0)
   const totT = all.reduce((a, x) => a + x.titles, 0)
-  const cards = all.map(x => `
+  const card = x => `
     <a class="ccard" href="#/c/${esc(x.c.id)}" style="--c:${esc(x.c.color || 'var(--club)')}">
       <div class="ccard-top">${logo(x.c)}<div>
         <h3>${esc(x.c.name)}</h3>
@@ -317,13 +321,22 @@ function viewHome() {
         <div><b>${posLabel(x.best)}</b><span>Meilleur</span></div>
       </div>
       <div>${x.live ? '<span class="tag live">● En cours</span> ' : x.c.status === 'terminee' ? '<span class="tag">Terminée</span> ' : ''}${x.c.tag ? `<span class="tag">${esc(x.c.tag)}</span>` : ''}</div>
-    </a>`).join('')
-  document.title = 'Carnets FM26'
+    </a>`
+  // Un bloc par version du jeu, la plus récente en premier
+  const groups = games().map((g, gi) => {
+    const list = all.filter(x => gameOf(x.c) === g.id)
+    if (!list.length) return ''
+    return `<section class="game-group">
+      <h2 class="h-section"><span><span class="game-badge${gi ? ' old' : ''}">${esc(g.id)}</span>${esc(g.label)}</span><small>${list.length} carrière${list.length > 1 ? 's' : ''}</small></h2>
+      <div class="careers">${list.map(card).join('')}</div>
+    </section>`
+  }).join('')
+  document.title = 'Carnets FM'
   setClub(null)
   return `
     <div class="home-head">
       <div>
-        <div class="eyebrow">Football Manager 26 · Toutes les carrières</div>
+        <div class="eyebrow">Football Manager 26 &amp; 27 · Toutes les carrières</div>
         <h1 class="h-display">Les carnets<br><em>de carrière.</em></h1>
         <p class="lede">Chaque club, chaque saison, chaque match : l'historique complet des parties, à feuilleter comme un almanach.</p>
       </div>
@@ -333,7 +346,7 @@ function viewHome() {
         <div><div class="big-num">${totT}</div><div class="eyebrow">Trophées</div></div>
       </div>
     </div>
-    <div class="careers">${cards}</div>
+    ${groups}
     <p class="eyebrow" style="margin-top:26px">${totW} victoires en championnat, toutes carrières confondues.</p>`
 }
 
@@ -354,7 +367,7 @@ function viewCareer(c) {
   const ss = seasonsOf(c.id)
   setClub(c)
   store.set(window.CURRENT_CAREER_KEY || 'lbc-fm-current-career', c.id)
-  document.title = c.short + ' — Carnets FM26'
+  document.title = c.short + ' — Carnets ' + gameOf(c)
   const recs = ss.map(record)
   const sum = k => recs.reduce((a, r) => a + (r[k] || 0), 0)
   const titles = ss.reduce((a, s) => a + honours(s).filter(h => h.gold).length, 0)
@@ -373,7 +386,7 @@ function viewCareer(c) {
     <div class="crumbs"><a href="#/">Carrières</a><span>/</span><span>${esc(c.short)}</span></div>
     <div class="career-hero">${logo(c, c.name)}
       <div>
-        <div class="eyebrow">${esc(c.country)}${c.status === 'en_cours' ? ' · <span class="c-win">● En cours</span>' : c.status === 'terminee' ? ' · Terminée' : ''}${c.tag ? ' · ' + esc(c.tag) : ''}</div>
+        <div class="eyebrow">${esc(gameLabel(c))} · ${esc(c.country)}${c.status === 'en_cours' ? ' · <span class="c-win">● En cours</span>' : c.status === 'terminee' ? ' · Terminée' : ''}${c.tag ? ' · ' + esc(c.tag) : ''}</div>
         <h1 class="h-display">${esc(c.name)}</h1>
         <div class="meta-line">${c.coach ? `<span>Entraîneur <b>${esc(c.coach)}</b></span>` : ''}<span><b>${ss.length}</b> saison${ss.length > 1 ? 's' : ''}</span></div>
       </div>
@@ -498,7 +511,7 @@ function viewSeason(c, s) {
   const newer = ss[idx - 1], older = ss[idx + 1]
   const r = record(s)
   const sp = s.splash || {}
-  document.title = `${c.short} ${s.year} — Carnets FM26`
+  document.title = `${c.short} ${s.year} — Carnets ${gameOf(c)}`
   const hs = honours(s)
   const title = sp.lines && sp.lines.length ? sp.lines.map((l, i) => i === sp.lines.length - 1 && sp.lines.length > 1 ? `<em>${esc(l)}</em>` : esc(l)).join('<br>') : esc(s.year)
   const cups = cupsOf(s)
@@ -588,8 +601,11 @@ function setClub(c) {
 }
 
 function renderNav() {
-  $('#career-nav').innerHTML = careers().map(c =>
-    `<a class="chip" data-id="${esc(c.id)}" href="#/c/${esc(c.id)}">${logo(c)}<span>${esc(c.short)}</span></a>`).join('')
+  $('#career-nav').innerHTML = games().map(g => {
+    const list = careers().filter(c => gameOf(c) === g.id)
+    return list.length ? `<span class="nav-game" title="${esc(g.label)}">${esc(g.id)}</span>` + list.map(c =>
+      `<a class="chip" data-id="${esc(c.id)}" href="#/c/${esc(c.id)}">${logo(c)}<span>${esc(c.short)}</span></a>`).join('') : ''
+  }).join('')
 }
 
 // Lien « design actuel » vers la page équivalente de l'ancien site

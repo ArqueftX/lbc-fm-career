@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>FM26 — Les CARQrières</title>
+  <title>Les CARQrières — Football Manager</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter+Tight:wght@400;600&family=JetBrains+Mono:wght@500&display=swap"/>
   <link rel="icon" href="logo-chateauroux.png"/>
@@ -35,6 +35,14 @@
     .np-stats span{font:500 9.5px/1.3 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.8px;text-transform:uppercase;color:var(--n-muted)}
     .np-label{position:absolute;top:-11px;right:18px;font:500 10px/1 'JetBrains Mono',ui-monospace,monospace;letter-spacing:1px;text-transform:uppercase;background:var(--n-ink);color:var(--n-bg);padding:6px 9px;border-radius:999px;z-index:2}
     .clist{padding-bottom:70px}
+    /* Un bloc par version du jeu (FM27, FM26…) */
+    .game-head{display:flex;align-items:center;gap:14px;margin-top:56px;padding-bottom:12px;border-bottom:1px solid rgba(232,184,75,.18)}
+    .game-badge{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;line-height:1;color:var(--navy);background:var(--gold);padding:5px 10px 3px}
+    .game-badge.old{background:transparent;color:var(--gold);box-shadow:inset 0 0 0 1px rgba(232,184,75,.45)}
+    .game-name{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:5px;color:var(--gold);font-weight:700;text-transform:uppercase}
+    .game-count{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted)}
+    .game-group .clist{padding-bottom:0}
+    .game-group:last-child .clist{padding-bottom:70px}
     .clist-head,.crow{display:grid;grid-template-columns:44px 64px minmax(0,1fr) 90px 90px 90px 90px 170px 24px;gap:16px;align-items:center}
     .clist-head{padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.06)}
     .clist-head span:nth-child(n+4){text-align:center}
@@ -80,7 +88,7 @@
   <div id="header" style="padding:60px 56px 52px;border-bottom:1px solid rgba(232,184,75,.08);position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(232,184,75,.08) 0%,var(--navy) 65%)">
     <div style="position:absolute;top:0;right:0;width:320px;height:100%;background-image:repeating-linear-gradient(90deg,rgba(232,184,75,.04) 0,rgba(232,184,75,.04) 1px,transparent 1px,transparent 24px);pointer-events:none"></div>
     <div style="max-width:1160px;margin:0 auto">
-      <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 · ACCUEIL</div>
+      <div class="bc au" style="font-size:10px;letter-spacing:6px;color:var(--gold);margin-bottom:18px;font-weight:600">FOOTBALL MANAGER 26 &amp; 27 · ACCUEIL</div>
       <h1 class="bb au au1" style="font-size:clamp(44px,8vw,92px);line-height:.9;letter-spacing:2px;margin-bottom:16px" aria-label="Les CARQrières">Les<br><span style="color:var(--gold)">CAR<span style="color:var(--white)">Q</span>rières</span></h1>
       <div id="stats-line" class="bc au au2" style="font-size:12px;color:var(--muted);letter-spacing:3px"></div>
     </div>
@@ -101,11 +109,8 @@
       </div>
     </section>
 
-    <div class="bc sec-title" style="margin-top:56px">Toutes les carrières</div>
-    <div class="clist">
-      <div class="clist-head" aria-hidden="true"><span></span><span></span><span>CARRIÈRE</span><span>SAISONS</span><span>VICTOIRES</span><span>TROPHÉES</span><span>MEILLEUR</span><span>DERNIÈRE SAISON</span><span></span></div>
-      <div id="career-list"></div>
-    </div>
+    <!-- Carrières regroupées par version du jeu, la plus récente en premier -->
+    <div id="career-groups"></div>
   </div>
 </div>
 
@@ -200,7 +205,17 @@ loadSeasons().then(() => {
   const all = window.CAREERS
   const totS = all.reduce((a, c) => a + (window['SEASONS_' + c.id] || []).length, 0)
   document.getElementById('stats-line').textContent = `${all.length} CARRIÈRES · ${totS} SAISONS`
-  document.getElementById('career-list').innerHTML = all.map(careerRow).join('')
+  document.getElementById('career-groups').innerHTML = (window.GAMES || [{ id: 'FM26', label: 'Football Manager 26' }]).map((g, gi) => {
+    const list = all.filter(c => window.gameOf(c) === g.id)
+    if (!list.length) return ''
+    return `<section class="game-group">
+      <div class="game-head au"><span class="game-badge${gi ? ' old' : ''}">${g.id}</span><span class="game-name">${g.label}</span><span class="game-count">${list.length} CARRIÈRE${list.length > 1 ? 'S' : ''}</span></div>
+      <div class="clist">
+        <div class="clist-head" aria-hidden="true"><span></span><span></span><span>CARRIÈRE</span><span>SAISONS</span><span>VICTOIRES</span><span>TROPHÉES</span><span>MEILLEUR</span><span>DERNIÈRE SAISON</span><span></span></div>
+        ${list.map(careerRow).join('')}
+      </div>
+    </section>`
+  }).join('')
 })
 
 document.getElementById('news-cta').addEventListener('click', () => {
