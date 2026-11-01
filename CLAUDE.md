@@ -1,11 +1,11 @@
-# Les CARQrières — récaps de carrières Football Manager 26
+# Les CARQrières — récaps de carrières Football Manager 26 et 27
 
-Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé publiquement : les récaps doivent être exacts et soignés.
+Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est partagé publiquement : les récaps doivent être exacts et soignés.
 
 ## Fonctionnement des mises à jour
 
 - Le propriétaire dépose ses captures du jeu sur l'artefact « Mes images » (https://claude.ai/artifact/RLLqr1yVgTcoVAy8HouQBL), dans la collection `photos`. Repérer les nouvelles avec `createdAt`. Pour lire une image : `Artifact read` avec `path=<assetId>`, une image à la fois.
-- Depuis le 22/10/2026 (captures du 02/04/2026 in-game et après), le champ `date` / `sortKey` d'une image est **la date in-game** de l'actu : s'en servir pour ranger chaque actu dans le bon mois. Avant, ce champ était faux (souvent 16/03/27).
+- **Dates : se fier à la capture du jeu** (date affichée en haut, date du match, du mail…). Le champ `date` / `sortKey` d'une image sur l'artefact n'est qu'une aide, souvent juste mais parfois faux : en cas de désaccord, la capture l'emporte, sans le signaler au propriétaire.
 - Un mois en cours peut être ouvert dès la première actu (matchs ajoutés au fil des actus) ; sa `position` et le classement se mettent à jour avec les captures de fin de mois.
 - **Depuis octobre 2026, il envoie les actus de la boîte de réception du jeu** (comptes rendus de matchs, classements, transferts, distinctions, records…) au lieu de récaps mensuels. C'est à Claude de tout déduire et de tenir le site à jour seul :
   - les matchs du mois, leurs scores et leurs compétitions ;
@@ -35,10 +35,12 @@ Site statique (GitHub Pages) qui raconte des carrières FM26. Il est partagé pu
 
 ## Carrières
 
-Ordre de création (ordre de `careers.js`) : Arsenal, Chippenham Town, Châteauroux, Séville, Wolfsburg (Réseau), Ajax, Wolfsburg (Pep), Leverkusen.
+Ordre de création (ordre de `careers.js`) : Arsenal, Chippenham Town, Châteauroux, Séville, Wolfsburg (Réseau), Ajax, Wolfsburg (Pep), Leverkusen (toutes sur FM26), puis Brest (FM27).
 
-- En cours : Chippenham, Châteauroux, Wolfsburg (Pep), Leverkusen. Terminées : Arsenal, Séville, Wolfsburg (Réseau), Ajax.
-- Entraîneurs : Nolann Queft (Arsenal, Chippenham, Châteauroux), Arq Queft (Ajax, Leverkusen), Pep Guardiola (Wolfsburg Pep).
+- **Version du jeu** : champ `game` de `careers.js` (`'FM27'`, `'FM26'` si absent). Les accueils et les menus des deux designs regroupent les carrières par jeu, le plus récent en premier (liste `window.GAMES`).
+- En cours : Chippenham, Châteauroux, Wolfsburg (Pep), Leverkusen, Brest. Terminées : Arsenal, Séville, Wolfsburg (Réseau), Ajax.
+- Entraîneurs : Nolann Queft (Arsenal, Chippenham, Châteauroux), Arq Queft (Ajax, Leverkusen), Arq Queft 1er du Nom (Brest), Pep Guardiola (Wolfsburg Pep).
+- Brest (FM27) : Ligue 1, 18 clubs, 34 journées ; saison mois par mois (même format que Chippenham) ; coupe = `CDF` (Coupe de France).
 
 ## Technique
 

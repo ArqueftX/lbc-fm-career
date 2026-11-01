@@ -86,10 +86,12 @@ function getSeason(id) {
 function renderCareerSwitcher() {
   return `
     <div id="career-modal" onclick="closeCareerModal(event)" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(7,17,31,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center">
-      <div onclick="event.stopPropagation()" style="background:#0c2259;max-width:480px;width:calc(100% - 48px);padding:36px;position:relative">
+      <div onclick="event.stopPropagation()" style="background:#0c2259;max-width:480px;width:calc(100% - 48px);max-height:calc(100vh - 48px);overflow:auto;padding:36px;position:relative">
         <div class="bc" style="font-size:9px;letter-spacing:6px;color:${C.gold};font-weight:700;margin-bottom:24px">CHANGER DE CARRIÈRE</div>
         <div style="display:flex;flex-direction:column;gap:3px">
-          ${window.CAREERS.map(c => {
+          ${(window.GAMES || [{ id: 'FM26', label: 'Football Manager 26' }]).map(g => {
+            const list = window.CAREERS.filter(c => (window.gameOf ? window.gameOf(c) : 'FM26') === g.id)
+            return list.length ? `<div class="bc" style="font-size:9px;letter-spacing:4px;color:${C.muted};font-weight:700;margin:12px 0 6px">${g.label.toUpperCase()}</div>` + list.map(c => {
             const active = window.getCurrentCareer().id === c.id
             return `
               <div onclick="switchCareer('${c.id}')"
@@ -107,6 +109,7 @@ function renderCareerSwitcher() {
                 ${active ? `<div class="bc" style="font-size:9px;letter-spacing:3px;color:${C.gold};font-weight:700">ACTIF</div>` : ''}
               </div>
             `
+          }).join('') : ''
           }).join('')}
         </div>
         <button onclick="closeCareerModal()" class="bc" style="margin-top:24px;width:100%;padding:12px;background:transparent;border:1px solid rgba(106,130,176,.3);color:${C.muted};font-size:11px;letter-spacing:4px;transition:border-color .2s"

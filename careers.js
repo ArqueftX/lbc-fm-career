@@ -11,6 +11,7 @@
 window.CAREERS = [
   // Dans l'ordre de création des carrières.
   // status : 'en_cours' ou 'terminee'
+  // game : version du jeu ('FM26' par défaut, 'FM27' pour les parties sur Football Manager 27)
   {
     id:       'arsenal',
     name:     'Arsenal FC',
@@ -121,6 +122,21 @@ window.CAREERS = [
     accent:   '#000000',
   },
 
+  // ── Football Manager 27 ──
+  {
+    id:       'brest',
+    game:     'FM27',
+    name:     'Stade Brestois 29',
+    short:    'Brest',
+    country:  'France',
+    status:   'en_cours',
+    coach:    'Arq Queft 1er du Nom',
+    file:     'seasons-brest.js',
+    logo:     'logo-brest.png',
+    color:    '#e30613',   // rouge Brest
+    accent:   '#ffffff',
+  },
+
   // Template — copie ce bloc pour ajouter une carrière :
   // {
   //   id:      'mon-club',
@@ -128,6 +144,7 @@ window.CAREERS = [
   //   short:   'Nom court',
   //   country: 'Pays',
   //   status:  'en_cours',            // ou 'terminee'
+  //   game:    'FM27',                // version du jeu (FM26 si absent)
   //   file:    'seasons-mon-club.js',
   //   logo:    'logo-mon-club.png',
   //   color:   '#couleur-principale',
@@ -136,6 +153,13 @@ window.CAREERS = [
 ]
 
 window.CURRENT_CAREER_KEY = 'lbc-fm-current-career'
+
+// Versions du jeu, de la plus récente à la plus ancienne (regroupement des carrières)
+window.GAMES = [
+  { id: 'FM27', label: 'Football Manager 27' },
+  { id: 'FM26', label: 'Football Manager 26' },
+]
+window.gameOf = function(c) { return (c && c.game) || 'FM26' }
 
 window.LOGO_PATH = (typeof window.FORCE_CAREER !== 'undefined') ? '../' : ''
 
