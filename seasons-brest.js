@@ -30,7 +30,7 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Octobre 2026 · J9",
+    lastUpdate:   "Novembre 2026 · J11",
     position:     11,
     compNames:    { CDF: "Coupe de France" },
     objective:    "S'installer durablement en Ligue 1",
@@ -72,6 +72,14 @@ window['SEASONS_brest'] = [
           { r:"L", tip:"LOSC (E) 3-2" },
           { r:"W", tip:"OGC Nice (D) 3-1" },
           { r:"D", tip:"FC Lorient (E) 0-0" },
+        ],
+      },
+      {
+        key: "11", label: "Novembre 2026",
+        note: "Trois journées au programme en novembre : la réception de Lyon le 8, un déplacement à Strasbourg le 22, puis la venue du Paris FC le 28. Le 8, au stade Francis-Le Blé, Brest tire davantage (12 tirs à 7) mais l'OL, plus réaliste et maître du ballon (67 % de possession), s'impose 0-2 : Morton ouvre le score juste avant la pause (45e) et Nuamah, servi par Bidstrup, double la mise dans le temps additionnel (90e+3). Le 22, à la Meinau, les deux équipes livrent un match fou (4-4). Brest mène 3-0 à la pause grâce à Baldé (4e), Magnetti sur une passe de Lala (9e) et Ajorque servi par Baldé (26e). Strasbourg réduit l'écart dès la reprise par Harder (46e), Locko redonne trois buts d'avance aux Bretons sur une passe de Doumbia (48e), mais Reyna, auteur d'un match exceptionnel (9,9), sonne la révolte : il marque à la 64e puis sert Mara à la 68e, et les Alsaciens arrachent finalement le point du nul.",
+        matches: [
+          { r:"L", tip:"OL (D) 0-2" },
+          { r:"D", tip:"Strasbourg (E) 4-4" },
         ],
       },
     ],
