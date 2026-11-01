@@ -243,6 +243,8 @@ html, body {
 
 /* ── TWO COL ── */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-bottom: 64px; }
+/* Les colonnes ne s'élargissent pas au-delà de l'écran avec un nom long */
+.two-col > * { min-width: 0; }
 
 /* ── PERF LIST ── */
 .perf-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
