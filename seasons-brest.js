@@ -85,10 +85,27 @@ window['SEASONS_brest'] = [
       },
     ],
 
-    scorers: [],
-    assists: [],
-    ratings: [],
-    flops:   [],
+    // Stats au 28 novembre 2026 (12 journées de Ligue 1)
+    scorers: [
+      { name: "Ludovic Ajorque",       detail: "BU · Français · 32 ans",          value: 5 },
+      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 3 },
+      { name: "Pathé Mboup",           detail: "MOG · Sénégalais · 23 ans",       value: 2 },
+    ],
+    assists: [
+      { name: "K. Lala · B. Locko",    detail: "DD / DG · ex-aequo",              value: 3 },
+      { name: "M. Baldé · P. Mboup",   detail: "MOD / MOG · ex-aequo",            value: 2 },
+    ],
+    // Meilleures et pires moyennes : au moins 6 matchs joués (la moitié des 12 journées)
+    ratings: [
+      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 12 tit. · 1 but · 3 passes D.", value: 6.96 },
+      { name: "K. Doumbia · L. Ajorque", detail: "MC / BU · ex-aequo",            value: 6.94 },
+      { name: "Kenny Lala",            detail: "DD · Martiniquais · 35 ans · 11 tit. / 1 rempl. · 3 passes D.", value: 6.88 },
+    ],
+    flops: [
+      { name: "Djylian N'Guessan",     detail: "BU · Français · 18 ans · 6 rempl.",                     value: 6.48 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 1 tit. / 8 rempl.",               value: 6.50 },
+      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 12 tit. · 1 passe D.",         value: 6.55 },
+    ],
     // Mercato d'été 2026
     transfers:  [],
     departures: [],
@@ -113,7 +130,30 @@ window['SEASONS_brest'] = [
       { pos:17, team:"Rennes",          j:11, g:3, n:2, l:6, bp:11, bc:16, db:-5, pts:11, zone:"releg" },
       { pos:18, team:"Havre AC",        j:12, g:2, n:1, l:9, bp:7, bc:22, db:-15, pts:7, zone:"releg" },
     ],
-    squad:      [],
+    // Effectif au 28 novembre 2026
+    squad: [
+      { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:22 },
+      { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:29 },
+      { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:24 },
+      { n:"Kenny Lala",            p:"DD",   nat:"MTQ", age:35 },
+      { n:"Bradley Locko",         p:"DG",   nat:"FRA", age:24 },
+      { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:21 },
+      { n:"Gautier Lloris",        p:"DC",   nat:"FRA", age:31 },
+      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:31 },
+      { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:20 },
+      { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:24 },
+      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:29 },
+      { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:28 },
+      { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:23 },
+      { n:"Joris Chotard",         p:"MC",   nat:"FRA", age:25 },
+      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:21 },
+      { n:"Mama Baldé",            p:"MOD",  nat:"GNB", age:31 },
+      { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:22 },
+      { n:"Noah Edjouma",          p:"MOD",  nat:"FRA", age:21 },
+      { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:23 },
+      { n:"Ludovic Ajorque",       p:"BU",   nat:"FRA", age:32 },
+      { n:"Djylian N'Guessan",     p:"BU",   nat:"FRA", age:18 },
+    ],
 
     records: [
       { key:"buts-match-l1", label:"Buts dans un match de championnat", value:"8", detail:"4-4 à Strasbourg (Ligue 1) · ancien record : 3-2 à Lille le 17 octobre 2026", date:"22 nov. 2026" },

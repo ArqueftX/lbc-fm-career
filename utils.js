@@ -202,7 +202,7 @@ function renderPerfList(title, items, unit, color) {
       ${items.map((item,i) => `
         <div class="perf-row">
           <div class="bb" style="font-size:24px;color:${C.gold};width:22px;flex-shrink:0">${i+1}</div>
-          <div style="flex:1">
+          <div style="flex:1;min-width:0;overflow-wrap:anywhere">
             <div style="font-size:13px;font-weight:500">${item.name}</div>
             <div class="bc" style="font-size:11px;color:${C.muted};margin-top:2px">${item.detail}</div>
           </div>
@@ -312,7 +312,7 @@ function renderSeasonAwards(s) {
   const as = (s && s.awards) || []
   if (!as.length) return ''
   return `<div style="margin-bottom:60px"><div class="bc sec-title">Distinctions</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:3px">${as.map(a => awardRow(a, a.period)).join('')}</div></div>`
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:3px">${as.map(a => awardRow(a, a.period)).join('')}</div></div>`
 }
 
 /* Profil de l'entraîneur (champ "coachProfile" de careers.js) */
@@ -321,7 +321,7 @@ function renderCoachProfile(career) {
   if (!p) return ''
   const line = (k, v) => v ? `<div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)"><span class="bc" style="font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase">${k}</span><span class="bc" style="font-size:14px;text-align:right">${v}</span></div>` : ''
   return `<div class="bc sec-title">Profil de l'entraîneur</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3px;margin-bottom:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:3px;margin-bottom:48px">
       <div style="background:var(--blue);padding:22px 24px">
         <div class="bb" style="font-size:34px;line-height:1;letter-spacing:1px">${career.coach}</div>
         <div class="bc" style="font-size:12px;color:var(--gold);letter-spacing:2px;margin:6px 0 12px">${[p.nat, p.born ? 'né le ' + p.born : ''].filter(Boolean).join(' · ')}</div>
@@ -342,7 +342,7 @@ function renderSeasonRecords(s) {
   const rs = (s && s.records) || []
   if (!rs.length) return ''
   return `<div style="margin-bottom:60px"><div class="bc sec-title">Records battus</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:3px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:3px">
       ${rs.map(r => `
         <div style="background:var(--blue);padding:22px 22px 20px;border-left:3px solid var(--gold)">
           <div class="bc" style="font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;font-weight:700">${r.label}</div>
@@ -442,7 +442,7 @@ function renderCareerExtras(seasons) {
     const css = document.createElement('style')
     css.id = 'cx-style'
     css.textContent = `
-      .cx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:3px}
+      .cx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:3px}
       .cx-box{background:var(--blue);padding:22px 22px 20px;position:relative;overflow:hidden}
       .cx-k{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;font-weight:700}
       .cx-v{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;margin-top:10px}
@@ -479,14 +479,14 @@ function renderCareerExtras(seasons) {
     <div style="max-width:1160px;margin:0 auto;padding:0 56px 60px" class="cx">
       ${renderCoachProfile(getCurrentCareer())}
       <div class="bc sec-title">Vitrine à trophées</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:3px;margin-bottom:48px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:3px;margin-bottom:48px">
         ${trophies || ''}${finals || ''}
         ${!trophies && !finals ? `<div class="cx-d" style="padding:6px 0">Pas encore de trophée ni de finale.</div>` : ''}
       </div>
 
       ${awards.length ? `
       <div class="bc sec-title">Distinctions · ${awards.length}</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:3px;margin-bottom:48px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:3px;margin-bottom:48px">
         ${awards.map(a => awardRow(a, a.period || a.year)).join('')}
       </div>` : ''}
 
