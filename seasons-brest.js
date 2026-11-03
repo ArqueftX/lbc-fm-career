@@ -85,10 +85,11 @@ window['SEASONS_brest'] = [
       },
       {
         key: "12", label: "Décembre 2026",
-        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20. Le 5, au Roazhon Park, Brest signe une victoire solide à Rennes (0-2) : Hugo Magnetti, servi par Lala, ouvre le score (18e), puis Kamory Doumbia, sur une passe de Mboup, double la mise juste après la pause (48e). Magnetti est élu homme du match (8,1). Brest remonte à la 10e place avec 15 points, et enfonce un peu plus Rennes, 17e. Coup dur le lendemain pour Giovani Versini : décidément maudit cette saison, l'ailier se blesse une troisième fois, victime d'un tacle appuyé lors d'un match amical face à la réserve du Plougastel FC. Touché au cartilage du genou, il est confié à un spécialiste et sera absent huit à onze semaines. Le 12, au stade Francis-Le Blé, Brest enchaîne une deuxième victoire de rang face à l'ESTAC (2-0) : Bradley Locko, servi par Tousart, ouvre le score juste avant la pause (44e), puis Ludovic Ajorque, après avoir vu son penalty repoussé, reprend lui-même le ballon pour doubler la mise (49e). Locko est élu homme du match (8,1). Avec 18 points, Brest grimpe à la 9e place, à quatre longueurs de l'Europe. Le lendemain, Lucas Tousart écope de son cinquième carton jaune de la saison : le milieu sera suspendu pour un match à compter du 15 décembre. Le 15, Bradley Locko, buteur et homme du match contre l'ESTAC, est retenu dans l'équipe-type de la 14e journée de Ligue 1. Bonne nouvelle le 17 : après sept semaines d'absence, Joris Chotard, remis de son élongation au mollet, reprend l'entraînement complet.",
+        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20. Le 5, au Roazhon Park, Brest signe une victoire solide à Rennes (0-2) : Hugo Magnetti, servi par Lala, ouvre le score (18e), puis Kamory Doumbia, sur une passe de Mboup, double la mise juste après la pause (48e). Magnetti est élu homme du match (8,1). Brest remonte à la 10e place avec 15 points, et enfonce un peu plus Rennes, 17e. Coup dur le lendemain pour Giovani Versini : décidément maudit cette saison, l'ailier se blesse une troisième fois, victime d'un tacle appuyé lors d'un match amical face à la réserve du Plougastel FC. Touché au cartilage du genou, il est confié à un spécialiste et sera absent huit à onze semaines. Le 12, au stade Francis-Le Blé, Brest enchaîne une deuxième victoire de rang face à l'ESTAC (2-0) : Bradley Locko, servi par Tousart, ouvre le score juste avant la pause (44e), puis Ludovic Ajorque, après avoir vu son penalty repoussé, reprend lui-même le ballon pour doubler la mise (49e). Locko est élu homme du match (8,1). Avec 18 points, Brest grimpe à la 9e place, à quatre longueurs de l'Europe. Le lendemain, Lucas Tousart écope de son cinquième carton jaune de la saison : le milieu sera suspendu pour un match à compter du 15 décembre. Le 15, Bradley Locko, buteur et homme du match contre l'ESTAC, est retenu dans l'équipe-type de la 14e journée de Ligue 1. Bonne nouvelle le 17 : après sept semaines d'absence, Joris Chotard, remis de son élongation au mollet, reprend l'entraînement complet. Le 20, Brest fait son entrée en Coupe de France au 9e tour, au stade Serge-Leleu, chez l'AS Gamaches, et doit attendre la toute fin du match pour se qualifier (0-1). Sans Tousart, suspendu, les Bretons écrasent la rencontre (28 tirs à 2, 63 % de possession) mais butent longtemps sur Vesperini, avant que Kamory Doumbia, servi par Mama Baldé, ne délivre enfin les siens à la 89e minute. Le jeune Justin Bourgault est élu homme du match (8,4).",
         matches: [
           { r:"W", tip:"Rennes (E) 0-2" },
           { r:"W", tip:"ESTAC (D) 2-0" },
+          { r:"W", tip:"AS Gamaches (E) 0-1",           comp:"CDF", tag:"9e tour" },
         ],
       },
     ],
@@ -117,6 +118,12 @@ window['SEASONS_brest'] = [
     // Mercato d'été 2026
     transfers:  [],
     departures: [],
+    cup: {
+      name: "Coupe de France",
+      rounds: [
+        { result: "W", round: "9e tour", score: "0 – 1", opponent: "AS Gamaches (E)" },
+      ],
+    },
     standingsTitle: "Classement après la 14e journée",
     standings: [
       { pos:1,  team:"Toulouse FC",     j:14, g:7, n:7, l:0, bp:23, bc:9, db:14, pts:28, zone:"ucl" },
