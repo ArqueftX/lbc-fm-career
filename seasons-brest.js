@@ -30,7 +30,7 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Décembre 2026 · J14",
+    lastUpdate:   "Janvier 2027 · J14",
     position:     10,
     compNames:    { CDF: "Coupe de France" },
     objective:    "S'installer durablement en Ligue 1",
@@ -91,6 +91,11 @@ window['SEASONS_brest'] = [
           { r:"W", tip:"ESTAC (D) 2-0" },
           { r:"W", tip:"AS Gamaches (E) 0-1",           comp:"CDF", tag:"9e tour" },
         ],
+      },
+      {
+        key: "01", label: "Janvier 2027",
+        note: "Janvier s'annonce chargé, avec cinq rendez-vous : la réception de l'OM le samedi 2, le 10e tour de la Coupe de France à Colmar le 9, puis trois journées de Ligue 1, à Monaco le 17, à Lens le 23 et contre Strasbourg à domicile le 30.",
+        matches: [],
       },
     ],
 
