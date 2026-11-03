@@ -85,7 +85,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "12", label: "Décembre 2026",
-        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20. Le 5, au Roazhon Park, Brest signe une victoire solide à Rennes (0-2) : Hugo Magnetti, servi par Lala, ouvre le score (18e), puis Kamory Doumbia, sur une passe de Mboup, double la mise juste après la pause (48e). Magnetti est élu homme du match (8,1). Brest remonte à la 10e place avec 15 points, et enfonce un peu plus Rennes, 17e.",
+        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20. Le 5, au Roazhon Park, Brest signe une victoire solide à Rennes (0-2) : Hugo Magnetti, servi par Lala, ouvre le score (18e), puis Kamory Doumbia, sur une passe de Mboup, double la mise juste après la pause (48e). Magnetti est élu homme du match (8,1). Brest remonte à la 10e place avec 15 points, et enfonce un peu plus Rennes, 17e. Coup dur le lendemain pour Giovani Versini : décidément maudit cette saison, l'ailier se blesse une troisième fois, victime d'un tacle appuyé lors d'un match amical face à la réserve du Plougastel FC. Touché au cartilage du genou, il est confié à un spécialiste et sera absent huit à onze semaines.",
         matches: [
           { r:"W", tip:"Rennes (E) 0-2" },
         ],
