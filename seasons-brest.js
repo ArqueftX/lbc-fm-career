@@ -83,6 +83,11 @@ window['SEASONS_brest'] = [
           { r:"D", tip:"Paris FC (D) 1-1" },
         ],
       },
+      {
+        key: "12", label: "Décembre 2026",
+        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20.",
+        matches: [],
+      },
     ],
 
     // Stats au 28 novembre 2026 (12 journées de Ligue 1)
