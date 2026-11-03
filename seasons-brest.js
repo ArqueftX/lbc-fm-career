@@ -31,7 +31,7 @@ window['SEASONS_brest'] = [
     totalTeams:   18,
     seasonLength: 34,
     lastUpdate:   "Décembre 2026 · J14",
-    position:     9,
+    position:     10,
     compNames:    { CDF: "Coupe de France" },
     objective:    "S'installer durablement en Ligue 1",
 
@@ -84,8 +84,8 @@ window['SEASONS_brest'] = [
         ],
       },
       {
-        key: "12", label: "Décembre 2026",
-        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20. Le 5, au Roazhon Park, Brest signe une victoire solide à Rennes (0-2) : Hugo Magnetti, servi par Lala, ouvre le score (18e), puis Kamory Doumbia, sur une passe de Mboup, double la mise juste après la pause (48e). Magnetti est élu homme du match (8,1). Brest remonte à la 10e place avec 15 points, et enfonce un peu plus Rennes, 17e. Coup dur le lendemain pour Giovani Versini : décidément maudit cette saison, l'ailier se blesse une troisième fois, victime d'un tacle appuyé lors d'un match amical face à la réserve du Plougastel FC. Touché au cartilage du genou, il est confié à un spécialiste et sera absent huit à onze semaines. Le 12, au stade Francis-Le Blé, Brest enchaîne une deuxième victoire de rang face à l'ESTAC (2-0) : Bradley Locko, servi par Tousart, ouvre le score juste avant la pause (44e), puis Ludovic Ajorque, après avoir vu son penalty repoussé, reprend lui-même le ballon pour doubler la mise (49e). Locko est élu homme du match (8,1). Avec 18 points, Brest grimpe à la 9e place, à quatre longueurs de l'Europe. Le lendemain, Lucas Tousart écope de son cinquième carton jaune de la saison : le milieu sera suspendu pour un match à compter du 15 décembre. Le 15, Bradley Locko, buteur et homme du match contre l'ESTAC, est retenu dans l'équipe-type de la 14e journée de Ligue 1. Bonne nouvelle le 17 : après sept semaines d'absence, Joris Chotard, remis de son élongation au mollet, reprend l'entraînement complet. Le 20, Brest fait son entrée en Coupe de France au 9e tour, au stade Serge-Leleu, chez l'AS Gamaches, et doit attendre la toute fin du match pour se qualifier (0-1). Sans Tousart, suspendu, les Bretons écrasent la rencontre (28 tirs à 2, 63 % de possession) mais butent longtemps sur Vesperini, avant que Kamory Doumbia, servi par Mama Baldé, ne délivre enfin les siens à la 89e minute. Le jeune Justin Bourgault est élu homme du match (8,4).",
+        key: "12", label: "Décembre 2026", position: 10,
+        note: "Trois matchs au programme avant la trêve : un déplacement à Rennes le samedi 5 décembre, la réception de l'ESTAC le 12, puis l'entrée en lice en Coupe de France, au 9e tour, chez l'AS Gamaches le dimanche 20. Le 5, au Roazhon Park, Brest signe une victoire solide à Rennes (0-2) : Hugo Magnetti, servi par Lala, ouvre le score (18e), puis Kamory Doumbia, sur une passe de Mboup, double la mise juste après la pause (48e). Magnetti est élu homme du match (8,1). Brest remonte à la 10e place avec 15 points, et enfonce un peu plus Rennes, 17e. Coup dur le lendemain pour Giovani Versini : décidément maudit cette saison, l'ailier se blesse une troisième fois, victime d'un tacle appuyé lors d'un match amical face à la réserve du Plougastel FC. Touché au cartilage du genou, il est confié à un spécialiste et sera absent huit à onze semaines. Le 12, au stade Francis-Le Blé, Brest enchaîne une deuxième victoire de rang face à l'ESTAC (2-0) : Bradley Locko, servi par Tousart, ouvre le score juste avant la pause (44e), puis Ludovic Ajorque, après avoir vu son penalty repoussé, reprend lui-même le ballon pour doubler la mise (49e). Locko est élu homme du match (8,1). Avec 18 points, Brest grimpe à la 9e place, à quatre longueurs de l'Europe. Le lendemain, Lucas Tousart écope de son cinquième carton jaune de la saison : le milieu sera suspendu pour un match à compter du 15 décembre. Le 15, Bradley Locko, buteur et homme du match contre l'ESTAC, est retenu dans l'équipe-type de la 14e journée de Ligue 1. Bonne nouvelle le 17 : après sept semaines d'absence, Joris Chotard, remis de son élongation au mollet, reprend l'entraînement complet. Le 20, Brest fait son entrée en Coupe de France au 9e tour, au stade Serge-Leleu, chez l'AS Gamaches, et doit attendre la toute fin du match pour se qualifier (0-1). Sans Tousart, suspendu, les Bretons écrasent la rencontre (28 tirs à 2, 63 % de possession) mais butent longtemps sur Vesperini, avant que Kamory Doumbia, servi par Mama Baldé, ne délivre enfin les siens à la 89e minute. Le jeune Justin Bourgault est élu homme du match (8,4). Brest termine l'année civile à la 10e place, avec 18 points, après trois victoires de rang toutes compétitions confondues.",
         matches: [
           { r:"W", tip:"Rennes (E) 0-2" },
           { r:"W", tip:"ESTAC (D) 2-0" },
@@ -94,26 +94,26 @@ window['SEASONS_brest'] = [
       },
     ],
 
-    // Stats au 28 novembre 2026 (12 journées de Ligue 1)
+    // Stats au 20 décembre 2026 (14 journées de Ligue 1 + 1 match de Coupe de France, toutes compétitions)
     scorers: [
-      { name: "Ludovic Ajorque",       detail: "BU · Français · 32 ans",          value: 5 },
-      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 3 },
-      { name: "Pathé Mboup",           detail: "MOG · Sénégalais · 23 ans",       value: 2 },
+      { name: "Ludovic Ajorque",       detail: "BU · Français · 32 ans",          value: 6 },
+      { name: "K. Doumbia · M. Baldé", detail: "MC / MOD · ex-aequo",             value: 3 },
+      { name: "Magnetti · Locko · Mboup", detail: "3 joueurs à égalité",          value: 2 },
     ],
     assists: [
-      { name: "K. Lala · B. Locko",    detail: "DD / DG · ex-aequo",              value: 3 },
-      { name: "M. Baldé · P. Mboup",   detail: "MOD / MOG · ex-aequo",            value: 2 },
+      { name: "Kenny Lala",            detail: "DD · Martiniquais · 35 ans",      value: 4 },
+      { name: "Baldé · Locko · Mboup", detail: "3 joueurs à égalité",             value: 3 },
     ],
-    // Meilleures et pires moyennes : au moins 6 matchs joués (la moitié des 12 journées)
+    // Meilleures et pires moyennes : au moins 7 matchs joués (la moitié des 14 journées)
     ratings: [
-      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 12 tit. · 1 but · 3 passes D.", value: 6.96 },
-      { name: "K. Doumbia · L. Ajorque", detail: "MC / BU · ex-aequo",            value: 6.94 },
-      { name: "Kenny Lala",            detail: "DD · Martiniquais · 35 ans · 11 tit. / 1 rempl. · 3 passes D.", value: 6.88 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 23 ans · 9 tit. / 1 rempl. · 3 buts · 1 passe D.",  value: 7.13 },
+      { name: "Justin Bourgault",      detail: "DG · Français · 21 ans · 1 tit. / 9 rempl.",                      value: 7.07 },
+      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 14 tit. / 1 rempl. · 2 buts · 3 passes D.", value: 7.05 },
     ],
     flops: [
-      { name: "Djylian N'Guessan",     detail: "BU · Français · 18 ans · 6 rempl.",                     value: 6.48 },
-      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 1 tit. / 8 rempl.",               value: 6.50 },
-      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 12 tit. · 1 passe D.",         value: 6.55 },
+      { name: "Djylian N'Guessan",     detail: "BU · Français · 18 ans · 1 tit. / 6 rempl.",                      value: 6.32 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 2 tit. / 9 rempl.",                          value: 6.59 },
+      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 15 tit. · 1 passe D.",                    value: 6.65 },
     ],
     // Mercato d'été 2026
     transfers:  [],
@@ -128,22 +128,22 @@ window['SEASONS_brest'] = [
     standings: [
       { pos:1,  team:"Toulouse FC",     j:14, g:7, n:7, l:0, bp:23, bc:9, db:14, pts:28, zone:"ucl" },
       { pos:2,  team:"PSG",             j:14, g:9, n:1, l:4, bp:29, bc:16, db:13, pts:28, zone:"ucl" },
-      { pos:3,  team:"LOSC",            j:14, g:7, n:4, l:3, bp:21, bc:12, db:9, pts:25, zone:"ucl" },
-      { pos:4,  team:"Angers SCO",      j:14, g:7, n:3, l:4, bp:19, bc:19, db:0, pts:24, zone:"ucl" },
-      { pos:5,  team:"AS Monaco",       j:13, g:6, n:5, l:2, bp:19, bc:12, db:7, pts:23, zone:"uel" },
+      { pos:3,  team:"AS Monaco",       j:14, g:7, n:5, l:2, bp:21, bc:12, db:9, pts:26, zone:"ucl" },
+      { pos:4,  team:"LOSC",            j:14, g:7, n:4, l:3, bp:21, bc:12, db:9, pts:25, zone:"ucl" },
+      { pos:5,  team:"Angers SCO",      j:14, g:7, n:3, l:4, bp:19, bc:19, db:0, pts:24, zone:"uel" },
       { pos:6,  team:"AJ Auxerre",      j:14, g:5, n:7, l:2, bp:18, bc:12, db:6, pts:22, zone:"uecl" },
       { pos:7,  team:"Paris FC",        j:14, g:6, n:4, l:4, bp:18, bc:13, db:5, pts:22 },
-      { pos:8,  team:"FC Lorient",      j:14, g:4, n:7, l:3, bp:9, bc:11, db:-2, pts:19 },
-      { pos:9,  team:"Brest",           j:14, g:5, n:3, l:6, bp:21, bc:21, db:0, pts:18, highlight:true },
-      { pos:10, team:"OL",              j:13, g:5, n:3, l:5, bp:17, bc:19, db:-2, pts:18 },
-      { pos:11, team:"OM",              j:13, g:5, n:1, l:7, bp:15, bc:16, db:-1, pts:16 },
+      { pos:8,  team:"OL",              j:14, g:5, n:4, l:5, bp:19, bc:21, db:-2, pts:19 },
+      { pos:9,  team:"FC Lorient",      j:14, g:4, n:7, l:3, bp:9, bc:11, db:-2, pts:19 },
+      { pos:10, team:"Brest",           j:14, g:5, n:3, l:6, bp:21, bc:21, db:0, pts:18, highlight:true },
+      { pos:11, team:"OM",              j:14, g:5, n:2, l:7, bp:17, bc:18, db:-1, pts:17 },
       { pos:12, team:"OGC Nice",        j:14, g:4, n:4, l:6, bp:14, bc:20, db:-6, pts:16 },
       { pos:13, team:"Strasbourg",      j:14, g:3, n:6, l:5, bp:18, bc:20, db:-2, pts:15 },
       { pos:14, team:"RC Lens",         j:14, g:3, n:5, l:6, bp:14, bc:17, db:-3, pts:14 },
       { pos:15, team:"ESTAC",           j:14, g:4, n:2, l:8, bp:13, bc:19, db:-6, pts:14 },
-      { pos:16, team:"Le Mans",         j:13, g:3, n:3, l:7, bp:10, bc:18, db:-8, pts:12, zone:"releg-playoff" },
-      { pos:17, team:"Rennes",          j:13, g:3, n:2, l:8, bp:11, bc:21, db:-10, pts:11, zone:"releg" },
-      { pos:18, team:"Havre AC",        j:13, g:3, n:1, l:9, bp:9, bc:23, db:-14, pts:10, zone:"releg" },
+      { pos:16, team:"Havre AC",        j:14, g:4, n:1, l:9, bp:10, bc:23, db:-13, pts:13, zone:"releg-playoff" },
+      { pos:17, team:"Le Mans",         j:14, g:3, n:3, l:8, bp:10, bc:19, db:-9, pts:12, zone:"releg" },
+      { pos:18, team:"Rennes",          j:14, g:3, n:2, l:9, bp:11, bc:23, db:-12, pts:11, zone:"releg" },
     ],
     // Effectif au 28 novembre 2026
     squad: [
