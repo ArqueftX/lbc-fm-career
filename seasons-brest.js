@@ -33,7 +33,7 @@ window['SEASONS_brest'] = [
     lastUpdate:   "Janvier 2027 · J14",
     position:     10,
     compNames:    { CDF: "Coupe de France" },
-    objective:    "S'installer durablement en Ligue 1",
+    objective:    "Terminer en milieu de tableau en Ligue 1",
 
     months: [
       {
@@ -94,7 +94,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "01", label: "Janvier 2027",
-        note: "Janvier s'annonce chargé, avec cinq rendez-vous : la réception de l'OM le samedi 2, le 10e tour de la Coupe de France à Colmar le 9, puis trois journées de Ligue 1, à Monaco le 17, à Lens le 23 et contre Strasbourg à domicile le 30.",
+        note: "Janvier s'annonce chargé, avec cinq rendez-vous : la réception de l'OM le samedi 2, le 10e tour de la Coupe de France à Colmar le 9, puis trois journées de Ligue 1, à Monaco le 17, à Lens le 23 et contre Strasbourg à domicile le 30. Le 1er janvier, au vu des bons résultats de la première partie de saison, les dirigeants revoient leurs attentes à la hausse : l'objectif en Ligue 1 n'est plus seulement de s'installer dans l'élite, mais de terminer en milieu de tableau.",
         matches: [],
       },
     ],
