@@ -94,7 +94,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "01", label: "Janvier 2027",
-        note: "Janvier s'annonce chargé, avec cinq rendez-vous : la réception de l'OM le samedi 2, le 10e tour de la Coupe de France à Colmar le 9, puis trois journées de Ligue 1, à Monaco le 17, à Lens le 23 et contre Strasbourg à domicile le 30. Le 1er janvier, au vu des bons résultats de la première partie de saison, les dirigeants revoient leurs attentes à la hausse : l'objectif en Ligue 1 n'est plus seulement de s'installer dans l'élite, mais de terminer en milieu de tableau. Le même jour, Bradley Locko voit sa superbe frappe contre l'ESTAC élue but du mois de décembre en Ligue 1, deuxième distinction de la saison pour l'arrière gauche ; il est toutefois actuellement à l'infirmerie, touché par une contracture.",
+        note: "Janvier s'annonce chargé, avec cinq rendez-vous : la réception de l'OM le samedi 2, le 10e tour de la Coupe de France à Colmar le 9, puis trois journées de Ligue 1, à Monaco le 17, à Lens le 23 et contre Strasbourg à domicile le 30. Le 1er janvier, au vu des bons résultats de la première partie de saison, les dirigeants revoient leurs attentes à la hausse : l'objectif en Ligue 1 n'est plus seulement de s'installer dans l'élite, mais de terminer en milieu de tableau. Le même jour, Bradley Locko voit sa superbe frappe contre l'ESTAC élue but du mois de décembre en Ligue 1, deuxième distinction de la saison pour l'arrière gauche ; il est toutefois actuellement à l'infirmerie, touché par une contracture. Toujours le 1er janvier, Mama Baldé (31 ans), un des meilleurs éléments du club selon les supporters, prolonge de deux ans, jusqu'en juin 2029.",
         matches: [],
       },
     ],
