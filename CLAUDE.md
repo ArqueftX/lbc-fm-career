@@ -48,3 +48,4 @@ Ordre de création (ordre de `careers.js`) : Arsenal, Chippenham Town, Châteaur
 - Une nouvelle carrière : entrée dans `careers.js`, fichier `seasons-<id>.js`, dossier `<id>/` (copier celui d'une carrière au même format), et `<script src="../seasons-<id>.js">` dans toutes les pages carrière.
 - Tester en local (`python3 -m http.server 8765` + Playwright, Chromium dans `/opt/pw-browsers/chromium`) les deux designs, en 1280 et 390 px, avant chaque push.
 - Le propriétaire fusionne lui-même les pull requests : ne jamais les fusionner (essai de fusion par Claude du 03/11/2026 abandonné à sa demande). Commits et PR en français.
+- Pas de mention « Generated with Claude Code », de lien de session ni de ligne « Co-Authored-By » dans les commits et les PR (demande du propriétaire).
