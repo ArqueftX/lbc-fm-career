@@ -105,26 +105,26 @@ window['SEASONS_brest'] = [
       },
     ],
 
-    // Stats au 20 décembre 2026 (14 journées de Ligue 1 + 1 match de Coupe de France, toutes compétitions)
+    // Stats au 31 janvier 2027 (18 journées de Ligue 1 + 3 matchs de Coupe de France, toutes compétitions)
     scorers: [
-      { name: "Ludovic Ajorque",       detail: "BU · Français · 32 ans",          value: 6 },
-      { name: "K. Doumbia · M. Baldé", detail: "MC / MOD · ex-aequo",             value: 3 },
-      { name: "Magnetti · Locko · Mboup", detail: "3 joueurs à égalité",          value: 2 },
+      { name: "Ludovic Ajorque",       detail: "BU · Français · 32 ans",          value: 8 },
+      { name: "Magnetti · Doumbia · Baldé", detail: "3 joueurs à égalité",        value: 3 },
+      { name: "B. Locko · P. Mboup",   detail: "DG / MOG · ex-aequo",             value: 2 },
     ],
     assists: [
-      { name: "Kenny Lala",            detail: "DD · Martiniquais · 35 ans",      value: 4 },
-      { name: "Baldé · Locko · Mboup", detail: "3 joueurs à égalité",             value: 3 },
+      { name: "K. Lala · B. Locko",    detail: "DD / DG · ex-aequo",              value: 4 },
+      { name: "P. Mboup · M. Baldé",   detail: "MOG / MOD · ex-aequo",            value: 3 },
+      { name: "Noah Edjouma",          detail: "MOD · Français · 21 ans",         value: 2 },
     ],
-    // Meilleures et pires moyennes : au moins 7 matchs joués (la moitié des 14 journées)
+    // Meilleures et pires moyennes : au moins 9 matchs joués (la moitié des 18 journées)
     ratings: [
-      { name: "Kamory Doumbia",        detail: "MC · Malien · 23 ans · 9 tit. / 1 rempl. · 3 buts · 1 passe D.",  value: 7.13 },
-      { name: "Justin Bourgault",      detail: "DG · Français · 21 ans · 1 tit. / 9 rempl.",                      value: 7.07 },
-      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 14 tit. / 1 rempl. · 2 buts · 3 passes D.", value: 7.05 },
+      { name: "Justin Bourgault",      detail: "DG · Français · 21 ans · 2 tit. / 12 rempl.",                     value: 7.07 },
+      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 18 tit. / 2 rempl. · 2 buts · 4 passes D.", value: 7.05 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 23 ans · 12 tit. / 3 rempl. · 3 buts · 1 passe D.", value: 7.01 },
     ],
     flops: [
-      { name: "Djylian N'Guessan",     detail: "BU · Français · 18 ans · 1 tit. / 6 rempl.",                      value: 6.32 },
-      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 2 tit. / 9 rempl.",                          value: 6.59 },
-      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 15 tit. · 1 passe D.",                    value: 6.65 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 3 tit. / 12 rempl.",                         value: 6.61 },
+      { name: "G. Lloris · M. Diambou", detail: "DC / MD · ex-aequo",                                              value: 6.69 },
     ],
     // Mercato d'été 2026
     transfers:  [],
@@ -159,7 +159,7 @@ window['SEASONS_brest'] = [
       { pos:17, team:"Havre AC",       j:18, g:5, n:1, l:12, bp:11, bc:27, db:-16, pts:16, zone:"releg" },
       { pos:18, team:"ESTAC",          j:17, g:4, n:2, l:11, bp:13, bc:33, db:-20, pts:14, zone:"releg" },
     ],
-    // Effectif au 31 décembre 2026 (sans N'Guessan, rentré à Saint-Étienne)
+    // Effectif au 31 janvier 2027
     squad: [
       { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:22 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:29 },
@@ -168,7 +168,7 @@ window['SEASONS_brest'] = [
       { n:"Bradley Locko",         p:"DG",   nat:"FRA", age:24 },
       { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:21 },
       { n:"Gautier Lloris",        p:"DC",   nat:"FRA", age:31 },
-      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:31 },
+      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:32 },
       { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:20 },
       { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:24 },
       { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:29 },
