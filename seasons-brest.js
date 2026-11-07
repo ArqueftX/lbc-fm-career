@@ -105,8 +105,10 @@ window['SEASONS_brest'] = [
       },
       {
         key: "02", label: "Février 2027",
-        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27. Le 1er février, Brest se renforce en défense centrale : l'Espagnol Manu Hernando (28 ans) arrive en prêt du Racing Santander jusqu'à la fin de la saison, avec une option d'achat de 575 000 €. Dirigeants comme supporters saluent l'opération.",
-        matches: [],
+        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27. Le 1er février, Brest se renforce en défense centrale : l'Espagnol Manu Hernando (28 ans) arrive en prêt du Racing Santander jusqu'à la fin de la saison, avec une option d'achat de 575 000 €. Dirigeants comme supporters saluent l'opération. Le 3, au stade Francis-Le Blé et sous un vent violent, Brest se qualifie pour les quarts de finale de la Coupe de France en battant Saint-Étienne (2-0). Le latéral Luck Zogbé est encore décisif : il sert Noah Edjouma pour l'ouverture du score (14e), puis Joseph Nonge pour le break (34e). Les Brestois dominent la rencontre (19 tirs à 12, sept cadrés contre deux) et Selvik garde sa cage inviolée. Pour sa première apparition, Manu Hernando se montre solide en défense centrale (7,6). Avec ses deux passes décisives, Zogbé est élu homme du match (8,7). En quart de finale, Brest affrontera le vainqueur de FC Lorient - RC Lens.",
+        matches: [
+          { r:"W", tip:"AS Saint-Étienne (D) 2-0",      comp:"CDF", tag:"11e tour (huitièmes)" },
+        ],
       },
     ],
 
@@ -143,6 +145,7 @@ window['SEASONS_brest'] = [
       rounds: [
         { result: "W", round: "9e tour", score: "0 – 1", opponent: "AS Gamaches (E)" },
         { result: "W", round: "10e tour", score: "0 – 3", opponent: "SR Colmar (E)" },
+        { result: "W", round: "11e tour (huitièmes)", score: "2 – 0", opponent: "AS Saint-Étienne (D)" },
       ],
     },
     standingsTitle: "Classement après la 18e journée",
