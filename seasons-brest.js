@@ -116,26 +116,26 @@ window['SEASONS_brest'] = [
       },
     ],
 
-    // Stats au 31 janvier 2027 (18 journées de Ligue 1 + 3 matchs de Coupe de France, toutes compétitions)
+    // Stats au 28 février 2027 (22 journées de Ligue 1 + 4 matchs de Coupe de France, toutes compétitions)
     scorers: [
-      { name: "Ludovic Ajorque",       detail: "BU · Français · 32 ans",          value: 8 },
-      { name: "Magnetti · Doumbia · Baldé", detail: "3 joueurs à égalité",        value: 3 },
-      { name: "B. Locko · P. Mboup",   detail: "DG / MOG · ex-aequo",             value: 2 },
+      { name: "Ludovic Ajorque",       detail: "BU · Français · 33 ans",          value: 9 },
+      { name: "H. Magnetti · M. Baldé", detail: "MD / MOD · ex-aequo",            value: 4 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans",            value: 3 },
     ],
     assists: [
-      { name: "K. Lala · B. Locko",    detail: "DD / DG · ex-aequo",              value: 4 },
-      { name: "P. Mboup · M. Baldé",   detail: "MOG / MOD · ex-aequo",            value: 3 },
-      { name: "Noah Edjouma",          detail: "MOD · Français · 21 ans",         value: 2 },
+      { name: "Zogbé · Lala · Locko · Edjouma · Mboup", detail: "5 joueurs à égalité", value: 4 },
+      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 3 },
     ],
-    // Meilleures et pires moyennes : au moins 9 matchs joués (la moitié des 18 journées)
+    // Meilleures et pires moyennes : au moins 11 matchs joués (la moitié des 22 journées)
     ratings: [
-      { name: "Justin Bourgault",      detail: "DG · Français · 21 ans · 2 tit. / 12 rempl.",                     value: 7.07 },
-      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 18 tit. / 2 rempl. · 2 buts · 4 passes D.", value: 7.05 },
-      { name: "Kamory Doumbia",        detail: "MC · Malien · 23 ans · 12 tit. / 3 rempl. · 3 buts · 1 passe D.", value: 7.01 },
+      { name: "L. Zogbé · J. Bourgault", detail: "DD / DG · ex-aequo",                                            value: 7.03 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans · 16 tit. / 4 rempl. · 3 buts · 1 passe D.", value: 7.01 },
+      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 22 tit. / 3 rempl. · 2 buts · 4 passes D.", value: 7.00 },
     ],
     flops: [
-      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 3 tit. / 12 rempl.",                         value: 6.61 },
-      { name: "G. Lloris · M. Diambou", detail: "DC / MD · ex-aequo",                                              value: 6.69 },
+      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 24 tit. · 1 passe D.",                    value: 6.65 },
+      { name: "Diambou · Chotard · Baldé · Ajorque", detail: "4 joueurs à égalité",                                value: 6.71 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 4 tit. / 15 rempl. · 2 buts",                value: 6.73 },
     ],
     // Mercato
     transfers:  [
@@ -173,9 +173,9 @@ window['SEASONS_brest'] = [
       { pos:17, team:"Le Mans",        j:21, g:4, n:5, l:12, bp:16, bc:32, db:-16, pts:17, zone:"releg" },
       { pos:18, team:"ESTAC",          j:22, g:4, n:4, l:14, bp:15, bc:40, db:-25, pts:16, zone:"releg" },
     ],
-    // Effectif au 1er février 2027 (avec Manu Hernando, prêté par le Racing Santander)
+    // Effectif au 28 février 2027
     squad: [
-      { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:22 },
+      { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:23 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:29 },
       { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:24 },
       { n:"Kenny Lala",            p:"DD",   nat:"MTQ", age:35 },
@@ -188,14 +188,14 @@ window['SEASONS_brest'] = [
       { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:24 },
       { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:29 },
       { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:28 },
-      { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:23 },
+      { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:24 },
       { n:"Joris Chotard",         p:"MC",   nat:"FRA", age:25 },
       { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:21 },
       { n:"Mama Baldé",            p:"MOD",  nat:"GNB", age:31 },
       { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:22 },
       { n:"Noah Edjouma",          p:"MOD",  nat:"FRA", age:21 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:23 },
-      { n:"Ludovic Ajorque",       p:"BU",   nat:"FRA", age:32 },
+      { n:"Ludovic Ajorque",       p:"BU",   nat:"FRA", age:33 },
     ],
 
     awards: [
