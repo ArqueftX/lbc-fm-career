@@ -17,6 +17,19 @@ Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est par
 - **À chaque fin de mois**, le propriétaire envoie au moins le classement du championnat et les stats des joueurs : de quoi mettre à jour `standings`, la `position` du mois, `scorers`, `assists`, `ratings`, `flops` et `squad`.
 - Si une info manque pour qu'un récap soit juste (classement, stats des joueurs…), la demander plutôt que l'inventer.
 - Les notes de mois et les messages d'intro sont rédigés par Claude : le dire au propriétaire à chaque fois.
+- **Récap écrit d'un mois** (quand le propriétaire le demande, à donner dans un bloc de code) :
+  ```
+  Mois AAAA :
+  - Compétition, J-N (ou tour) : Adversaire, Dom|Ext : score :green_circle: | :blue_circle: | :red_circle:
+  -> Brest : Buteur (minute) & Buteur (minute)
+  -> Adversaire : Buteur (minute)
+  --> HDM : Joueur (Club)
+
+  Classé Ne en Ligue 1
+  Meilleur buteur : Prénom Nom (POSTE/Nationalité/âge ans) -> N buts
+  Meilleur passeur : Prénom Nom (POSTE/Nationalité/âge ans) -> N passes D.
+  ```
+  Score du point de vue de Brest (buts de Brest en premier). Omettre la ligne meilleur buteur ou meilleur passeur en cas d'ex-aequo.
 
 ## Règles des récaps
 

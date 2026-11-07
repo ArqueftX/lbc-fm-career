@@ -22,23 +22,38 @@
  */
 window['SEASONS_brest'] = [
 
-  /* ─── SAISON 2026/27 · EN COURS ──────────────────────── */
+  /* ─── SAISON 2027/28 · EN COURS ──────────────────────── */
   {
-    id:           "brest-2026-27",
-    year:         "2026/27",
+    id:           "brest-2027-28",
+    year:         "2027/28",
     league:       "Ligue 1",
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Avril 2027 · J29",
-    position:     13,
+    lastUpdate:   "Intersaison 2027",
+    position:     null,
+    compNames:    { CDF: "Coupe de France" },
+
+    months: [],
+  },
+
+  /* ─── SAISON 2026/27 · TERMINÉE ──────────────────────── */
+  {
+    id:           "brest-2026-27",
+    year:         "2026/27",
+    league:       "Ligue 1",
+    status:       "termine",
+    totalTeams:   18,
+    seasonLength: 34,
+    lastUpdate:   "Saison terminée",
+    position:     9,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
 
     months: [
       {
         key: "07", label: "Juillet 2026 · pré-saison",
-        note: "Arq Queft 1er du Nom prend les commandes du Stade Brestois 29 pour sa première saison sur Football Manager 27. Les dirigeants fixent le cap : faire de Brest une équipe installée durablement en Ligue 1 et se montrer compétitif en Coupe de France, tout en formant des jeunes grâce au centre de formation du club ; ils reconnaissent qu'il est encore trop tôt pour juger le travail du nouvel entraîneur. Le 22 juillet, en Autriche, le premier match amical tourne à la démonstration au Stadion Leoben : Brest écrase le DSV Leoben 6-1 (28 tirs à 4, 64 % de possession). Magnetti ouvre le score sur une passe de Baldé (14e), Chotard double la mise (21e), puis, après la réduction du score de Sturm (35e), Lala (41e), Kamory Doumbia sur une passe de Versini (58e), Diambou servi par Zogbé (60e) et Nonge sur une passe de Le Guen (80e) complètent la marque. Doumbia est élu homme du match (8,1). Seule ombre au tableau : Ludovic Ajorque se blesse de manière anodine et souffre d'une rupture du tendon rotulien ; l'avant-centre de 32 ans, confié à un spécialiste, sera absent six semaines à deux mois. Le stage autrichien se poursuit avec trois nouvelles victoires. Le 25 juillet, le SV Donau résiste longtemps (28 tirs à 6) avant de céder sur un but de Giovani Versini, servi par Diambou (0-1, 61e) ; Versini est élu homme du match (8,5). Le 27, Brest déroule à Donaufeld (1-5) : Kanté (2e) et Mboup (14e) marquent sur des passes de Joseph Nonge, avant que ce dernier ne s'offre un doublé (20e, sur une passe de Diambou, puis 43e). Holzer réduit l'écart (48e), puis Edjouma, servi par N'Guessan, clôt la marque (60e). Nonge signe un match parfait (10/10). Le jeune Djylian N'Guessan (17 ans), prêté par Saint-Étienne, se fait toutefois une foulure à la cheville (8 jours à 2 semaines d'absence). Enfin, le 30 juillet, Brest s'impose 0-4 à Krems/Getzersdorf : Baldé ouvre le score dès la 2e minute sur une passe de Chotard, Lucas Tousart, homme du match (9,0), s'offre un doublé (77e, puis 80e sur une passe de Doumbia), et Magnetti, servi par Locko, conclut (84e). La pré-saison est pour l'instant parfaite : quatre victoires en quatre matchs, 16 buts marqués et 2 encaissés.",
+        note: "Arq Queft 1er du Nom prend les commandes du Stade Brestois 29 pour sa première saison sur Football Manager 27. Les dirigeants fixent le cap : faire de Brest une équipe installée durablement en Ligue 1 et se montrer compétitif en Coupe de France, tout en formant des jeunes grâce au centre de formation du club ; ils reconnaissent qu'il est encore trop tôt pour juger le travail du nouvel entraîneur. Dans les buts, il hérite du Norvégien Egil Selvik, prêté par Watford avant son arrivée. Le 22 juillet, en Autriche, le premier match amical tourne à la démonstration au Stadion Leoben : Brest écrase le DSV Leoben 6-1 (28 tirs à 4, 64 % de possession). Magnetti ouvre le score sur une passe de Baldé (14e), Chotard double la mise (21e), puis, après la réduction du score de Sturm (35e), Lala (41e), Kamory Doumbia sur une passe de Versini (58e), Diambou servi par Zogbé (60e) et Nonge sur une passe de Le Guen (80e) complètent la marque. Doumbia est élu homme du match (8,1). Seule ombre au tableau : Ludovic Ajorque se blesse de manière anodine et souffre d'une rupture du tendon rotulien ; l'avant-centre de 32 ans, confié à un spécialiste, sera absent six semaines à deux mois. Le stage autrichien se poursuit avec trois nouvelles victoires. Le 25 juillet, le SV Donau résiste longtemps (28 tirs à 6) avant de céder sur un but de Giovani Versini, servi par Diambou (0-1, 61e) ; Versini est élu homme du match (8,5). Le 27, Brest déroule à Donaufeld (1-5) : Kanté (2e) et Mboup (14e) marquent sur des passes de Joseph Nonge, avant que ce dernier ne s'offre un doublé (20e, sur une passe de Diambou, puis 43e). Holzer réduit l'écart (48e), puis Edjouma, servi par N'Guessan, clôt la marque (60e). Nonge signe un match parfait (10/10). Le jeune Djylian N'Guessan (17 ans), prêté par Saint-Étienne, se fait toutefois une foulure à la cheville (8 jours à 2 semaines d'absence). Enfin, le 30 juillet, Brest s'impose 0-4 à Krems/Getzersdorf : Baldé ouvre le score dès la 2e minute sur une passe de Chotard, Lucas Tousart, homme du match (9,0), s'offre un doublé (77e, puis 80e sur une passe de Doumbia), et Magnetti, servi par Locko, conclut (84e). La pré-saison est pour l'instant parfaite : quatre victoires en quatre matchs, 16 buts marqués et 2 encaissés.",
         matches: [
           { r:"W", tip:"DSV Leoben (E) 1-6",            comp:"AM" },
           { r:"W", tip:"SV Donau (E) 0-1",              comp:"AM" },
@@ -126,7 +141,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "04", label: "Avril 2027", position: 13,
-        note: "Avril propose quatre journées de Ligue 1 : la réception de Lorient le vendredi 2, un déplacement à Marseille le dimanche 11, la venue du Mans le samedi 17, puis un déplacement à Lyon le samedi 24. Le 2, au stade Francis-Le Blé, Brest prend sa revanche sur Lorient, un mois après l'élimination en Coupe de France (3-1). Gautier Lloris ouvre le score sur un service de Pathé Mboup (17e), Lucas Tousart double la mise sur une passe de Joris Chotard (61e), puis Kamory Doumbia, de nouveau servi par Mboup, alourdit la marque (65e) ; Tosin réduit l'écart à la 79e. Avec deux passes décisives, Mboup est élu homme du match (7,8). La victoire coûte toutefois cher : Joris Chotard se fait une élongation à un mollet (3 semaines à 2 mois d'absence) et Ludovic Ajorque une élongation à un adducteur (9 jours à 3 semaines). Le 4, le jeune attaquant Mathis Lainé (20 ans), auteur de 17 buts en National 2 avec la réserve, prolonge jusqu'en 2030, à la grande satisfaction des supporters. Le 8, onze jeunes à l'essai signent leur premier contrat au centre de formation et rejoignent les U19 : Yacouba Kamissoko, Pape Gueye, Simone De Martino, Quentin Bourda, Kevin Braun, Lenny Dan, Alexis Boubee, Cedric Bayiha, Gérald Kanté, Franck Guillerm et Layvin Granet, tous Français et âgés de 15 ou 16 ans. Le 11, à l'Orange Vélodrome, Pathé Mboup ouvre le score (16e), mais l'OM renverse la rencontre : Højbjerg égalise à la 22e, puis Gouiri donne l'avantage aux Marseillais dès la reprise (46e), à chaque fois sur une passe de Timothy Weah, élu homme du match (8,1). Brest s'incline (2-1) malgré quatorze tirs. Le 17, sous un vent de tempête, Brest bat Le Mans à domicile (1-0) grâce à Mama Baldé, servi par Joseph Nonge juste avant la pause (43e) ; Nonge est élu homme du match (7,6), et Brest remonte à la 13e place. Le 20, le jeune Pape Gueye (16 ans), milieu des U19 arrivé au début du mois, signe son premier contrat professionnel, jusqu'en 2030. Le 22, Hugo Magnetti, remis de sa distension des ligaments du genou, reprend l'entraînement complet. Le 24, au Groupama Stadium, Brest signe sa plus belle performance de la saison face à l'OL (0-3) : Pathé Mboup ouvre le score sur une passe de Kamory Doumbia (13e), Ludovic Ajorque, de retour de blessure, double la mise sur un service de Mama Baldé (43e), puis Doumbia, servi par Mboup, scelle le succès dès la reprise (46e). Doumbia est élu homme du match (8,1), et Selvik garde sa cage inviolée face aux dix tirs cadrés lyonnais. Coup dur en fin de match : Mama Baldé se casse la cheville et sera absent deux à trois mois. Avec trois victoires en quatre matchs, Brest termine le mois à la 13e place (36 points), onze points devant Le Mans, barragiste, et à cinq points de la 6e place, toujours en deçà de l'objectif du milieu de tableau mais sur une bonne dynamique.",
+        note: "Avril propose quatre journées de Ligue 1 : la réception de Lorient le vendredi 2, un déplacement à Marseille le dimanche 11, la venue du Mans le samedi 17, puis un déplacement à Lyon le samedi 24. Le 2, au stade Francis-Le Blé, Brest prend sa revanche sur Lorient, un mois après l'élimination en Coupe de France (3-1). Gautier Lloris ouvre le score sur un service de Pathé Mboup (17e), Lucas Tousart double la mise sur une passe de Joris Chotard (61e), puis Kamory Doumbia, de nouveau servi par Mboup, alourdit la marque (65e) ; Tosin réduit l'écart à la 79e. Avec deux passes décisives, Mboup est élu homme du match (7,8). La victoire coûte toutefois cher : Joris Chotard se fait une élongation à un mollet (3 semaines à 2 mois d'absence) et Ludovic Ajorque une élongation à un adducteur (9 jours à 3 semaines). Le 4, le jeune attaquant Mathis Lainé (20 ans), auteur de 17 buts en National 2 avec la réserve, prolonge jusqu'en 2030, à la grande satisfaction des supporters. Le 8, onze jeunes à l'essai signent leur premier contrat au centre de formation et rejoignent les U19 : Yacouba Kamissoko, Pape Gueye, Simone De Martino, Quentin Bourda, Kevin Braun, Lenny Dan, Alexis Boubee, Cedric Bayiha, Gérald Kanté, Franck Guillerm et Layvin Granet, tous Français et âgés de 15 ou 16 ans. Le 11, à l'Orange Vélodrome, Pathé Mboup ouvre le score (16e), mais l'OM renverse la rencontre : Højbjerg égalise à la 22e, puis Gouiri donne l'avantage aux Marseillais dès la reprise (46e), à chaque fois sur une passe de Timothy Weah, élu homme du match (8,1). Brest s'incline (2-1) malgré quatorze tirs. Le 17, sous un vent de tempête, Brest bat Le Mans à domicile (1-0) grâce à Mama Baldé, servi par Joseph Nonge juste avant la pause (43e) ; Nonge est élu homme du match (7,6), et Brest remonte à la 13e place. Le 20, le jeune Pape Gueye (16 ans), milieu des U19 arrivé au début du mois, signe son premier contrat professionnel, jusqu'en 2030. Le 22, Hugo Magnetti, remis de sa distension des ligaments du genou, reprend l'entraînement complet. Le 24, au Groupama Stadium, Brest signe sa plus belle performance de la saison face à l'OL (0-3) : Pathé Mboup ouvre le score sur une passe de Kamory Doumbia (13e), Ludovic Ajorque, de retour de blessure, double la mise sur un service de Mama Baldé (43e), puis Doumbia, servi par Mboup, scelle le succès dès la reprise (46e). Doumbia est élu homme du match (8,1), et Selvik garde sa cage inviolée face aux dix tirs cadrés lyonnais. Coup dur en fin de match : Mama Baldé se casse la cheville et sera absent deux à trois mois. Dans la foulée, Selvik, Manu Hernando, Mama Baldé et Kamory Doumbia sont nommés dans l'équipe-type de la 29e journée, et la presse rapporte que la pression est retombée : convaincus par la série en cours, les dirigeants soutiennent pleinement leur entraîneur. Avec trois victoires en quatre matchs, Brest termine le mois à la 13e place (36 points), onze points devant Le Mans, barragiste, et à cinq points de la 6e place, toujours en deçà de l'objectif du milieu de tableau mais sur une bonne dynamique.",
         matches: [
           { r:"W", tip:"FC Lorient (D) 3-1" },
           { r:"L", tip:"OM (E) 2-1" },
@@ -134,29 +149,40 @@ window['SEASONS_brest'] = [
           { r:"W", tip:"OL (E) 0-3" },
         ],
       },
+      {
+        key: "05", label: "Mai 2027", position: 9,
+        note: "Mai, dernier mois de la saison, propose cinq journées de Ligue 1 : un déplacement à Troyes le dimanche 2, la réception d'Auxerre le 9 et du Havre le 16, un déplacement à Angers le samedi 22, puis la venue de Lens le samedi 29 pour la dernière journée. Le 2, au stade de l'Aube, l'ESTAC ouvre le score dès la 8e minute par Dermane Karim, servi par Boura, mais Lucas Tousart égalise sur une passe de Noah Edjouma (37e) avant que Ludovic Ajorque, servi par Giovani Versini, n'offre la victoire aux siens dans le temps additionnel (1-2, 90e+3) ; Karim est élu homme du match (7,4). Le 4, Brendan Chardonnet, remis de sa blessure à la hanche, reprend l'entraînement complet. Le 9, au stade Francis-Le Blé, Brest écrase Auxerre (4-1) : Ajorque ouvre le score sur une passe de Justin Bourgault (74e), Archer égalise aussitôt (75e), puis Versini, servi par Luck Zogbé (85e), Ajorque, sur un service de Versini (90e), et Joseph Nonge, de nouveau servi par Zogbé (90e+4), font la différence en fin de match. Auteur de deux passes décisives, Zogbé est élu homme du match (9,0). Grâce à ce quatrième succès consécutif, Brest grimpe à la 8e place. Les 14 et 15, deux jeunes des U19 signent leur premier contrat professionnel, jusqu'en 2030 : le milieu Simone De Martino et le défenseur Franck Guillerm, tous deux âgés de 16 ans. Le 15, Mamady Diambou met fin aux rumeurs de départ en prolongeant de deux ans, jusqu'en juin 2029. À la mi-mai, la Coupe de France rend son verdict : l'AS Monaco la remporte en finale face à Lorient, le club qui avait éliminé Brest en quart de finale. Le 16, la série s'arrête face au Havre (0-1) : Junior Mwanga, servi par Ilić, inscrit le seul but de la rencontre (25e) et est élu homme du match (8,3). Le 19, Joris Chotard reprend l'entraînement après sept semaines d'absence. Le 22, au stade Raymond-Kopa, Brest ramène un point d'Angers (0-0) ; dominés (38 % de possession, 1,41 xG contre 0,30), les Brestois doivent beaucoup à Egil Selvik, élu homme du match (7,3). Le 29, pour la dernière journée, Brest bat Lens au stade Francis-Le Blé (2-1) : Gautier Lloris (11e) puis Noah Edjouma (62e) marquent, tous deux sur des passes de Kenny Lala, élu homme du match (8,1), avant que Ganiou ne réduise l'écart (75e). Le jeune Jaden Choisy, 17 ans, est titularisé en pointe. Brest termine la saison à la 9e place avec 46 points, dans la première moitié du tableau : l'objectif du milieu de tableau fixé par les dirigeants est atteint.",
+        matches: [
+          { r:"W", tip:"ESTAC (E) 1-2" },
+          { r:"W", tip:"AJ Auxerre (D) 4-1" },
+          { r:"L", tip:"Havre AC (D) 0-1" },
+          { r:"D", tip:"Angers SCO (E) 0-0" },
+          { r:"W", tip:"RC Lens (D) 2-1" },
+        ],
+      },
     ],
 
-    // Stats au 25 avril 2027 (29 journées de Ligue 1 + 5 matchs de Coupe de France, toutes compétitions)
+    // Stats finales (34 journées de Ligue 1 + 4 matchs de Coupe de France, toutes compétitions)
     scorers: [
-      { name: "Ludovic Ajorque",       detail: "BU · Français · 33 ans",          value: 12 },
+      { name: "Ludovic Ajorque",       detail: "BU · Français · 33 ans",          value: 15 },
       { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 6 },
       { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans",            value: 5 },
     ],
     assists: [
       { name: "Pathé Mboup",           detail: "MOG · Sénégalais · 23 ans",       value: 8 },
-      { name: "Bradley Locko",         detail: "DG · Français · 24 ans",          value: 6 },
-      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 5 },
+      { name: "Zogbé · Lala · Locko",  detail: "3 joueurs à égalité",             value: 6 },
+      { name: "N. Edjouma · M. Baldé", detail: "MOD / MOD · ex-aequo",            value: 5 },
     ],
-    // Meilleures et pires moyennes : au moins 15 matchs joués (la moitié des 29 journées)
+    // Meilleures et pires moyennes : au moins 17 matchs joués (la moitié de la saison)
     ratings: [
-      { name: "Luck Zogbé",            detail: "DD · Ivoirien · 24 ans · 4 tit. / 29 rempl. · 1 but · 4 passes D.", value: 7.05 },
-      { name: "Locko · Doumbia · Bourgault", detail: "3 joueurs à égalité",                                         value: 7.03 },
-      { name: "H. Magnetti · B. Chardonnet", detail: "MD / DC · ex-aequo",                                          value: 6.88 },
+      { name: "Luck Zogbé",            detail: "DD · Ivoirien · 24 ans · 4 tit. / 33 rempl. · 1 but · 6 passes D.", value: 7.13 },
+      { name: "Justin Bourgault",      detail: "DG · Français · 21 ans · 5 tit. / 19 rempl. · 1 passe D.",         value: 7.09 },
+      { name: "B. Locko · K. Doumbia", detail: "DG / MC · ex-aequo",                                                value: 7.01 },
     ],
     flops: [
-      { name: "Lloris · Ajorque · Chotard", detail: "3 joueurs à égalité",                                          value: 6.69 },
-      { name: "Mamady Diambou",        detail: "MD · Malien · 24 ans · 5 tit. / 22 rempl.",                        value: 6.73 },
-      { name: "Selvik · Lala · Tousart", detail: "3 joueurs à égalité",                                             value: 6.78 },
+      { name: "G. Lloris · J. Chotard", detail: "DC / MC · ex-aequo",                                               value: 6.73 },
+      { name: "Selvik · Diambou · Ajorque", detail: "3 joueurs à égalité",                                          value: 6.76 },
+      { name: "Lucas Tousart",         detail: "MD · Français · 30 ans · 28 tit. / 6 rempl. · 3 buts · 1 passe D.", value: 6.80 },
     ],
     // Mercato
     transfers:  [
@@ -174,49 +200,50 @@ window['SEASONS_brest'] = [
         { result: "L", round: "Quarts de finale", score: "1 – 0", opponent: "FC Lorient (E)" },
       ],
     },
-    standingsTitle: "Classement après la 29e journée",
+    standingsTitle: "Classement final",
     standings: [
-      { pos:1,  team:"PSG",            j:29, g:20, n:3, l:6, bp:68, bc:29, db:39, pts:63, zone:"ucl" },
-      { pos:2,  team:"Toulouse FC",    j:28, g:14, n:13, l:1, bp:43, bc:21, db:22, pts:55, zone:"ucl" },
-      { pos:3,  team:"AS Monaco",      j:29, g:16, n:6, l:7, bp:54, bc:33, db:21, pts:54, zone:"ucl" },
-      { pos:4,  team:"LOSC",           j:29, g:15, n:8, l:6, bp:44, bc:27, db:17, pts:53, zone:"ucl" },
-      { pos:5,  team:"OM",             j:28, g:11, n:8, l:9, bp:32, bc:28, db:4, pts:41, zone:"uel" },
-      { pos:6,  team:"FC Lorient",     j:29, g:10, n:11, l:8, bp:22, bc:22, db:0, pts:41, zone:"uecl" },
-      { pos:7,  team:"OGC Nice",       j:29, g:11, n:7, l:11, bp:32, bc:36, db:-4, pts:40 },
-      { pos:8,  team:"AJ Auxerre",     j:28, g:10, n:9, l:9, bp:35, bc:33, db:2, pts:39 },
-      { pos:9,  team:"Paris FC",       j:29, g:9, n:10, l:10, bp:35, bc:32, db:3, pts:37 },
-      { pos:10, team:"Rennes",         j:28, g:11, n:4, l:13, bp:37, bc:40, db:-3, pts:37 },
-      { pos:11, team:"RC Lens",        j:29, g:10, n:7, l:12, bp:33, bc:36, db:-3, pts:37 },
-      { pos:12, team:"OL",             j:29, g:9, n:10, l:10, bp:35, bc:39, db:-4, pts:37 },
-      { pos:13, team:"Brest",          j:29, g:10, n:6, l:13, bp:39, bc:43, db:-4, pts:36, highlight:true },
-      { pos:14, team:"Angers SCO",     j:29, g:9, n:7, l:13, bp:33, bc:45, db:-12, pts:34 },
-      { pos:15, team:"Strasbourg",     j:28, g:7, n:10, l:11, bp:31, bc:41, db:-10, pts:31 },
-      { pos:16, team:"Le Mans",        j:29, g:6, n:7, l:16, bp:23, bc:41, db:-18, pts:25, zone:"releg-playoff" },
-      { pos:17, team:"Havre AC",       j:29, g:7, n:4, l:18, bp:20, bc:41, db:-21, pts:25, zone:"releg" },
-      { pos:18, team:"ESTAC",          j:28, g:5, n:6, l:17, bp:19, bc:48, db:-29, pts:21, zone:"releg" },
+      { pos:1,  team:"PSG",            j:34, g:24, n:3, l:7, bp:79, bc:31, db:48, pts:75, zone:"ucl", champion:true },
+      { pos:2,  team:"Toulouse FC",    j:34, g:17, n:15, l:2, bp:54, bc:29, db:25, pts:66, zone:"ucl" },
+      { pos:3,  team:"AS Monaco",      j:34, g:18, n:7, l:9, bp:62, bc:40, db:22, pts:61, zone:"ucl" },
+      { pos:4,  team:"LOSC",           j:34, g:15, n:10, l:9, bp:50, bc:36, db:14, pts:55, zone:"ucl" },
+      { pos:5,  team:"OM",             j:34, g:14, n:10, l:10, bp:42, bc:36, db:6, pts:52, zone:"uel" },
+      { pos:6,  team:"Rennes",         j:34, g:14, n:7, l:13, bp:48, bc:44, db:4, pts:49, zone:"uel" },
+      { pos:7,  team:"FC Lorient",     j:34, g:12, n:12, l:10, bp:25, bc:26, db:-1, pts:48, zone:"uecl" },
+      { pos:8,  team:"AJ Auxerre",     j:34, g:12, n:11, l:11, bp:45, bc:46, db:-1, pts:47 },
+      { pos:9,  team:"Brest",          j:34, g:13, n:7, l:14, bp:47, bc:47, db:0, pts:46, highlight:true },
+      { pos:10, team:"RC Lens",        j:34, g:12, n:8, l:14, bp:39, bc:43, db:-4, pts:44 },
+      { pos:11, team:"OGC Nice",       j:34, g:11, n:11, l:12, bp:37, bc:44, db:-7, pts:44 },
+      { pos:12, team:"OL",             j:34, g:10, n:11, l:13, bp:37, bc:45, db:-8, pts:41 },
+      { pos:13, team:"Paris FC",       j:34, g:9, n:13, l:12, bp:42, bc:42, db:0, pts:40 },
+      { pos:14, team:"Strasbourg",     j:34, g:9, n:12, l:13, bp:38, bc:49, db:-11, pts:39 },
+      { pos:15, team:"Angers SCO",     j:34, g:10, n:9, l:15, bp:37, bc:50, db:-13, pts:39 },
+      { pos:16, team:"Havre AC",       j:34, g:9, n:5, l:20, bp:25, bc:46, db:-21, pts:32, zone:"releg-playoff" },
+      { pos:17, team:"Le Mans",        j:34, g:7, n:9, l:18, bp:30, bc:49, db:-19, pts:30, zone:"releg" },
+      { pos:18, team:"ESTAC",          j:34, g:7, n:6, l:21, bp:24, bc:58, db:-34, pts:27, zone:"releg" },
     ],
-    // Effectif au 25 avril 2027
+    // Effectif en fin de saison (29 mai 2027), avec Jaden Choisy, intégré au groupe pro
     squad: [
       { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:23 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:29 },
       { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:24 },
       { n:"Kenny Lala",            p:"DD",   nat:"MTQ", age:35 },
-      { n:"Bradley Locko",         p:"DG",   nat:"FRA", age:24 },
+      { n:"Bradley Locko",         p:"DG",   nat:"FRA", age:25 },
       { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:21 },
       { n:"Gautier Lloris",        p:"DC",   nat:"FRA", age:31 },
       { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:32 },
       { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:20 },
       { n:"Manu Hernando",         p:"DC",   nat:"ESP", age:28 },
       { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:24 },
-      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:29 },
+      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:30 },
       { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:28 },
       { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:24 },
       { n:"Joris Chotard",         p:"MC",   nat:"FRA", age:25 },
-      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:21 },
+      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:22 },
       { n:"Mama Baldé",            p:"MOD",  nat:"GNB", age:31 },
       { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:23 },
       { n:"Noah Edjouma",          p:"MOD",  nat:"FRA", age:21 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:23 },
+      { n:"Jaden Choisy",          p:"MOD",  nat:"FRA", age:17 },
       { n:"Ludovic Ajorque",       p:"BU",   nat:"FRA", age:33 },
     ],
 
@@ -224,6 +251,7 @@ window['SEASONS_brest'] = [
       { label:"Équipe-type de la semaine", winner:"Bradley Locko", period:"14e journée", detail:"Ligue 1 · arrière gauche · 1 but contre l'ESTAC (2-0), note de 8,1" },
       { label:"But du mois", winner:"Bradley Locko", period:"Décembre 2026", detail:"Ligue 1 · superbe frappe contre l'ESTAC (2-0), le 12 décembre" },
       { label:"Équipe-type de la semaine", winner:"Luck Zogbé", period:"24e journée", detail:"Ligue 1 · latéral droit, note de 7,3" },
+      { label:"Équipe-type de la semaine", winner:"Selvik · Hernando · M. Baldé · Doumbia", period:"29e journée", detail:"Ligue 1 · quatre Brestois après la victoire à Lyon (0-3)" },
     ],
 
     records: [
@@ -233,6 +261,11 @@ window['SEASONS_brest'] = [
       { key:"but-plus-rapide", label:"But le plus rapide", value:"39 s", detail:"Ludovic Ajorque · au Paris FC (Ligue 1, victoire 1-2)", date:"7 mars 2027" },
     ],
 
-    // splash: { ... }  ← à ajouter à la fin de la saison
+    splash: {
+      eyebrow:  "2026/27 · Stade Brestois 29 · Saison 1",
+      lines:    ["NEUVIÈMES.", "OBJECTIF ATTEINT."],
+      sub:      "Ligue 1 · 9e · 46 pts · Quarts de finale de la Coupe de France",
+      tagline:  "Pour sa première saison, Arq Queft 1er du Nom a vite installé Brest en Ligue 1, au point que les dirigeants ont relevé l'objectif en janvier : finir en milieu de tableau. Après un hiver difficile et une pression grandissante en mars, sept victoires lors des douze dernières journées ont ramené les Brestois dans la première moitié du classement. 9e avec 46 points, un quart de finale de Coupe de France, et Ludovic Ajorque meilleur buteur avec 15 buts : l'objectif est atteint.",
+    },
   },
 ]
