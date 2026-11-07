@@ -105,7 +105,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "02", label: "Février 2027",
-        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27.",
+        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27. Le 1er février, Brest se renforce en défense centrale : l'Espagnol Manu Hernando (28 ans) arrive en prêt du Racing Santander jusqu'à la fin de la saison, avec une option d'achat de 575 000 €. Dirigeants comme supporters saluent l'opération.",
         matches: [],
       },
     ],
@@ -131,8 +131,10 @@ window['SEASONS_brest'] = [
       { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 3 tit. / 12 rempl.",                         value: 6.61 },
       { name: "G. Lloris · M. Diambou", detail: "DC / MD · ex-aequo",                                              value: 6.69 },
     ],
-    // Mercato d'été 2026
-    transfers:  [],
+    // Mercato
+    transfers:  [
+      { type: "loan", name: "Manu Hernando", from: "Prêt du Racing Santander jusqu'à la fin de la saison, avec option d'achat de 575 000 € (DC · Espagnol · 28 ans)", date: "Févr. 2027" },
+    ],
     departures: [
       { type: "loan", name: "Djylian N'Guessan",  to: "Fin de prêt, retour à Saint-Étienne (BU · Français · 18 ans)", date: "Déc. 2026" },
     ],
@@ -164,7 +166,7 @@ window['SEASONS_brest'] = [
       { pos:17, team:"Havre AC",       j:18, g:5, n:1, l:12, bp:11, bc:27, db:-16, pts:16, zone:"releg" },
       { pos:18, team:"ESTAC",          j:17, g:4, n:2, l:11, bp:13, bc:33, db:-20, pts:14, zone:"releg" },
     ],
-    // Effectif au 31 janvier 2027
+    // Effectif au 1er février 2027 (avec Manu Hernando, prêté par le Racing Santander)
     squad: [
       { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:22 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:29 },
@@ -175,6 +177,7 @@ window['SEASONS_brest'] = [
       { n:"Gautier Lloris",        p:"DC",   nat:"FRA", age:31 },
       { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:32 },
       { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:20 },
+      { n:"Manu Hernando",         p:"DC",   nat:"ESP", age:28 },
       { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:24 },
       { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:29 },
       { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:28 },
