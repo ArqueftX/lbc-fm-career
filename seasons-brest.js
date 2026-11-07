@@ -30,7 +30,7 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Février 2027 · J22",
+    lastUpdate:   "Mars 2027 · J25",
     position:     14,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
@@ -105,7 +105,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "02", label: "Février 2027", position: 14,
-        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27. Le 1er février, Brest se renforce en défense centrale : l'Espagnol Manu Hernando (28 ans) arrive en prêt du Racing Santander jusqu'à la fin de la saison, avec une option d'achat de 575 000 €. Dirigeants comme supporters saluent l'opération. Le 3, au stade Francis-Le Blé et sous un vent violent, Brest se qualifie pour les quarts de finale de la Coupe de France en battant Saint-Étienne (2-0). Le latéral Luck Zogbé est encore décisif : il sert Noah Edjouma pour l'ouverture du score (14e), puis Joseph Nonge pour le break (34e). Les Brestois dominent la rencontre (19 tirs à 12, sept cadrés contre deux) et Selvik garde sa cage inviolée. Pour sa première apparition, Manu Hernando se montre solide en défense centrale (7,6). Avec ses deux passes décisives, Zogbé est élu homme du match (8,7). Lorient ayant éliminé Lens, le quart de finale sera un derby breton : Brest se déplacera au stade du Moustoir le mercredi 3 mars. Bonne nouvelle le 6 : Giovani Versini, blessé au cartilage du genou depuis décembre, termine sa rééducation et reprend l'entraînement complet ; encore loin de sa meilleure condition, il devra toutefois être ménagé. Le soir même, à l'Allianz Riviera, Brest arrache un point à Nice (1-1). Mama Baldé ouvre le score sur un service de Pathé Mboup (23e), mais Jansson, servi par Boudaoui, égalise à la 84e. Les Niçois ont multiplié les tirs (18 à 11, dix cadrés), mais Selvik a tenu bon, et c'est Brest qui s'est procuré le plus d'occasions franches (deux contre une). Mboup, passeur décisif, est élu homme du match (8,1), mais il paie cher son match : victime d'un tacle appuyé, il souffre d'une élongation à un adducteur (7 jours à 2 semaines d'absence) et devrait manquer le derby contre Rennes. Le 10, le tirage des demi-finales de la Coupe de France est effectué : en cas de victoire à Lorient, Brest affrontera le vainqueur de Strasbourg - Reims ; l'autre demi-finale opposera le vainqueur de Pau FC - AS Monaco à celui de PSG - AJ Auxerre. Le 12, le derby breton tourne mal au stade Francis-Le Blé : privé de Mboup, Brest s'incline face à Rennes (1-2). Thomasson, servi par Merlin, ouvre le score dès la 7e minute, et les Rennais confisquent le ballon (60 % de possession). Ludovic Ajorque égalise enfin à la 74e, servi par Luck Zogbé, mais Lepaul, sur une passe de Szymański, offre la victoire aux visiteurs à la 87e ; l'attaquant rennais est élu homme du match (7,5). Brest reste 13e (23 points) après la 20e journée. Coup dur le 18 : Brendan Chardonnet, pilier de la défense centrale, se blesse à la hanche à l'entraînement après une collision avec un coéquipier. Confié à un spécialiste, il sera absent deux à trois mois. L'arrivée de Manu Hernando prend tout son sens. Le 21, le déplacement au Parc des Princes vire à la correction : Brest s'incline lourdement face au PSG (6-1). Fabián, servi par Désiré Doué, ouvre le score dès la 2e minute, puis double la mise sur une passe de Ferran Torres (52e). Hugo Magnetti, sur un service de Noah Edjouma, réduit l'écart (58e), mais les Parisiens déroulent ensuite : Akliouche, sur une passe de Vitinha (66e), Ferran Torres, servi par Doué (68e), Doué lui-même, sur un service de Perrone (71e), puis à nouveau Akliouche, servi par Torres (87e), alourdissent la marque. Auteur d'un but et de deux passes décisives, Ferran Torres est élu homme du match (9,7). Le 27, au stade Francis-Le Blé, le leader monégasque frappe d'entrée : Minamino, servi par Balogun, ouvre le score dès la 4e minute, puis Balogun, sur une passe de Vanderson, double la mise (27e). Dominés (33 % de possession, 2,58 xG contre 0,95), les Brestois ne réduisent l'écart qu'au bout du temps additionnel par Joseph Nonge, servi par Edjouma (90e+2) ; Balogun est élu homme du match (8,5). Février se termine sans la moindre victoire en Ligue 1 (un nul et trois défaites), et Brest glisse à la 14e place (23 points), à cinq points de la zone de barrage. Seule éclaircie du mois : la qualification pour les quarts de finale de la Coupe de France. Dépassé au classement par l'OL, l'OM et Rennes, Brest recule à la 13e place (23 points) après la 19e journée.",
+        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27. Le 1er février, Brest se renforce en défense centrale : l'Espagnol Manu Hernando (28 ans) arrive en prêt du Racing Santander jusqu'à la fin de la saison, avec une option d'achat de 575 000 €. Dirigeants comme supporters saluent l'opération. Le 3, au stade Francis-Le Blé et sous un vent violent, Brest se qualifie pour les quarts de finale de la Coupe de France en battant Saint-Étienne (2-0). Le latéral Luck Zogbé est encore décisif : il sert Noah Edjouma pour l'ouverture du score (14e), puis Joseph Nonge pour le break (34e). Les Brestois dominent la rencontre (19 tirs à 12, sept cadrés contre deux) et Selvik garde sa cage inviolée. Pour sa première apparition, Manu Hernando se montre solide en défense centrale (7,6). Avec ses deux passes décisives, Zogbé est élu homme du match (8,7). Lorient ayant éliminé Lens, le quart de finale sera un derby breton : Brest se déplacera au stade du Moustoir le mercredi 3 mars. Bonne nouvelle le 6 : Giovani Versini, blessé au cartilage du genou depuis décembre, termine sa rééducation et reprend l'entraînement complet ; encore loin de sa meilleure condition, il devra toutefois être ménagé. Le soir même, à l'Allianz Riviera, Brest arrache un point à Nice (1-1). Mama Baldé ouvre le score sur un service de Pathé Mboup (23e), mais Jansson, servi par Boudaoui, égalise à la 84e. Les Niçois ont multiplié les tirs (18 à 11, dix cadrés), mais Selvik a tenu bon, et c'est Brest qui s'est procuré le plus d'occasions franches (deux contre une). Mboup, passeur décisif, est élu homme du match (8,1), mais il paie cher son match : victime d'un tacle appuyé, il souffre d'une élongation à un adducteur (7 jours à 2 semaines d'absence) et devrait manquer le derby contre Rennes. Dépassé au classement par l'OL, l'OM et Rennes, Brest recule à la 13e place (23 points) après la 19e journée. Le 10, le tirage des demi-finales de la Coupe de France est effectué : en cas de victoire à Lorient, Brest affrontera le vainqueur de Strasbourg - Reims ; l'autre demi-finale opposera le vainqueur de Pau FC - AS Monaco à celui de PSG - AJ Auxerre. Le 12, le derby breton tourne mal au stade Francis-Le Blé : privé de Mboup, Brest s'incline face à Rennes (1-2). Thomasson, servi par Merlin, ouvre le score dès la 7e minute, et les Rennais confisquent le ballon (60 % de possession). Ludovic Ajorque égalise enfin à la 74e, servi par Luck Zogbé, mais Lepaul, sur une passe de Szymański, offre la victoire aux visiteurs à la 87e ; l'attaquant rennais est élu homme du match (7,5). Brest reste 13e (23 points) après la 20e journée. Coup dur le 18 : Brendan Chardonnet, pilier de la défense centrale, se blesse à la hanche à l'entraînement après une collision avec un coéquipier. Confié à un spécialiste, il sera absent deux à trois mois. L'arrivée de Manu Hernando prend tout son sens. Le 21, le déplacement au Parc des Princes vire à la correction : Brest s'incline lourdement face au PSG (6-1). Fabián, servi par Désiré Doué, ouvre le score dès la 2e minute, puis double la mise sur une passe de Ferran Torres (52e). Hugo Magnetti, sur un service de Noah Edjouma, réduit l'écart (58e), mais les Parisiens déroulent ensuite : Akliouche, sur une passe de Vitinha (66e), Ferran Torres, servi par Doué (68e), Doué lui-même, sur un service de Perrone (71e), puis à nouveau Akliouche, servi par Torres (87e), alourdissent la marque. Auteur d'un but et de deux passes décisives, Ferran Torres est élu homme du match (9,7). Le 27, au stade Francis-Le Blé, le leader monégasque frappe d'entrée : Minamino, servi par Balogun, ouvre le score dès la 4e minute, puis Balogun, sur une passe de Vanderson, double la mise (27e). Dominés (33 % de possession, 2,58 xG contre 0,95), les Brestois ne réduisent l'écart qu'au bout du temps additionnel par Joseph Nonge, servi par Edjouma (90e+2) ; Balogun est élu homme du match (8,5). Février se termine sans la moindre victoire en Ligue 1 (un nul et trois défaites), et Brest glisse à la 14e place (23 points), à cinq points de la zone de barrage. Seule éclaircie du mois : la qualification pour les quarts de finale de la Coupe de France.",
         matches: [
           { r:"W", tip:"AS Saint-Étienne (D) 2-0",      comp:"CDF", tag:"11e tour (huitièmes)" },
           { r:"D", tip:"OGC Nice (E) 1-1" },
@@ -114,28 +114,39 @@ window['SEASONS_brest'] = [
           { r:"L", tip:"AS Monaco (D) 1-2" },
         ],
       },
+      {
+        key: "03", label: "Mars 2027", position: 14,
+        note: "Le 3 mars, au stade du Moustoir, l'aventure en Coupe de France s'arrête en quart de finale : dans un derby breton serré, Brest s'incline face à Lorient (1-0). Les Merlus confisquent le ballon (68 % de possession) sans se montrer dangereux, mais Ibrahima Baldé, servi par Théo Le Bris, fait la différence à la 79e ; Le Bris est élu homme du match (7,9). Le 7, Brest réagit en Ligue 1 au stade Jean-Bouin face au Paris FC (1-2). Ludovic Ajorque, servi par Mama Baldé, ouvre le score après 39 secondes de jeu : c'est le but le plus rapide de l'histoire du club. Ikoné égalise à la 61e, mais Noah Edjouma, sur un service de Bradley Locko, offre la victoire aux siens dans le temps additionnel (90e+4). Mama Baldé est élu homme du match (7,9). Brest renoue avec la victoire en championnat, une première depuis le 30 janvier, mais perd Hugo Magnetti, touché aux ligaments du genou (5 à 8 semaines d'absence). Le 13, au stade Francis-Le Blé, Ajorque ouvre encore le score face à Lille, sur une passe de Locko (12e), mais Olivier Giroud renverse la rencontre avant la pause, servi par Ethan Mbappé (26e) puis par Bakwa (44e) ; Brest s'incline (1-2) malgré neuf tirs cadrés, et Giroud est élu homme du match (8,7). Le soir même, la presse évoque un entraîneur de plus en plus sous pression : les résultats sont jugés en deçà des attentes, et les dirigeants étudieraient discrètement d'autres options. Luck Zogbé est tout de même nommé dans l'équipe-type de la 24e journée. Le 21, au Stadium de Toulouse, Brest ramène un bon point face au deuxième du championnat (1-1) : Hidalgo, servi par Mário Rui, ouvre le score (71e), mais Mama Baldé égalise six minutes plus tard sur une passe de Pathé Mboup (77e). Les Brestois se sont procuré le plus d'occasions (2,41 xG contre 0,82), et Mboup est élu homme du match (7,6). Brest termine le mois à la 14e place (27 points), trois points devant Le Havre, barragiste, loin de l'objectif du milieu de tableau fixé par les dirigeants.",
+        matches: [
+          { r:"L", tip:"FC Lorient (E) 1-0",            comp:"CDF", tag:"Quarts de finale" },
+          { r:"W", tip:"Paris FC (E) 1-2" },
+          { r:"L", tip:"LOSC (D) 1-2" },
+          { r:"D", tip:"Toulouse FC (E) 1-1" },
+        ],
+      },
     ],
 
-    // Stats au 28 février 2027 (22 journées de Ligue 1 + 4 matchs de Coupe de France, toutes compétitions)
+    // Stats au 21 mars 2027 (25 journées de Ligue 1 + 5 matchs de Coupe de France, toutes compétitions)
     scorers: [
-      { name: "Ludovic Ajorque",       detail: "BU · Français · 33 ans",          value: 9 },
-      { name: "H. Magnetti · M. Baldé", detail: "MD / MOD · ex-aequo",            value: 4 },
-      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans",            value: 3 },
+      { name: "Ludovic Ajorque",       detail: "BU · Français · 33 ans",          value: 11 },
+      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 5 },
+      { name: "Hugo Magnetti",         detail: "MD · Français · 28 ans",          value: 4 },
     ],
     assists: [
-      { name: "Zogbé · Lala · Locko · Edjouma · Mboup", detail: "5 joueurs à égalité", value: 4 },
-      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 3 },
+      { name: "Bradley Locko",         detail: "DG · Français · 24 ans",          value: 6 },
+      { name: "Pathé Mboup",           detail: "MOG · Sénégalais · 23 ans",       value: 5 },
+      { name: "Zogbé · Lala · Edjouma · Baldé", detail: "4 joueurs à égalité",    value: 4 },
     ],
-    // Meilleures et pires moyennes : au moins 11 matchs joués (la moitié des 22 journées)
+    // Meilleures et pires moyennes : au moins 13 matchs joués (la moitié des 25 journées)
     ratings: [
-      { name: "L. Zogbé · J. Bourgault", detail: "DD / DG · ex-aequo",                                            value: 7.03 },
-      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans · 16 tit. / 4 rempl. · 3 buts · 1 passe D.", value: 7.01 },
-      { name: "Bradley Locko",         detail: "DG · Français · 24 ans · 22 tit. / 3 rempl. · 2 buts · 4 passes D.", value: 7.00 },
+      { name: "Luck Zogbé",            detail: "DD · Ivoirien · 24 ans · 4 tit. / 25 rempl. · 1 but · 4 passes D.", value: 7.05 },
+      { name: "J. Bourgault · B. Locko", detail: "DG / DG · ex-aequo",                                             value: 7.03 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans · 20 tit. / 4 rempl. · 3 buts · 1 passe D.", value: 6.98 },
     ],
     flops: [
-      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 24 tit. · 1 passe D.",                    value: 6.65 },
-      { name: "Diambou · Chotard · Baldé · Ajorque", detail: "4 joueurs à égalité",                                value: 6.71 },
-      { name: "Joseph Nonge",          detail: "MC · Belge · 21 ans · 4 tit. / 15 rempl. · 2 buts",                value: 6.73 },
+      { name: "Gautier Lloris",        detail: "DC · Français · 31 ans · 27 tit. · 1 passe D.",                    value: 6.65 },
+      { name: "J. Chotard · L. Ajorque", detail: "MC / BU · ex-aequo",                                             value: 6.67 },
+      { name: "Egil Selvik",           detail: "GB · Norvégien · 29 ans · 27 tit.",                                value: 6.71 },
     ],
     // Mercato
     transfers:  [
@@ -150,30 +161,31 @@ window['SEASONS_brest'] = [
         { result: "W", round: "9e tour", score: "0 – 1", opponent: "AS Gamaches (E)" },
         { result: "W", round: "10e tour", score: "0 – 3", opponent: "SR Colmar (E)" },
         { result: "W", round: "11e tour (huitièmes)", score: "2 – 0", opponent: "AS Saint-Étienne (D)" },
+        { result: "L", round: "Quarts de finale", score: "1 – 0", opponent: "FC Lorient (E)" },
       ],
     },
-    standingsTitle: "Classement après la 22e journée",
+    standingsTitle: "Classement après la 25e journée",
     standings: [
-      { pos:1,  team:"AS Monaco",      j:22, g:13, n:5, l:4, bp:43, bc:25, db:18, pts:44, zone:"ucl" },
-      { pos:2,  team:"PSG",            j:22, g:13, n:3, l:6, bp:52, bc:26, db:26, pts:42, zone:"ucl" },
-      { pos:3,  team:"Toulouse FC",    j:21, g:11, n:9, l:1, bp:35, bc:16, db:19, pts:42, zone:"ucl" },
-      { pos:4,  team:"LOSC",           j:22, g:12, n:6, l:4, bp:36, bc:18, db:18, pts:42, zone:"ucl" },
-      { pos:5,  team:"FC Lorient",     j:22, g:8, n:10, l:4, bp:16, bc:15, db:1, pts:34, zone:"uel" },
-      { pos:6,  team:"Paris FC",       j:21, g:8, n:8, l:5, bp:27, bc:19, db:8, pts:32, zone:"uecl" },
-      { pos:7,  team:"OM",             j:21, g:9, n:3, l:9, bp:24, bc:22, db:2, pts:30 },
-      { pos:8,  team:"OGC Nice",       j:22, g:8, n:6, l:8, bp:28, bc:31, db:-3, pts:30 },
-      { pos:9,  team:"AJ Auxerre",     j:22, g:7, n:8, l:7, bp:27, bc:25, db:2, pts:29 },
-      { pos:10, team:"Rennes",         j:21, g:9, n:2, l:10, bp:28, bc:29, db:-1, pts:29 },
-      { pos:11, team:"Angers SCO",     j:22, g:8, n:5, l:9, bp:27, bc:33, db:-6, pts:29 },
-      { pos:12, team:"OL",             j:21, g:7, n:6, l:8, bp:26, bc:29, db:-3, pts:27 },
-      { pos:13, team:"RC Lens",        j:22, g:6, n:7, l:9, bp:21, bc:29, db:-8, pts:25 },
-      { pos:14, team:"Brest",          j:22, g:6, n:5, l:11, bp:27, bc:36, db:-9, pts:23, highlight:true },
-      { pos:15, team:"Strasbourg",     j:21, g:4, n:9, l:8, bp:23, bc:29, db:-6, pts:21 },
-      { pos:16, team:"Havre AC",       j:21, g:5, n:3, l:13, bp:13, bc:30, db:-17, pts:18, zone:"releg-playoff" },
-      { pos:17, team:"Le Mans",        j:21, g:4, n:5, l:12, bp:16, bc:32, db:-16, pts:17, zone:"releg" },
-      { pos:18, team:"ESTAC",          j:22, g:4, n:4, l:14, bp:15, bc:40, db:-25, pts:16, zone:"releg" },
+      { pos:1,  team:"PSG",            j:25, g:16, n:3, l:6, bp:62, bc:29, db:33, pts:51, zone:"ucl" },
+      { pos:2,  team:"Toulouse FC",    j:25, g:13, n:11, l:1, bp:39, bc:18, db:21, pts:50, zone:"ucl" },
+      { pos:3,  team:"AS Monaco",      j:25, g:14, n:6, l:5, bp:46, bc:28, db:18, pts:48, zone:"ucl" },
+      { pos:4,  team:"LOSC",           j:25, g:13, n:7, l:5, bp:39, bc:23, db:16, pts:46, zone:"ucl" },
+      { pos:5,  team:"Paris FC",       j:25, g:9, n:9, l:7, bp:34, bc:26, db:8, pts:36, zone:"uel" },
+      { pos:6,  team:"OGC Nice",       j:25, g:10, n:6, l:9, bp:30, bc:32, db:-2, pts:36, zone:"uecl" },
+      { pos:7,  team:"AJ Auxerre",     j:25, g:9, n:8, l:8, bp:32, bc:29, db:3, pts:35 },
+      { pos:8,  team:"FC Lorient",     j:25, g:8, n:11, l:6, bp:16, bc:18, db:-2, pts:35 },
+      { pos:9,  team:"OM",             j:25, g:9, n:7, l:9, bp:28, bc:26, db:2, pts:34 },
+      { pos:10, team:"Rennes",         j:25, g:10, n:4, l:11, bp:34, bc:36, db:-2, pts:34 },
+      { pos:11, team:"OL",             j:25, g:8, n:8, l:9, bp:32, bc:34, db:-2, pts:32 },
+      { pos:12, team:"Angers SCO",     j:25, g:9, n:5, l:11, bp:29, bc:36, db:-7, pts:32 },
+      { pos:13, team:"RC Lens",        j:25, g:8, n:7, l:10, bp:27, bc:31, db:-4, pts:31 },
+      { pos:14, team:"Brest",          j:25, g:7, n:6, l:12, bp:31, bc:40, db:-9, pts:27, highlight:true },
+      { pos:15, team:"Strasbourg",     j:25, g:6, n:9, l:10, bp:27, bc:37, db:-10, pts:27 },
+      { pos:16, team:"Havre AC",       j:25, g:7, n:3, l:15, bp:18, bc:34, db:-16, pts:24, zone:"releg-playoff" },
+      { pos:17, team:"Le Mans",        j:25, g:5, n:5, l:15, bp:21, bc:39, db:-18, pts:20, zone:"releg" },
+      { pos:18, team:"ESTAC",          j:25, g:4, n:5, l:16, bp:16, bc:45, db:-29, pts:17, zone:"releg" },
     ],
-    // Effectif au 28 février 2027
+    // Effectif au 21 mars 2027
     squad: [
       { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:23 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:29 },
@@ -192,7 +204,7 @@ window['SEASONS_brest'] = [
       { n:"Joris Chotard",         p:"MC",   nat:"FRA", age:25 },
       { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:21 },
       { n:"Mama Baldé",            p:"MOD",  nat:"GNB", age:31 },
-      { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:22 },
+      { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:23 },
       { n:"Noah Edjouma",          p:"MOD",  nat:"FRA", age:21 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:23 },
       { n:"Ludovic Ajorque",       p:"BU",   nat:"FRA", age:33 },
@@ -201,12 +213,14 @@ window['SEASONS_brest'] = [
     awards: [
       { label:"Équipe-type de la semaine", winner:"Bradley Locko", period:"14e journée", detail:"Ligue 1 · arrière gauche · 1 but contre l'ESTAC (2-0), note de 8,1" },
       { label:"But du mois", winner:"Bradley Locko", period:"Décembre 2026", detail:"Ligue 1 · superbe frappe contre l'ESTAC (2-0), le 12 décembre" },
+      { label:"Équipe-type de la semaine", winner:"Luck Zogbé", period:"24e journée", detail:"Ligue 1 · latéral droit, note de 7,3" },
     ],
 
     records: [
       { key:"buts-match-l1", label:"Buts dans un match de championnat", value:"8", detail:"4-4 à Strasbourg (Ligue 1) · ancien record : 3-2 à Lille le 17 octobre 2026", date:"22 nov. 2026" },
       { key:"plus-jeune-joueur", label:"Plus jeune joueur à disputer un match", value:"16 ans et 235 jours", detail:"Jaden Choisy · à Colmar (Coupe de France, 10e tour) · ancien record : Lenny Pintor, 17 ans et 132 jours face à Quevilly-Rouen · également record de la Coupe de France (Axel Koukaba, 16 ans et 322 jours avec Guingamp)", date:"9 janv. 2027" },
       { key:"plus-jeune-buteur", label:"Plus jeune buteur", value:"16 ans et 235 jours", detail:"Jaden Choisy · à Colmar (Coupe de France, 10e tour) · également record de la Coupe de France (Mezian Mesloub, 17 ans et 42 jours avec Metz)", date:"9 janv. 2027" },
+      { key:"but-plus-rapide", label:"But le plus rapide", value:"39 s", detail:"Ludovic Ajorque · au Paris FC (Ligue 1, victoire 1-2)", date:"7 mars 2027" },
     ],
 
     // splash: { ... }  ← à ajouter à la fin de la saison
