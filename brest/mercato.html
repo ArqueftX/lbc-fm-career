@@ -120,11 +120,11 @@ function row(t, isArr) {
   const b = isArr ? badgeArr(t.type) : badgeDep(t.type)
   const club = isArr ? t.from : t.to
   return `
-    <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+    <div class="merc-row" style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)">
       <span class="bc" style="font-size:9px;letter-spacing:2px;padding:3px 8px;font-weight:700;flex-shrink:0;background:${b.bg};border:1px solid ${b.border};color:${b.color}">${b.label}</span>
-      <span style="flex:1;font-size:13px;font-weight:500">${t.name}</span>
-      <span class="bc" style="font-size:12px;color:var(--muted);flex-shrink:0">${club}</span>
-      ${t.amount ? `<span class="bb" style="font-size:15px;color:var(--gold);flex-shrink:0;min-width:60px;text-align:right">${t.amount}</span>` : '<span style="min-width:60px"></span>'}
+      <span style="flex:1;min-width:90px;font-size:13px;font-weight:500">${t.name}</span>
+      <span class="bc merc-club" style="font-size:12px;color:var(--muted);flex:0 1 auto;min-width:0;text-align:right;overflow-wrap:anywhere">${club}</span>
+      ${t.amount ? `<span class="bb merc-amt" style="font-size:15px;color:var(--gold);flex-shrink:0;min-width:60px;text-align:right">${t.amount}</span>` : '<span class="merc-amt" style="min-width:60px"></span>'}
     </div>
   `
 }
