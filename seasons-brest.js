@@ -30,7 +30,7 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Janvier 2027 · J18",
+    lastUpdate:   "Février 2027 · J18",
     position:     10,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
@@ -102,6 +102,11 @@ window['SEASONS_brest'] = [
           { r:"D", tip:"RC Lens (E) 0-0" },
           { r:"W", tip:"Strasbourg (D) 2-1" },
         ],
+      },
+      {
+        key: "02", label: "Février 2027",
+        note: "Février s'ouvre sur le huitième de finale de la Coupe de France : Brest reçoit l'AS Saint-Étienne (Ligue 2) au stade Francis-Le Blé le mercredi 3, avec un quart de finale contre Lorient ou Lens à la clé, mais sans Joris Chotard, blessé. Suivent quatre journées de Ligue 1 : un déplacement à Nice le samedi 6, la réception de Rennes le vendredi 12 pour le derby breton, puis un déplacement chez le PSG le dimanche 21, avant de recevoir le leader, l'AS Monaco, le samedi 27.",
+        matches: [],
       },
     ],
 
