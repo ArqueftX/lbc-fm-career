@@ -30,7 +30,7 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Juillet 2027 · pré-saison",
+    lastUpdate:   "Août 2027 · pré-saison",
     position:     null,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
@@ -52,6 +52,14 @@ window['SEASONS_brest'] = [
           { r:"W", tip:"Middlesbrough (E) 2-3",         comp:"AM" },
         ],
       },
+      {
+        key: "08", label: "Août 2027",
+        note: "Août mêle les derniers matchs amicaux, à West Bromwich le mercredi 4 et contre Liverpool au stade Francis-Le Blé le samedi 7, et la reprise de la Ligue 1 : Brest reçoit Nice le dimanche 15 puis Rennes le samedi 21 pour le derby breton, avant un déplacement à Marseille le samedi 28. Le 4, au stade des Hawthorns, Brest partage les points avec West Brom (3-3) au terme d'un match très ouvert : Giovani Versini, servi par Mama Baldé, ouvre le score (8e), Price égalise dans la foulée (8e), puis Baldé s'offre un doublé, sur des passes de Justin Bourgault (17e) et de Versini (21e), avant que Price (42e) et Morgan (47e) ne ramènent les Anglais à hauteur. Baldé est élu homme du match (9,0). Le 6, Brest recrute le jeune gardien angolais Justin Bengui Joao (22 ans), en provenance de l'OL pour 1,9 million d'euros, avec un contrat jusqu'en 2030. Le même jour, mauvaise nouvelle : Egil Selvik se blesse à la hanche à l'entraînement après une mauvaise chute et sera absent deux à trois mois. Le 7, Liverpool s'impose au stade Francis-Le Blé (0-1) sur un but de Danns (61e), servi par Virgil van Dijk, élu homme du match ; Alireza Beiranvand, titularisé, se montre solide (7,4). La préparation se termine sur un bilan de trois victoires, deux nuls et deux défaites.",
+        matches: [
+          { r:"D", tip:"West Brom (E) 3-3",             comp:"AM" },
+          { r:"L", tip:"Liverpool (D) 0-1",             comp:"AM" },
+        ],
+      },
     ],
 
     transfers:  [
@@ -59,6 +67,7 @@ window['SEASONS_brest'] = [
       { type: "buy",  name: "Egil Selvik",       from: "Watford, après son prêt (GB · Norvégien · 29 ans)", date: "Juil. 2027", amount: "1,2M €" },
       { type: "free", name: "Alireza Beiranvand", from: "Libre (GB · Iranien · 34 ans)", date: "Juil. 2027" },
       { type: "free", name: "Kaio César",        from: "Libre (MOD / MOG · Brésilien · 23 ans)", date: "Juil. 2027" },
+      { type: "buy",  name: "Justin Bengui Joao", from: "OL (GB · Angolais · 22 ans)", date: "Août 2027", amount: "1,9M €" },
       { type: "buy",  name: "Václav Jemelka",    from: "Viktoria Plzeň (DC · Tchèque · 32 ans)", date: "Juil. 2027", amount: "775K €" },
     ],
     departures: [
