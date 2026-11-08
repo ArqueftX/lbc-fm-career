@@ -30,9 +30,10 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "30 juin 2027 · intersaison",
+    lastUpdate:   "Juillet 2027 · pré-saison",
     position:     null,
     compNames:    { CDF: "Coupe de France" },
+    objective:    "Terminer en milieu de tableau en Ligue 1",
 
     months: [
       {
@@ -40,10 +41,29 @@ window['SEASONS_brest'] = [
         note: "Le 5 juin, le milieu Axel Lassus (18 ans), joueur de la réserve, signe son premier contrat professionnel, jusqu'en juin 2030. Le 20, neuf jeunes joueurs, tous âgés de 19 ans, arrivent en fin de contrat et quittent le club libres : Evan Mailly, Paul Rivoal, Yanis Ettori, Enzo Ngoma, Nathan Thomas, Mattéo Piveteau, Yessine Ben Mahmoud, Tia Davy et Hugo Bourgoin. Le 24, le défenseur central Noa Lango (18 ans) est prêté au FC Chambly, en Ligue 3, jusqu'à la fin de la saison, pour y gagner du temps de jeu. Le lendemain, le jeune attaquant Jaden Choisy (17 ans), révélation de la fin de saison, est à son tour prêté à Valenciennes jusqu'à la fin de la saison, après avoir décliné les propositions de Concarneau, Quevilly-Rouen et Fleury. Le 26, le milieu Kevin Braun (16 ans), des U19, signe son premier contrat professionnel, jusqu'en 2030. Le 29, Mama Baldé, remis de sa cheville cassée, reprend l'entraînement complet. Le 30, les prêts arrivent à leur terme : le gardien Egil Selvik (36 matchs) retourne à Watford, Manu Hernando (12 matchs) au Racing Santander et Noah Edjouma (34 matchs, 4 buts, 5 passes décisives) au LOSC. Le même jour, le gardien Romain Cagnon et le milieu Abdoul Samaké quittent le club en fin de contrat, tandis que le jeune milieu Hamidou Makalou (20 ans) revient de prêt.",
         matches: [],
       },
+      {
+        key: "07", label: "Juillet 2027 · pré-saison",
+        note: "Pour sa deuxième saison, les dirigeants reconduisent l'objectif d'un milieu de tableau en Ligue 1 et attendent de Brest qu'il se montre compétitif en Coupe de France ; ils se disent contents des progrès accomplis. Le 1er juillet, deux recrues sont officialisées : le Japonais Gotoku Sakai (36 ans), arrière polyvalent et expérimenté, et Egil Selvik, le gardien prêté la saison passée, qui s'engage cette fois définitivement jusqu'en 2029. Le même jour, cinq jeunes joueurs quittent le club en fin de contrat : Angelo Bico, Sacha Viel, Kenan Moulangou, Noah Mockhtari et Romain Decker. Le 3, le milieu Axel Lassus (18 ans) est prêté à l'AS Cannes jusqu'à la fin de la saison. Le 4, Brest recrute libre le gardien international iranien Alireza Beiranvand (34 ans), pour un an. Le 10, c'est au tour de l'ailier brésilien Kaio César (23 ans) de s'engager libre jusqu'en 2031, mais Mamady Diambou se fait une élongation des ischio-jambiers à l'entraînement (8 jours à 2 semaines d'absence). Le 11, Brest ouvre sa préparation par une courte défaite à Guingamp (1-0), sur un but d'Ewan Aucon (67e), élu homme du match. Le 12, Yacouba Kamissoko (16 ans), ailier des U19, signe son premier contrat professionnel, jusqu'en 2030. Le 14, à Białystok, Brest arrache le nul face au Jagiellonia (3-3) malgré un triplé de Youssuf Sylla, homme du match : Cedric Bayiha (16e, sur une passe de Joseph Nonge), Justin Bourgault (45e+2, servi par Bayiha) et Nonge (56e, sur un service de Kaio César) marquent pour les Brestois. Le 15, le défenseur central tchèque Václav Jemelka (32 ans) arrive du Viktoria Plzeň, avec un contrat jusqu'en 2029. Le 17, au stade Francis-Le Blé, Brest remporte le jubilé face au FC Midtjylland (3-1) : Lenny Dan ouvre le score sur une passe d'Hugo Magnetti (9e), Billing égalise (25e), puis Ludovic Ajorque, élu homme du match, s'offre un doublé (73e, servi par Pathé Mboup, puis 83e, sur une passe de Kamory Doumbia). Le même jour, Mboup, un des meilleurs joueurs de l'équipe selon les supporters, prolonge de quatre ans, jusqu'en 2031. Le 24, le défenseur Gautier Lloris (32 ans) quitte le club pour Reims. Le soir même, au Portugal, Brest s'impose à Sintrense (3-4) dans un match fou : Giovani Versini, auteur de quatre passes décisives, obtient la note parfaite (10/10), servant Lenny Dan (14e, puis 68e), Raphaël Le Guen (23e) et Mamady Diambou (73e), malgré le triplé d'Ernesto Tungumuna. Enfin, le 31, Brest gagne à Middlesbrough (2-3) : Bayiha, sur une passe de Luck Zogbé (9e), et Bourgault, servi par Versini (21e), donnent l'avantage aux Brestois, Leo Castledine, homme du match, égalise par un doublé éclair (40e, 41e), avant que Versini, servi par Bayiha, ne donne la victoire aux siens (52e). Bilan de la préparation : trois victoires, un nul et une défaite.",
+        matches: [
+          { r:"L", tip:"EA Guingamp (E) 1-0",           comp:"AM" },
+          { r:"D", tip:"Jagiellonia (E) 3-3",           comp:"AM" },
+          { r:"W", tip:"FC Midtjylland (D) 3-1",        comp:"AM", tag:"Jubilé" },
+          { r:"W", tip:"Sintrense (E) 3-4",             comp:"AM" },
+          { r:"W", tip:"Middlesbrough (E) 2-3",         comp:"AM" },
+        ],
+      },
     ],
 
-    transfers:  [],
+    transfers:  [
+      { type: "free", name: "Gotoku Sakai",      from: "Libre (DG / DC / DD · Japonais · 36 ans)", date: "Juil. 2027" },
+      { type: "buy",  name: "Egil Selvik",       from: "Watford, après son prêt (GB · Norvégien · 29 ans)", date: "Juil. 2027", amount: "1,2M €" },
+      { type: "free", name: "Alireza Beiranvand", from: "Libre (GB · Iranien · 34 ans)", date: "Juil. 2027" },
+      { type: "free", name: "Kaio César",        from: "Libre (MOD / MOG · Brésilien · 23 ans)", date: "Juil. 2027" },
+      { type: "buy",  name: "Václav Jemelka",    from: "Viktoria Plzeň (DC · Tchèque · 32 ans)", date: "Juil. 2027", amount: "775K €" },
+    ],
     departures: [
+      { type: "sell", name: "Gautier Lloris",    to: "Reims (DC · Français · 32 ans)", date: "Juil. 2027", amount: "825K €" },
+      { type: "loan", name: "Axel Lassus",       to: "Prêt à l'AS Cannes jusqu'à la fin de la saison (MC · Français · 18 ans)", date: "Juil. 2027" },
       { type: "loan", name: "Noa Lango", to: "Prêt au FC Chambly (Ligue 3) jusqu'à la fin de la saison (DC · Français · 18 ans)", date: "Juin 2027" },
       { type: "loan", name: "Jaden Choisy", to: "Prêt à Valenciennes jusqu'à la fin de la saison (BU · Français · 17 ans)", date: "Juin 2027" },
       { type: "loan", name: "Egil Selvik", to: "Fin de prêt, retour à Watford (GB · Norvégien · 29 ans)", date: "Juin 2027" },
