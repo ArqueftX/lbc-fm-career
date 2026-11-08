@@ -34,6 +34,48 @@ window['SEASONS_brest'] = [
     position:     13,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
+
+    // Stats au 28 août 2027 (3 journées de Ligue 1)
+    scorers: [
+      { name: "Pathé Mboup",           detail: "MOG · Sénégalais · 23 ans",       value: 1 },
+    ],
+    assists: [
+      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans",   value: 1 },
+    ],
+    // Meilleures et pires moyennes : au moins 2 matchs joués (la moitié des 3 journées)
+    ratings: [
+      { name: "Giovani Versini",       detail: "MOD · Français · 23 ans · 3 rempl.",                               value: 7.19 },
+      { name: "Gotoku Sakai",          detail: "DG · Japonais · 36 ans · 3 tit.",                                  value: 6.90 },
+      { name: "B. Chardonnet · H. Magnetti", detail: "DC / MD · ex-aequo",                                         value: 6.86 },
+    ],
+    flops: [
+      { name: "Kaio César",            detail: "MOD · Brésilien · 23 ans · 3 tit.",                                value: 6.46 },
+      { name: "Alireza Beiranvand",    detail: "GB · Iranien · 34 ans · 3 tit.",                                   value: 6.50 },
+      { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans · 3 tit. · 1 passe D.",              value: 6.53 },
+    ],
+    // Effectif au 28 août 2027
+    squad: [
+      { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:34 },
+      { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
+      { n:"Mathieu Patouillet",    p:"GB",   nat:"FRA", age:23 },
+      { n:"Justin Bengui Joao",    p:"GB",   nat:"ANG", age:22 },
+      { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:25 },
+      { n:"Gotoku Sakai",          p:"DG",   nat:"JPN", age:36 },
+      { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:21 },
+      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:32 },
+      { n:"Václav Jemelka",        p:"DC",   nat:"CZE", age:32 },
+      { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:20 },
+      { n:"Joris Chotard",         p:"MD",   nat:"FRA", age:25 },
+      { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:29 },
+      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:30 },
+      { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:24 },
+      { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:24 },
+      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:22 },
+      { n:"Kaio César",            p:"MOD",  nat:"BRA", age:23 },
+      { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:23 },
+      { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:23 },
+      { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:31 },
+    ],
     standingsTitle: "Classement au 28 août 2027",
     standings: [
       { pos:1,  team:"Paris FC",       j:3, g:2, n:1, l:0, bp:4, bc:1, db:3, pts:7, zone:"ucl" },
@@ -75,7 +117,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "08", label: "Août 2027", position: 13,
-        note: "Août mêle les derniers matchs amicaux, à West Bromwich le mercredi 4 et contre Liverpool au stade Francis-Le Blé le samedi 7, et la reprise de la Ligue 1 : Brest reçoit Nice le dimanche 15 puis Rennes le samedi 21 pour le derby breton, avant un déplacement à Marseille le samedi 28. Le 4, au stade des Hawthorns, Brest partage les points avec West Brom (3-3) au terme d'un match très ouvert : Giovani Versini, servi par Mama Baldé, ouvre le score (8e), Price égalise dans la foulée (8e), puis Baldé s'offre un doublé, sur des passes de Justin Bourgault (17e) et de Versini (21e), avant que Price (42e) et Morgan (47e) ne ramènent les Anglais à hauteur. Baldé est élu homme du match (9,0). Le 6, Brest recrute le jeune gardien angolais Justin Bengui Joao (22 ans), en provenance de l'OL pour 1,9 million d'euros, avec un contrat jusqu'en 2030. Le même jour, mauvaise nouvelle : Egil Selvik se blesse à la hanche à l'entraînement après une mauvaise chute et sera absent deux à trois mois. Le 7, Liverpool s'impose au stade Francis-Le Blé (0-1) sur un but de Danns (61e), servi par Virgil van Dijk, élu homme du match ; Alireza Beiranvand, titularisé, se montre solide (7,4). La préparation se termine sur un bilan de trois victoires, deux nuls et deux défaites. Le 15, pour la reprise de la Ligue 1 au stade Francis-Le Blé, Brest renverse Nice (2-1) : Cabezas Hurtado, servi par Sofiane Diop, ouvre le score pour les Aiglons (51e), Pathé Mboup égalise sur une passe de Mama Baldé (74e), puis Bombito marque contre son camp dans le temps additionnel (90e+1). Sofiane Diop est élu homme du match (7,6). Le 18, deux jeunes des U19 signent leur premier contrat professionnel, jusqu'en 2030 : l'attaquant Cedric Bayiha, révélation de la préparation avec deux buts et deux passes décisives, et le latéral Quentin Bourda, tous deux âgés de 16 ans. Le 21, le derby breton tourne encore à l'avantage de Rennes, vainqueur au stade Francis-Le Blé (0-1) sur un but tardif d'Esteban Lepaul, servi par Blas (85e) ; Lepaul est élu homme du match (7,8). Le 28, à l'Orange Vélodrome, Brest s'incline face à l'OM (1-0) sur un but de Kondogbia juste avant la pause, servi par Gouiri (44e) ; Jeffrey de Lange, le gardien marseillais, est élu homme du match (7,5). Après trois journées, Brest pointe à la 13e place avec 3 points.",
+        note: "Août mêle les derniers matchs amicaux, à West Bromwich le mercredi 4 et contre Liverpool au stade Francis-Le Blé le samedi 7, et la reprise de la Ligue 1 : Brest reçoit Nice le dimanche 15 puis Rennes le samedi 21 pour le derby breton, avant un déplacement à Marseille le samedi 28. Le 4, au stade des Hawthorns, Brest partage les points avec West Brom (3-3) au terme d'un match très ouvert : Giovani Versini, servi par Mama Baldé, ouvre le score (8e), Price égalise dans la foulée (8e), puis Baldé s'offre un doublé, sur des passes de Justin Bourgault (17e) et de Versini (21e), avant que Price (42e) et Morgan (47e) ne ramènent les Anglais à hauteur. Baldé est élu homme du match (9,0). Le 6, Brest recrute le jeune gardien angolais Justin Bengui Joao (22 ans), en provenance de l'OL pour 1,9 million d'euros, avec un contrat jusqu'en 2030. Le même jour, mauvaise nouvelle : Egil Selvik se blesse à la hanche à l'entraînement après une mauvaise chute et sera absent deux à trois mois. Le 7, Liverpool s'impose au stade Francis-Le Blé (0-1) sur un but de Danns (61e), servi par Virgil van Dijk, élu homme du match ; Alireza Beiranvand, titularisé, se montre solide (7,4). La préparation se termine sur un bilan de trois victoires, deux nuls et deux défaites. Le 15, pour la reprise de la Ligue 1 au stade Francis-Le Blé, Brest renverse Nice (2-1) : Cabezas Hurtado, servi par Sofiane Diop, ouvre le score pour les Aiglons (51e), Pathé Mboup égalise sur une passe de Mama Baldé (74e), puis Bombito marque contre son camp dans le temps additionnel (90e+1). Sofiane Diop est élu homme du match (7,6). Le 18, deux jeunes des U19 signent leur premier contrat professionnel, jusqu'en 2030 : l'attaquant Cedric Bayiha, révélation de la préparation avec deux buts et deux passes décisives, et le latéral Quentin Bourda, tous deux âgés de 16 ans. Le 21, le derby breton tourne encore à l'avantage de Rennes, vainqueur au stade Francis-Le Blé (0-1) sur un but tardif d'Esteban Lepaul, servi par Blas (85e) ; Lepaul est élu homme du match (7,8). Le 28, à l'Orange Vélodrome, Brest s'incline face à l'OM (1-0) sur un but de Kondogbia juste avant la pause, servi par Gouiri (44e) ; Jeffrey de Lange, le gardien marseillais, est élu homme du match (7,5). Après trois journées, Brest pointe à la 13e place avec 3 points, avant de recevoir Angers le 31.",
         matches: [
           { r:"D", tip:"West Brom (E) 3-3",             comp:"AM" },
           { r:"L", tip:"Liverpool (D) 0-1",             comp:"AM" },

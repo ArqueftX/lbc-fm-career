@@ -30,7 +30,7 @@ Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est par
   Meilleur passeur : Prénom Nom (POSTE/Nationalité/âge ans) -> N passes D.
   ```
   Score du point de vue de Brest (buts de Brest en premier). Omettre la ligne meilleur buteur ou meilleur passeur en cas d'ex-aequo.
-  Matchs amicaux : seulement la ligne du résultat (`- Match amical : Adversaire, Dom|Ext : score :rond:`), sans buteurs ni HDM. Un mois sans match officiel : pas de classement ni de meilleurs buteur / passeur.
+  Matchs amicaux : jamais dans le récap d'un mois qui a des matchs officiels. Récap de pré-saison (seulement si demandé) : une ligne par amical (`- Match amical : Adversaire, Dom|Ext : score :rond:`), sans buteurs, HDM, classement ni meilleurs buteur / passeur.
 
 ## Règles des récaps
 
