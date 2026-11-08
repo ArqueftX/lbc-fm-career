@@ -53,7 +53,7 @@ window['SEASONS_brest'] = [
       { name: "Alireza Beiranvand",    detail: "GB · Iranien · 34 ans · 3 tit.",                                   value: 6.50 },
       { name: "Mama Baldé",            detail: "MOD · Bissau-Guinéen · 31 ans · 3 tit. · 1 passe D.",              value: 6.53 },
     ],
-    // Effectif au 28 août 2027
+    // Effectif au 1er septembre 2027 (avec Paris Brunner, prêté par l'AS Monaco)
     squad: [
       { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:34 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
@@ -75,6 +75,7 @@ window['SEASONS_brest'] = [
       { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:23 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:23 },
       { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:31 },
+      { n:"Paris Brunner",         p:"BU",   nat:"GER", age:21 },
     ],
     standingsTitle: "Classement au 28 août 2027",
     standings: [
@@ -126,6 +127,11 @@ window['SEASONS_brest'] = [
           { r:"L", tip:"OM (E) 1-0" },
         ],
       },
+      {
+        key: "09", label: "Septembre 2027",
+        note: "Le 1er septembre, Brest frappe un gros coup en attaque : l'avant-centre allemand Paris Brunner (21 ans), sept fois sélectionné avec les Espoirs, arrive de l'AS Monaco en prêt jusqu'à la fin de la saison, avec une clause d'achat de 17,25 millions d'euros. Dirigeants et supporters sont enthousiastes. Le même jour, le jeune milieu Hamidou Makalou (21 ans) est prêté à Nancy, en Ligue 2, jusqu'à la fin de la saison.",
+        matches: [],
+      },
     ],
 
     transfers:  [
@@ -134,6 +140,7 @@ window['SEASONS_brest'] = [
       { type: "free", name: "Alireza Beiranvand", from: "Libre (GB · Iranien · 34 ans)", date: "Juil. 2027" },
       { type: "free", name: "Kaio César",        from: "Libre (MOD / MOG · Brésilien · 23 ans)", date: "Juil. 2027" },
       { type: "buy",  name: "Justin Bengui Joao", from: "OL (GB · Angolais · 22 ans)", date: "Août 2027", amount: "1,9M €" },
+      { type: "loan", name: "Paris Brunner",     from: "Prêt de l'AS Monaco jusqu'à la fin de la saison, avec une clause d'achat de 17,25M € (BU · Allemand · 21 ans)", date: "Sept. 2027" },
       { type: "buy",  name: "Václav Jemelka",    from: "Viktoria Plzeň (DC · Tchèque · 32 ans)", date: "Juil. 2027", amount: "775K €" },
     ],
     departures: [
@@ -143,6 +150,7 @@ window['SEASONS_brest'] = [
       { type: "sell", name: "Gautier Lloris",    to: "Reims (DC · Français · 32 ans)", date: "Juil. 2027", amount: "825K €" },
       { type: "loan", name: "Axel Lassus",       to: "Prêt à l'AS Cannes jusqu'à la fin de la saison (MC · Français · 18 ans)", date: "Juil. 2027" },
       { type: "loan", name: "Noa Lango", to: "Prêt au FC Chambly (Ligue 3) jusqu'à la fin de la saison (DC · Français · 18 ans)", date: "Juin 2027" },
+      { type: "loan", name: "Hamidou Makalou",   to: "Prêt à Nancy (Ligue 2) jusqu'à la fin de la saison (MD · Malien · 21 ans)", date: "Sept. 2027" },
       { type: "loan", name: "Jaden Choisy", to: "Prêt à Valenciennes jusqu'à la fin de la saison (BU · Français · 17 ans)", date: "Juin 2027" },
       { type: "loan", name: "Egil Selvik", to: "Fin de prêt, retour à Watford (GB · Norvégien · 29 ans)", date: "Juin 2027" },
       { type: "loan", name: "Manu Hernando", to: "Fin de prêt, retour au Racing Santander (DC · Espagnol · 28 ans)", date: "Juin 2027" },
