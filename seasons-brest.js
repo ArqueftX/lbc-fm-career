@@ -78,6 +78,10 @@ window['SEASONS_brest'] = [
       { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:31 },
       { n:"Paris Brunner",         p:"BU",   nat:"GER", age:21 },
     ],
+    awards: [
+      { label:"Équipe-type de la semaine", winner:"L. Zogbé · K. Doumbia", period:"4e et 5e journées", detail:"Ligue 1 · après la victoire contre Angers (2-0) et le nul contre Toulouse (1-1)" },
+    ],
+
     standingsTitle: "Classement après la 7e journée",
     standings: [
       { pos:1,  team:"PSG",            j:7, g:5, n:1, l:1, bp:10, bc:3, db:7, pts:16, zone:"ucl" },
@@ -378,7 +382,6 @@ window['SEASONS_brest'] = [
       { label:"Équipe-type de la semaine", winner:"Bradley Locko", period:"14e journée", detail:"Ligue 1 · arrière gauche · 1 but contre l'ESTAC (2-0), note de 8,1" },
       { label:"But du mois", winner:"Bradley Locko", period:"Décembre 2026", detail:"Ligue 1 · superbe frappe contre l'ESTAC (2-0), le 12 décembre" },
       { label:"Équipe-type de la semaine", winner:"Luck Zogbé", period:"24e journée", detail:"Ligue 1 · latéral droit, note de 7,3" },
-      { label:"Équipe-type de la semaine", winner:"L. Zogbé · K. Doumbia", period:"4e et 5e journées (2027/28)", detail:"Ligue 1 · après la victoire contre Angers (2-0) et le nul contre Toulouse (1-1)" },
       { label:"Équipe-type de la semaine", winner:"Kenny Lala", period:"34e journée", detail:"Ligue 1 · latéral droit, deux passes décisives contre Lens (2-1), note de 8,1" },
       { label:"Équipe-type de la semaine", winner:"Selvik · Hernando · M. Baldé · Doumbia", period:"29e journée", detail:"Ligue 1 · quatre Brestois après la victoire à Lyon (0-3)" },
     ],
