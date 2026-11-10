@@ -30,7 +30,7 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Novembre 2027 · J15",
+    lastUpdate:   "Décembre 2027 · J15",
     position:     11,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
@@ -168,6 +168,11 @@ window['SEASONS_brest'] = [
           { r:"W", tip:"Strasbourg (E) 1-2" },
           { r:"D", tip:"Reims (D) 0-0" },
         ],
+      },
+      {
+        key: "12", label: "Décembre 2027",
+        note: "Le 29 novembre, le tirage du 9e tour de la Coupe de France désigne un adversaire familier : Brest recevra l'EA Guingamp, qui l'avait battu en match amical l'été dernier, au stade Francis-Le Blé le samedi 18 décembre, pour l'entrée en lice des Brestois dans la compétition. Avant cela, décembre propose deux déplacements en Ligue 1 : à Saint-Étienne le samedi 4, puis à Lens le samedi 11.",
+        matches: [],
       },
     ],
 
