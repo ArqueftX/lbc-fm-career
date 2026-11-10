@@ -35,26 +35,28 @@ window['SEASONS_brest'] = [
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
 
-    // Stats au 31 octobre 2027 (12 journées de Ligue 1)
+    // Stats au 27 novembre 2027 (15 journées de Ligue 1)
     scorers: [
-      { name: "Pathé Mboup",           detail: "MOG · Sénégalais · 24 ans",       value: 4 },
-      { name: "Doumbia · Baldé · Brunner", detail: "3 joueurs à égalité",         value: 1 },
+      { name: "M. Baldé · P. Mboup",   detail: "BU / MOG · ex-aequo",             value: 4 },
+      { name: "Paris Brunner",         detail: "BU · Allemand · 21 ans",          value: 2 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans",            value: 1 },
     ],
     assists: [
-      { name: "Zogbé · Sakai · Kaio César · Baldé · Le Guen · Chotard · Bourgault", detail: "7 joueurs à égalité", value: 1 },
+      { name: "J. Bourgault · J. Nonge", detail: "DG / MC · ex-aequo",            value: 2 },
+      { name: "Le Guen · Sakai · Chotard · Baldé · Zogbé · Kaio César", detail: "6 joueurs à égalité", value: 1 },
     ],
-    // Meilleures et pires moyennes : au moins 6 matchs joués (la moitié des 12 journées)
+    // Meilleures et pires moyennes : au moins 8 matchs joués (la moitié des 15 journées)
     ratings: [
-      { name: "Gotoku Sakai",          detail: "DG · Japonais · 36 ans · 11 tit. / 1 rempl. · 1 passe D.",         value: 6.92 },
-      { name: "Raphaël Le Guen",       detail: "DC · Français · 21 ans · 2 tit. / 4 rempl. · 1 passe D.",          value: 6.90 },
-      { name: "A. Beiranvand · P. Mboup", detail: "GB / MOG · ex-aequo",                                           value: 6.88 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 22 ans · 6 tit. / 7 rempl. · 2 passes D.",           value: 6.96 },
+      { name: "Sakai · Mboup · Beiranvand", detail: "3 joueurs à égalité",                                          value: 6.88 },
+      { name: "Raphaël Le Guen",       detail: "DC · Français · 21 ans · 5 tit. / 4 rempl. · 1 passe D.",          value: 6.86 },
     ],
     flops: [
-      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 31 ans · 11 tit. / 1 rempl. · 1 but · 1 passe D.", value: 6.46 },
-      { name: "Paris Brunner",         detail: "BU · Allemand · 21 ans · 1 tit. / 7 rempl. · 1 but",               value: 6.59 },
-      { name: "Kaio César",            detail: "MOD · Brésilien · 23 ans · 9 tit. · 1 passe D.",                   value: 6.61 },
+      { name: "M. Baldé · Kaio César", detail: "BU / MOD · ex-aequo",                                              value: 6.61 },
+      { name: "P. Brunner · M. Diambou", detail: "BU / MD · ex-aequo",                                             value: 6.69 },
+      { name: "Joris Chotard",         detail: "MD · Français · 26 ans · 13 tit. / 1 rempl. · 1 passe D.",         value: 6.73 },
     ],
-    // Effectif au 31 octobre 2027
+    // Effectif au 27 novembre 2027
     squad: [
       { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:35 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
@@ -75,7 +77,7 @@ window['SEASONS_brest'] = [
       { n:"Kaio César",            p:"MOD",  nat:"BRA", age:23 },
       { n:"Giovani Versini",       p:"MOD",  nat:"FRA", age:23 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:24 },
-      { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:31 },
+      { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:32 },
       { n:"Paris Brunner",         p:"BU",   nat:"GER", age:21 },
     ],
     awards: [
@@ -160,7 +162,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "11", label: "Novembre 2027", position: 11,
-        note: "Novembre ne compte que trois journées de Ligue 1 : la réception de l'OL le samedi 6, un déplacement à Strasbourg le dimanche 21, puis la venue de Reims, deuxième, le samedi 27. Le 2, Brendan Chardonnet et Raphaël Le Guen, la charnière centrale qui a gardé la cage inviolée face au Havre, sont nommés dans l'équipe-type de la semaine. Le 6, au stade Francis-Le Blé, Mama Baldé ouvre le score dès la première minute sur une passe de Joseph Nonge, mais l'OL renverse la situation par Tolisso (5e) puis Tyler Morton (50e), élu homme du match ; Baldé, servi par Justin Bourgault, arrache l'égalisation à la 74e (2-2). Le 8, Mamady Diambou se blesse aux abdominaux à l'entraînement (5 jours à 2 semaines d'absence). Le 21, à la Meinau, Brest s'impose à Strasbourg (1-2) : Baldé transforme un penalty dès la 3e minute, Dany Mota égalise pour les Alsaciens (51e), puis Paris Brunner, servi par Nonge, offre la victoire aux siens (74e). Nonge est élu homme du match (8,2) et nommé dans l'équipe-type de la semaine. Le 27, Brest tient en échec Reims, deuxième du championnat, au stade Francis-Le Blé (0-0), dans un match pauvre en occasions ; Mathieu Patouillet, titularisé dans les buts pour le deuxième match de suite, n'encaisse pas de but. Invaincu en novembre (une victoire, deux nuls), Brest remonte à la 11e place (19 points), à trois longueurs de la 4e place.",
+        note: "Novembre ne compte que trois journées de Ligue 1 : la réception de l'OL le samedi 6, un déplacement à Strasbourg le dimanche 21, puis la venue de Reims, deuxième, le samedi 27. Le 2, Brendan Chardonnet et Raphaël Le Guen, la charnière centrale qui a gardé la cage inviolée face au Havre, sont nommés dans l'équipe-type de la semaine. Le 6, au stade Francis-Le Blé, Mama Baldé ouvre le score dès la première minute sur une passe de Joseph Nonge, mais l'OL renverse la situation par Tolisso (5e) puis Tyler Morton (50e), élu homme du match ; Baldé, servi par Justin Bourgault, arrache l'égalisation à la 74e (2-2). Le 8, Mamady Diambou se blesse aux abdominaux à l'entraînement (5 jours à 2 semaines d'absence). Le 21, à la Meinau, Brest s'impose à Strasbourg (1-2) : Baldé transforme un penalty dès la 3e minute, Dany Mota égalise pour les Alsaciens (51e), puis Paris Brunner, servi par Nonge, offre la victoire aux siens (74e). Nonge est élu homme du match (8,2) et nommé dans l'équipe-type de la semaine. Le 27, Brest tient en échec Reims, deuxième du championnat, au stade Francis-Le Blé (0-0), dans un match pauvre en occasions ; Mathieu Patouillet, titularisé dans les buts pour le deuxième match de suite, n'encaisse pas de but. Invaincu en novembre (une victoire, deux nuls), Brest remonte à la 11e place (19 points), à trois longueurs de la 4e place. Avec son doublé contre l'OL et son penalty à Strasbourg, Mama Baldé rejoint Pathé Mboup en tête des buteurs du club (4 buts).",
         matches: [
           { r:"D", tip:"OL (D) 2-2" },
           { r:"W", tip:"Strasbourg (E) 1-2" },
