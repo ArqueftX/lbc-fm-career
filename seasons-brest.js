@@ -30,33 +30,33 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Décembre 2027 · J15",
+    lastUpdate:   "Décembre 2027 · J17",
     position:     11,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
 
-    // Stats au 27 novembre 2027 (15 journées de Ligue 1)
+    // Stats au 31 décembre 2027 (17 journées de Ligue 1 + 1 match de Coupe de France)
     scorers: [
-      { name: "M. Baldé · P. Mboup",   detail: "BU / MOG · ex-aequo",             value: 4 },
-      { name: "Paris Brunner",         detail: "BU · Allemand · 21 ans",          value: 2 },
-      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans",            value: 1 },
+      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans",    value: 5 },
+      { name: "P. Mboup · P. Brunner", detail: "MOG / BU · ex-aequo",             value: 4 },
+      { name: "Kamory Doumbia",        detail: "MC · Malien · 24 ans",            value: 2 },
     ],
     assists: [
-      { name: "J. Bourgault · J. Nonge", detail: "DG / MC · ex-aequo",            value: 2 },
-      { name: "Le Guen · Sakai · Chotard · Baldé · Zogbé · Kaio César", detail: "6 joueurs à égalité", value: 1 },
+      { name: "J. Bourgault · J. Nonge", detail: "DG / MC · ex-aequo",            value: 3 },
+      { name: "Le Guen · Jemelka · Sakai · Chotard · Baldé · Zogbé · Kaio César", detail: "7 joueurs à égalité", value: 1 },
     ],
-    // Meilleures et pires moyennes : au moins 8 matchs joués (la moitié des 15 journées)
+    // Meilleures et pires moyennes : au moins 9 matchs joués (la moitié des 17 journées)
     ratings: [
-      { name: "Joseph Nonge",          detail: "MC · Belge · 22 ans · 6 tit. / 7 rempl. · 2 passes D.",           value: 6.96 },
-      { name: "Sakai · Mboup · Beiranvand", detail: "3 joueurs à égalité",                                          value: 6.88 },
-      { name: "Raphaël Le Guen",       detail: "DC · Français · 21 ans · 5 tit. / 4 rempl. · 1 passe D.",          value: 6.86 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 22 ans · 9 tit. / 7 rempl. · 3 passes D.",           value: 6.92 },
+      { name: "Alireza Beiranvand",    detail: "GB · Iranien · 35 ans · 13 tit.",                                  value: 6.90 },
+      { name: "Le Guen · Sakai · Doumbia · Mboup", detail: "4 joueurs à égalité",                                  value: 6.86 },
     ],
     flops: [
-      { name: "M. Baldé · Kaio César", detail: "BU / MOD · ex-aequo",                                              value: 6.61 },
-      { name: "P. Brunner · M. Diambou", detail: "BU / MD · ex-aequo",                                             value: 6.69 },
-      { name: "Joris Chotard",         detail: "MD · Français · 26 ans · 13 tit. / 1 rempl. · 1 passe D.",         value: 6.73 },
+      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans · 16 tit. / 2 rempl. · 5 buts · 1 passe D.", value: 6.59 },
+      { name: "Kaio César",            detail: "MOD · Brésilien · 23 ans · 9 tit. · 1 passe D.",                   value: 6.61 },
+      { name: "Mamady Diambou",        detail: "MD · Malien · 25 ans · 1 tit. / 8 rempl.",                         value: 6.69 },
     ],
-    // Effectif au 27 novembre 2027
+    // Effectif au 31 décembre 2027
     squad: [
       { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:35 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
@@ -65,7 +65,7 @@ window['SEASONS_brest'] = [
       { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:25 },
       { n:"Gotoku Sakai",          p:"DG",   nat:"JPN", age:36 },
       { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:22 },
-      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:32 },
+      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:33 },
       { n:"Václav Jemelka",        p:"DC",   nat:"CZE", age:32 },
       { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:21 },
       { n:"Joris Chotard",         p:"MD",   nat:"FRA", age:26 },
@@ -86,29 +86,36 @@ window['SEASONS_brest'] = [
       { label:"Joueur international asiatique de l'année", winner:"Alireza Beiranvand", period:"Octobre 2027", detail:"Gardien iranien · 1er devant Riku Yamane et Henry Heroki Mochizuki" },
       { label:"Équipe-type de la semaine", winner:"B. Chardonnet · R. Le Guen", period:"12e journée", detail:"Ligue 1 · la charnière centrale après la victoire contre Le Havre (1-0)" },
       { label:"Équipe-type de la semaine", winner:"Joseph Nonge", period:"14e journée", detail:"Ligue 1 · passeur décisif à Strasbourg (1-2), note de 8,2" },
+      { label:"Équipe-type de la semaine", winner:"Václav Jemelka", period:"16e journée", detail:"Ligue 1 · défenseur central, passeur décisif à Saint-Étienne (1-2)" },
       { label:"Sélection All-Star asiatique", winner:"Alireza Beiranvand", period:"Octobre 2027", detail:"Gardien titulaire de la sélection" },
     ],
 
-    standingsTitle: "Classement au 27 novembre 2027",
+    cup: {
+      name: "Coupe de France",
+      rounds: [
+        { result: "W", round: "9e tour", score: "1 – 0", opponent: "EA Guingamp (D)" },
+      ],
+    },
+    standingsTitle: "Classement après la 17e journée",
     standings: [
-      { pos:1,  team:"PSG",            j:14, g:10, n:1, l:3, bp:28, bc:13, db:15, pts:31, zone:"ucl" },
-      { pos:2,  team:"Reims",          j:15, g:7, n:7, l:1, bp:25, bc:13, db:12, pts:28, zone:"ucl" },
-      { pos:3,  team:"OL",             j:15, g:7, n:5, l:3, bp:27, bc:21, db:6, pts:26, zone:"ucl" },
-      { pos:4,  team:"OGC Nice",       j:15, g:5, n:7, l:3, bp:25, bc:22, db:3, pts:22, zone:"ucl" },
-      { pos:5,  team:"AJ Auxerre",     j:14, g:6, n:4, l:4, bp:24, bc:22, db:2, pts:22, zone:"uel" },
-      { pos:6,  team:"Paris FC",       j:14, g:5, n:6, l:3, bp:14, bc:11, db:3, pts:21, zone:"uecl" },
-      { pos:7,  team:"OM",             j:14, g:5, n:6, l:3, bp:17, bc:16, db:1, pts:21 },
-      { pos:8,  team:"Toulouse FC",    j:14, g:6, n:3, l:5, bp:21, bc:22, db:-1, pts:21 },
-      { pos:9,  team:"FC Lorient",     j:14, g:6, n:2, l:6, bp:17, bc:15, db:2, pts:20 },
-      { pos:10, team:"Rennes",         j:14, g:6, n:2, l:6, bp:23, bc:24, db:-1, pts:20 },
-      { pos:11, team:"Brest",          j:15, g:5, n:4, l:6, bp:12, bc:13, db:-1, pts:19, highlight:true },
-      { pos:12, team:"AS Monaco",      j:14, g:4, n:5, l:5, bp:23, bc:20, db:3, pts:17 },
-      { pos:13, team:"LOSC",           j:14, g:4, n:5, l:5, bp:18, bc:22, db:-4, pts:17 },
-      { pos:14, team:"Angers SCO",     j:14, g:3, n:7, l:4, bp:10, bc:12, db:-2, pts:16 },
-      { pos:15, team:"RC Lens",        j:14, g:3, n:6, l:5, bp:14, bc:16, db:-2, pts:15 },
-      { pos:16, team:"Saint-Étienne",  j:14, g:2, n:5, l:7, bp:9, bc:18, db:-9, pts:11, zone:"releg-playoff" },
-      { pos:17, team:"Strasbourg",     j:14, g:2, n:4, l:8, bp:10, bc:21, db:-11, pts:10, zone:"releg" },
-      { pos:18, team:"Havre AC",       j:14, g:0, n:5, l:9, bp:6, bc:22, db:-16, pts:5, zone:"releg" },
+      { pos:1,  team:"PSG",            j:17, g:12, n:1, l:4, bp:30, bc:16, db:14, pts:37, zone:"ucl" },
+      { pos:2,  team:"Reims",          j:17, g:7, n:8, l:2, bp:27, bc:16, db:11, pts:29, zone:"ucl" },
+      { pos:3,  team:"OL",             j:17, g:8, n:5, l:4, bp:30, bc:24, db:6, pts:29, zone:"ucl" },
+      { pos:4,  team:"AJ Auxerre",     j:17, g:8, n:5, l:4, bp:29, bc:25, db:4, pts:29, zone:"ucl" },
+      { pos:5,  team:"Paris FC",       j:17, g:7, n:6, l:4, bp:17, bc:14, db:3, pts:27, zone:"uel" },
+      { pos:6,  team:"Rennes",         j:16, g:8, n:2, l:6, bp:28, bc:26, db:2, pts:26, zone:"uecl" },
+      { pos:7,  team:"Toulouse FC",    j:17, g:7, n:5, l:5, bp:26, bc:26, db:0, pts:26 },
+      { pos:8,  team:"FC Lorient",     j:17, g:7, n:4, l:6, bp:24, bc:21, db:3, pts:25 },
+      { pos:9,  team:"OGC Nice",       j:17, g:5, n:7, l:5, bp:26, bc:25, db:1, pts:22 },
+      { pos:10, team:"OM",             j:16, g:5, n:7, l:4, bp:18, bc:19, db:-1, pts:22 },
+      { pos:11, team:"Brest",          j:17, g:6, n:4, l:7, bp:15, bc:16, db:-1, pts:22, highlight:true },
+      { pos:12, team:"AS Monaco",      j:17, g:5, n:6, l:6, bp:26, bc:22, db:4, pts:21 },
+      { pos:13, team:"Angers SCO",     j:17, g:4, n:7, l:6, bp:12, bc:14, db:-2, pts:19 },
+      { pos:14, team:"RC Lens",        j:17, g:4, n:7, l:6, bp:18, bc:21, db:-3, pts:19 },
+      { pos:15, team:"LOSC",           j:16, g:4, n:5, l:7, bp:21, bc:27, db:-6, pts:17 },
+      { pos:16, team:"Saint-Étienne",  j:17, g:3, n:6, l:8, bp:14, bc:21, db:-7, pts:15, zone:"releg-playoff" },
+      { pos:17, team:"Strasbourg",     j:16, g:2, n:6, l:8, bp:12, bc:23, db:-11, pts:12, zone:"releg" },
+      { pos:18, team:"Havre AC",       j:17, g:1, n:5, l:11, bp:10, bc:27, db:-17, pts:8, zone:"releg" },
     ],
 
     months: [
@@ -141,7 +148,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "09", label: "Septembre 2027", position: 6,
-        note: "Le 1er septembre, Brest frappe un gros coup en attaque : l'avant-centre allemand Paris Brunner (21 ans), sept fois sélectionné avec les Espoirs, arrive de l'AS Monaco en prêt jusqu'à la fin de la saison, avec une clause d'achat de 17,25 millions d'euros. Dirigeants et supporters sont enthousiastes. Le même jour, le jeune milieu Hamidou Makalou (21 ans) est prêté à Nancy, en Ligue 2, jusqu'à la fin de la saison. Le soir même, pour la 4e journée, Brest bat Angers au stade Francis-Le Blé (2-0) : Mama Baldé, servi par Kaio César (20e), puis Pathé Mboup, sur une passe de Luck Zogbé (23e), font la différence en trois minutes. Angers ne cadre pas le moindre tir, et Zogbé est élu homme du match (8,8). Le 4, Toulouse arrache le nul au stade Francis-Le Blé (1-1) : Russell-Rowe ouvre le score sur une passe de Vossah (17e), mais Kamory Doumbia, servi par Joris Chotard, égalise au retour des vestiaires (50e) et est élu homme du match (8,0). Zogbé et Doumbia sont tous deux nommés dans l'équipe-type de la semaine. Le 11, au stade Jean-Bouin, Brest ramène un nouveau nul du Paris FC (1-1) : Mboup ouvre le score sur un centre de Gotoku Sakai (27e), avant l'égalisation d'Enes Ünal, servi par Lees-Melou (39e). Sakai est élu homme du match (8,5). Le 17, Brest bat Lorient au stade Francis-Le Blé (1-0) grâce à Paris Brunner, entré en jeu, qui marque son premier but sous le maillot brestois à la 82e minute, sur une passe de Raphaël Le Guen. Brest reste invaincu en septembre (deux victoires, deux nuls) et termine le mois à la 6e place (11 points), qualificative pour la Ligue Conférence, à cinq points du leader parisien, qu'il défiera le 9 octobre. Le 21, Raphaël Le Guen et Paris Brunner, le buteur du match contre Lorient, sont nommés dans l'équipe-type de la 7e journée. Le 24, Giovani Versini se blesse à la cuisse à l'entraînement (3 à 5 semaines d'absence). Le 25, l'entraîneur Arq Queft 1er du Nom prolonge son contrat jusqu'en juin 2030, à la grande satisfaction des dirigeants. Enfin, le 29, l'attaquant Lenny Dan (16 ans), des U19, signe son premier contrat professionnel, jusqu'en 2030.",
+        note: "Le 1er septembre, Brest frappe un gros coup en attaque : l'avant-centre allemand Paris Brunner (21 ans), sept fois sélectionné avec les Espoirs, arrive de l'AS Monaco en prêt jusqu'à la fin de la saison, avec une clause d'achat de 17,25 millions d'euros. Dirigeants et supporters sont enthousiastes. Le même jour, le jeune milieu Hamidou Makalou (21 ans) est prêté à Nancy, en Ligue 2, jusqu'à la fin de la saison. Le soir même, pour la 4e journée, Brest bat Angers au stade Francis-Le Blé (2-0) : Mama Baldé, servi par Kaio César (20e), puis Pathé Mboup, sur une passe de Luck Zogbé (23e), font la différence en trois minutes. Angers ne cadre pas le moindre tir, et Zogbé est élu homme du match (8,8). Le 4, Toulouse arrache le nul au stade Francis-Le Blé (1-1) : Russell-Rowe ouvre le score sur une passe de Vossah (17e), mais Kamory Doumbia, servi par Joris Chotard, égalise au retour des vestiaires (50e) et est élu homme du match (8,0). Zogbé et Doumbia sont tous deux nommés dans l'équipe-type de la semaine. Le 11, au stade Jean-Bouin, Brest ramène un nouveau nul du Paris FC (1-1) : Mboup ouvre le score sur un centre de Gotoku Sakai (27e), avant l'égalisation d'Enes Ünal, servi par Lees-Melou (39e). Sakai est élu homme du match (8,5). Le 17, Brest bat Lorient au stade Francis-Le Blé (1-0) grâce à Paris Brunner, entré en jeu, qui marque son premier but sous le maillot brestois à la 82e minute, sur une passe de Raphaël Le Guen. Brest reste invaincu en septembre (deux victoires, deux nuls) et termine le mois à la 6e place (11 points), qualificative pour la Ligue Conférence, à cinq points du leader parisien, qu'il défiera le 9 octobre. Le 21, Raphaël Le Guen et Paris Brunner, le buteur du match contre Lorient, sont nommés dans l'équipe-type de la 7e journée. Le 24, Giovani Versini se blesse à la cuisse à l'entraînement (3 à 5 semaines d'absence). Le 25, l'entraîneur Arq Queft 1er du Nom prolonge son contrat jusqu'en juin 2030, pour un salaire de 55 000 € par mois, à la grande satisfaction des dirigeants ; ces derniers se disent ravis de l'aspect financier du recrutement de Gotoku Sakai, mais très déçus de l'accord négocié pour la vente de Gautier Lloris, tandis que les supporters regrettent le départ de Bradley Locko. Enfin, le 29, l'attaquant Lenny Dan (16 ans), des U19, signe son premier contrat professionnel, jusqu'en 2030 (11 750 € par mois).",
         matches: [
           { r:"W", tip:"Angers SCO (D) 2-0" },
           { r:"D", tip:"Toulouse FC (D) 1-1" },
@@ -170,9 +177,13 @@ window['SEASONS_brest'] = [
         ],
       },
       {
-        key: "12", label: "Décembre 2027",
-        note: "Le 29 novembre, le tirage du 9e tour de la Coupe de France désigne un adversaire familier : Brest recevra l'EA Guingamp, qui l'avait battu en match amical l'été dernier, au stade Francis-Le Blé le samedi 18 décembre, pour l'entrée en lice des Brestois dans la compétition. Avant cela, décembre propose deux déplacements en Ligue 1 : à Saint-Étienne le samedi 4, puis à Lens le samedi 11.",
-        matches: [],
+        key: "12", label: "Décembre 2027", position: 11,
+        note: "Le 29 novembre, le tirage du 9e tour de la Coupe de France désigne un adversaire familier : Brest recevra l'EA Guingamp, qui l'avait battu en match amical l'été dernier, au stade Francis-Le Blé le samedi 18 décembre, pour l'entrée en lice des Brestois dans la compétition. Avant cela, décembre propose deux déplacements en Ligue 1 : à Saint-Étienne le samedi 4, puis à Lens le samedi 11. Le 1er, les dirigeants contractent un emprunt de 12,5 millions d'euros pour renforcer les ambitions du club en championnat : le budget transferts est porté à 10,75 millions d'euros. Le 4, au stade Geoffroy-Guichard, Brest renverse Saint-Étienne (1-2) : Stassin ouvre le score sur penalty pour les Verts (55e), Kamory Doumbia égalise sur une passe de Joseph Nonge (73e), puis Paris Brunner, servi par Václav Jemelka, offre la victoire aux siens dans le temps additionnel (90e+5) ; Brunner est élu homme du match (7,8), et Jemelka nommé dans l'équipe-type de la semaine. Le 9, Mathieu Patouillet se blesse à la cheville à l'entraînement (3 à 5 semaines d'absence). Le 11, au stade Bollaert-Delelis, Brest s'incline à Lens (2-1), privé de Raphaël Le Guen, suspendu : Cuisance ouvre le score sur penalty (8e), Mama Baldé égalise de la même manière (15e), mais Odsonne Édouard, servi par Sima, redonne l'avantage aux Lensois (23e) et est élu homme du match (7,6). Le même jour, Le Guen prolonge de cinq ans pour un contrat de 3,5 millions d'euros, jusqu'en juin 2032, et le jeune attaquant Gérald Kanté (16 ans), des U19, signe son premier contrat professionnel, jusqu'en 2030 (11 250 € par mois). Le 14, Egil Selvik se fait une élongation à un adducteur (8 jours à 2 semaines d'absence). Le 18, pour son entrée en lice en Coupe de France, Brest élimine Guingamp au stade Francis-Le Blé (1-0) grâce à un but de Brunner dès la 6e minute, sur une passe de Justin Bourgault, élu homme du match (7,6). Le 20, le tirage du 10e tour offre une nouvelle affiche de Ligue 1 : Brest recevra Reims, deuxième du championnat, le samedi 15 janvier 2028. Le 23, Hugo Magnetti, un des meilleurs joueurs de l'équipe selon les supporters, prolonge de quatre ans, jusqu'en juin 2031, pour un contrat de 7 millions d'euros. Le 27, Alireza Beiranvand se blesse au mollet à l'entraînement (3 semaines à 2 mois d'absence), et le 31, le club active la clause qui prolonge automatiquement son contrat d'un an, jusqu'en juin 2029 (46 000 € par mois). Brest termine l'année civile à la 11e place (22 points), à trois longueurs du top 8.",
+        matches: [
+          { r:"W", tip:"Saint-Étienne (E) 1-2" },
+          { r:"L", tip:"RC Lens (E) 2-1" },
+          { r:"W", tip:"EA Guingamp (D) 1-0",          comp:"CDF", tag:"9e tour" },
+        ],
       },
     ],
 
@@ -314,7 +325,7 @@ window['SEASONS_brest'] = [
       },
       {
         key: "05", label: "Mai 2027", position: 9,
-        note: "Mai, dernier mois de la saison, propose cinq journées de Ligue 1 : un déplacement à Troyes le dimanche 2, la réception d'Auxerre le 9 et du Havre le 16, un déplacement à Angers le samedi 22, puis la venue de Lens le samedi 29 pour la dernière journée. Le 2, au stade de l'Aube, l'ESTAC ouvre le score dès la 8e minute par Dermane Karim, servi par Boura, mais Lucas Tousart égalise sur une passe de Noah Edjouma (37e) avant que Ludovic Ajorque, servi par Giovani Versini, n'offre la victoire aux siens dans le temps additionnel (1-2, 90e+3) ; Karim est élu homme du match (7,4). Le 4, Brendan Chardonnet, remis de sa blessure à la hanche, reprend l'entraînement complet. Le 9, au stade Francis-Le Blé, Brest écrase Auxerre (4-1) : Ajorque ouvre le score sur une passe de Justin Bourgault (74e), Archer égalise aussitôt (75e), puis Versini, servi par Luck Zogbé (85e), Ajorque, sur un service de Versini (90e), et Joseph Nonge, de nouveau servi par Zogbé (90e+4), font la différence en fin de match. Auteur de deux passes décisives, Zogbé est élu homme du match (9,0). Grâce à ce quatrième succès consécutif, Brest grimpe à la 8e place. Les 14 et 15, deux jeunes des U19 signent leur premier contrat professionnel, jusqu'en 2030 : le milieu Simone De Martino et le défenseur Franck Guillerm, tous deux âgés de 16 ans. Le 15, Mamady Diambou met fin aux rumeurs de départ en prolongeant de deux ans, jusqu'en juin 2029. À la mi-mai, la Coupe de France rend son verdict : l'AS Monaco la remporte en finale face à Lorient, le club qui avait éliminé Brest en quart de finale. Le 16, la série s'arrête face au Havre (0-1) : Junior Mwanga, servi par Ilić, inscrit le seul but de la rencontre (25e) et est élu homme du match (8,3). Le 19, Joris Chotard reprend l'entraînement après sept semaines d'absence. Le 22, au stade Raymond-Kopa, Brest ramène un point d'Angers (0-0) ; dominés (38 % de possession, 1,41 xG contre 0,30), les Brestois doivent beaucoup à Egil Selvik, élu homme du match (7,3). Le 29, pour la dernière journée, Brest bat Lens au stade Francis-Le Blé (2-1) : Gautier Lloris (11e) puis Noah Edjouma (62e) marquent, tous deux sur des passes de Kenny Lala, élu homme du match (8,1), avant que Ganiou ne réduise l'écart (75e). Le jeune Jaden Choisy, 17 ans, est titularisé en pointe, tandis que Brendan Chardonnet dispute son 277e match de championnat sous le maillot brestois, un record pour le club : il dépasse Bruno Grougi (276). Brest termine la saison à la 9e place avec 46 points, dans la première moitié du tableau : l'objectif du milieu de tableau fixé par les dirigeants est atteint. Au lendemain de la saison, le club salue plusieurs records individuels : Ludovic Ajorque (15 buts) et Pathé Mboup (8 passes décisives, 4 titres d'homme du match) signent les meilleures saisons de l'histoire du club dans leur domaine, et Egil Selvik établit un nouveau record avec 9 matchs sans encaisser de but. Bradley Locko signe la meilleure note moyenne de l'histoire du club sur une saison (7,01 en 36 matchs), et le public du stade Francis-Le Blé bat lui aussi un record, avec une affluence moyenne de 14 210 spectateurs, contre 13 549 en 2010. Kenny Lala, lui, est nommé dans l'équipe-type de la dernière journée.",
+        note: "Mai, dernier mois de la saison, propose cinq journées de Ligue 1 : un déplacement à Troyes le dimanche 2, la réception d'Auxerre le 9 et du Havre le 16, un déplacement à Angers le samedi 22, puis la venue de Lens le samedi 29 pour la dernière journée. Le 2, au stade de l'Aube, l'ESTAC ouvre le score dès la 8e minute par Dermane Karim, servi par Boura, mais Lucas Tousart égalise sur une passe de Noah Edjouma (37e) avant que Ludovic Ajorque, servi par Giovani Versini, n'offre la victoire aux siens dans le temps additionnel (1-2, 90e+3) ; Karim est élu homme du match (7,4). Le même jour, les dirigeants concluent un prêt bancaire de 18,5 millions d'euros pour payer les charges courantes du club. Le 4, Brendan Chardonnet, remis de sa blessure à la hanche, reprend l'entraînement complet. Le 9, au stade Francis-Le Blé, Brest écrase Auxerre (4-1) : Ajorque ouvre le score sur une passe de Justin Bourgault (74e), Archer égalise aussitôt (75e), puis Versini, servi par Luck Zogbé (85e), Ajorque, sur un service de Versini (90e), et Joseph Nonge, de nouveau servi par Zogbé (90e+4), font la différence en fin de match. Auteur de deux passes décisives, Zogbé est élu homme du match (9,0). Grâce à ce quatrième succès consécutif, Brest grimpe à la 8e place. Les 14 et 15, deux jeunes des U19 signent leur premier contrat professionnel, jusqu'en 2030 : le milieu Simone De Martino et le défenseur Franck Guillerm, tous deux âgés de 16 ans. Le 15, Mamady Diambou met fin aux rumeurs de départ en prolongeant de deux ans, jusqu'en juin 2029. À la mi-mai, la Coupe de France rend son verdict : l'AS Monaco la remporte en finale face à Lorient, le club qui avait éliminé Brest en quart de finale. Le 16, la série s'arrête face au Havre (0-1) : Junior Mwanga, servi par Ilić, inscrit le seul but de la rencontre (25e) et est élu homme du match (8,3). Le 19, Joris Chotard reprend l'entraînement après sept semaines d'absence. Le 22, au stade Raymond-Kopa, Brest ramène un point d'Angers (0-0) ; dominés (38 % de possession, 1,41 xG contre 0,30), les Brestois doivent beaucoup à Egil Selvik, élu homme du match (7,3). Le 29, pour la dernière journée, Brest bat Lens au stade Francis-Le Blé (2-1) : Gautier Lloris (11e) puis Noah Edjouma (62e) marquent, tous deux sur des passes de Kenny Lala, élu homme du match (8,1), avant que Ganiou ne réduise l'écart (75e). Le jeune Jaden Choisy, 17 ans, est titularisé en pointe, tandis que Brendan Chardonnet dispute son 277e match de championnat sous le maillot brestois, un record pour le club : il dépasse Bruno Grougi (276). Brest termine la saison à la 9e place avec 46 points, dans la première moitié du tableau : l'objectif du milieu de tableau fixé par les dirigeants est atteint. Au lendemain de la saison, le club salue plusieurs records individuels : Ludovic Ajorque (15 buts) et Pathé Mboup (8 passes décisives, 4 titres d'homme du match) signent les meilleures saisons de l'histoire du club dans leur domaine, et Egil Selvik établit un nouveau record avec 9 matchs sans encaisser de but. Bradley Locko signe la meilleure note moyenne de l'histoire du club sur une saison (7,01 en 36 matchs), et le public du stade Francis-Le Blé bat lui aussi un record, avec une affluence moyenne de 14 210 spectateurs, contre 13 549 en 2010. Kenny Lala, lui, est nommé dans l'équipe-type de la dernière journée.",
         matches: [
           { r:"W", tip:"ESTAC (E) 1-2" },
           { r:"W", tip:"AJ Auxerre (D) 4-1" },

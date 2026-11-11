@@ -46,6 +46,7 @@ Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est par
 - Records du club (`records`, `key` unique par record : le plus récent remplace l'ancien sur la page carrière) ; distinctions (`awards`, toutes conservées).
 - Objectif de la saison fixé par les dirigeants : champ `objective` de la saison (affiché dans l'en-tête des deux designs). Le reprendre dans les notes et le message d'intro (objectif atteint, dépassé ou manqué).
 - **Ne pas afficher** : les attributs détaillés des joueurs (fiches techniques/mentales/physiques), ni les demandes faites aux dirigeants. Une fiche joueur sert seulement à en tirer poste, âge, nationalité, contrat ou transfert.
+- **Tout ce qu'une capture contient doit apparaître quelque part** sur le site (note du mois, mercato, distinctions, records…), **montants compris** : emprunts, budgets, salaires, montants des contrats et des transferts (demande du propriétaire, 11/11/2026). Seules exceptions : les attributs détaillés et les demandes aux dirigeants ci-dessus.
 
 ## Carrières
 
