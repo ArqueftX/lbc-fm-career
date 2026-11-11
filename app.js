@@ -1,17 +1,15 @@
 /* ═══════════════════════════════════════════════
-   CARNETS FM — NOUVEAU DESIGN (v2)
+   CARNETS FM
    Une seule page, trois vues (hash) :
      #/                 toutes les carrières
      #/c/<carrière>     une carrière
      #/c/<carrière>/<saison>   une saison
-   Lit les mêmes fichiers que le site actuel (careers.js +
-   seasons-*.js) : rien à saisir en double.
+   Lit careers.js et les fichiers seasons-*.js.
 ═══════════════════════════════════════════════ */
 
 ;(function () {
 
-const ROOT = '../'
-const DESIGN_KEY = 'lbc-design'
+const ROOT = ''
 const THEME_KEY = 'lbc-v2-theme'
 
 const $ = sel => document.querySelector(sel)
@@ -608,13 +606,6 @@ function renderNav() {
   }).join('')
 }
 
-// Lien « design actuel » vers la page équivalente de l'ancien site
-function oldSiteUrl(route) {
-  if (route.season) return `${ROOT}${route.career}/saison.html?id=${encodeURIComponent(route.season)}&career=${encodeURIComponent(route.career)}`
-  if (route.career) return `${ROOT}${route.career}/index.html`
-  return ROOT + 'index.html'
-}
-
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map(decodeURIComponent)
   return parts[0] === 'c' ? { career: parts[1] || null, season: parts[2] || null } : {}
@@ -632,9 +623,6 @@ function render() {
   } else if (c) html = viewCareer(c)
   else html = viewHome()
   app.innerHTML = html
-  const back = oldSiteUrl(route)
-  $('#design-back').href = back
-  $('#design-back-foot').href = back
   bindRibbons()
   bindToggles()
   window.scrollTo(0, 0)
@@ -670,7 +658,7 @@ function bindRibbons() {
   })
 }
 
-/* ── Thème + bascule de design ── */
+/* ── Thème ── */
 function initChrome() {
   $('#theme-btn').addEventListener('click', () => {
     const cur = document.documentElement.dataset.theme
@@ -679,10 +667,25 @@ function initChrome() {
     document.documentElement.dataset.theme = next
     store.set(THEME_KEY, next)
   })
-  const back = () => store.set(DESIGN_KEY, 'v1')
-  $('#design-back').addEventListener('click', back)
-  $('#design-back-foot').addEventListener('click', back)
-  store.set(DESIGN_KEY, 'v2')
+}
+
+/* ── Annonce : suppression de l'ancien design (affichée une seule fois) ── */
+const NOTICE_KEY = 'lbc-notice-ancien-design'
+function showNotice() {
+  if (store.get(NOTICE_KEY) === 'vu') return
+  const d = document.createElement('dialog')
+  d.className = 'notice'
+  d.setAttribute('aria-labelledby', 'notice-title')
+  d.innerHTML = `
+    <span class="eyebrow">Nouveauté</span>
+    <h2 id="notice-title">L'ancien design a été supprimé</h2>
+    <p>Le site n'a plus qu'un seul design, celui-ci, et c'est pour de bon : le retour à l'ancien design n'est plus possible.</p>
+    <p>Rien n'est perdu : toutes les carrières, les saisons, les mercatos et les messages d'intro sont ici. Les anciens liens mènent automatiquement à la bonne page.</p>
+    <form method="dialog"><button class="notice-ok" type="submit">Compris</button></form>`
+  d.addEventListener('close', () => { store.set(NOTICE_KEY, 'vu'); d.remove() })
+  document.body.appendChild(d)
+  if (typeof d.showModal === 'function') d.showModal()
+  else d.setAttribute('open', '')
 }
 
 initChrome()
@@ -690,6 +693,7 @@ loadData().then(() => {
   renderNav()
   render()
   window.addEventListener('hashchange', render)
+  showNotice()
 })
 
 })()

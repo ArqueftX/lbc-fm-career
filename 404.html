@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Carnets FM</title>
+  <script>
+    // L'ancien design (pages <carrière>/index.html, saison.html, mercato.html,
+    // splash.html et le dossier v2/) a été supprimé : on renvoie ces anciens
+    // liens vers la page équivalente du design unique (routes #/c/…).
+    (function () {
+      var CAREERS = ['arsenal', 'chippenham', 'chateauroux', 'seville', 'wolfsburg', 'ajax', 'wolfsburg-pep', 'leverkusen', 'brest']
+      var path = location.pathname
+      var m = path.match(/^(.*\/)v2(?:\/(?:index\.html)?)?$/)
+      if (m) { location.replace(m[1] + (location.hash || '')); return }
+      m = path.match(/^(.*\/)([a-z-]+)(?:\/(?:(index|saison|mercato|splash)\.html)?)?$/)
+      if (m && CAREERS.indexOf(m[2]) !== -1) {
+        var id = new URLSearchParams(location.search).get('id')
+        var deep = id && m[3] && m[3] !== 'index'
+        location.replace(m[1] + '#/c/' + m[2] + (deep ? '/' + encodeURIComponent(id) : ''))
+        return
+      }
+      window.__notFound = true
+    })()
+  </script>
+  <style>
+    :root { --bg: #f3efe6; --ink: #17191d; --muted: #6d7078; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111317; --ink: #ece7dc; --muted: #979ba3; } }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; padding: 16px; box-sizing: border-box; text-align: center; }
+    a { color: inherit; }
+    p { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Page introuvable</h1>
+    <p>Cette page n'existe pas (ou plus).</p>
+    <p><a id="home" href="/">Retour aux carrières</a></p>
+  </main>
+  <script>
+    // Lien de retour vers la racine du site (sous-dossier du projet sur GitHub Pages)
+    var seg = location.pathname.split('/')[1]
+    if (location.hostname.slice(-10) === '.github.io' && seg) document.getElementById('home').href = '/' + seg + '/'
+  </script>
+</body>
+</html>

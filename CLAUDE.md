@@ -44,7 +44,7 @@ Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est par
 - Classements : `zone` = `ucl`, `uel`, `uecl`, `promo`, `promo-playoff`, `releg-playoff`, `releg` (+ `champion:true`) ; phase européenne : `r16`, `playoff`, `out`. Suivre les couleurs du jeu (voir `standings-zones.js`).
 - **Toujours vérifier par script** que la somme des matchs de championnat (V/N/D, buts) donne exactement la ligne du classement, et que le tableau est cohérent (somme BP = somme BC).
 - Records du club (`records`, `key` unique par record : le plus récent remplace l'ancien sur la page carrière) ; distinctions (`awards`, toutes conservées).
-- Objectif de la saison fixé par les dirigeants : champ `objective` de la saison (affiché dans l'en-tête des deux designs). Le reprendre dans les notes et le message d'intro (objectif atteint, dépassé ou manqué).
+- Objectif de la saison fixé par les dirigeants : champ `objective` de la saison (affiché dans l'en-tête de la saison). Le reprendre dans les notes et le message d'intro (objectif atteint, dépassé ou manqué).
 - **Ne pas afficher** : les attributs détaillés des joueurs (fiches techniques/mentales/physiques), ni les demandes faites aux dirigeants. Une fiche joueur sert seulement à en tirer poste, âge, nationalité, contrat ou transfert.
 - **Tout ce qu'une capture contient doit apparaître quelque part** sur le site (note du mois, mercato, distinctions, records…), **montants compris** : emprunts, budgets, salaires, montants des contrats et des transferts (demande du propriétaire, 11/11/2026). Seules exceptions : les attributs détaillés et les demandes aux dirigeants ci-dessus.
 
@@ -52,15 +52,16 @@ Site statique (GitHub Pages) qui raconte des carrières FM26 et FM27. Il est par
 
 Ordre de création (ordre de `careers.js`) : Arsenal, Chippenham Town, Châteauroux, Séville, Wolfsburg (Réseau), Ajax, Wolfsburg (Pep), Leverkusen (toutes sur FM26), puis Brest (FM27).
 
-- **Version du jeu** : champ `game` de `careers.js` (`'FM27'`, `'FM26'` si absent). Les accueils et les menus des deux designs regroupent les carrières par jeu, le plus récent en premier (liste `window.GAMES`).
+- **Version du jeu** : champ `game` de `careers.js` (`'FM27'`, `'FM26'` si absent). L'accueil et le menu regroupent les carrières par jeu, le plus récent en premier (liste `window.GAMES`).
 - En cours : Chippenham, Châteauroux, Wolfsburg (Pep), Leverkusen, Brest. Terminées : Arsenal, Séville, Wolfsburg (Réseau), Ajax.
 - Entraîneurs : Nolann Queft (Arsenal, Chippenham, Châteauroux), Arq Queft (Ajax, Leverkusen), Arq Queft 1er du Nom (Brest), Pep Guardiola (Wolfsburg Pep).
 - Brest (FM27) : Ligue 1, 18 clubs, 34 journées ; saison mois par mois (même format que Chippenham) ; coupe = `CDF` (Coupe de France).
 
 ## Technique
 
-- Données : `seasons-<id>.js` (`window['SEASONS_<id>']`) et `careers.js`. Ancien design : pages `<id>/` + `utils.js` + `style.css`. Nouveau design : `v2/` (routes `#/`, `#/c/id`, `#/c/id/sid`). Partagés : `career-stats.js`, `standings-zones.js`.
-- Une nouvelle carrière : entrée dans `careers.js`, fichier `seasons-<id>.js`, dossier `<id>/` (copier celui d'une carrière au même format), et `<script src="../seasons-<id>.js">` dans toutes les pages carrière.
-- Tester en local (`python3 -m http.server 8765` + Playwright, Chromium dans `/opt/pw-browsers/chromium`) les deux designs, en 1280 et 390 px, avant chaque push.
+- **Un seul design** (l'ancien a été supprimé pour de bon le 11/11/2026, à la demande du propriétaire : ne pas le recréer ni proposer de bascule). Page unique à la racine : `index.html` + `app.js` + `app.css`, routes `#/`, `#/c/id`, `#/c/id/sid`. Données : `seasons-<id>.js` (`window['SEASONS_<id>']`) et `careers.js`, plus `career-stats.js` et `standings-zones.js`.
+- `404.html` renvoie les anciens liens (`<id>/`, `<id>/saison.html?id=…`, `mercato.html`, `splash.html`, `v2/`) vers la page équivalente ; sa liste `CAREERS` doit suivre `careers.js`. Un pop-up affiché une seule fois (`showNotice` dans `app.js`) annonce la suppression de l'ancien design.
+- Une nouvelle carrière : entrée dans `careers.js` et fichier `seasons-<id>.js` (chargé automatiquement), et ajouter son id à la liste de `404.html`.
+- Tester en local (`python3 -m http.server 8765` + Playwright, Chromium dans `/opt/pw-browsers/chromium`), en 1280 et 390 px, avant chaque push.
 - Le propriétaire fusionne lui-même les pull requests : ne jamais les fusionner (essai de fusion par Claude du 03/11/2026 abandonné à sa demande). Commits et PR en français.
 - Pas de mention « Generated with Claude Code », de lien de session ni de ligne « Co-Authored-By » dans les commits et les PR (demande du propriétaire).
