@@ -165,12 +165,37 @@ function standingsTable(rows, opts) {
     <tbody>${body}</tbody></table></div>${legend.length ? `<div class="std-legend">${legend.map(z => `<span><i style="background:${z.color}"></i>${esc(z.label)}</span>`).join('')}</div>` : ''}`
 }
 
+// Distinctions : les principales en cartes ; les équipes-types de la semaine,
+// plus nombreuses et moins importantes, dans un bloc repliable (fermé par défaut)
+const isWeekly = a => /^Équipe-type de la semaine/i.test(a.label || '')
+function awardsSection(list, small, withYear) {
+  if (!list.length) return ''
+  const main = list.filter(a => !isWeekly(a))
+  const weekly = list.filter(isWeekly)
+  const when = a => esc([a.period, withYear && a.year && a.period && !String(a.period).includes(String(a.year).slice(0, 4)) ? a.year : ''].filter(Boolean).join(' · ') || a.year || '')
+  const cards = main.length ? `<ul class="cx-list">${main.map(a => `<li class="cx-t gold"><span>🏅 ${esc(a.label)}${a.winner ? ` · ${esc(a.winner)}` : ''}${a.detail ? `<span class="cx-d" style="display:block;font-weight:400">${esc(a.detail)}</span>` : ''}</span><span class="mono">${when(a)}</span></li>`).join('')}</ul>` : ''
+  let fold = ''
+  if (weekly.length) {
+    // Nominations par joueur (clé : nom de famille), du plus nommé au moins nommé
+    const count = new Map()
+    weekly.forEach(a => String(a.winner || '').split(' · ').map(x => x.trim()).filter(Boolean).forEach(n => {
+      const t = n.split(' ')
+      const k = (t.length > 1 ? t.slice(1) : t).join(' ') // « R. Le Guen » / « Raphaël Le Guen » → « Le Guen »
+      count.set(k, (count.get(k) || 0) + 1)
+    }))
+    const top = [...count.entries()].sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0], 'fr'))
+    fold = `<details class="aw-fold">
+      <summary><span class="chev">▸</span><b>Équipes-types de la semaine</b><span class="cx-d">${weekly.length} sélection${weekly.length > 1 ? 's' : ''} · ${top.slice(0, 4).map(([n, k]) => `${esc(n)} ×${k}`).join(', ')}${top.length > 4 ? '…' : ''}</span></summary>
+      <ul class="aw-weekly">${weekly.map(a => `<li><span class="mono">${when(a)}</span><span><b>${esc(a.winner || '')}</b>${a.detail ? ` <span class="cx-d">${esc(a.detail.replace(/^Ligue 1 · /, ''))}</span>` : ''}</span></li>`).join('')}</ul>
+    </details>`
+  }
+  return `<section class="section"><h2 class="h-section">Distinctions <small>${small(main.length, weekly.length)}</small></h2>${cards}${fold}</section>`
+}
+const awardsSmall = (m, w) => [m ? `${m} distinction${m > 1 ? 's' : ''}` : '', w ? `${w} équipe${w > 1 ? 's' : ''}-type${w > 1 ? 's' : ''}` : ''].filter(Boolean).join(' · ')
+
 // Distinctions de la saison (entraîneur du mois, etc.)
 function seasonAwards(s) {
-  const as = s.awards || []
-  if (!as.length) return ''
-  return `<section class="section"><h2 class="h-section">Distinctions <small>${as.length}</small></h2>
-    <ul class="cx-list">${as.map(a => `<li class="cx-t gold"><span>🏅 ${esc(a.label)}${a.winner ? ` · ${esc(a.winner)}` : ''}${a.detail ? `<span class="cx-d" style="display:block;font-weight:400">${esc(a.detail)}</span>` : ''}</span><span class="mono">${esc(a.period || '')}</span></li>`).join('')}</ul></section>`
+  return awardsSection(s.awards || [], awardsSmall, false)
 }
 
 // Records battus pendant la saison : tous restent, même un record battu deux fois
@@ -436,9 +461,7 @@ function careerExtras(ss, c) {
     <section class="section"><h2 class="h-section">Vitrine <small>${st.trophies.length} trophée${st.trophies.length > 1 ? 's' : ''} · ${st.finals.length} finale${st.finals.length > 1 ? 's' : ''} perdue${st.finals.length > 1 ? 's' : ''}</small></h2>
       ${trophies || finals ? `<ul class="cx-list">${trophies}${finals}</ul>` : '<div class="empty">Pas encore de trophée ni de finale.</div>'}
     </section>
-    ${awards.length ? `<section class="section"><h2 class="h-section">Distinctions <small>${awards.length} au total</small></h2>
-      <ul class="cx-list">${awards.map(a => `<li class="cx-t gold"><span>🏅 ${esc(a.label)}${a.winner ? ` · ${esc(a.winner)}` : ''}${a.detail ? `<span class="cx-d" style="display:block;font-weight:400">${esc(a.detail)}</span>` : ''}</span><span class="mono">${esc(a.period || a.year)}</span></li>`).join('')}</ul>
-    </section>` : ''}
+    ${awardsSection(awards, awardsSmall, true)}
     ${recs.length ? `<section class="section"><h2 class="h-section">Records du club <small>Les plus récents</small></h2>
       <div class="kpis cx-kpis rec-kpis">${recs.map(r => cell(esc(r.label), esc(r.value), esc([r.detail, r.date || r.year].filter(Boolean).join(' · ')))).join('')}</div>
     </section>` : ''}

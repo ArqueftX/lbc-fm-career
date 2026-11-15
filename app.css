@@ -304,6 +304,20 @@ details.month:not([open]) .month-note { margin-bottom: 0; display: -webkit-box; 
 .cx-t { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-weight: 600; }
 .cx-t.gold { background: color-mix(in srgb, var(--gold) 14%, var(--surface)); border-color: color-mix(in srgb, var(--gold) 45%, transparent); }
 .cx-t .mono { font-size: 12px; color: var(--muted); font-weight: 500; }
+/* Équipes-types de la semaine : bloc repliable sous les distinctions */
+.aw-fold { margin-top: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.cx-list + .aw-fold { margin-top: 10px; }
+.aw-fold > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 12px 16px; }
+.aw-fold > summary::-webkit-details-marker { display: none; }
+.aw-fold > summary .chev { display: inline-block; transition: transform .15s; color: var(--muted); }
+.aw-fold[open] > summary .chev { transform: rotate(90deg); }
+.aw-fold > summary b { font-weight: 600; }
+.aw-weekly { list-style: none; margin: 0; padding: 0 16px 12px; display: grid; gap: 0; }
+.aw-weekly li { display: grid; grid-template-columns: minmax(110px, auto) 1fr; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.aw-weekly .mono { font-size: 12px; color: var(--muted); }
+.aw-weekly b { font-weight: 600; }
+.aw-fold .cx-d { margin-top: 0; }
+@media (max-width: 640px) { .aw-weekly li { grid-template-columns: 1fr; gap: 2px; } }
 .cx-d { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.4; font-weight: 400; }
 .cx-d b { color: var(--ink); font-weight: 600; }
 .cx-kpis { grid-template-columns: repeat(3, 1fr); margin-top: 0; }
