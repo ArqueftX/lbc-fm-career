@@ -22,23 +22,23 @@
  */
 window['SEASONS_brest'] = [
 
-  /* ─── SAISON 2027/28 · EN COURS ──────────────────────── */
+  /* ─── SAISON 2027/28 · TERMINÉE ──────────────────────── */
   {
     id:           "brest-2027-28",
     year:         "2027/28",
     league:       "Ligue 1",
-    status:       "en_cours",
+    status:       "termine",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "Avril 2028 · J32",
+    lastUpdate:   "Saison terminée",
     position:     4,
     compNames:    { CDF: "Coupe de France" },
     objective:    "Terminer en milieu de tableau en Ligue 1",
 
-    // Stats au 1er mai 2028 (32 journées de Ligue 1 + 5 matchs de Coupe de France)
+    // Stats finales (34 journées de Ligue 1 + 5 matchs de Coupe de France)
     scorers: [
       { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans",    value: 12 },
-      { name: "Joseph Nonge",          detail: "MC · Belge · 22 ans",             value: 8 },
+      { name: "Joseph Nonge",          detail: "MC · Belge · 23 ans",             value: 8 },
       { name: "Paris Brunner",         detail: "BU · Allemand · 22 ans",          value: 6 },
     ],
     assists: [
@@ -46,18 +46,19 @@ window['SEASONS_brest'] = [
       { name: "Kamory Doumbia",        detail: "MC · Malien · 25 ans",            value: 5 },
       { name: "G. Sakai · L. Zogbé",   detail: "DG / DD · ex-aequo",              value: 4 },
     ],
-    // Meilleures et pires moyennes : au moins 16 matchs joués (la moitié des 32 journées)
+    // Meilleures et pires moyennes : au moins 17 matchs joués (la moitié de la saison)
     ratings: [
-      { name: "Joseph Nonge",          detail: "MC · Belge · 22 ans · 24 tit. / 7 rempl. · 8 buts · 3 passes D.", value: 7.01 },
-      { name: "Justin Bourgault",      detail: "DG · Français · 22 ans · 27 tit. / 8 rempl. · 6 passes D.",      value: 6.98 },
-      { name: "E. Selvik · L. Zogbé",  detail: "GB / DD · ex-aequo",                                               value: 6.96 },
+      { name: "J. Nonge · E. Selvik",  detail: "MC / GB · ex-aequo",                                               value: 7.00 },
+      { name: "Justin Bourgault",      detail: "DG · Français · 22 ans · 29 tit. / 8 rempl. · 6 passes D.",      value: 6.97 },
+      { name: "Luck Zogbé",            detail: "DD · Ivoirien · 25 ans · 13 tit. / 19 rempl. · 4 passes D.",     value: 6.96 },
     ],
+    // Pires moyennes : Baldé définitive ; Brunner et Diambou au 1er mai (à confirmer avec l'effectif de fin de saison)
     flops: [
       { name: "Paris Brunner",         detail: "BU · Allemand · 22 ans · 5 tit. / 19 rempl. · 6 buts",             value: 6.73 },
-      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans · 25 tit. / 3 rempl. · 12 buts · 1 passe D.", value: 6.76 },
+      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans · 25 tit. / 3 rempl. · 12 buts · 1 passe D.", value: 6.77 },
       { name: "Mamady Diambou",        detail: "MD · Malien · 25 ans · 2 tit. / 23 rempl.",                        value: 6.78 },
     ],
-    // Effectif au 1er mai 2028
+    // Effectif en fin de saison (mai 2028)
     squad: [
       { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:35 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
@@ -75,7 +76,7 @@ window['SEASONS_brest'] = [
       { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:30 },
       { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:25 },
       { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:25 },
-      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:22 },
+      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:23 },
       { n:"Kaio César",            p:"MOD",  nat:"BRA", age:24 },
       { n:"Yannis Rabrun-Nellec",  p:"MOD",  nat:"GUF", age:20 },
       { n:"Taïryk Arconte",        p:"MOD",  nat:"GLP", age:24 },
@@ -91,6 +92,13 @@ window['SEASONS_brest'] = [
       { label:"Équipe-type de la semaine", winner:"Joseph Nonge", period:"14e journée", detail:"Ligue 1 · passeur décisif à Strasbourg (1-2), note de 8,2" },
       { label:"Équipe-type de la semaine", winner:"Václav Jemelka", period:"16e journée", detail:"Ligue 1 · défenseur central, passeur décisif à Saint-Étienne (1-2)" },
       { label:"Sélection All-Star asiatique", winner:"Alireza Beiranvand", period:"Octobre 2027", detail:"Gardien titulaire de la sélection" },
+      { label:"Joueur de la saison des supporters", winner:"Joseph Nonge", period:"Mai 2028", detail:"Note moyenne de 7,00 · également élu jeune joueur de la saison" },
+      { label:"Jeune joueur de la saison", winner:"Joseph Nonge", period:"Mai 2028", detail:"Récompenses de fin de saison du club" },
+      { label:"But de la saison", winner:"Joris Chotard", period:"Mai 2028", detail:"À Angers (0-3), le 29 janvier 2028" },
+      { label:"Recrue de la saison", winner:"Alireza Beiranvand", period:"Mai 2028", detail:"Gardien iranien · note moyenne de 6,90" },
+      { label:"Le plus souvent homme du match", winner:"Justin Bourgault", period:"Mai 2028", detail:"4 titres · aussi meilleur passeur du club (6)" },
+      { label:"Meilleur onze de la saison", winner:"Selvik · Jemelka · Chardonnet · Cáceres · Sakai · Magnetti · Chotard · Bourgault · Nonge · Doumbia · Baldé", period:"Mai 2028", detail:"Récompenses de fin de saison du club" },
+      { label:"Meilleur onze de tous les temps", winner:"V. Jemelka · A. Beiranvand", period:"Mai 2028", detail:"Ajoutés par les supporters : Jemelka titulaire (38 matchs, 6,91 de moyenne), Beiranvand parmi les remplaçants" },
       { label:"Équipe-type de la semaine", winner:"Gotoku Sakai", period:"18e journée", detail:"Ligue 1 · passeur décisif et homme du match à Rennes (0-1), note de 8,0" },
       { label:"Équipe-type de la semaine", winner:"V. Jemelka · J. Bourgault · K. Doumbia · M. Baldé", period:"19e journée", detail:"Ligue 1 · quatre Brestois après la victoire contre l'OM (2-0)" },
       { label:"Équipe-type de la semaine", winner:"Justin Bourgault", period:"20e journée", detail:"Ligue 1 · homme du match à Angers (0-3), note de 7,9" },
@@ -100,10 +108,14 @@ window['SEASONS_brest'] = [
       { label:"Équipe-type de la semaine", winner:"Gotoku Sakai", period:"26e journée", detail:"Ligue 1 · passeur décisif et homme du match contre le LOSC (1-0), note de 8,3" },
       { label:"Équipe-type de la semaine", winner:"J. Bourgault · J. Nonge", period:"28e journée", detail:"Ligue 1 · après la victoire au Havre (1-2) : deux passes décisives de Bourgault (8,6), but de Nonge (7,5)" },
       { label:"Équipe-type de la semaine", winner:"Luck Zogbé", period:"31e journée", detail:"Ligue 1 · homme du match malgré la défaite à Reims (4-1), passeur décisif, note de 8,4" },
+      { label:"Équipe-type de la semaine", winner:"E. Selvik · L. Zogbé · H. Magnetti", period:"32e journée", detail:"Ligue 1 · après la victoire contre Saint-Étienne (1-0), but de Magnetti (7,9)" },
+      { label:"Équipe-type de la semaine", winner:"Egil Selvik", period:"33e journée", detail:"Ligue 1 · homme du match contre Lens (0-0), note de 7,9" },
     ],
     records: [
       { key:"victoires-consecutives", label:"Victoires consécutives", value:"6", detail:"Du 18 décembre 2027 (EA Guingamp, Coupe de France) au 2 février 2028 (GFA Rumilly-Vallières 74, Coupe de France)", date:"3 févr. 2028" },
       { key:"invincibilite", label:"Matchs consécutifs sans défaite", value:"6", detail:"Série commencée le 18 décembre 2027, arrêtée à Toulouse (2-0) le 6 février 2028", date:"3 févr. 2028" },
+      { key:"plus-age-joueur", label:"Joueur le plus âgé à disputer un match", value:"37 ans et 53 jours", detail:"Gotoku Sakai · contre Lens (Ligue 1, 0-0)", date:"6 mai 2028" },
+      { key:"clean-sheets-saison", label:"Matchs sans encaisser de but sur une saison", value:"12", detail:"Egil Selvik · 10 en Ligue 1, 2 en Coupe de France · ancien record : 9, par lui-même en 2026/27", date:"Saison 2027/28" },
       { key:"matchs-sans-encaisser", label:"Matchs consécutifs sans encaisser de but", value:"6", detail:"Série commencée le 18 décembre 2027, arrêtée à Toulouse le 6 février 2028", date:"3 févr. 2028" },
     ],
 
@@ -117,26 +129,26 @@ window['SEASONS_brest'] = [
         { result: "L", round: "Demi-finale", score: "2 – 3", opponent: "FC Lorient (D)" },
       ],
     },
-    standingsTitle: "Classement après la 32e journée",
+    standingsTitle: "Classement final",
     standings: [
-      { pos:1,  team:"PSG",            j:32, g:23, n:3, l:6, bp:64, bc:28, db:36, pts:72, zone:"ucl", champion:true },
-      { pos:2,  team:"Toulouse FC",    j:32, g:15, n:8, l:9, bp:47, bc:42, db:5, pts:53, zone:"ucl" },
-      { pos:3,  team:"Reims",          j:32, g:14, n:9, l:9, bp:44, bc:35, db:9, pts:51, zone:"ucl" },
-      { pos:4,  team:"Brest",          j:32, g:15, n:5, l:12, bp:32, bc:34, db:-2, pts:50, zone:"ucl", highlight:true },
-      { pos:5,  team:"Angers SCO",     j:32, g:13, n:9, l:10, bp:29, bc:28, db:1, pts:48, zone:"uel" },
-      { pos:6,  team:"AJ Auxerre",     j:32, g:12, n:11, l:9, bp:47, bc:40, db:7, pts:47, zone:"uecl" },
-      { pos:7,  team:"OM",             j:32, g:12, n:11, l:9, bp:46, bc:40, db:6, pts:47 },
-      { pos:8,  team:"RC Lens",        j:32, g:12, n:11, l:9, bp:41, bc:41, db:0, pts:47 },
-      { pos:9,  team:"OL",             j:32, g:13, n:7, l:12, bp:50, bc:46, db:4, pts:46 },
-      { pos:10, team:"AS Monaco",      j:32, g:11, n:10, l:11, bp:48, bc:41, db:7, pts:43 },
-      { pos:11, team:"Paris FC",       j:32, g:10, n:12, l:10, bp:28, bc:33, db:-5, pts:42 },
-      { pos:12, team:"Rennes",         j:32, g:12, n:5, l:15, bp:50, bc:53, db:-3, pts:41 },
-      { pos:13, team:"FC Lorient",     j:32, g:12, n:5, l:15, bp:37, bc:42, db:-5, pts:41 },
-      { pos:14, team:"LOSC",           j:32, g:10, n:9, l:13, bp:44, bc:45, db:-1, pts:39 },
-      { pos:15, team:"OGC Nice",       j:32, g:9, n:10, l:13, bp:42, bc:46, db:-4, pts:37 },
-      { pos:16, team:"Strasbourg",     j:32, g:8, n:10, l:14, bp:22, bc:34, db:-12, pts:34, zone:"releg-playoff" },
-      { pos:17, team:"Saint-Étienne",  j:32, g:6, n:10, l:16, bp:29, bc:40, db:-11, pts:28, zone:"releg" },
-      { pos:18, team:"Havre AC",       j:32, g:5, n:7, l:20, bp:22, bc:54, db:-32, pts:22, zone:"releg" },
+      { pos:1,  team:"PSG",            j:34, g:23, n:4, l:7, bp:66, bc:33, db:33, pts:73, zone:"ucl", champion:true },
+      { pos:2,  team:"Toulouse FC",    j:34, g:17, n:8, l:9, bp:51, bc:43, db:8, pts:59, zone:"ucl" },
+      { pos:3,  team:"Reims",          j:34, g:16, n:9, l:9, bp:52, bc:36, db:16, pts:57, zone:"ucl" },
+      { pos:4,  team:"Brest",          j:34, g:15, n:6, l:13, bp:32, bc:35, db:-3, pts:51, zone:"ucl", highlight:true },
+      { pos:5,  team:"AJ Auxerre",     j:34, g:13, n:11, l:10, bp:50, bc:43, db:7, pts:50, zone:"uel" },
+      { pos:6,  team:"OM",             j:34, g:13, n:11, l:10, bp:50, bc:43, db:7, pts:50, zone:"uecl" },
+      { pos:7,  team:"RC Lens",        j:34, g:12, n:12, l:10, bp:42, bc:44, db:-2, pts:48 },
+      { pos:8,  team:"Angers SCO",     j:34, g:13, n:9, l:12, bp:30, bc:32, db:-2, pts:48 },
+      { pos:9,  team:"AS Monaco",      j:34, g:12, n:11, l:11, bp:50, bc:42, db:8, pts:47 },
+      { pos:10, team:"OL",             j:34, g:13, n:8, l:13, bp:50, bc:47, db:3, pts:47 },
+      { pos:11, team:"Rennes",         j:34, g:13, n:5, l:16, bp:55, bc:56, db:-1, pts:44 },
+      { pos:12, team:"OGC Nice",       j:34, g:11, n:10, l:13, bp:46, bc:46, db:0, pts:43 },
+      { pos:13, team:"Paris FC",       j:34, g:10, n:13, l:11, bp:28, bc:38, db:-10, pts:43 },
+      { pos:14, team:"LOSC",           j:34, g:11, n:9, l:14, bp:47, bc:48, db:-1, pts:42 },
+      { pos:15, team:"FC Lorient",     j:34, g:12, n:6, l:16, bp:38, bc:45, db:-7, pts:42 },
+      { pos:16, team:"Strasbourg",     j:34, g:10, n:10, l:14, bp:26, bc:35, db:-9, pts:40, zone:"releg-playoff" },
+      { pos:17, team:"Saint-Étienne",  j:34, g:6, n:11, l:17, bp:31, bc:46, db:-15, pts:29, zone:"releg" },
+      { pos:18, team:"Havre AC",       j:34, g:6, n:7, l:21, bp:26, bc:58, db:-32, pts:25, zone:"releg" },
     ],
 
     months: [
@@ -249,6 +261,14 @@ window['SEASONS_brest'] = [
           { r:"W", tip:"Saint-Étienne (D) 1-0" },
         ],
       },
+      {
+        key: "05", label: "Mai 2028", position: 4,
+        note: "Mai, dernier mois de la saison, ne compte plus que deux journées de Ligue 1 : la réception de Lens le samedi 6 et un déplacement à Nice le samedi 13. Le 1er, trois Brestois figurent dans l'équipe-type de la 32e journée après la victoire contre Saint-Étienne : Egil Selvik (7,6), Luck Zogbé (7,6) et le buteur Hugo Magnetti (7,9). Le 6, au stade Francis-Le Blé, Brest partage les points avec Lens (0-0). Dominés aux tirs (neuf contre quinze, deux cadrés contre huit), les Brestois doivent beaucoup à Egil Selvik, élu homme du match (7,92) puis nommé dans l'équipe-type de la 33e journée (7,9). En disputant cette rencontre à 37 ans et 53 jours, Gotoku Sakai devient le joueur le plus âgé de l'histoire du club. À une journée de la fin, Brest est 4e (51 points), un point devant Auxerre. Le 13, à l'Allianz Riviera, Brest s'incline à Nice (1-0) sur un but contre son camp de Václav Jemelka dès la 8e minute, malgré 1,68 xG contre 0,47 ; le gardien niçois Yehvann Diouf est élu homme du match (7,42). Auxerre perd aussi, et Brest conserve sa 4e place : avec 51 points, un de plus qu'Auxerre et l'OM, les Brestois sont qualifiés pour la Ligue des champions. Le 14, Pathé Mboup, qui jouait avec la réserve pour retrouver du rythme, se casse la cheville lors d'un match amical (deux à trois mois d'absence, traitement par un spécialiste). À la mi-mai, Egil Selvik bat son propre record : ses 12 matchs sans encaisser de but cette saison (10 en Ligue 1, 2 en Coupe de France) effacent les 9 de 2026/27. Le 19, Kamory Doumbia reprend l'entraînement complet après quatre semaines d'absence. Le 20, lors de la cérémonie de fin de saison au stade Francis-Le Blé, les dirigeants valident une saison au-delà de leurs attentes : 4e en Ligue 1 pour un objectif de milieu de tableau, et une demi-finale de Coupe de France quand ils attendaient au moins un quart. Joseph Nonge est élu joueur de la saison par les supporters (7,00 de moyenne) et jeune joueur de la saison, Joris Chotard signe le but de la saison (à Angers, le 29 janvier), Alireza Beiranvand est la recrue de la saison, Mama Baldé termine meilleur buteur (12 buts), Justin Bourgault meilleur passeur (6) et le plus souvent homme du match (4 fois), et Egil Selvik réussit 95 % de ses passes. Le meilleur onze de la saison réunit Selvik, Jemelka, Chardonnet, Cáceres, Sakai, Magnetti, Chotard, Bourgault, Nonge, Doumbia et Baldé. Les supporters ajoutent aussi deux joueurs au meilleur onze de tous les temps du club : Václav Jemelka (38 matchs, 6,91 de moyenne) et Alireza Beiranvand. Le 21, Angers remporte la Coupe de France en finale contre Lorient, le club qui avait éliminé Brest en demi-finale ; le PSG, éliminé dès le 11e tour par ces mêmes Lorientais, est la grande déception de l'édition. Le même jour, le kinésithérapeute Emili Ricart (65 ans), au club depuis mars 2027, prend sa retraite. Le 29, Mama Baldé, remis de sa blessure à la hanche, reprend l'entraînement complet, et le défenseur central Noa Lango (19 ans), prêté cette saison à Chambly en Ligue 3 (32 matchs), passe professionnel : il signe jusqu'en juin 2031 pour 14 250 € par mois.",
+        matches: [
+          { r:"D", tip:"RC Lens (D) 0-0" },
+          { r:"L", tip:"OGC Nice (E) 1-0" },
+        ],
+      },
     ],
 
     transfers:  [
@@ -283,6 +303,13 @@ window['SEASONS_brest'] = [
       { type: "loan", name: "Giovani Versini",   to: "Prêt à Bergamo (Serie A) jusqu'à la fin de la saison, avec une clause d'achat obligatoire de 1,2M € (MOD · Français · 23 ans)", date: "Févr. 2028" },
       { type: "sell", name: "Mathieu Patouillet", to: "Southampton, jusqu'à 1,3M € avec les bonus, contrat jusqu'en 2031 (GB · Français · 23 ans)", date: "Janv. 2028", amount: "1,1M €" },
     ],
+
+    splash: {
+      eyebrow:  "2027/28 · Stade Brestois 29 · Saison 2",
+      lines:    ["QUATRIÈMES.", "LIGUE DES CHAMPIONS."],
+      sub:      "Ligue 1 · 4e · 51 pts · Demi-finale de la Coupe de France",
+      tagline:  "Pour sa deuxième saison, Arq Queft 1er du Nom devait installer Brest en milieu de tableau. Après un automne irrégulier, six victoires de suite sans encaisser de but entre décembre et février ont propulsé les Brestois jusqu'à la 2e place, et le PSG lui-même est tombé au stade Francis-Le Blé. Malgré un printemps plus difficile, Brest termine 4e avec 51 points, se qualifie pour la Ligue des champions et atteint les demi-finales de la Coupe de France. Mama Baldé (12 buts) et Joseph Nonge, élu joueur de la saison par les supporters, ont porté une équipe qui a largement dépassé l'objectif fixé par les dirigeants.",
+    },
   },
 
   /* ─── SAISON 2026/27 · TERMINÉE ──────────────────────── */
