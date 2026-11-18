@@ -22,6 +22,60 @@
  */
 window['SEASONS_brest'] = [
 
+  /* ─── SAISON 2028/29 · EN COURS ──────────────────────── */
+  {
+    id:           "brest-2028-29",
+    year:         "2028/29",
+    league:       "Ligue 1",
+    status:       "en_cours",
+    totalTeams:   18,
+    seasonLength: 34,
+    lastUpdate:   "1er juillet 2028 · intersaison",
+    position:     null,
+    compNames:    { CDF: "Coupe de France", UCL: "Ligue des champions" },
+
+    // Effectif au 1er juillet 2028
+    squad: [
+      { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:35 },
+      { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
+      { n:"Justin Bengui Joao",    p:"GB",   nat:"ANG", age:22 },
+      { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:25 },
+      { n:"Gotoku Sakai",          p:"DG",   nat:"JPN", age:37 },
+      { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:22 },
+      { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:33 },
+      { n:"Václav Jemelka",        p:"DC",   nat:"CZE", age:33 },
+      { n:"Raphaël Le Guen",       p:"DC",   nat:"FRA", age:21 },
+      { n:"Sebastián Cáceres",     p:"DC",   nat:"URU", age:28 },
+      { n:"Mateo Mendoza",         p:"DC",   nat:"ARG", age:23 },
+      { n:"Joris Chotard",         p:"MD",   nat:"FRA", age:26 },
+      { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:30 },
+      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:31 },
+      { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:25 },
+      { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:25 },
+      { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:23 },
+      { n:"Kaio César",            p:"MOD",  nat:"BRA", age:24 },
+      { n:"Taïryk Arconte",        p:"MOD",  nat:"GLP", age:24 },
+      { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:24 },
+      { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:32 },
+    ],
+
+    months: [
+      {
+        key: "06", label: "Juin 2028 · intersaison",
+        note: "Au lendemain d'une saison conclue par la qualification pour la Ligue des champions, juin est le mois des bilans et des premiers mouvements. Le 2, Justin Bengui Joao, troisième gardien, se fracture un doigt en sélection avec l'Angola, percuté par le ballon lors d'un match de qualification pour la Coupe du monde face à la Sierra Leone : il doit consulter un spécialiste et sera absent deux à trois semaines. Le 5, l'attaquant Noé Verron (19 ans), auteur de 6 buts en 18 matchs de Ligue 2 lors de son prêt à Villefranche, passe professionnel : il signe jusqu'en juin 2031 pour 14 250 € par mois. Le 15, Francis De Taddéo (70 ans), responsable de la formation des jeunes depuis octobre 2026, prend sa retraite. Ancien entraîneur de Metz, champion de Ligue 2 en 2007 et élu entraîneur de la saison de Ligue 2, il a aussi dirigé la formation à Auxerre, Caen et Montpellier. Le 19, dix-huit jeunes joueurs arrivés en fin de contrat quittent le club libres : Ethan Brissaud, Joan Caroff, Aurélien Quéré, Meven Loric, Pierre Delacour, Yazid Moussa, Oan Bonnet, Aldrig Colin, Said Zaidi, Louis Maynard, Nando Martinez, Nohann Riou, Cheick Kanté, Charles Noël Gnamian, Nolhann Dehaine, Gianni Bellot, Ilhan Mammeri et Darel Mourana. Le même jour, une clause annuelle de son contrat augmente le salaire de Kaio César de 5 %, à 83 500 € par mois (contrat jusqu'en juin 2031). Le 26, le défenseur central marocain Noham Varela (18 ans), de la réserve, international U20 (16 sélections), passe professionnel jusqu'en juin 2033, pour 18 000 € par mois. Le 28, Mama Baldé se blesse à l'entraînement (élongation des ischio-jambiers, dix jours à trois semaines d'absence), alors que Pathé Mboup, toujours en convalescence après sa fracture de la cheville, n'a pas encore repris. Le 29, le prêt de Paris Brunner prend fin : l'attaquant rentre à Monaco après 26 matchs et 6 buts sous le maillot brestois (6,70 de moyenne). Le 30, Kelyan Graziani et Enzo Monchatre, de la réserve, quittent eux aussi le club en fin de contrat, et les prêtés font leur retour : Hamidou Makalou, Axel Lassus et Noa Lango rejoignent la réserve, Jaden Choisy les U19, tandis que Noé Verron (Villefranche), Yacouba Kamissoko (Paris 13 Atlético, 16 matchs, 4 passes décisives) et Pape Gueye (Chambly, 17 matchs) achèvent leur prêt. Giovani Versini, prêté à l'Atalanta, n'y a joué qu'un match, mais la clause d'achat obligatoire s'applique : il rejoint définitivement le club italien pour 1,2 M€ (jusqu'à 1,6 M€ avec les bonus), avec un contrat jusqu'en juin 2033. Dans le même temps, Brest lève l'option d'achat de Sebastián Cáceres, son défenseur central prêté par le Celta Vigo : l'Uruguayen (28 ans), membre du meilleur onze de la saison, s'engage définitivement pour 1 M€ (jusqu'à 1,5 M€ avec les bonus), jusqu'en juin 2031 et pour 123 000 € par mois. Les dirigeants sont très contents de l'accord, et les supporters ravis de garder un joueur aussi important. Au 1er juillet, l'effectif professionnel compte 21 joueurs, et la préparation s'annonce avec trois matchs amicaux, tous à l'extérieur : à St. Pauli le samedi 15 juillet, à Créteil le samedi 22 et à Nîmes le mercredi 26.",
+        matches: [],
+      },
+    ],
+
+    transfers:  [
+      { type: "buy",  name: "Sebastián Cáceres", from: "Celta Vigo, option d'achat levée après son prêt, jusqu'à 1,5M € avec les bonus, contrat jusqu'en 2031 à 123K € par mois (DC · Uruguayen · 28 ans)", date: "Juin 2028", amount: "1M €" },
+    ],
+    departures: [
+      { type: "sell", name: "Giovani Versini",   to: "Atalanta, clause d'achat obligatoire après son prêt, jusqu'à 1,6M € avec les bonus, contrat jusqu'en 2033 (MOD · Français · 24 ans)", date: "Juin 2028", amount: "1,2M €" },
+      { type: "loan", name: "Paris Brunner",     to: "Fin de prêt, retour à l'AS Monaco après 26 matchs et 6 buts (BU · Allemand · 22 ans)", date: "Juin 2028" },
+    ],
+  },
+
   /* ─── SAISON 2027/28 · TERMINÉE ──────────────────────── */
   {
     id:           "brest-2027-28",
@@ -49,16 +103,15 @@ window['SEASONS_brest'] = [
     // Meilleures et pires moyennes : au moins 17 matchs joués (la moitié de la saison)
     ratings: [
       { name: "J. Nonge · E. Selvik",  detail: "MC / GB · ex-aequo",                                               value: 7.00 },
-      { name: "Justin Bourgault",      detail: "DG · Français · 22 ans · 29 tit. / 8 rempl. · 6 passes D.",      value: 6.97 },
-      { name: "Luck Zogbé",            detail: "DD · Ivoirien · 25 ans · 13 tit. / 19 rempl. · 4 passes D.",     value: 6.96 },
+      { name: "Justin Bourgault",      detail: "DG · Français · 22 ans · 29 tit. / 8 rempl. · 6 passes D.",      value: 6.96 },
+      { name: "K. Doumbia · L. Zogbé", detail: "MC / DD · ex-aequo",                                               value: 6.94 },
     ],
-    // Pires moyennes : Baldé définitive ; Brunner et Diambou au 1er mai (à confirmer avec l'effectif de fin de saison)
     flops: [
-      { name: "Paris Brunner",         detail: "BU · Allemand · 22 ans · 5 tit. / 19 rempl. · 6 buts",             value: 6.73 },
-      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans · 25 tit. / 3 rempl. · 12 buts · 1 passe D.", value: 6.77 },
-      { name: "Mamady Diambou",        detail: "MD · Malien · 25 ans · 2 tit. / 23 rempl.",                        value: 6.78 },
+      { name: "Paris Brunner",         detail: "BU · Allemand · 22 ans · 7 tit. / 19 rempl. · 6 buts",             value: 6.69 },
+      { name: "Mama Baldé",            detail: "BU · Bissau-Guinéen · 32 ans · 25 tit. / 3 rempl. · 12 buts · 1 passe D.", value: 6.76 },
+      { name: "Mamady Diambou",        detail: "MD · Malien · 25 ans · 2 tit. / 24 rempl.",                        value: 6.78 },
     ],
-    // Effectif en fin de saison (mai 2028)
+    // Effectif en fin de saison (1er juin 2028)
     squad: [
       { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:35 },
       { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
@@ -72,13 +125,12 @@ window['SEASONS_brest'] = [
       { n:"Sebastián Cáceres",     p:"DC",   nat:"URU", age:28 },
       { n:"Mateo Mendoza",         p:"DC",   nat:"ARG", age:23 },
       { n:"Joris Chotard",         p:"MD",   nat:"FRA", age:26 },
-      { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:29 },
-      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:30 },
+      { n:"Hugo Magnetti",         p:"MD",   nat:"FRA", age:30 },
+      { n:"Lucas Tousart",         p:"MD",   nat:"FRA", age:31 },
       { n:"Mamady Diambou",        p:"MD",   nat:"MLI", age:25 },
       { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:25 },
       { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:23 },
       { n:"Kaio César",            p:"MOD",  nat:"BRA", age:24 },
-      { n:"Yannis Rabrun-Nellec",  p:"MOD",  nat:"GUF", age:20 },
       { n:"Taïryk Arconte",        p:"MOD",  nat:"GLP", age:24 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:24 },
       { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:32 },
