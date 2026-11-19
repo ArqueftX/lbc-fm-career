@@ -30,17 +30,19 @@ window['SEASONS_brest'] = [
     status:       "en_cours",
     totalTeams:   18,
     seasonLength: 34,
-    lastUpdate:   "1er juillet 2028 · intersaison",
+    lastUpdate:   "1er août 2028 · pré-saison",
     position:     null,
     compNames:    { CDF: "Coupe de France", UCL: "Ligue des champions" },
+    objective:    "Terminer dans la première moitié du tableau en Ligue 1",
 
-    // Effectif au 1er juillet 2028
+    // Effectif au 1er août 2028
     squad: [
+      { n:"Guilherme Fernandes",   p:"GB",   nat:"POR", age:27 },
+      { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:31 },
       { n:"Alireza Beiranvand",    p:"GB",   nat:"IRN", age:35 },
-      { n:"Egil Selvik",           p:"GB",   nat:"NOR", age:30 },
-      { n:"Justin Bengui Joao",    p:"GB",   nat:"ANG", age:22 },
       { n:"Luck Zogbé",            p:"DD",   nat:"CIV", age:25 },
       { n:"Gotoku Sakai",          p:"DG",   nat:"JPN", age:37 },
+      { n:"Javi Galán",            p:"DG",   nat:"ESP", age:33 },
       { n:"Justin Bourgault",      p:"DG",   nat:"FRA", age:22 },
       { n:"Brendan Chardonnet",    p:"DC",   nat:"FRA", age:33 },
       { n:"Václav Jemelka",        p:"DC",   nat:"CZE", age:33 },
@@ -54,9 +56,13 @@ window['SEASONS_brest'] = [
       { n:"Kamory Doumbia",        p:"MC",   nat:"MLI", age:25 },
       { n:"Joseph Nonge",          p:"MC",   nat:"BEL", age:23 },
       { n:"Kaio César",            p:"MOD",  nat:"BRA", age:24 },
-      { n:"Taïryk Arconte",        p:"MOD",  nat:"GLP", age:24 },
+      { n:"Jaden Choisy",          p:"MOD",  nat:"FRA", age:18 },
+      { n:"Mike Trésor",           p:"MOG",  nat:"BEL", age:29 },
       { n:"Pathé Mboup",           p:"MOG",  nat:"SEN", age:24 },
       { n:"Mama Baldé",            p:"BU",   nat:"GNB", age:32 },
+      { n:"Taïryk Arconte",        p:"BU",   nat:"GLP", age:24 },
+      { n:"Noé Verron",            p:"BU",   nat:"FRA", age:19 },
+      { n:"Mathis Lainé",          p:"BU",   nat:"FRA", age:21 },
     ],
 
     months: [
@@ -65,14 +71,34 @@ window['SEASONS_brest'] = [
         note: "Au lendemain d'une saison conclue par la qualification pour la Ligue des champions, juin est le mois des bilans et des premiers mouvements. Le 2, Justin Bengui Joao, troisième gardien, se fracture un doigt en sélection avec l'Angola, percuté par le ballon lors d'un match de qualification pour la Coupe du monde face à la Sierra Leone : il doit consulter un spécialiste et sera absent deux à trois semaines. Le 5, l'attaquant Noé Verron (19 ans), auteur de 6 buts en 18 matchs de Ligue 2 lors de son prêt à Villefranche, passe professionnel : il signe jusqu'en juin 2031 pour 14 250 € par mois. Le 15, Francis De Taddéo (70 ans), responsable de la formation des jeunes depuis octobre 2026, prend sa retraite. Ancien entraîneur de Metz, champion de Ligue 2 en 2007 et élu entraîneur de la saison de Ligue 2, il a aussi dirigé la formation à Auxerre, Caen et Montpellier. Le 19, dix-huit jeunes joueurs arrivés en fin de contrat quittent le club libres : Ethan Brissaud, Joan Caroff, Aurélien Quéré, Meven Loric, Pierre Delacour, Yazid Moussa, Oan Bonnet, Aldrig Colin, Said Zaidi, Louis Maynard, Nando Martinez, Nohann Riou, Cheick Kanté, Charles Noël Gnamian, Nolhann Dehaine, Gianni Bellot, Ilhan Mammeri et Darel Mourana. Le même jour, une clause annuelle de son contrat augmente le salaire de Kaio César de 5 %, à 83 500 € par mois (contrat jusqu'en juin 2031). Le 26, le défenseur central marocain Noham Varela (18 ans), de la réserve, international U20 (16 sélections), passe professionnel jusqu'en juin 2033, pour 18 000 € par mois. Le 28, Mama Baldé se blesse à l'entraînement (élongation des ischio-jambiers, dix jours à trois semaines d'absence), alors que Pathé Mboup, toujours en convalescence après sa fracture de la cheville, n'a pas encore repris. Le 29, le prêt de Paris Brunner prend fin : l'attaquant rentre à Monaco après 26 matchs et 6 buts sous le maillot brestois (6,70 de moyenne). Le 30, Kelyan Graziani et Enzo Monchatre, de la réserve, quittent eux aussi le club en fin de contrat, et les prêtés font leur retour : Hamidou Makalou, Axel Lassus et Noa Lango rejoignent la réserve, Jaden Choisy les U19, tandis que Noé Verron (Villefranche), Yacouba Kamissoko (Paris 13 Atlético, 16 matchs, 4 passes décisives) et Pape Gueye (Chambly, 17 matchs) achèvent leur prêt. Giovani Versini, prêté à l'Atalanta, n'y a joué qu'un match, mais la clause d'achat obligatoire s'applique : il rejoint définitivement le club italien pour 1,2 M€ (jusqu'à 1,6 M€ avec les bonus), avec un contrat jusqu'en juin 2033. Dans le même temps, Brest lève l'option d'achat de Sebastián Cáceres, son défenseur central prêté par le Celta Vigo : l'Uruguayen (28 ans), membre du meilleur onze de la saison, s'engage définitivement pour 1 M€ (jusqu'à 1,5 M€ avec les bonus), jusqu'en juin 2031 et pour 123 000 € par mois. Les dirigeants sont très contents de l'accord, et les supporters ravis de garder un joueur aussi important. Au 1er juillet, l'effectif professionnel compte 21 joueurs, et la préparation s'annonce avec trois matchs amicaux, tous à l'extérieur : à St. Pauli le samedi 15 juillet, à Créteil le samedi 22 et à Nîmes le mercredi 26.",
         matches: [],
       },
+      {
+        key: "07", label: "Juillet 2028 · pré-saison",
+        note: "Pour sa troisième saison, la première en Coupe d'Europe, les dirigeants fixent trois objectifs : terminer dans la première moitié du tableau en Ligue 1 (nécessaire), atteindre au moins le 3e tour qualificatif de la Ligue des champions (nécessaire) et au moins les quarts de finale de la Coupe de France (préférable). Dans leur plan sur cinq ans, ils veulent un Brest compétitif en Ligue des champions et qui aille loin en Coupe de France, et rêvent d'un nouveau stade ; ils se disent très contents des progrès accomplis et de la stature grandissante du club, mais jugent la situation budgétaire délicate. Le 1er juillet, trois joueurs de la réserve quittent le club en fin de contrat : Ibrahim Kanté, Yannis Rabrun-Nellec et Darri Tifra, tandis que Souleymane Camara, en fin de formation, ne se voit pas proposer de contrat professionnel. Le même jour, Brest officialise deux recrues libres de tout contrat : l'arrière gauche espagnol Javi Galán (33 ans), jusqu'en juin 2029 pour 96 500 € par mois, et le milieu offensif international belge Mike Trésor (29 ans), jusqu'en juin 2031 pour 55 500 € par mois. Les dirigeants sont ravis de l'aspect financier de ces deux arrivées, comme de celle de Sebastián Cáceres. Le 2, le Napoli accepte la proposition de match amical de Brest pour le 29 juillet. Le 4, le milieu défensif malien Hamidou Makalou (21 ans), de retour de prêt, s'engage pour quatre ans, jusqu'en juin 2032, pour 34 500 € par mois, avec une clause libératoire de 1,7 M€ ; les supporters, très heureux, voient en lui l'un des éléments les plus prometteurs du club. Le 5, c'est au tour de Jaden Choisy (18 ans), le plus jeune buteur de l'histoire du club, de signer un contrat de cinq ans, jusqu'en juin 2033, pour 32 500 € par mois, avec une clause libératoire de 6 M€. Plusieurs jeunes partent ensuite se former en prêt jusqu'à la fin de la saison : l'ailier Alexis Boubee (17 ans) à Villefranche (Ligue 2), l'attaquant Lenny Dan (16 ans) à Pau (Ligue 3), le défenseur central Noham Varela (18 ans) à Nîmes (Ligue 3), le défenseur central Franck Guillerm (17 ans) à Rodez (Ligue 3), l'attaquant Cedric Bayiha (16 ans) au Red Star (Ligue 2), le milieu Kevin Braun (17 ans) et l'attaquant Gérald Kanté (16 ans) à Boulogne (Ligue 3). Le 15, Brest ouvre sa préparation par une défaite au Millerntor-Stadion face à St. Pauli (2-0) : Adeline ouvre le score dès la 1re minute et Aigbekaen double la mise (77e), malgré vingt tirs brestois ; le gardien Ben Voll est élu homme du match (8,44). Le 17, le tirage au sort du 3e tour qualificatif de la Ligue des champions (voie de la Ligue) désigne le Club Brugge : aller au Jan Breydelstadion le mardi 1er août, retour au stade Francis-Le Blé le mardi 8. Le 22, à Créteil, Brest s'impose (0-2) grâce à Kaio César (17e) et Taïryk Arconte (60e), tous deux servis par Luck Zogbé, élu homme du match (8,46). Le 24, le gardien portugais Guilherme Fernandes (27 ans) arrive en prêt de Reims jusqu'à la fin de la saison, pour 1,4 M€ de frais au total, avec une clause d'achat de 800 000 € ; il touche 73 000 € par mois. Les supporters sont contents de ce prêt, mais les dirigeants se disent extrêmement déçus de l'accord. Le 26, à Nîmes, Brest renverse son adversaire (1-2), face à un Noham Varela titulaire avec son nouveau club : Depres ouvre le score (48e), puis Jaden Choisy, servi par Joseph Nonge (66e), et Arconte, sur une nouvelle passe de Zogbé (74e), font la différence ; Nonge est élu homme du match (7,93). Le 29, au stade Francis-Le Blé, Brest bat le Napoli de Massimiliano Allegri (1-0) grâce à Raphaël Le Guen, servi par Mike Trésor (81e), malgré seulement 39 % de possession ; Le Guen est élu homme du match (7,77). Kaio César se blesse au mollet pendant la rencontre (élongation, trois à sept semaines d'absence). Bilan de la préparation : trois victoires et une défaite, avant un mois d'août chargé : le barrage aller à Bruges le 1er, un dernier amical à Aston Villa le 5, le retour contre Bruges le 8, puis les quatre premières journées de Ligue 1 (à Lorient, contre le PSG et Strasbourg, à Lille).",
+        matches: [
+          { r:"L", tip:"St. Pauli (E) 2-0",            comp:"AM" },
+          { r:"W", tip:"Créteil (E) 0-2",              comp:"AM" },
+          { r:"W", tip:"Nîmes (E) 1-2",                comp:"AM" },
+          { r:"W", tip:"Napoli (D) 1-0",               comp:"AM" },
+        ],
+      },
     ],
 
     transfers:  [
+      { type: "free", name: "Javi Galán",        from: "Libre, contrat jusqu'en 2029 à 96,5K € par mois (DG · Espagnol · 33 ans)", date: "Juil. 2028" },
+      { type: "free", name: "Mike Trésor",       from: "Libre, contrat jusqu'en 2031 à 55,5K € par mois (MOG · Belge · 29 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Guilherme Fernandes", from: "Prêt de Reims jusqu'à la fin de la saison, frais de 1,4M €, clause d'achat de 800K €, salaire de 73K € par mois (GB · Portugais · 27 ans)", date: "Juil. 2028" },
       { type: "buy",  name: "Sebastián Cáceres", from: "Celta Vigo, option d'achat levée après son prêt, jusqu'à 1,5M € avec les bonus, contrat jusqu'en 2031 à 123K € par mois (DC · Uruguayen · 28 ans)", date: "Juin 2028", amount: "1M €" },
     ],
     departures: [
       { type: "sell", name: "Giovani Versini",   to: "Atalanta, clause d'achat obligatoire après son prêt, jusqu'à 1,6M € avec les bonus, contrat jusqu'en 2033 (MOD · Français · 24 ans)", date: "Juin 2028", amount: "1,2M €" },
       { type: "loan", name: "Paris Brunner",     to: "Fin de prêt, retour à l'AS Monaco après 26 matchs et 6 buts (BU · Allemand · 22 ans)", date: "Juin 2028" },
+      { type: "loan", name: "Alexis Boubee",     to: "Prêt à Villefranche (Ligue 2) jusqu'à la fin de la saison (MOD · Français · 17 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Lenny Dan",         to: "Prêt à Pau (Ligue 3) jusqu'à la fin de la saison (MOD / BU · Français · 16 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Noham Varela",      to: "Prêt à Nîmes (Ligue 3) jusqu'à la fin de la saison (DC · Marocain · 18 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Franck Guillerm",   to: "Prêt à Rodez (Ligue 3) jusqu'à la fin de la saison (DC · Français · 17 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Cedric Bayiha",     to: "Prêt au Red Star (Ligue 2) jusqu'à la fin de la saison (BU · Français · 16 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Kevin Braun",       to: "Prêt à Boulogne (Ligue 3) jusqu'à la fin de la saison (MC · Français · 17 ans)", date: "Juil. 2028" },
+      { type: "loan", name: "Gérald Kanté",      to: "Prêt à Boulogne (Ligue 3) jusqu'à la fin de la saison (BU · Français · 16 ans)", date: "Juil. 2028" },
     ],
   },
 
